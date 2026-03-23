@@ -1,0 +1,11 @@
+:root {
+  --color-page: #f4f7fb;
+  --color-ink: #0f172a;
+  --color-muted: #475569;
+  --color-brand: #1d4ed8;
+  --color-brand-deep: #1e3a8a;
+  --color-accent: #f97316;
+  --color-border: #dbe4f0;
+  --font-body: var(--font-poppins), "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: var(--font-poppins), "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
