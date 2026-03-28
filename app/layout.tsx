@@ -12,8 +12,24 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`
   },
   description:
-    "NB Prompts helps creators with AI prompts, image tools, blogging ideas, and free online tools in a modern SEO-friendly platform.",
-  keywords: ["NB Prompts", "AI prompts", "image tools", "blogging tips", "online tools", "background remover", "image compressor", "JPG to PNG"],
+    "NB Prompts is a creator-first hub for AI prompt ideas, free online image tools, blogging tips, SEO guides, and quick content workflow solutions.",
+  keywords: [
+    "NB Prompts",
+    "AI prompts",
+    "free online tools",
+    "image tools",
+    "blogging tips",
+    "SEO friendly blog",
+    "background remover",
+    "image compressor",
+    "JPG to PNG",
+    "image optimization",
+    "AI writing prompts",
+    "content creation",
+    "creator tools",
+    "online converter",
+    "prompt ideas"
+  ],
   applicationName: SITE_NAME,
   alternates: {
     canonical: "/"
@@ -21,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${SITE_NAME} | Best AI Prompts & Free Online Tools`,
     description:
-      "Create smarter with AI using prompts, blogging resources, and free online image tools.",
+      "Create smarter with AI prompts, blogging resources, and free online image tools for creators and bloggers.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_US",

@@ -1,8 +1,48 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CategoryCard } from "@/components/category-card";
 import { PostCard } from "@/components/post-card";
 import { ToolCard } from "@/components/tool-card";
 import { getAllPosts } from "@/lib/posts";
+
+export const metadata: Metadata = {
+  title: "NB Prompts | AI Blog, Free Online Tools & Image Tips",
+  description:
+    "NB Prompts is a creator-first website with AI prompt ideas, free online image tools, blogging guides, and SEO-friendly content for smarter online workflows.",
+  keywords: [
+    "NB Prompts",
+    "AI prompts",
+    "free online tools",
+    "blogging tips",
+    "image converter",
+    "image compressor",
+    "background remover",
+    "SEO blog",
+    "content ideas",
+    "AI image tools",
+    "JPG to PNG",
+    "online image editor",
+    "blogging ideas",
+    "creator resources"
+  ],
+  alternates: {
+    canonical: "/"
+  },
+  openGraph: {
+    title: "NB Prompts | AI Blog, Free Online Tools & Image Tips",
+    description:
+      "Discover AI prompt ideas, free image tools, and blogging guides on NB Prompts — made for creators, bloggers, and marketers.",
+    url: "https://newbananaprompts.in",
+    siteName: "NB Prompts",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NB Prompts | AI Blog, Free Online Tools & Image Tips",
+    description:
+      "Discover AI prompt ideas, free image tools, and blogging guides on NB Prompts — made for creators, bloggers, and marketers."
+  }
+};
 
 export default function HomePage() {
   const posts = getAllPosts();

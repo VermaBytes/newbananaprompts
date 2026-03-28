@@ -27,18 +27,30 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     };
   }
 
-  const canonicalPath = `/post/${post.slug}`;
+  const canonicalUrl = `${SITE_URL}/post/${post.slug}`;
+  const keywords = Array.from(
+    new Set([
+      ...post.tags,
+      post.category,
+      post.title,
+      "AI prompts",
+      "free online tools",
+      "blogging tips",
+      "image tools"
+    ]).values()
+  );
 
   return {
     title: post.seoTitle,
     description: post.description,
+    keywords,
     alternates: {
-      canonical: canonicalPath
+      canonical: canonicalUrl
     },
     openGraph: {
       title: post.seoTitle,
       description: post.description,
-      url: canonicalPath,
+      url: canonicalUrl,
       type: "article",
       siteName: SITE_NAME,
       publishedTime: post.publishedAt,
@@ -60,6 +72,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     }
   };
 }
+
 
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = await params;
