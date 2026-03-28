@@ -91,6 +91,12 @@ export default async function PostPage({ params }: PostPageProps) {
       href: "https://www.bing.com/images/create",
       prompt:
         "Create a realistic devotional image of a young person standing beside Goddess Durga (Mata Rani). The person should look natural, smiling, and wearing traditional Indian clothes. Goddess Durga should appear divine with glowing aura, sitting on a lion, holding weapons, and blessing pose. Background: Navratri festival decoration with lights, mandir, diyas, and flowers. Lighting: golden divine glow, cinematic, ultra realistic. Style: highly detailed, 4K, realistic photography style. Emotion: peaceful, spiritual, bhaktimay feeling."
+    },
+    "instagram-par-viral-3d-social-media-ai-avatar-kaise-banayein-free-bing-prompts-2026": {
+      label: "Create Avatar",
+      href: "https://www.bing.com/images/create",
+      prompt:
+        "Create a realistic 3D illustration of a 22-year-old Indian boy sitting casually on a stylish wooden chair in front of a giant social media logo of 'Instagram'. The character should wear a modern hoodie, sneakers, and sunglasses. The background should feature his username 'YOUR NAME' in glowing blue neon lights on the wall. The lighting should be cinematic with high resolution."
     }
   };
   const postCta = ctaLinks[post.slug];
