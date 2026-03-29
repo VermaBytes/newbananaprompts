@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   description: "Contact NB Prompts for partnerships, tool requests, editorial queries, or collaboration opportunities.",
   alternates: {
     canonical: "/contact"
+  },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png"
   }
 };
 

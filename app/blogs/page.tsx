@@ -4,11 +4,17 @@ import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Blogs",
-  description: "Browse AI prompts, image tools, blogging articles, and online utility guides on NB Prompts."
+  description: "Browse AI prompts, image tools, blogging articles, and online utility guides on NB Prompts.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png"
+  }
 };
 
-export default function BlogsPage() {
+export default function BlogsPage({ searchParams }: { searchParams?: { query?: string } }) {
   const posts = getAllPosts();
+  const query = searchParams?.query ?? "";
 
   return (
     <section className="space-y-5">
@@ -21,7 +27,7 @@ export default function BlogsPage() {
           Search posts, filter by topic, and explore a cleaner library of AI prompts, image tools, and blogging guides.
         </p>
       </div>
-      <PostsExplorer posts={posts} />
+      <PostsExplorer posts={posts} query={query} />
     </section>
   );
 }

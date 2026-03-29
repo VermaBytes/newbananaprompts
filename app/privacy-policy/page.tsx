@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
-  description: "Read the privacy policy for NB Prompts, including data usage, cookies, and contact details."
+  description: "Read the privacy policy for NB Prompts, including data usage, cookies, and contact details.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png"
+  }
 };
 
 export default function PrivacyPolicyPage() {

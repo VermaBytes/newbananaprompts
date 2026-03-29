@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/"
   },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png"
+  },
   openGraph: {
     title: "NB Prompts | AI Blog, Free Online Tools & Image Tips",
     description:

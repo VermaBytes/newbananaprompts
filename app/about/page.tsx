@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   description: "Learn about NB Prompts and how it helps readers with AI prompts, image tools, blogging, and online creator resources.",
   alternates: {
     canonical: "/about"
+  },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png"
   }
 };
 

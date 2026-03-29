@@ -35,7 +35,6 @@ export function PostCard({ post }: { post: BlogPost }) {
             {post.title}
           </Link>
         </h2>
-        <p className="theme-text-secondary line-clamp-3 text-sm leading-7">{post.description}</p>
         <div className="pt-1">
           <Link
             href={`/post/${post.slug}`}

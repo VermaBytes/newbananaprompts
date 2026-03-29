@@ -1,38 +1,47 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/blogs", label: "Blogs" },
   { href: "/#popular-tools", label: "Tools" },
-  { href: "/#categories", label: "Categories" },
-  { href: "/contact", label: "Contact" }
+  { href: "/#categories", label: "Categories" }
 ];
 
 export function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
+
+  const handleSearch = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const query = searchQuery.trim();
+    if (query.length > 0) {
+      router.push(`/blogs?query=${encodeURIComponent(query)}`);
+    } else {
+      router.push("/blogs");
+    }
+  };
 
   return (
     <header className="site-header fixed inset-x-0 top-0 z-50 border-b backdrop-blur">
       <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <Link href="/" className="min-w-0 flex items-center gap-3">
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#0f766e] text-sm font-bold text-white shadow-lg shadow-[#0f766e]/20">
-            NB
-          </span>
+            <img src="/logo.png" alt="Logo" className="h-11 w-11 rounded-xl object-cover" />
             <span className="min-w-0">
-            <span className="theme-text-primary block truncate font-[family-name:var(--font-heading)] text-lg font-bold">
-              {SITE_NAME}
-            </span>
-            <span className="theme-text-muted hidden text-xs uppercase tracking-[0.24em] sm:block">{SITE_TAGLINE}</span>
+              <span className="block truncate font-[family-name:var(--font-heading)] text-lg font-bold">
+                {SITE_NAME}
+              </span>
+              <span className="hidden text-xs uppercase tracking-[0.24em] sm:block">{SITE_TAGLINE}</span>
             </span>
           </Link>
-          <div className="flex items-center gap-2">
-            <nav aria-label="Primary" className="hidden items-center gap-1 sm:flex sm:gap-2">
+          <div className="flex flex-1 flex-col items-center gap-4 md:flex-row md:justify-center">
+            <nav aria-label="Primary" className="flex flex-wrap items-center justify-center gap-2">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
@@ -43,45 +52,30 @@ export function Navbar() {
                 </Link>
               ))}
             </nav>
-            <ThemeToggle />
-            <button
-              type="button"
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-nav"
-              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              onClick={() => setIsMenuOpen((open) => !open)}
-              className="theme-button theme-soft-hover inline-flex h-11 w-11 items-center justify-center rounded-md sm:hidden"
-            >
-              <span className="sr-only">{isMenuOpen ? "Close menu" : "Open menu"}</span>
-              <span className="flex w-5 flex-col gap-1.5">
-                <span
-                  className={`block h-0.5 w-full rounded bg-current transition ${isMenuOpen ? "translate-y-2 rotate-45" : ""}`}
+            <form onSubmit={handleSearch} className="w-full max-w-[320px]">
+              <label htmlFor="navbar-search" className="sr-only">
+                Search
+              </label>
+              <div className="relative w-full">
+                <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-slate-400">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                    <circle cx="11" cy="11" r="7" />
+                    <path d="M16.65 16.65L21 21" />
+                  </svg>
+                </span>
+                <input
+                  id="navbar-search"
+                  type="search"
+                  value={searchQuery}
+                  onChange={(event) => setSearchQuery(event.target.value)}
+                  placeholder="Search posts, tools, prompts..."
+                  className="theme-input w-full rounded-full border border-slate-200 bg-white px-4 py-2.5 pl-11 pr-4 text-sm outline-none placeholder:text-slate-400 transition focus:border-[#0f766e] focus:ring-2 focus:ring-[#0f766e]/20"
                 />
-                <span className={`block h-0.5 w-full rounded bg-current transition ${isMenuOpen ? "opacity-0" : ""}`} />
-                <span
-                  className={`block h-0.5 w-full rounded bg-current transition ${isMenuOpen ? "-translate-y-2 -rotate-45" : ""}`}
-                />
-              </span>
-            </button>
+              </div>
+            </form>
           </div>
         </div>
-        <nav
-          id="mobile-nav"
-          aria-label="Mobile Primary"
-          className={`${isMenuOpen ? "mt-4 flex" : "hidden"} flex-col gap-2 border-t border-slate-200 pt-4 sm:hidden`}
-        >
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setIsMenuOpen(false)}
-              className="theme-nav-link theme-text-secondary rounded-md px-4 py-3 text-sm font-semibold"
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
-        </div>
+      </div>
     </header>
   );
 }

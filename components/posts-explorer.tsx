@@ -8,8 +8,7 @@ import { PostCardSkeleton } from "@/components/post-card-skeleton";
 const filters = ["All", "AI Tools", "Earn Money", "Images Prompt", "Student Prompt", "Videos Prompt"] as const;
 const POSTS_PER_PAGE = 6;
 
-export function PostsExplorer({ posts = [] }: { posts?: BlogPost[] }) {
-  const [query, setQuery] = useState("");
+export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; query?: string }) {
   const [category, setCategory] = useState<(typeof filters)[number]>("All");
   const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
 
@@ -25,9 +24,7 @@ export function PostsExplorer({ posts = [] }: { posts?: BlogPost[] }) {
         (category === "Images Prompt" && post.category === "Image Prompts") ||
         (category === "Videos Prompt" && post.category === "Video Prompts") ||
         (category === "Student Prompt" && /student|study|school|education/.test(searchableText));
-      const matchesQuery =
-        normalizedQuery.length === 0 ||
-        searchableText.includes(normalizedQuery);
+      const matchesQuery = normalizedQuery.length === 0 || searchableText.includes(normalizedQuery);
 
       return matchesCategory && matchesQuery;
     });
@@ -39,21 +36,8 @@ export function PostsExplorer({ posts = [] }: { posts?: BlogPost[] }) {
 
   return (
     <div className="space-y-5">
-      <div className="site-panel rounded-2xl p-4 sm:p-5">
+      <div className="mb-4">
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] lg:items-end">
-          <label className="block">
-            <span className="theme-text-muted mb-2 block text-xs font-bold uppercase tracking-[0.18em]">Search</span>
-            <input
-              type="search"
-              value={query}
-              onChange={(event) => {
-                setQuery(event.target.value);
-                setVisibleCount(POSTS_PER_PAGE);
-              }}
-              placeholder="Search AI image or video prompts"
-              className="theme-input w-full rounded-xl px-4 py-3.5 text-sm outline-none placeholder:text-slate-400 focus:border-[#0f766e]"
-            />
-          </label>
           <div>
             <span className="theme-text-muted mb-2 block text-xs font-bold uppercase tracking-[0.18em]">Category</span>
             <div className="flex flex-wrap gap-2">
@@ -80,7 +64,7 @@ export function PostsExplorer({ posts = [] }: { posts?: BlogPost[] }) {
         <p className="theme-text-secondary font-medium">
           Showing {visiblePosts.length} of {filteredPosts.length} posts
         </p>
-        <p className="theme-text-muted">{query ? `Results for "${query}"` : `Browse ${category === "All" ? "all prompts" : category}`}</p>
+        <p className="theme-text-muted">Browse {category === "All" ? "all prompts" : category}</p>
       </div>
       {isLoading ? (
         <div className="content-grid md:grid-cols-2 xl:grid-cols-3">
