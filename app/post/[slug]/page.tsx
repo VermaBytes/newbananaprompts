@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       authors: [post.author],
       images: [
         {
-          url: post.image,
+          url: `${SITE_URL}${post.image}`,
           width: 1200,
           height: 630,
           alt: post.title
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       card: "summary_large_image",
       title: post.seoTitle,
       description: post.description,
-      images: [post.image]
+      images: [`${SITE_URL}${post.image}`]
     }
   };
 }
@@ -129,7 +129,7 @@ export default async function PostPage({ params }: PostPageProps) {
       name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/logo.svg`
+        url: `${SITE_URL}/logo.png`
       }
     },
     mainEntityOfPage: canonicalUrl

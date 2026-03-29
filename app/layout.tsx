@@ -48,6 +48,11 @@ export const metadata: Metadata = {
     title: `${SITE_NAME} | ${SITE_TAGLINE}`,
     description:
       "Best AI prompts, image tools, blogging tips, and online creator resources."
+  },
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png"
   }
 };
 
