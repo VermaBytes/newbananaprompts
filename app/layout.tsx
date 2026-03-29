@@ -50,10 +50,12 @@ export const metadata: Metadata = {
       "Best AI prompts, image tools, blogging tips, and online creator resources."
   },
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png"
-  }
+  icon: [
+    { url: "/logo.png" }, // Normal icon
+    { url: "/logo.png", sizes: "192x192", type: "image/png" }, // Google-friendly size
+  ],
+  apple: "/logo.png",
+},
 };
 
 export default function RootLayout({
