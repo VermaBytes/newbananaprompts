@@ -50,12 +50,13 @@ export const metadata: Metadata = {
       "Best AI prompts, image tools, blogging tips, and online creator resources."
   },
   icons: {
-  icon: [
-    { url: "/logo.png" }, // Normal icon
-    { url: "/logo.png", sizes: "192x192", type: "image/png" }, // Google-friendly size
-  ],
-  apple: "/logo.png",
-},
+    icon: [
+      { url: "/logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/logo.png", sizes: "16x16", type: "image/png" }
+    ],
+    shortcut: [{ url: "/logo.png" }],
+    apple: [{ url: "/logo.png", sizes: "180x180", type: "image/png" }]
+  },
 };
 
 export default function RootLayout({
@@ -77,6 +78,9 @@ export default function RootLayout({
             })();
           `}
         </Script>
+        <link rel="icon" href="/logo.png" sizes="32x32" type="image/png" />
+        <link rel="shortcut icon" href="/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png" sizes="180x180" />
       </head>
       <body>
         <div className="site-shell">
