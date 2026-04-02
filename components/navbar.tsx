@@ -32,7 +32,7 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <Link href="/" className="min-w-0 flex items-center gap-3">
-            <img src="/logo.png" alt="Logo" className="h-11 w-11 rounded-xl object-cover" />
+            <img src="/main-logo.png" alt="Logo" className="h-11 w-11 rounded-xl object-cover" />
             <span className="min-w-0">
               <span className="block truncate font-[family-name:var(--font-heading)] text-lg font-bold">
                 {SITE_NAME}
