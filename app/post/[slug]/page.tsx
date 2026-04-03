@@ -226,15 +226,42 @@ export default async function PostPage({ params }: PostPageProps) {
               </a>
             </div>
             <div className="post-content space-y-8">
-              {post.sections.map((section) => (
-                <section key={section.heading} className="space-y-3">
-                  <h2>{section.heading}</h2>
-                  {section.subheading ? <h3>{section.subheading}</h3> : null}
-                  {section.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </section>
-              ))}
+              {post.sections.map((section) => {
+                const isPromptCard = section.heading.toLowerCase().includes("prompt");
+                const promptText = section.paragraphs.join("\n\n");
+
+                if (isPromptCard) {
+                  return (
+                    <section key={section.heading} className="space-y-3">
+                      <h2>{section.heading}</h2>
+                      {section.subheading ? <h3>{section.subheading}</h3> : null}
+                      <div className="theme-surface space-y-3 rounded-2xl border border-dashed border-[#d6c7b6] px-4 py-4">
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                          <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.22em]">Prompt</p>
+                          <CopyButton text={promptText} />
+                        </div>
+                        <div className="space-y-4">
+                          {section.paragraphs.map((paragraph) => (
+                            <p key={paragraph} className="theme-text-secondary text-sm leading-7">
+                              {paragraph}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    </section>
+                  );
+                }
+
+                return (
+                  <section key={section.heading} className="space-y-3">
+                    <h2>{section.heading}</h2>
+                    {section.subheading ? <h3>{section.subheading}</h3> : null}
+                    {section.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </section>
+                );
+              })}
             </div>
           </div>
         </div>
