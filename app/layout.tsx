@@ -50,10 +50,10 @@ export const metadata: Metadata = {
       "Best AI prompts, image tools, blogging tips, and online creator resources."
   },
   icons: {
-  icon: "/favicon.ico",
-  shortcut: "/apple-touch-icon.png",
-  apple: "/apple-touch-icon.png"
-},
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/apple-touch-icon.png"
+  },
 };
 
 export default function RootLayout({
@@ -75,8 +75,8 @@ export default function RootLayout({
             })();
           `}
         </Script>
-        <link rel="icon" href="/favicon.ico" sizes="32x32" type="image/png" />
-        <link rel="shortcut icon" href="/apple-touch-icon.png" type="image/png" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
       </head>
       <body>

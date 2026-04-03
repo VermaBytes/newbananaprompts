@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AdPlaceholder } from "@/components/ad-placeholder";
+import { CopyButton } from "@/components/copy-button";
 import { RelatedPosts } from "@/components/related-posts";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
@@ -110,6 +111,12 @@ export default async function PostPage({ params }: PostPageProps) {
       href: "https://www.bing.com/images/create",
       prompt:
         "Create a realistic 3D illustration of a 22-year-old Indian boy sitting casually on a stylish wooden chair in front of a giant social media logo of 'Instagram'. The character should wear a modern hoodie, sneakers, and sunglasses. The background should feature his username 'YOUR NAME' in glowing blue neon lights on the wall. The lighting should be cinematic with high resolution."
+    },
+    "golden-hour-riverside-camping-portrait": {
+      label: "Create Image",
+      href: "https://www.bing.com/images/create",
+      prompt:
+        "A high-resolution DSLR photo using an 85mm lens at f/1.8, showing a young man with South Asian features and a friendly smile, relaxing in a tan folding camping chair. He is wearing a red and black checkered flannel shirt, dark blue jeans, and rugged brown leather boots, holding a camping mug. The setting is a peaceful riverside at golden hour, with a small tan tent and a glowing campfire nearby. The background features a lush green forest with soft bokeh, creating a serene outdoor atmosphere."
     }
   };
   const postCta = ctaLinks[post.slug];
@@ -183,7 +190,10 @@ export default async function PostPage({ params }: PostPageProps) {
                 </div>
                 {postCta.prompt ? (
                   <div className="rounded-xl border border-dashed border-[#d6c7b6] px-4 py-4 text-left">
-                    <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.22em]">Prompt</p>
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.22em]">Prompt</p>
+                      <CopyButton text={postCta.prompt} />
+                    </div>
                     <p className="theme-text-secondary mt-2 text-sm leading-7">{postCta.prompt}</p>
                   </div>
                 ) : null}

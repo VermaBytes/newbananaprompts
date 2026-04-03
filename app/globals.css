@@ -171,6 +171,32 @@ select {
   color: #2d1f18;
 }
 
+.search-pro {
+  border: 1px solid #d9d9d9;
+  background: #ffffff;
+  box-shadow:
+    0 1px 2px rgba(17, 17, 17, 0.06),
+    0 6px 18px rgba(17, 17, 17, 0.06);
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    background-color 200ms ease;
+}
+
+.search-pro:hover {
+  border-color: #c9c9c9;
+  box-shadow:
+    0 2px 4px rgba(17, 17, 17, 0.08),
+    0 8px 22px rgba(17, 17, 17, 0.08);
+}
+
+.search-pro:focus {
+  border-color: #0f766e;
+  box-shadow:
+    0 0 0 3px rgba(15, 118, 110, 0.18),
+    0 10px 26px rgba(17, 17, 17, 0.1);
+}
+
 .theme-chip {
   background: rgba(255, 250, 243, 0.94);
   border: 1px solid #eadfce;
@@ -314,6 +340,28 @@ html[data-theme="dark"] .theme-button {
   background: rgba(46, 35, 29, 0.88);
   border-color: rgba(255, 213, 184, 0.16);
   color: #f5e8dc;
+}
+
+html[data-theme="dark"] .search-pro {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(26, 20, 16, 0.92);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.35),
+    0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] .search-pro:hover {
+  border-color: rgba(255, 255, 255, 0.24);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 10px 24px rgba(0, 0, 0, 0.42);
+}
+
+html[data-theme="dark"] .search-pro:focus {
+  border-color: #2dd4bf;
+  box-shadow:
+    0 0 0 3px rgba(45, 212, 191, 0.22),
+    0 12px 26px rgba(0, 0, 0, 0.46);
 }
 
 html[data-theme="dark"] .theme-chip-active {
