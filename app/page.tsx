@@ -101,6 +101,15 @@ export default function HomePage() {
               Master Python fundamentals and projects with AI‑guided explanations and practice.
             </p>
           </div>
+          <div className="tool-card rounded-[1.5rem] p-5">
+            <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.24em]">Course</p>
+            <h3 className="theme-text-primary mt-3 font-[family-name:var(--font-heading)] text-2xl font-bold">
+              Learn Prompt Engineering with AI
+            </h3>
+            <p className="theme-text-secondary mt-3 text-sm leading-7">
+              Build strong prompt skills for image, writing, and productivity workflows with real examples.
+            </p>
+          </div>
         </div>
       </section>
 
