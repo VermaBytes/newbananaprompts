@@ -13,7 +13,6 @@ export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; 
   const urlQuery = searchParams.get("query") ?? "";
   const effectiveQuery = urlQuery || query;
   const [category, setCategory] = useState<(typeof filters)[number]>("All");
-  const [visibleCount, setVisibleCount] = useState(0);
 
   const filteredPosts = useMemo(() => {
     const normalizedQuery = effectiveQuery.trim().toLowerCase();
@@ -33,7 +32,6 @@ export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; 
   }, [category, posts, effectiveQuery]);
 
   const visiblePosts = filteredPosts;
-  const canLoadMore = false;
   const isLoading = posts.length === 0;
 
   return (
@@ -49,7 +47,6 @@ export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; 
                   type="button"
                   onClick={() => {
                     setCategory(item);
-                    setVisibleCount(0);
                   }}
                   className={`rounded-full px-4 py-2.5 text-sm font-semibold ${
                     category === item ? "theme-chip-active shadow-sm" : "theme-chip theme-soft-hover"
@@ -80,17 +77,6 @@ export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; 
           <p className="theme-text-secondary mt-3">Try a different keyword or switch to another category.</p>
         </div>
       )}
-      {canLoadMore ? (
-        <div>
-          <button
-            type="button"
-            onClick={() => setVisibleCount((count) => count + POSTS_PER_PAGE)}
-            className="theme-button theme-soft-hover rounded-xl px-5 py-3 text-sm font-semibold"
-          >
-            Load More Posts
-          </button>
-        </div>
-      ) : null}
     </div>
   );
 }
