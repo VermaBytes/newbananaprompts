@@ -7,9 +7,9 @@ import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/blogs", label: "Blogs" },
-  { href: "/#prompt-tools", label: "Tools" },
-  { href: "/#categories", label: "Categories" }
+  { href: "/prompt", label: "Prompts" },
+  { href: "/#courses", label: "Courses" },
+  { href: "/about", label: "About Us" },
 ];
 
 export function Navbar() {
@@ -22,9 +22,9 @@ export function Navbar() {
 
     const query = searchQuery.trim();
     if (query.length > 0) {
-      router.push(`/blogs?query=${encodeURIComponent(query)}`);
+      router.push(`/search?query=${encodeURIComponent(query)}`);
     } else {
-      router.push("/blogs");
+      router.push("/search");
     }
   };
 

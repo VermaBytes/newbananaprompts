@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import type { BlogPost } from "@/lib/posts";
-import { PostCard } from "@/components/post-card";
+import { PromptCard } from "@/components/prompt-card";
 import { PostCardSkeleton } from "@/components/post-card-skeleton";
 
 const filters = ["All", "Image Prompts", "Student Prompts", "God Image Prompts"] as const;
@@ -67,9 +67,23 @@ export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; 
         </div>
       ) : visiblePosts.length > 0 ? (
         <div className="content-grid md:grid-cols-2 xl:grid-cols-3">
-          {visiblePosts.map((post) => (
-            <PostCard key={post.slug} post={post} />
-          ))}
+          {visiblePosts.map((post) => {
+            const promptText =
+              post.sections?.[0]?.paragraphs?.join(" ") ||
+              post.description ||
+              post.title;
+            return (
+              <PromptCard
+                key={post.slug}
+                slug={post.slug}
+                title={post.title}
+                image={post.image}
+                prompt={promptText}
+                tags={[]}
+                tryUrl="https://www.bing.com/images/create"
+              />
+            );
+          })}
         </div>
       ) : (
         <div className="site-panel rounded-2xl px-6 py-12 text-center">

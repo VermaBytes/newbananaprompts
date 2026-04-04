@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CategoryCard } from "@/components/category-card";
-import { PostCard } from "@/components/post-card";
-import { ToolCard } from "@/components/tool-card";
-import { getAllPosts } from "@/lib/posts";
+import { PromptCard } from "@/components/prompt-card";
+import { promptCards } from "@/data/prompt-cards";
 
 export const metadata: Metadata = {
   title: "NB Prompts | AI Blog, Free Online Tools & Image Tips",
@@ -50,9 +48,8 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const posts = getAllPosts();
-  const featuredPosts = posts.slice(0, 3);
-  const latestPosts = posts.slice(0, 6);
+  const featuredPrompts = promptCards.slice(0, 3);
+  const latestPrompts = promptCards.slice(0, 6);
 
   return (
     <div className="space-y-14">
@@ -69,35 +66,41 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="content-grid md:grid-cols-2 xl:grid-cols-3">
-          {featuredPosts.map((post) => (
-            <PostCard key={post.slug} post={post} />
+          {featuredPrompts.map((card) => (
+            <PromptCard key={card.slug} {...card} />
           ))}
         </div>
       </section>
 
-      <section id="prompt-tools" className="space-y-5">
+      <section id="courses" className="space-y-5">
         <div className="space-y-2">
-          <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">Popular Tools</p>
+          <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">Courses</p>
           <h2 className="theme-text-primary font-(family-name:--font-heading) text-3xl font-bold sm:text-4xl">
-            Tools that turn prompts into images.
+            Lecture-based learning with AI.
           </h2>
+          <p className="theme-text-secondary max-w-2xl text-sm leading-7 sm:text-base">
+            Structured lessons to build real skills with AI assistance.
+          </p>
         </div>
         <div className="content-grid md:grid-cols-2 xl:grid-cols-3">
-          <ToolCard
-            title="Bing Image Creator"
-            description="Free prompt-based image generator with fast results and multiple variations."
-            href="https://www.bing.com/images/create"
-          />
-          <ToolCard
-            title="Adobe Firefly"
-            description="High-quality generative images with strong text rendering and style control."
-            href="https://firefly.adobe.com"
-          />
-          <ToolCard
-            title="Gemini AI"
-            description="Popular prompt tool for cinematic and stylized image generation."
-            href="https://gemini.google.com"
-          />
+          <div className="tool-card rounded-[1.5rem] p-5">
+            <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.24em]">Course</p>
+            <h3 className="theme-text-primary mt-3 font-[family-name:var(--font-heading)] text-2xl font-bold">
+              Web Development with AI
+            </h3>
+            <p className="theme-text-secondary mt-3 text-sm leading-7">
+              Learn modern front‑end and full‑stack workflows using AI for speed, quality, and debugging.
+            </p>
+          </div>
+          <div className="tool-card rounded-[1.5rem] p-5">
+            <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.24em]">Course</p>
+            <h3 className="theme-text-primary mt-3 font-[family-name:var(--font-heading)] text-2xl font-bold">
+              Python Learning with AI
+            </h3>
+            <p className="theme-text-secondary mt-3 text-sm leading-7">
+              Master Python fundamentals and projects with AI‑guided explanations and practice.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -114,8 +117,8 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="content-grid md:grid-cols-2 xl:grid-cols-3">
-          {latestPosts.map((post) => (
-            <PostCard key={post.slug} post={post} />
+          {latestPrompts.map((card) => (
+            <PromptCard key={card.slug} {...card} />
           ))}
         </div>
       </section>
