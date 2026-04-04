@@ -8,7 +8,7 @@ import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/blogs", label: "Blogs" },
-  { href: "/#popular-tools", label: "Tools" },
+  { href: "/#prompt-tools", label: "Tools" },
   { href: "/#categories", label: "Categories" }
 ];
 

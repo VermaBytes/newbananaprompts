@@ -12,20 +12,19 @@ export const metadata: Metadata = {
   }
 };
 
-export default function BlogsPage({ searchParams }: { searchParams?: { query?: string } }) {
+export default async function BlogsPage({
+  searchParams
+}: {
+  searchParams?: Promise<{ query?: string | string[] }>;
+}) {
   const posts = getAllPosts();
-  const query = searchParams?.query ?? "";
+  const resolvedParams = searchParams ? await searchParams : undefined;
+  const rawQuery = resolvedParams?.query;
+  const query = Array.isArray(rawQuery) ? rawQuery.join(" ") : rawQuery ?? "";
 
   return (
     <section className="space-y-5">
       <div className="space-y-2">
-        <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">Blogs Library</p>
-        <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
-          Browse prompts, tools, and creator posts.
-        </h1>
-        <p className="theme-text-secondary max-w-2xl text-sm leading-7 sm:text-base">
-          Search posts, filter by topic, and explore a cleaner library of AI prompts, image tools, and blogging guides.
-        </p>
       </div>
       <PostsExplorer posts={posts} query={query} />
     </section>

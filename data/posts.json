@@ -1,5 +1,34 @@
 [
   {
+    "slug": "dark-moody-cyberpunk-portrait-prompt",
+    "title": "Dark Moody Cyberpunk Portrait Prompt",
+    "seoTitle": "Dark Moody Cyberpunk Portrait Prompt | Neon Cinematic",
+    "description": "A cinematic, neon-lit cyberpunk portrait prompt with high contrast and moody lighting for 4K wallpapers.",
+    "category": "Image Prompts",
+    "author": "Shobhit Verma",
+    "publishedAt": "2026-04-04T10:30:00.000Z",
+    "dateLabel": "April 4, 2026",
+    "image": "/posts/image1.png",
+    "tags": ["cyberpunk portrait", "neon glow", "moody lighting", "cinematic", "4K wallpaper"],
+    "sections": [
+      {
+        "heading": "FAQ",
+        "paragraphs": [
+          "What aspect ratio works best? Use 16:9 for wallpapers and 4:5 for social posts.",
+          "Can I make it more realistic? Add 'photo-realistic' and 'DSLR look'.",
+          "How to increase drama? Add 'strong rim light' and 'deep shadows'."
+        ]
+      },
+      {
+        "heading": "SEO Keywords",
+        "subheading": "Use these labels in titles and tags.",
+        "paragraphs": [
+          "cyberpunk portrait prompt, neon glow portrait, dark moody portrait, cinematic shadows, 4K wallpaper prompt, high contrast photo, futuristic neon lighting"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "golden-hour-riverside-camping-portrait",
     "title": "Golden Hour Riverside Camping: A Serene DSLR Portrait Scene",
     "seoTitle": "Golden Hour Riverside Camping Portrait | DSLR 85mm f/1.8 Scene",

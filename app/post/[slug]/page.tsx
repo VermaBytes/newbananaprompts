@@ -117,6 +117,12 @@ export default async function PostPage({ params }: PostPageProps) {
       href: "https://www.bing.com/images/create",
       prompt:
         "A high-resolution DSLR photo using an 85mm lens at f/1.8, showing a young man with South Asian features and a friendly smile, relaxing in a tan folding camping chair. He is wearing a red and black checkered flannel shirt, dark blue jeans, and rugged brown leather boots, holding a camping mug. The setting is a peaceful riverside at golden hour, with a small tan tent and a glowing campfire nearby. The background features a lush green forest with soft bokeh, creating a serene outdoor atmosphere."
+    },
+    "dark-moody-cyberpunk-portrait-prompt": {
+      label: "Try It",
+      href: "https://www.bing.com/images/create",
+      prompt:
+        "Dark moody portrait of a mysterious person in low light, neon glow highlights, cinematic shadows, cyberpunk atmosphere, ultra detailed, high contrast, 4K wallpaper style"
     }
   };
   const postCta = ctaLinks[post.slug];
@@ -177,22 +183,21 @@ export default async function PostPage({ params }: PostPageProps) {
             </header>
             {postCta ? (
               <div className="theme-surface space-y-4 rounded-2xl px-4 py-4 text-center">
-                <div className="flex flex-wrap items-center justify-center gap-3">
-                  <span className="theme-text-primary text-base font-semibold">{postCta.label}</span>
-                  <a
-                    href={postCta.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center rounded-full bg-[#159947] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-[#159947]/25 transition hover:-translate-y-0.5 hover:bg-[#0d7a38]"
-                  >
-                    Click here
-                  </a>
-                </div>
                 {postCta.prompt ? (
-                  <div className="rounded-xl border border-dashed border-[#d6c7b6] px-4 py-4 text-left">
+                  <div className="relative rounded-xl border border-dashed border-[#d6c7b6] px-4 py-4 text-left">
                     <div className="flex flex-wrap items-center justify-between gap-3">
                       <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.22em]">Prompt</p>
-                      <CopyButton text={postCta.prompt} />
+                      <div className="flex items-center gap-2">
+                        <CopyButton text={postCta.prompt} />
+                        <a
+                          href={postCta.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center rounded-full bg-[#159947] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-[#159947]/25 transition hover:-translate-y-0.5 hover:bg-[#0d7a38]"
+                        >
+                          Try Now
+                        </a>
+                      </div>
                     </div>
                     <p className="theme-text-secondary mt-2 text-sm leading-7">{postCta.prompt}</p>
                   </div>

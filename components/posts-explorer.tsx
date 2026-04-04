@@ -1,37 +1,39 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import type { BlogPost } from "@/lib/posts";
 import { PostCard } from "@/components/post-card";
 import { PostCardSkeleton } from "@/components/post-card-skeleton";
 
-const filters = ["All", "AI Tools", "Earn Money", "Images Prompt", "Student Prompt", "Videos Prompt"] as const;
-const POSTS_PER_PAGE = 6;
+const filters = ["All", "Image Prompts", "Student Prompts", "God Image Prompts"] as const;
 
 export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; query?: string }) {
+  const searchParams = useSearchParams();
+  const urlQuery = searchParams.get("query") ?? "";
+  const effectiveQuery = urlQuery || query;
   const [category, setCategory] = useState<(typeof filters)[number]>("All");
-  const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
+  const [visibleCount, setVisibleCount] = useState(0);
 
   const filteredPosts = useMemo(() => {
-    const normalizedQuery = query.trim().toLowerCase();
+    const normalizedQuery = effectiveQuery.trim().toLowerCase();
 
     return posts.filter((post) => {
       const searchableText = [post.title, post.seoTitle, post.description, post.author, ...post.tags].join(" ").toLowerCase();
       const matchesCategory =
         category === "All" ||
-        (category === "AI Tools" && post.category === "AI Tools") ||
-        (category === "Earn Money" && post.category === "Earn Money") ||
-        (category === "Images Prompt" && post.category === "Image Prompts") ||
-        (category === "Videos Prompt" && post.category === "Video Prompts") ||
-        (category === "Student Prompt" && /student|study|school|education/.test(searchableText));
+        (category === "Image Prompts" && post.category === "Image Prompts") ||
+        (category === "God Image Prompts" &&
+          /god|krishna|shiva|mata|devi|durga|ram|hanuman|temple|devotional|spiritual/.test(searchableText)) ||
+        (category === "Student Prompts" && /student|study|school|education|exam|notes/.test(searchableText));
       const matchesQuery = normalizedQuery.length === 0 || searchableText.includes(normalizedQuery);
 
       return matchesCategory && matchesQuery;
     });
-  }, [category, posts, query]);
+  }, [category, posts, effectiveQuery]);
 
-  const visiblePosts = filteredPosts.slice(0, visibleCount);
-  const canLoadMore = visibleCount < filteredPosts.length;
+  const visiblePosts = filteredPosts;
+  const canLoadMore = false;
   const isLoading = posts.length === 0;
 
   return (
@@ -47,7 +49,7 @@ export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; 
                   type="button"
                   onClick={() => {
                     setCategory(item);
-                    setVisibleCount(POSTS_PER_PAGE);
+                    setVisibleCount(0);
                   }}
                   className={`rounded-full px-4 py-2.5 text-sm font-semibold ${
                     category === item ? "theme-chip-active shadow-sm" : "theme-chip theme-soft-hover"
@@ -59,12 +61,6 @@ export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; 
             </div>
           </div>
         </div>
-      </div>
-      <div className="theme-surface flex flex-col gap-2 rounded-2xl px-4 py-3 text-sm sm:flex-row sm:items-center sm:justify-between">
-        <p className="theme-text-secondary font-medium">
-          Showing {visiblePosts.length} of {filteredPosts.length} posts
-        </p>
-        <p className="theme-text-muted">Browse {category === "All" ? "all prompts" : category}</p>
       </div>
       {isLoading ? (
         <div className="content-grid md:grid-cols-2 xl:grid-cols-3">
