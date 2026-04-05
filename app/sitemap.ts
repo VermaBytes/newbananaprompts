@@ -18,6 +18,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1
     },
     {
+      url: `${SITE_URL}/courses/web-development-with-ai`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.7
+    },
+    {
+      url: `${SITE_URL}/courses/web-development-with-ai/lecture-01`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.65
+    },
+    {
       url: `${SITE_URL}/about`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",

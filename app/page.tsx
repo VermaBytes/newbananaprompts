@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PromptCard } from "@/components/prompt-card";
 import { promptCards } from "@/data/prompt-cards";
@@ -83,33 +84,27 @@ export default function HomePage() {
           </p>
         </div>
         <div className="content-grid md:grid-cols-2 xl:grid-cols-3">
-          <div className="tool-card rounded-[1.5rem] p-5">
-            <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.24em]">Course</p>
-            <h3 className="theme-text-primary mt-3 font-[family-name:var(--font-heading)] text-2xl font-bold">
-              Web Development with AI
-            </h3>
-            <p className="theme-text-secondary mt-3 text-sm leading-7">
-              Learn modern front‑end and full‑stack workflows using AI for speed, quality, and debugging.
-            </p>
-          </div>
-          <div className="tool-card rounded-[1.5rem] p-5">
-            <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.24em]">Course</p>
-            <h3 className="theme-text-primary mt-3 font-[family-name:var(--font-heading)] text-2xl font-bold">
-              Python Learning with AI
-            </h3>
-            <p className="theme-text-secondary mt-3 text-sm leading-7">
-              Master Python fundamentals and projects with AI‑guided explanations and practice.
-            </p>
-          </div>
-          <div className="tool-card rounded-[1.5rem] p-5">
-            <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.24em]">Course</p>
-            <h3 className="theme-text-primary mt-3 font-[family-name:var(--font-heading)] text-2xl font-bold">
-              Learn Prompt Engineering with AI
-            </h3>
-            <p className="theme-text-secondary mt-3 text-sm leading-7">
-              Build strong prompt skills for image, writing, and productivity workflows with real examples.
-            </p>
-          </div>
+          <Link
+            href="/courses/web-development-with-ai"
+            className="tool-card group relative overflow-hidden rounded-[1.5rem] p-0"
+            aria-label="Open Web Development with AI course"
+          >
+            <div className="relative aspect-[16/10]">
+              <Image
+                src="/posts/30dayweb-development.png"
+                alt="30 Days Web Development with AI course thumbnail"
+                fill
+                sizes="(max-width: 1024px) 100vw, 420px"
+                className="object-cover transition duration-300 group-hover:scale-[1.04]"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition duration-300 group-hover:opacity-100">
+                <span className="hero-cta inline-flex items-center rounded-full px-5 py-3 text-sm font-semibold text-white shadow-lg">
+                  Start Learning
+                </span>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 
