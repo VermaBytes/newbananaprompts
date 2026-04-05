@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Pratik Verma",
+    "role": "Developer",
+    "rating": 5,
+    "features": [
+      "AI support",
+      "Practical tasks",
+      "Course structure",
+      "Easy to learn"
+    ],
+    "review": "This is a good Platform for student and developers.\nThankyou...",
+    "createdAt": "2026-04-05T18:22:17.081Z",
+    "updatedAt": "2026-04-05T18:22:17.081Z"
+  }
+]

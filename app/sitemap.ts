@@ -36,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6
     },
     {
+      url: `${SITE_URL}/testimonials`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.6
+    },
+    {
       url: `${SITE_URL}/contact`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
