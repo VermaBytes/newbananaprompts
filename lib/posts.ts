@@ -11,7 +11,7 @@ export type BlogPost = {
   title: string;
   seoTitle: string;
   description: string;
-  category: "Image Prompts" | "Video Prompts" | "AI Tools" | "Earn Money";
+  category: "Image Prompts" | "Video Prompts" | "AI Tools" | "Earn Money" | "Courses";
   author: string;
   publishedAt: string;
   image: string;

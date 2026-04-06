@@ -13,19 +13,23 @@ type ReviewRecord = {
 };
 
 const dataFilePath = path.join(process.cwd(), "data", "testimonials.json");
+const isReadOnlyRuntime = Boolean(process.env.NETLIFY);
 
 async function readReviews(): Promise<ReviewRecord[]> {
   try {
     const file = await fs.readFile(dataFilePath, "utf-8");
     return JSON.parse(file) as ReviewRecord[];
   } catch {
-    await fs.mkdir(path.dirname(dataFilePath), { recursive: true });
-    await fs.writeFile(dataFilePath, "[]", "utf-8");
+    if (!isReadOnlyRuntime) {
+      await fs.mkdir(path.dirname(dataFilePath), { recursive: true });
+      await fs.writeFile(dataFilePath, "[]", "utf-8");
+    }
     return [];
   }
 }
 
 async function writeReviews(reviews: ReviewRecord[]) {
+  if (isReadOnlyRuntime) return;
   await fs.writeFile(dataFilePath, JSON.stringify(reviews, null, 2), "utf-8");
 }
 
