@@ -105,7 +105,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="space-y-3 px-5 py-5">
-              <h3 className="theme-text-primary text-lg font-bold">Web Development with AI Days: 02/30</h3>
+              <h3 className="theme-text-primary text-lg font-bold">Web Development with AI Days: 03/30</h3>
               <p className="theme-text-secondary text-sm leading-6">Last Update: Currently Running...</p>
             </div>
           </Link>

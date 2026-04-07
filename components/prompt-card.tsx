@@ -58,7 +58,7 @@ export function PromptCard({ slug, title, image, prompt, tags = [], tryUrl }: Pr
           <button
             type="button"
             onClick={handleCopy}
-            className="absolute right-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 dark:bg-white/10 dark:text-white"
+            className="absolute right-3 top-3 rounded-full bg-yellow-200 px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 dark:bg-white/10 dark:text-white"
           >
             {copied ? "Copied!" : "Copy"}
           </button>

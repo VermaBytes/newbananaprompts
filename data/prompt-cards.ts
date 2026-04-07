@@ -8,6 +8,15 @@ export type PromptCardData = {
 };
 
 export const promptCards: PromptCardData[] = [
+   {
+    slug: "action-hero-escape",
+    title: "The Action Hero's Escape",
+    image: "/posts/10.png",
+    prompt:
+      "Cinematic action portrait of a man standing stoically amidst a massive, fiery explosion with debris.",
+    tags: ["#action", "#cinematic", "#dramatic"],
+    tryUrl: "https://www.bing.com/images/create"
+  },
   {
     slug: "dark-cyberpunk-portrait",
     title: "Dark Cyberpunk Portrait",
