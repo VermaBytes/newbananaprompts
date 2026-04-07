@@ -1,5 +1,17 @@
 [
   {
+    "name": "Askit Verma",
+    "role": "Student",
+    "rating": 5,
+    "features": [
+      "Easy to learn",
+      "AI support"
+    ],
+    "review": "Thanks for sharing very useful knowledge .\nThankyou.\nAstik Verma\nB. Tech",
+    "createdAt": "2026-04-07T10:18:08.120Z",
+    "updatedAt": "2026-04-07T10:18:08.120Z"
+  },
+  {
     "name": "Pratik Verma",
     "role": "Developer",
     "rating": 5,

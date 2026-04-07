@@ -58,21 +58,21 @@ export function PromptCard({ slug, title, image, prompt, tags = [], tryUrl }: Pr
           <button
             type="button"
             onClick={handleCopy}
-            className="absolute right-3 top-3 rounded-full bg-yellow-200 px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 dark:bg-white/10 dark:text-white"
+            className="absolute right-3 top-3 rounded-full bg-orange-300 px-3 py-1 text-xs font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 dark:bg-white/10 dark:text-white"
           >
             {copied ? "Copied!" : "Copy"}
           </button>
           <p className="line-clamp-3 text-sm leading-6 text-slate-600 dark:text-slate-200">{prompt}</p>
         </div>
         <div className="flex items-center justify-between">
-          <Link href={`/prompt/${slug}`} className="text-sm font-semibold text-slate-700 hover:text-slate-900 dark:text-slate-200">
-            Read More
+          <Link href={`/prompt/${slug}`} className="text-sm font-bold text-slate-700 hover:text-orange-500 hover:text-underline">
+            Read More →
           </Link>
           <a
             href={tryUrl}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-slate-900 px-4 py-2 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-black dark:bg-white dark:text-slate-900"
+            className="rounded-full bg-green-600 px-4 py-2 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-yellow-200 hover:text-black"
           >
             Try It
           </a>
