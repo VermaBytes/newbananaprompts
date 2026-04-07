@@ -45,8 +45,64 @@ export const metadata: Metadata = {
 };
 
 export default function Lecture02Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name: lectureTitle,
+    description: lectureDescription,
+    url: `${SITE_URL}/courses/web-development-with-ai/lecture-02`,
+    image: `${SITE_URL}/posts/lecture-02.png`,
+    inLanguage: "en",
+    educationalLevel: "Beginner",
+    learningResourceType: "Lecture",
+    author: {
+      "@type": "Person",
+      name: "Shobhit Verma"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo.png`
+      }
+    }
+  };
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What will I build in Day 02?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "You will build lists, tables, forms, and a real-world HTML layout."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Are forms and tables important for real projects?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Forms collect user input and tables display structured data in many web apps."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What should I practice after Day 02?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Create a simple page with a navbar, a table, and a contact form."
+        }
+      }
+    ]
+  };
+
   return (
     <article className="mx-auto max-w-4xl space-y-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Link
         href="/courses/web-development-with-ai"
         className="theme-button theme-soft-hover inline-flex items-center rounded-sm px-4 py-2 text-sm font-semibold"

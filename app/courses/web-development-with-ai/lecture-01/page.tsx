@@ -45,8 +45,64 @@ export const metadata: Metadata = {
 };
 
 export default function Lecture01Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name: lectureTitle,
+    description: lectureDescription,
+    url: `${SITE_URL}/courses/web-development-with-ai/lecture-01`,
+    image: `${SITE_URL}/posts/lecture-01.png`,
+    inLanguage: "en",
+    educationalLevel: "Beginner",
+    learningResourceType: "Lecture",
+    author: {
+      "@type": "Person",
+      name: "Shobhit Verma"
+    },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo.png`
+      }
+    }
+  };
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Is Day 01 suitable for absolute beginners?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Day 01 starts with basics like frontend vs backend and simple HTML structure."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "What should I practice after this lecture?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Build a simple HTML page with heading, paragraph, image, and a button."
+        }
+      },
+      {
+        "@type": "Question",
+        name: "Do I need any tools to begin?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A basic text editor like VS Code and any modern browser are enough."
+        }
+      }
+    ]
+  };
+
   return (
     <article className="mx-auto max-w-4xl space-y-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Link
         href="/courses/web-development-with-ai"
         className="theme-button theme-soft-hover inline-flex items-center rounded-sm px-4 py-2 text-sm font-semibold"

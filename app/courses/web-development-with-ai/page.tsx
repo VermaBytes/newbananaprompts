@@ -11,13 +11,42 @@ export const metadata: Metadata = {
   title: courseTitle,
   description: courseDescription,
   keywords: [
-    "Web Development with AI",
-    "30 days web development course",
-    "beginner web development",
-    "AI learning course",
-    "HTML CSS JavaScript basics",
-    "frontend course"
-  ],
+  "30 days web development with AI course",
+  "learn web development with AI step by step",
+  "AI web development roadmap 2026",
+  "beginner to advanced web development with AI",
+  "how to become web developer using AI",
+  "complete web development course with AI free",
+  "AI powered full stack development course",
+  "learn coding using ChatGPT step by step",
+  "build websites using AI tools course",
+  "web development roadmap for beginners with AI",
+  "learn HTML with AI prompts beginner",
+  "CSS flexbox grid tutorial with AI",
+  "javascript basics with chatgpt",
+  "how to use AI for coding beginners",
+  "build website using AI step by step",
+  "learn javascript ES6 with AI",
+  "react js for beginners with AI prompts",
+  "tailwind css tutorial with AI",
+  "convert figma to code using AI",
+  "AI UI design to code tutorial",
+  "learn javascript ES6 with AI",
+  "react js for beginners with AI prompts",
+  "tailwind css tutorial with AI",
+  "convert figma to code using AI",
+  "AI UI design to code tutorial",
+  "AI tech deals website tutorial",
+  "build ai blog generator step by step",
+  "AI resume builder project tutorial",
+  "full stack AI project ideas 2026",
+  "real world web development projects with AI",
+  "build ecommerce website using AI",
+  "deploy website using vercel netlify",
+  "seo blogging with AI tools",
+  "earn money with web development skills",
+  "freelancing with web development beginner"
+],
   alternates: {
     canonical: "/courses/web-development-with-ai"
   },
@@ -119,6 +148,22 @@ export default function WebDevelopmentWithAiCoursePage() {
             </div>
             <div className="mt-4 space-y-2">
               <p className="theme-text-primary text-lg font-bold text-center">HTML Basics: Build Simple webpage</p>
+            </div>
+          </Link>
+          <Link href="/courses/web-development-with-ai/lecture-03" className="tool-card group rounded-2xl p-4">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+              <Image
+                src="/posts/lecture-03.png"
+                alt="Day 03 lecture thumbnail"
+                fill
+                sizes="(max-width: 1024px) 100vw, 520px"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+              />
+            </div>
+            <div className="mt-4 space-y-2">
+              <p className="theme-text-primary text-lg font-bold text-center">
+                CSS Basics: Flexbox, Grid, Responsive
+              </p>
             </div>
           </Link>
         </div>
