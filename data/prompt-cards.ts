@@ -12,6 +12,31 @@ export type PromptCardData = {
 
 export const promptCards: PromptCardData[] = [
   {
+  slug: "studio-side-profile-portrait-ai-prompt",
+  title: "Studio Side Profile Portrait AI Prompt",
+  seoTitle: "Studio Side Profile Portrait AI Prompt (Clean Minimal Look)",
+  description: "Create a clean studio side profile portrait with soft lighting, neutral background, and modern minimal style using AI prompts.",
+  image: "/posts/haier.webp",
+
+  prompt: "A side profile studio portrait of a woman with a dark, asymmetrical bob haircut and side-swept bangs, looking to the left with a neutral expression. She is wearing a black turtleneck top against a plain, light grey background. Soft studio lighting, minimal shadows, high detail, realistic skin texture, clean composition.",
+
+  tags: [
+    "profile portrait",
+    "professional",
+    "clean background"
+  ],
+
+  keywords: [
+    "side profile portrait ai prompt",
+    "studio portrait ai prompt",
+    "minimal portrait photography ai",
+    "professional headshot ai prompt",
+    "clean background portrait ai"
+  ],
+
+  tryUrl: "https://www.bing.com/images/create"
+},
+  {
   slug: "cricket-player-selfie-fan-ai-prompt",
   title: "Cricket Player Selfie with Fan AI Prompt",
   seoTitle: "Cricket Player Selfie with Fan AI Prompt (Realistic Stadium Scene)",
