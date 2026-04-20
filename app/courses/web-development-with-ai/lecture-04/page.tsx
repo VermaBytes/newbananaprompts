@@ -227,9 +227,9 @@ button:hover {
                 <section className="space-y-3">
                     <h2>🔥Next (Day 05)</h2>
                     <p>👉 हम सीखेंगे:</p>
-                    <li>JavaScript Basics</li>
-                    <li>Variables, Functions</li>
-                    <li>DOM Manipulation</li>
+                    <li>Advanced Hover Effects</li>
+                    <li>CSS Transitions & Transform</li>
+                    <li>Animated Product Card UI</li>
                 </section>
 
                 <section className="text-center">

@@ -182,6 +182,38 @@ export default function WebDevelopmentWithAiCoursePage() {
               </p>
             </div>
           </Link>
+          <Link href="/courses/web-development-with-ai/lecture-05" className="tool-card group rounded-2xl p-4">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+              <Image
+                src="/posts/lecture-05.png"
+                alt="Day 05 lecture thumbnail"
+                fill
+                sizes="(max-width: 1024px) 100vw, 520px"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+              />
+            </div>
+            <div className="mt-4 space-y-2">
+              <p className="theme-text-primary text-lg font-bold text-center">
+                Advanced CSS: Product Card UI, Hover Effects, Animations
+              </p>
+            </div>
+          </Link>
+          <Link href="/courses/web-development-with-ai/lecture-06" className="tool-card group rounded-2xl p-4">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+              <Image
+                src="/posts/lecture-06.png"
+                alt="Day 06 lecture thumbnail"
+                fill
+                sizes="(max-width: 1024px) 100vw, 520px"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+              />
+            </div>
+            <div className="mt-4 space-y-2">
+              <p className="theme-text-primary text-lg font-bold text-center">
+                Mini Project 1: Portfolio Website (Basic)
+              </p>
+            </div>
+          </Link>
 
         </div>
       </section>
