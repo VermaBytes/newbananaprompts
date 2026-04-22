@@ -1,5 +1,33 @@
 [
   {
+    "name": "Vikas Verma",
+    "role": "Data Engineer",
+    "rating": 5,
+    "features": [
+      "AI support",
+      "Practical tasks",
+      "Course structure",
+      "Easy to learn"
+    ],
+    "review": "Today Reader, Tomorrow Leader.",
+    "createdAt": "2026-04-22T03:11:40.975Z",
+    "updatedAt": "2026-04-22T03:11:40.975Z"
+  },
+   {
+    "name": "Amit Verma",
+    "role": "Frontend Developer",
+    "rating": 5,
+    "features": [
+      "AI support",
+      "Practical tasks",
+      "Course structure",
+      "Easy to learn"
+    ],
+    "review": "This a best plateform for evryne Learning.",
+    "createdAt": "2026-04-22T03:11:40.975Z",
+    "updatedAt": "2026-04-22T03:11:40.975Z"
+  },
+  {
     "name": "Abhay Kumar Shukla",
     "role": "Java Developer",
     "rating": 5,
