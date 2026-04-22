@@ -214,6 +214,22 @@ export default function WebDevelopmentWithAiCoursePage() {
               </p>
             </div>
           </Link>
+          <Link href="/courses/web-development-with-ai/lecture-07" className="tool-card group rounded-2xl p-4">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+              <Image
+                src="/posts/lecture-07.png"
+                alt="Day 07 lecture thumbnail"
+                fill
+                sizes="(max-width: 1024px) 100vw, 520px"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+              />
+            </div>
+            <div className="mt-4 space-y-2">
+              <p className="theme-text-primary text-lg font-bold text-center">
+                Revision + GitHub Upload + Deployment + LinkedIn Post
+              </p>
+            </div>
+          </Link>
 
         </div>
       </section>
