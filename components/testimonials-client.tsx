@@ -225,7 +225,7 @@ export function TestimonialsClient() {
         </h2>
         {reviews.length ? (
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {reviews.slice(0, 3).map((review) => {
+            {reviews.map((review) => {
               const isOwner = currentName && review.name.toLowerCase() === currentName.toLowerCase();
               return (
                 <div key={review.name} className="tool-card space-y-4 rounded-2xl p-6">

@@ -27,23 +27,9 @@
     "createdAt": "2026-04-22T03:11:40.975Z",
     "updatedAt": "2026-04-22T03:11:40.975Z"
   },
-  {
-    "name": "Abhay Kumar Shukla",
-    "role": "Java Developer",
-    "rating": 5,
-    "features": [
-      "Easy to learn",
-      "AI support",
-      "Practical tasks",
-      "Course structure"
-    ],
-    "review": "Keep continue brother this content very helpful for developers and Students.\nThankyou.",
-    "createdAt": "2026-04-20T17:17:37.051Z",
-    "updatedAt": "2026-04-20T17:17:37.051Z"
-  },
-  {
+   {
     "name": "Askit Verma",
-    "role": "Student",
+    "role": "Web Developer",
     "rating": 5,
     "features": [
       "Easy to learn",
@@ -66,5 +52,19 @@
     "review": "This is a good Platform for student and developers.\nThankyou...",
     "createdAt": "2026-04-05T18:22:17.081Z",
     "updatedAt": "2026-04-05T18:22:17.081Z"
+  },
+  {
+    "name": "Abhay Kumar Shukla",
+    "role": "Java Developer",
+    "rating": 5,
+    "features": [
+      "Easy to learn",
+      "AI support",
+      "Practical tasks",
+      "Course structure"
+    ],
+    "review": "Keep continue brother this content very helpful for developers and Students.\nThankyou.",
+    "createdAt": "2026-04-20T17:17:37.051Z",
+    "updatedAt": "2026-04-20T17:17:37.051Z"
   }
 ]
