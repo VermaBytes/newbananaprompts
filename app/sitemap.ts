@@ -30,6 +30,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.65
     },
     {
+      url: `${SITE_URL}/courses/web-development-with-ai/lecture-02`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.65
+    },
+    {
+      url: `${SITE_URL}/courses/web-development-with-ai/lecture-03`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.65
+    },
+    {
+      url: `${SITE_URL}/courses/web-development-with-ai/lecture-04`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.65
+    },
+    {
+      url: `${SITE_URL}/courses/web-development-with-ai/lecture-05`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.65
+    },
+    {
+      url: `${SITE_URL}/courses/web-development-with-ai/lecture-06`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.65
+    },
+    {
+      url: `${SITE_URL}/courses/web-development-with-ai/lecture-07`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.65
+    },
+    {
+      url: `${SITE_URL}/courses/web-development-with-ai/lecture-08`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.65
+    },
+    {
       url: `${SITE_URL}/about`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
