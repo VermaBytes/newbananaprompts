@@ -1,18 +1,46 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
+
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+
+  // =========================
+  // ROBOTS SEO
+  // =========================
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  // =========================
+  // TITLE
+  // =========================
   title: {
     default: `${SITE_NAME} | AI Prompts, Image Tools & Blogging Platform`,
-    template: `%s | ${SITE_NAME}`
+    template: `%s | ${SITE_NAME}`,
   },
+
+  // =========================
+  // DESCRIPTION
+  // =========================
   description:
     "NB Prompts is a creator-first hub for AI prompt ideas, free online image tools, blogging tips, SEO guides, and quick content workflow solutions.",
+
+  // =========================
+  // KEYWORDS
+  // =========================
   keywords: [
     "NB Prompts",
     "AI prompts",
@@ -28,12 +56,25 @@ export const metadata: Metadata = {
     "content creation",
     "creator tools",
     "online converter",
-    "prompt ideas"
+    "prompt ideas",
+    "ChatGPT prompts",
+    "AI tools for students",
+    "AI blogging tools",
+    "free AI tools",
   ],
+
   applicationName: SITE_NAME,
+
+  // =========================
+  // CANONICAL
+  // =========================
   alternates: {
-    canonical: "/"
+    canonical: SITE_URL,
   },
+
+  // =========================
+  // OPEN GRAPH
+  // =========================
   openGraph: {
     title: `${SITE_NAME} | Best AI Prompts & Free Online Tools`,
     description:
@@ -41,51 +82,74 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_US",
-    type: "website"
+    type: "website",
   },
+
+  // =========================
+  // TWITTER
+  // =========================
   twitter: {
     card: "summary_large_image",
     title: `${SITE_NAME} | ${SITE_TAGLINE}`,
     description:
-      "Best AI prompts, image tools, blogging tips, and online creator resources."
+      "Best AI prompts, image tools, blogging tips, and online creator resources.",
   },
+
+  // =========================
+  // ICONS
+  // =========================
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png"
+    apple: "/apple-touch-icon.png",
   },
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      <body>
+        {/* =========================
+            THEME SCRIPT
+        ========================= */}
         <Script id="theme-init" strategy="beforeInteractive">
           {`
             (function() {
               try {
                 var storedTheme = localStorage.getItem("theme");
-                var theme = storedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+
+                var theme =
+                  storedTheme ||
+                  (window.matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light");
+
                 document.documentElement.dataset.theme = theme;
               } catch (error) {}
             })();
           `}
         </Script>
-        <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
-        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-      </head>
-      <body>
+
         <div className="site-shell">
+          {/* =========================
+              NAVBAR
+          ========================= */}
           <Navbar />
+
+          {/* =========================
+              MAIN CONTENT
+          ========================= */}
           <main className="mx-auto min-h-[calc(100vh-13rem)] max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8">
             {children}
           </main>
+
+          {/* =========================
+              FOOTER
+          ========================= */}
           <Footer />
         </div>
       </body>
