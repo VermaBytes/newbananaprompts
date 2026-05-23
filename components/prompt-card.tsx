@@ -36,7 +36,7 @@ export function PromptCard({ slug, title, image, prompt, tags = [], tryUrl }: Pr
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           className="object-cover transition duration-500 group-hover:scale-[1.05]"
         />
-        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/45 via-black/10 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
       </Link>
       <div className="space-y-4 px-5 py-5">
         <div className="space-y-2">

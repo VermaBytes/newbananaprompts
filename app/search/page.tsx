@@ -1,11 +1,11 @@
 import { SearchResults } from "@/components/search-results";
 
 type SearchPageProps = {
-  searchParams?: Promise<{ query?: string | string[] }>;
+  searchParams?: { query?: string | string[] };
 };
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
-  const resolved = searchParams ? await searchParams : undefined;
+  const resolved = searchParams;
   const rawQuery = resolved?.query;
   const query = Array.isArray(rawQuery) ? rawQuery.join(" ") : rawQuery ?? "";
 

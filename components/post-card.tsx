@@ -22,7 +22,7 @@ export function PostCard({ post }: { post: BlogPost }) {
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
           className="object-cover transition duration-500 group-hover:scale-[1.05]"
         />
-        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/45 via-black/10 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
       </Link>
       <div className="prompt-card-body flex flex-1 flex-col gap-3 px-5 py-5 sm:px-6">
         <div className="flex flex-wrap items-center gap-2">

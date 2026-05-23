@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { PostsExplorer } from "@/components/posts-explorer";
-import { getAllPosts, type BlogPost } from "@/lib/posts";
-import { promptCards } from "@/data/prompt-cards";
+import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Blogs",
-  description: "Browse AI prompts, image tools, blogging articles, and online utility guides on NB Prompts.",
+  title: "Blogs | AI Prompts, Reviews & Tools Guides",
+  description: "Browse cinematic AI prompts, detailed prompt engineering guides, free AI tool reviews, and productivity articles on NB Prompts.",
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
@@ -16,36 +15,26 @@ export const metadata: Metadata = {
 export default async function BlogsPage({
   searchParams
 }: {
-  searchParams?: Promise<{ query?: string | string[] }>;
+  searchParams?: { query?: string | string[] };
 }) {
-  const promptPosts: BlogPost[] = promptCards.map((card, index) => ({
-    slug: card.slug,
-    title: card.title,
-    seoTitle: card.title,
-    description: card.prompt,
-    category: "Image Prompts",
-    author: "NB Prompts",
-    publishedAt: new Date(Date.now() - index * 1000 * 60).toISOString(),
-    dateLabel: "April 2026",
-    image: card.image,
-    tags: card.tags.map((tag) => tag.replace("#", "")),
-    sections: [
-      {
-        heading: "Prompt (Copy-Ready)",
-        paragraphs: [card.prompt]
-      }
-    ]
-  }));
-  const posts = [...getAllPosts(), ...promptPosts];
-  const resolvedParams = searchParams ? await searchParams : undefined;
+  const posts = getAllPosts();
+  const resolvedParams = searchParams;
   const rawQuery = resolvedParams?.query;
   const query = Array.isArray(rawQuery) ? rawQuery.join(" ") : rawQuery ?? "";
 
   return (
-    <section className="space-y-5">
+    <section className="space-y-6">
       <div className="space-y-2">
+        <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">AI Library</p>
+        <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
+          AI Prompts & Tools Blog
+        </h1>
+        <p className="theme-text-secondary max-w-2xl text-sm leading-7 sm:text-base">
+          High-quality articles, step-by-step AI tool tutorials, and copy-ready image prompts to skyrocket your productivity.
+        </p>
       </div>
       <PostsExplorer posts={posts} query={query} />
     </section>
   );
 }
+

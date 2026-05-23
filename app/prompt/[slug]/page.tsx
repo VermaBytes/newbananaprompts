@@ -5,11 +5,11 @@ import { promptCards } from "@/data/prompt-cards";
 import { CopyButton } from "@/components/copy-button";
 
 type PromptPageProps = {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 };
 
 export default async function PromptPage({ params }: PromptPageProps) {
-  const { slug } = await params;
+  const { slug } = params;
   const prompt = promptCards.find((card) => card.slug === slug);
 
   if (!prompt) {

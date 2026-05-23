@@ -2,48 +2,154 @@ import Link from "next/link";
 
 export function HomeHero() {
   return (
-    <section className="site-panel rounded-sm px-6 py-10 sm:px-8 sm:py-12">
-      <div className="grid gap-8 lg:grid-cols-[1.3fr_0.7fr] lg:items-start">
+    <section className="relative overflow-hidden rounded-[2.5rem] border border-cyan-400/10 bg-[#020617] px-6 py-10 md:py-12 md:px-10 shadow-[0_0_60px_rgba(56,189,248,0.08)]">
+      
+      {/* =========================
+          AI BACKGROUND EFFECTS
+      ========================= */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        
+        {/* CYAN GLOW */}
+        <div className="absolute left-0 top-0 h-64 w-64 animate-pulse rounded-full bg-cyan-500/15 blur-3xl" />
+
+        {/* ORANGE GLOW */}
+        <div className="absolute bottom-0 right-0 h-64 w-64 animate-pulse rounded-full bg-orange-500/15 blur-3xl" />
+
+        {/* CENTER AI LIGHT */}
+        <div className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 animate-ping rounded-full bg-blue-500/5 blur-3xl" />
+
+        {/* GRID EFFECT */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
+      </div>
+
+      <div className="relative grid gap-8 lg:grid-cols-[1.35fr_0.65fr] lg:items-center">
+        
+        {/* =========================
+            LEFT CONTENT
+        ========================= */}
         <div className="space-y-6">
-          <p className="text-xs font-bold uppercase tracking-[0.28em] text-blue-700">AI Prompt Blog</p>
-          <h1 className="text-balance font-[family-name:var(--font-heading)] text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl">
-            Best AI image and video prompts for creators, editors, and marketers.
-          </h1>
-          <p className="max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-            PromptFrame publishes simple, usable prompt guides for Midjourney, Flux, Runway, Kling, and other AI tools.
-            The layout is intentionally content-first so visitors can move quickly from headline to article.
-          </p>
+          
+          {/* BADGE */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.24em] text-cyan-300 shadow-[0_0_15px_rgba(56,189,248,0.1)]">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-400" />
+            AI Prompt & Blog Hub
+          </div>
+
+          {/* HEADING */}
+          <div className="space-y-4">
+            <h1 className="max-w-3xl text-balance font-[family-name:var(--font-heading)] text-2xl sm:text-3xl lg:text-[2.6rem] font-extrabold leading-tight tracking-tight text-white">
+              Create Stunning{" "}
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-orange-400 bg-clip-text text-transparent">
+                AI Images & Videos
+              </span>{" "}
+              with Powerful Creator Prompts.
+            </h1>
+
+            <p className="max-w-2xl text-xs sm:text-sm leading-6 text-slate-300">
+              Discover cinematic AI prompts, Midjourney ideas,
+              video generation workflows, blogging resources,
+              and modern creator tools designed for editors,
+              designers, marketers, and AI creators.
+            </p>
+          </div>
+
+          {/* BUTTONS */}
           <div className="flex flex-wrap gap-3">
+            
             <Link
               href="#latest-posts"
-              className="rounded-md bg-slate-950 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
+              className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 px-5 py-3 text-xs font-bold text-white shadow-[0_0_20px_rgba(56,189,248,0.25)] transition-all duration-500 hover:scale-105"
             >
-              Browse Articles
+              <span className="absolute inset-0 bg-white/10 opacity-0 transition duration-500 group-hover:opacity-100" />
+              <span className="relative z-10">Explore AI Prompts</span>
             </Link>
+
             <Link
               href="/about"
-              className="rounded-md border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-800 hover:bg-slate-100"
+              className="rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-xs font-bold text-white backdrop-blur-md transition-all duration-500 hover:border-cyan-400/40 hover:text-cyan-300"
             >
-              About the Blog
+              Learn More
             </Link>
           </div>
-        </div>
-        <div className="grid gap-4">
-          <div className="rounded-sm border border-slate-200 bg-slate-50 p-5">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Popular Topics</p>
-            <div className="mt-4 space-y-3 text-sm font-semibold text-slate-800">
-              <p>Midjourney portrait prompts</p>
-              <p>AI product ad prompts</p>
-              <p>Text-to-video cinematic prompts</p>
-              <p>Reel and short-form motion prompts</p>
+
+          {/* STATS */}
+          <div className="flex flex-wrap gap-4 pt-2">
+            
+            <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 backdrop-blur-md">
+              <h3 className="text-lg font-bold text-white">500+</h3>
+              <p className="text-[10px] text-slate-400">AI Prompts</p>
+            </div>
+
+            <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 backdrop-blur-md">
+              <h3 className="text-lg font-bold text-white">50+</h3>
+              <p className="text-[10px] text-slate-400">Creator Tools</p>
+            </div>
+
+            <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 backdrop-blur-md">
+              <h3 className="text-lg font-bold text-white">24/7</h3>
+              <p className="text-[10px] text-slate-400">AI Resources</p>
             </div>
           </div>
-          <div className="rounded-sm border border-slate-200 bg-white p-5">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Why This Works</p>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Short titles, clear metadata, readable post lists, and a straightforward publishing layout inspired by
-              utility-first blog sites like the reference you shared.
+        </div>
+
+        {/* =========================
+            RIGHT SIDE AI CARDS
+        ========================= */}
+        <div className="relative grid gap-4">
+          
+          {/* CARD 1 */}
+          <div className="group relative overflow-hidden rounded-[1.5rem] border border-cyan-400/10 bg-white/5 p-5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-cyan-400/20">
+            
+            <div className="absolute right-0 top-0 h-20 w-20 rounded-full bg-cyan-500/5 blur-2xl" />
+
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-300">
+              Trending AI Topics
             </p>
+
+            <div className="mt-4 space-y-2 text-xs font-semibold text-white">
+              
+              <div className="flex items-center gap-2 rounded-lg border border-white/5 bg-white/5 px-3 py-2 transition-all duration-300 hover:bg-white/10">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                Midjourney Portrait Prompts
+              </div>
+
+              <div className="flex items-center gap-2 rounded-lg border border-white/5 bg-white/5 px-3 py-2 transition-all duration-300 hover:bg-white/10">
+                <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
+                AI Product Ad Prompts
+              </div>
+
+              <div className="flex items-center gap-2 rounded-lg border border-white/5 bg-white/5 px-3 py-2 transition-all duration-300 hover:bg-white/10">
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+                Cinematic Video Prompts
+              </div>
+            </div>
+          </div>
+
+          {/* CARD 2 */}
+          <div className="group relative overflow-hidden rounded-[1.5rem] border border-orange-400/10 bg-white/5 p-5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-0.5 hover:border-orange-400/20">
+            
+            <div className="absolute bottom-0 left-0 h-20 w-20 rounded-full bg-orange-500/5 blur-2xl" />
+
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-orange-300">
+              Why NB Prompts
+            </p>
+
+            <p className="mt-3 text-xs leading-5 text-slate-300">
+              Built for creators who want high-quality AI prompts,
+              SEO-friendly content, and modern workflows in one powerful platform.
+            </p>
+
+            {/* MINI FEATURES */}
+            <div className="mt-4 flex flex-wrap gap-2">
+              
+              <span className="rounded-full border border-cyan-400/20 bg-cyan-500/5 px-3 py-1 text-[9px] font-semibold text-cyan-300">
+                AI Prompts
+              </span>
+
+              <span className="rounded-full border border-orange-400/20 bg-orange-500/5 px-3 py-1 text-[9px] font-semibold text-orange-300">
+                Creator Tools
+              </span>
+            </div>
           </div>
         </div>
       </div>

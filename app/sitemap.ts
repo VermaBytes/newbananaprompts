@@ -78,10 +78,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6
     },
     {
-      url: `${SITE_URL}/testimonials`,
+      url: `${SITE_URL}/privacy-policy`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
-      priority: 0.6
+      priority: 0.5
+    },
+    {
+      url: `${SITE_URL}/terms-and-conditions`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.5
+    },
+    {
+      url: `${SITE_URL}/disclaimer`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.5
     },
     {
       url: `${SITE_URL}/contact`,

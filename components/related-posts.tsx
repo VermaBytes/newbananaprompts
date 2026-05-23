@@ -16,7 +16,7 @@ export function RelatedPosts({ posts, currentSlug }: { posts: BlogPost[]; curren
           Related Posts
         </h2>
       </div>
-      <div className="content-grid">
+      <div className="content-grid md:grid-cols-2 xl:grid-cols-3">
         {filteredPosts.map((post) => (
           <PostCard key={post.slug} post={post} />
         ))}

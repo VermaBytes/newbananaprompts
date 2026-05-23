@@ -9,9 +9,9 @@ import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 type PostPageProps = {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 };
 
 export async function generateStaticParams() {
@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PostPageProps): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug } = params;
   const post = getPostBySlug(slug);
 
   if (!post) {
@@ -74,9 +74,8 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   };
 }
 
-
 export default async function PostPage({ params }: PostPageProps) {
-  const { slug } = await params;
+  const { slug } = params;
   const post = getPostBySlug(slug);
 
   if (!post) {
@@ -87,6 +86,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const canonicalUrl = `${SITE_URL}/post/${post.slug}`;
   const encodedTitle = encodeURIComponent(post.title);
   const encodedUrl = encodeURIComponent(canonicalUrl);
+
   const ctaLinks: Record<string, { label: string; href: string; prompt?: string }> = {
     "remove-background-from-image-online-free-easy-method-2026": {
       label: "Remove Bg",
@@ -125,7 +125,9 @@ export default async function PostPage({ params }: PostPageProps) {
         "Dark moody portrait of a mysterious person in low light, neon glow highlights, cinematic shadows, cyberpunk atmosphere, ultra detailed, high contrast, 4K wallpaper style"
     }
   };
+
   const postCta = ctaLinks[post.slug];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -149,130 +151,271 @@ export default async function PostPage({ params }: PostPageProps) {
   };
 
   return (
-    <article className="mx-auto max-w-4xl space-y-10">
+    <div className="mx-auto max-w-7xl space-y-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <div className="space-y-4">
+      
+      {/* =========================
+          BACK BUTTON
+      ========================= */}
+      <div className="flex items-center">
         <Link
-          href="/"
-          className="theme-button theme-soft-hover inline-flex items-center rounded-sm px-4 py-2 text-sm font-semibold"
+          href="/blogs"
+          className="theme-button theme-soft-hover inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition hover:scale-105"
         >
-          Back to Home
+          ← All Articles
         </Link>
-        <div className="site-panel overflow-hidden rounded-sm">
-          <div className="relative aspect-[16/8] border-b border-slate-200">
-            <Image
-              src={post.image}
-              alt={post.title}
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 1200px"
-              className="object-cover"
-            />
-          </div>
-          <div className="space-y-6 px-6 py-8 sm:px-10 sm:py-10">
-            <div className="theme-text-muted flex flex-wrap items-center gap-3 text-sm">
-              <span className="theme-surface theme-kicker rounded-sm px-3 py-1 font-semibold">{post.category}</span>
-              <span>{post.dateLabel}</span>
-              <span>By {post.author}</span>
-            </div>
-            <header className="space-y-4">
-              <h1 className="theme-text-primary text-balance font-[family-name:var(--font-heading)] text-4xl font-bold tracking-tight sm:text-5xl">
-                {post.title}
-              </h1>
-              <p className="theme-text-secondary max-w-3xl text-lg leading-8">{post.description}</p>
-            </header>
-            {postCta ? (
-              <div className="theme-surface space-y-4 rounded-2xl px-4 py-4 text-center">
-                {postCta.prompt ? (
-                  <div className="relative rounded-xl border border-dashed border-[#d6c7b6] px-4 py-4 text-left">
-                    <div className="flex flex-wrap items-center justify-between gap-3">
-                      <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.22em]">Prompt</p>
-                      <div className="flex items-center gap-2">
-                        <CopyButton text={postCta.prompt} />
-                        <a
-                          href={postCta.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center rounded-full bg-[#159947] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-[#159947]/25 transition hover:-translate-y-0.5 hover:bg-[#0d7a38]"
-                        >
-                          Try Now
-                        </a>
-                      </div>
-                    </div>
-                    <p className="theme-text-secondary mt-2 text-sm leading-7">{postCta.prompt}</p>
-                  </div>
-                ) : null}
-              </div>
-            ) : null}
-            <div className="flex flex-wrap gap-3">
-              <a
-                href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
-                target="_blank"
-                rel="noreferrer"
-                className="theme-button theme-soft-hover rounded-full px-4 py-2 text-sm font-semibold"
-              >
-                Share on X
-              </a>
-              <a
-                href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
-                target="_blank"
-                rel="noreferrer"
-                className="theme-button theme-soft-hover rounded-full px-4 py-2 text-sm font-semibold"
-              >
-                Share on Facebook
-              </a>
-              <a
-                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
-                target="_blank"
-                rel="noreferrer"
-                className="theme-button theme-soft-hover rounded-full px-4 py-2 text-sm font-semibold"
-              >
-                Share on LinkedIn
-              </a>
-            </div>
-            <div className="post-content space-y-8">
-              {post.sections.map((section) => {
-                const isPromptCard = section.heading.toLowerCase().includes("prompt");
-                const promptText = section.paragraphs.join("\n\n");
+      </div>
 
-                if (isPromptCard) {
+      {/* =========================
+          TWO-COLUMN MAIN GRID (GaadiWaadi inspired + AI styling)
+      ========================= */}
+      <div className="grid gap-8 lg:grid-cols-[1fr_340px] items-start">
+        
+        {/* =========================
+            LEFT COLUMN: ARTICLE
+        ========================= */}
+        <div className="space-y-8">
+          <article className="site-panel overflow-hidden rounded-[2rem] shadow-lg border border-cyan-400/10 dark:border-white/10">
+            
+            {/* FEATURED IMAGE */}
+            <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-cyan-400/10 dark:border-white/10">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 850px"
+                className="object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#020617]/50 to-transparent" />
+            </div>
+
+            {/* ARTICLE CONTENTS */}
+            <div className="space-y-6 px-6 py-8 sm:px-10 sm:py-10">
+              
+              {/* METADATA CHIPS */}
+              <div className="flex flex-wrap items-center gap-4 text-xs font-semibold uppercase tracking-wider">
+                <span className="rounded-full bg-cyan-500/10 border border-cyan-400/20 px-4 py-1.5 text-cyan-300">
+                  {post.category}
+                </span>
+                <span className="theme-text-muted">{post.dateLabel}</span>
+                <span className="theme-text-muted">By {post.author}</span>
+              </div>
+
+              {/* HEADING & SUBTITLE */}
+              <header className="space-y-4">
+                <h1 className="theme-text-primary text-balance font-[family-name:var(--font-heading)] text-3xl font-extrabold sm:text-4xl lg:text-5xl leading-tight">
+                  {post.title}
+                </h1>
+                <p className="theme-text-secondary text-base leading-8 sm:text-lg border-l-4 border-cyan-400 pl-4 py-1">
+                  {post.description}
+                </p>
+              </header>
+
+              {/* DYNAMIC POST CTA BOX */}
+              {postCta ? (
+                <div className="theme-surface space-y-4 rounded-2xl px-4 py-4 text-center">
+                  {postCta.prompt ? (
+                    <div className="relative rounded-xl border border-dashed border-cyan-400/30 px-4 py-4 text-left">
+                      <div className="flex flex-wrap items-center justify-between gap-3">
+                        <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.22em]">Main Prompt</p>
+                        <div className="flex items-center gap-2">
+                          <CopyButton text={postCta.prompt} />
+                          <a
+                            href={postCta.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center rounded-full bg-[#159947] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-[#159947]/25 transition hover:-translate-y-0.5 hover:bg-[#0d7a38]"
+                          >
+                            Try Now
+                          </a>
+                        </div>
+                      </div>
+                      <p className="theme-text-secondary mt-2 text-sm leading-7">{postCta.prompt}</p>
+                    </div>
+                  ) : null}
+                </div>
+              ) : null}
+
+              {/* SOCIAL SHARING COMPONENT */}
+              <div className="flex flex-wrap gap-2 pt-2 border-y border-cyan-400/5 py-4">
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="theme-button theme-soft-hover rounded-xl px-4 py-2 text-xs font-bold transition hover:scale-105"
+                >
+                  Share on X
+                </a>
+                <a
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="theme-button theme-soft-hover rounded-xl px-4 py-2 text-xs font-bold transition hover:scale-105"
+                >
+                  Share on Facebook
+                </a>
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="theme-button theme-soft-hover rounded-xl px-4 py-2 text-xs font-bold transition hover:scale-105"
+                >
+                  Share on LinkedIn
+                </a>
+              </div>
+
+              {/* DYNAMIC ARTICLE SECTIONS */}
+              <div className="post-content space-y-8 pt-4">
+                {post.sections.map((section) => {
+                  const isPromptCard = section.heading.toLowerCase().includes("prompt");
+                  const promptText = section.paragraphs.join("\n\n");
+
+                  if (isPromptCard) {
+                    return (
+                      <section key={section.heading} className="space-y-4">
+                        <h2 className="theme-text-primary text-xl font-bold font-[family-name:var(--font-heading)]">
+                          {section.heading}
+                        </h2>
+                        {section.subheading ? (
+                          <h3 className="theme-text-secondary text-sm font-semibold">{section.subheading}</h3>
+                        ) : null}
+                        <div className="theme-surface space-y-3 rounded-2xl border border-dashed border-cyan-400/30 px-5 py-5 bg-cyan-950/5">
+                          <div className="flex flex-wrap items-center justify-between gap-3">
+                            <p className="theme-kicker text-xs font-bold uppercase tracking-[0.22em]">AI Prompt Box</p>
+                            <CopyButton text={promptText} />
+                          </div>
+                          <div className="space-y-4">
+                            {section.paragraphs.map((paragraph) => (
+                              <p key={paragraph} className="theme-text-secondary text-sm leading-7">
+                                {paragraph}
+                              </p>
+                            ))}
+                          </div>
+                        </div>
+                      </section>
+                    );
+                  }
+
                   return (
                     <section key={section.heading} className="space-y-3">
-                      <h2>{section.heading}</h2>
-                      {section.subheading ? <h3>{section.subheading}</h3> : null}
-                      <div className="theme-surface space-y-3 rounded-2xl border border-dashed border-[#d6c7b6] px-4 py-4">
-                        <div className="flex flex-wrap items-center justify-between gap-3">
-                          <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.22em]">Prompt</p>
-                          <CopyButton text={promptText} />
-                        </div>
-                        <div className="space-y-4">
-                          {section.paragraphs.map((paragraph) => (
-                            <p key={paragraph} className="theme-text-secondary text-sm leading-7">
-                              {paragraph}
-                            </p>
-                          ))}
-                        </div>
+                      <h2 className="theme-text-primary text-2xl font-bold font-[family-name:var(--font-heading)] leading-tight pt-2">
+                        {section.heading}
+                      </h2>
+                      {section.subheading ? (
+                        <h3 className="theme-text-secondary text-base font-semibold">{section.subheading}</h3>
+                      ) : null}
+                      <div className="space-y-4">
+                        {section.paragraphs.map((paragraph) => (
+                          <p key={paragraph} className="theme-text-secondary text-sm leading-7">
+                            {paragraph}
+                          </p>
+                        ))}
                       </div>
                     </section>
                   );
-                }
+                })}
+              </div>
 
-                return (
-                  <section key={section.heading} className="space-y-3">
-                    <h2>{section.heading}</h2>
-                    {section.subheading ? <h3>{section.subheading}</h3> : null}
-                    {section.paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
-                  </section>
-                );
-              })}
+            </div>
+          </article>
+
+          {/* AD / PROMOTION PLACEHOLDER */}
+          <AdPlaceholder />
+        </div>
+
+        {/* =========================
+            RIGHT COLUMN: STICKY SIDEBAR (Clean Editorial + Glowing AI effects)
+        ========================= */}
+        <aside className="space-y-6 lg:sticky lg:top-24">
+          
+          {/* SIDEBAR BLOCK: AI Academy Course CTA */}
+          <div className="group relative overflow-hidden rounded-[1.8rem] border border-cyan-400/20 bg-gradient-to-br from-cyan-950/40 to-slate-900/60 p-6 shadow-md backdrop-blur-xl transition hover:border-cyan-400/40">
+            <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-cyan-500/10 blur-2xl transition duration-500 group-hover:bg-cyan-500/25" />
+            <span className="rounded-full bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-cyan-300">
+              AI Academy Track
+            </span>
+            <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-lg font-bold mt-3">
+              Web Development with AI
+            </h3>
+            <p className="mt-2 text-xs leading-5 text-slate-300">
+              Structured lectures to build real skills using AI. Preserving Shobhit's complete Web Dev track!
+            </p>
+            <Link
+              href="/courses/web-development-with-ai"
+              className="hero-cta mt-5 flex items-center justify-center rounded-xl py-3 text-xs font-bold text-white shadow-lg transition hover:scale-105"
+            >
+              Start Learning Now
+            </Link>
+          </div>
+
+          {/* SIDEBAR BLOCK: Trending / Recent AI Guides */}
+          <div className="site-panel rounded-[1.8rem] p-6 space-y-4">
+            <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-base font-bold border-b border-cyan-400/10 pb-3">
+              Trending AI Guides
+            </h3>
+            <div className="space-y-4">
+              {relatedPosts.slice(0, 4).map((entry) => (
+                <Link
+                  key={entry.slug}
+                  href={`/post/${entry.slug}`}
+                  className="group flex gap-3 items-center transition duration-300"
+                >
+                  <div className="relative h-14 w-20 shrink-0 overflow-hidden rounded-xl border border-slate-200/10">
+                    <Image
+                      src={entry.image}
+                      alt={entry.title}
+                      fill
+                      sizes="80px"
+                      className="object-cover transition duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <h4 className="theme-text-primary text-xs font-bold leading-snug line-clamp-2 group-hover:text-cyan-400 transition-colors duration-200">
+                      {entry.title}
+                    </h4>
+                    <span className="theme-text-muted text-[9px] uppercase font-bold tracking-wider">
+                      {entry.category}
+                    </span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
-        </div>
+
+          {/* SIDEBAR BLOCK: Subscription Box */}
+          <div className="site-panel rounded-[1.8rem] p-6 space-y-4">
+            <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-base font-bold">
+              Join AI Newsletter
+            </h3>
+            <p className="theme-text-secondary text-xs leading-5">
+              Copy-ready Midjourney prompt bundles and fresh AI tools directly in your inbox.
+            </p>
+            <div className="space-y-2">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full rounded-xl border border-cyan-400/20 bg-white/5 px-4 py-3 text-xs text-white outline-none focus:border-cyan-400"
+              />
+              <button
+                type="button"
+                className="w-full rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 py-3 text-xs font-bold text-white shadow-lg transition hover:scale-105"
+              >
+                Subscribe Now
+              </button>
+            </div>
+          </div>
+
+        </aside>
+
       </div>
-      <AdPlaceholder />
-      <RelatedPosts posts={relatedPosts} currentSlug={post.slug} />
-    </article>
+
+      {/* =========================
+          RELATED POSTS SECTION (Footer of article)
+      ========================= */}
+      <div className="pt-4">
+        <RelatedPosts posts={relatedPosts} currentSlug={post.slug} />
+      </div>
+    </div>
   );
 }

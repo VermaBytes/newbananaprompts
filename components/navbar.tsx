@@ -1,27 +1,28 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/prompt", label: "Prompts" },
+  { href: "/blogs", label: "Blogs" },
   { href: "/#courses", label: "Courses" },
-  { href: "/testimonials", label: "Testimonials" },
   { href: "/about", label: "About Us" },
 ];
 
 export function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleSearch = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const query = searchQuery.trim();
+
     if (query.length > 0) {
       router.push(`/search?query=${encodeURIComponent(query)}`);
     } else {
@@ -30,92 +31,191 @@ export function Navbar() {
   };
 
   return (
-    <header className="site-header fixed inset-x-0 top-0 z-50 border-b backdrop-blur">
-      <div className="mx-auto max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-3">
-          <Link href="/" className="flex items-center gap-3">
-            <img src="/main-logo.png" alt="Logo" className="h-11 w-11 rounded-xl object-cover" />
-          </Link>
-          <button
-            type="button"
-            onClick={() => setIsOpen((open) => !open)}
-            className="theme-button theme-soft-hover inline-flex items-center rounded-full px-3 py-2 text-sm font-semibold lg:hidden"
-            aria-label="Toggle navigation"
-            aria-expanded={isOpen}
+    <header className="fixed inset-x-0 top-0 z-50 overflow-hidden border-b border-cyan-400/10 bg-[#020617cc] shadow-[0_0_40px_rgba(56,189,248,0.08)] backdrop-blur-2xl">
+      
+      {/* =========================
+          AI GLOW EFFECTS
+      ========================= */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        
+        <div className="absolute -left-20 top-0 h-40 w-40 animate-pulse rounded-full bg-cyan-500/20 blur-3xl" />
+
+        <div className="absolute right-0 top-0 h-32 w-32 animate-pulse rounded-full bg-orange-500/20 blur-3xl" />
+
+        <div className="absolute left-1/2 top-0 h-20 w-20 -translate-x-1/2 animate-ping rounded-full bg-blue-500/10 blur-2xl" />
+      </div>
+
+      <div className="relative mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        
+        {/* =========================
+            LOGO
+        ========================= */}
+        <Link
+          href="/"
+          className="group flex items-center gap-3"
+        >
+          <div className="relative">
+            <img
+              src="/main-logo.png"
+              alt="NB Prompts Logo"
+              className="h-12 w-12 rounded-2xl object-cover shadow-[0_0_25px_rgba(56,189,248,0.45)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
+            />
+
+            <div className="absolute inset-0 rounded-2xl bg-cyan-400/20 blur-xl transition-all duration-500 group-hover:bg-cyan-400/40" />
+          </div>
+
+          <div className="hidden sm:block">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-blue-400 to-orange-400 bg-clip-text text-lg font-extrabold tracking-wide text-transparent">
+              NB Prompts
+            </h2>
+
+            <p className="text-xs text-slate-400 transition-all duration-300 group-hover:text-slate-300">
+              AI Tools & Blogs Hub
+            </p>
+          </div>
+        </Link>
+
+        {/* =========================
+            DESKTOP NAVIGATION
+        ========================= */}
+        <nav className="hidden items-center gap-2 lg:flex">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`group relative overflow-hidden rounded-full px-5 py-2 text-sm font-semibold transition-all duration-500 ${
+                pathname === item.href
+                  ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-[0_0_25px_rgba(56,189,248,0.5)]"
+                  : "text-slate-300 hover:text-white"
+              }`}
+            >
+              {/* HOVER GLOW */}
+              <span className="absolute inset-0 -z-10 scale-0 rounded-full bg-gradient-to-r from-cyan-500/20 to-orange-500/20 transition-all duration-500 group-hover:scale-100" />
+
+              {/* ACTIVE BORDER */}
+              <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-cyan-400 transition-all duration-500 group-hover:w-3/4" />
+
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* =========================
+            RIGHT SECTION
+        ========================= */}
+        <div className="flex items-center gap-3">
+          
+          {/* SEARCH */}
+          <form
+            onSubmit={handleSearch}
+            className="hidden lg:block"
           >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
-              {isOpen ? <path d="M6 6l12 12M18 6l-12 12" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
-            </svg>
-          </button>
-          <nav aria-label="Primary" className="hidden flex-1 items-center justify-center gap-2 lg:flex">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="theme-nav-link theme-text-secondary rounded-md px-3 py-2 text-sm font-semibold"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <form onSubmit={handleSearch} className="hidden w-full max-w-[320px] lg:block lg:w-auto">
-            <label htmlFor="navbar-search" className="sr-only">
-              Search
-            </label>
-            <div className="relative w-full">
+            <div className="relative">
               <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-slate-400">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="h-4 w-4"
+                >
                   <circle cx="11" cy="11" r="7" />
                   <path d="M16.65 16.65L21 21" />
                 </svg>
               </span>
+
               <input
-                id="navbar-search"
                 type="search"
                 value={searchQuery}
-                onChange={(event) => setSearchQuery(event.target.value)}
-                placeholder="Search..."
-                className="theme-input search-pro w-full rounded-full bg-white px-3 py-2 pl-9 pr-3 text-sm outline-none placeholder:text-slate-400"
+                onChange={(event) =>
+                  setSearchQuery(event.target.value)
+                }
+                placeholder="Search blogs..."
+                className="w-[260px] rounded-full border border-cyan-400/20 bg-white/5 px-4 py-3 pl-11 text-sm text-white shadow-[0_0_20px_rgba(56,189,248,0.08)] outline-none backdrop-blur-md transition-all duration-500 placeholder:text-slate-400 focus:border-cyan-400 focus:bg-white/10 focus:shadow-[0_0_35px_rgba(56,189,248,0.35)]"
               />
             </div>
           </form>
+
+          {/* MOBILE MENU BUTTON */}
+          <button
+            type="button"
+            onClick={() => setIsOpen((open) => !open)}
+            className="inline-flex items-center justify-center rounded-full border border-cyan-400/20 bg-white/5 p-3 text-white shadow-[0_0_15px_rgba(56,189,248,0.08)] transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(56,189,248,0.25)] lg:hidden"
+            aria-label="Toggle navigation"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="h-5 w-5"
+            >
+              {isOpen ? (
+                <path d="M6 6l12 12M18 6l-12 12" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" />
+              )}
+            </svg>
+          </button>
         </div>
-        <div className={`mt-4 space-y-4 lg:hidden ${isOpen ? "block" : "hidden"}`}>
-          <nav aria-label="Mobile Primary" className="flex flex-col gap-2">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="theme-nav-link theme-text-secondary rounded-md px-4 py-2 text-sm font-semibold"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <form onSubmit={handleSearch} className="w-full">
-            <label htmlFor="navbar-search-mobile" className="sr-only">
-              Search
-            </label>
-            <div className="relative w-full">
+      </div>
+
+      {/* =========================
+          MOBILE MENU
+      ========================= */}
+      <div
+        className={`overflow-hidden border-t border-cyan-400/10 bg-[#020617f2] backdrop-blur-2xl transition-all duration-500 lg:hidden ${
+          isOpen ? "max-h-[500px] py-5" : "max-h-0"
+        }`}
+      >
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 sm:px-6">
+          
+          {/* MOBILE LINKS */}
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              className={`rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
+                pathname === item.href
+                  ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
+                  : "text-slate-300 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              {item.label}
+            </Link>
+          ))}
+
+          {/* MOBILE SEARCH */}
+          <form onSubmit={handleSearch} className="pt-2">
+            <div className="relative">
               <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-slate-400">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="h-4 w-4"
+                >
                   <circle cx="11" cy="11" r="7" />
                   <path d="M16.65 16.65L21 21" />
                 </svg>
               </span>
+
               <input
-                id="navbar-search-mobile"
                 type="search"
                 value={searchQuery}
-                onChange={(event) => setSearchQuery(event.target.value)}
-                placeholder="Search..."
-                className="theme-input search-pro w-full rounded-full bg-white px-3 py-2 pl-9 pr-3 text-sm outline-none placeholder:text-slate-400"
+                onChange={(event) =>
+                  setSearchQuery(event.target.value)
+                }
+                placeholder="Search blogs..."
+                className="w-full rounded-full border border-cyan-400/20 bg-white/5 px-4 py-3 pl-11 text-sm text-white outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400 focus:bg-white/10"
               />
             </div>
           </form>
         </div>
       </div>
+
     </header>
   );
 }
