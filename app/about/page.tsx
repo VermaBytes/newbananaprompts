@@ -11,7 +11,7 @@ export default function AboutPage() {
     <section className="mx-auto max-w-4xl space-y-8">
       <div className="space-y-3">
         <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">About Us</p>
-        <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
+        <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl">
           We build premium AI prompt resources for creators.
         </h1>
         <p className="theme-text-secondary text-base leading-7">

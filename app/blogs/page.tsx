@@ -26,7 +26,7 @@ export default async function BlogsPage({
     <section className="space-y-6">
       <div className="space-y-2">
         <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">AI Library</p>
-        <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
+        <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl">
           AI Prompts & Tools Blog
         </h1>
         <p className="theme-text-secondary max-w-2xl text-sm leading-7 sm:text-base">

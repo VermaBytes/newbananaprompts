@@ -6,7 +6,7 @@ export default function PromptGridPage() {
     <section className="space-y-6">
       <div className="space-y-2">
         <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">Prompt Gallery</p>
-        <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
+        <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl">
           Prompt-to-Image Inspiration
         </h1>
         <p className="theme-text-secondary max-w-2xl text-sm leading-7 sm:text-base">

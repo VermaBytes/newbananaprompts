@@ -17,7 +17,7 @@ export default function DisclaimerPage() {
         Back to Home
       </Link>
       <div className="site-panel rounded-2xl px-6 py-8 sm:px-10 sm:py-10 space-y-6">
-        <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
+        <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl">
           Disclaimer
         </h1>
         <p className="theme-text-muted text-sm">Last Updated: May 2026</p>

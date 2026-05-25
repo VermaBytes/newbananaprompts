@@ -63,7 +63,7 @@ export default function HomePage() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
             <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">Featured Articles</p>
-            <h2 className="theme-text-primary font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
+            <h2 className="theme-text-primary font-[family-name:var(--font-heading)] text-xl font-bold sm:text-2xl">
               Smart guides for AI prompts & tools.
             </h2>
           </div>
@@ -84,7 +84,7 @@ export default function HomePage() {
       <section id="courses" className="space-y-6">
         <div className="space-y-2">
           <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">AI Academy</p>
-          <h2 className="theme-text-primary font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
+          <h2 className="theme-text-primary font-[family-name:var(--font-heading)] text-xl font-bold sm:text-2xl">
             Syllabus-Based Structured AI Courses.
           </h2>
           <p className="theme-text-secondary max-w-2xl text-sm leading-7 sm:text-base">
@@ -165,7 +165,7 @@ export default function HomePage() {
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
             <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">Latest Updates</p>
-            <h2 className="theme-text-primary font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
+            <h2 className="theme-text-primary font-[family-name:var(--font-heading)] text-xl font-bold sm:text-2xl">
               Fresh blog posts and prompt guides.
             </h2>
           </div>

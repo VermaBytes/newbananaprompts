@@ -18,7 +18,7 @@ export default function ContactPage() {
     <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
       <div className="surface-card rounded-[2rem] px-6 py-10 sm:px-10">
         <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.24em]">Contact</p>
-        <h1 className="theme-text-primary mt-3 font-[family-name:var(--font-heading)] text-4xl font-bold tracking-tight">
+        <h1 className="theme-text-primary mt-3 font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl tracking-tight">
           Start a conversation.
         </h1>
         <div className="theme-text-secondary mt-6 space-y-4 text-base leading-8">

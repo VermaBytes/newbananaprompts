@@ -204,7 +204,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
               {/* HEADING & SUBTITLE */}
               <header className="space-y-4">
-                <h1 className="theme-text-primary text-balance font-[family-name:var(--font-heading)] text-3xl font-extrabold sm:text-4xl lg:text-5xl leading-tight">
+                <h1 className="theme-text-primary text-balance font-[family-name:var(--font-heading)] text-2xl font-extrabold sm:text-3xl lg:text-[2.2rem] leading-tight tracking-tight">
                   {post.title}
                 </h1>
                 <p className="theme-text-secondary text-base leading-8 sm:text-lg border-l-4 border-cyan-400 pl-4 py-1">

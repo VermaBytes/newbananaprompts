@@ -33,7 +33,7 @@ export default async function PromptPage({ params }: PromptPageProps) {
               </span>
             ))}
           </div>
-          <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
+          <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl">
             {prompt.title}
           </h1>
           <div className="rounded-2xl border border-dashed border-[#d6c7b6] px-4 py-4">
