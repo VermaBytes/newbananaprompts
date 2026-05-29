@@ -1,5 +1,89 @@
 [
   {
+    "slug": "midjourney-consistent-characters-generate-same-character-different-poses",
+    "title": "Midjourney Consistent Characters Guide: How to Generate Same Character in Different Poses",
+    "seoTitle": "Midjourney Consistent Characters: Generate Same Character in Multiple Poses",
+    "description": "Master the ultimate Midjourney consistent character workflow using --cref and --cw. Generate the same character in different poses, outfits, and scenes step-by-step.",
+    "category": "AI Tools",
+    "author": "Shobhit Verma",
+    "publishedAt": "2026-05-29T10:00:00.000Z",
+    "dateLabel": "May 29, 2026",
+    "image": "/posts/midjourney-consistent-character.jpg",
+    "tags": [
+      "midjourney cref",
+      "consistent characters",
+      "ai image prompt",
+      "midjourney guide",
+      "character reference"
+    ],
+    "sections": [
+      {
+        "heading": "Introduction: Character Consistency Ka Sabse Bada Solution",
+        "paragraphs": [
+          "AI image generation and story-boarding ki duniya me sabse badi samasya hamesha se **character consistency** (ek hi character ko alag-alag scenes me same facial features aur details ke sath generate karna) rahi hai. Pehle iske liye seed parameters aur dense image blending models ki zaroorat hoti thi, par Midjourney ne isko solve karne ke liye powerful `--cref` (Character Reference) feature launch kiya hai.",
+          "Is comprehensive step-by-step guide me hum seekhenge ki kaise `--cref` aur `--cw` (Character Weight) ka use karke aap kisi bhi AI character ko alag-alag poses, settings, aur outfits me absolute accuracy ke sath generate kar sakte hain."
+        ]
+      },
+      {
+        "heading": "Step 1: Create Your Base Reference Character",
+        "paragraphs": [
+          "Sabse pehle aapko ek high-quality base image generate karni hogi jisme character ka face bilkul clear, focused, aur direct forward-looking (neutral front portrait view) ho. Isse Midjourney ke facial tracking algorithms ko facial details map karne me maximum speed and efficiency milti hai.",
+          "Apna unique base character create karne ke liye niche diye gaye copy-ready prompt ka use karein:"
+        ]
+      },
+      {
+        "heading": "Base Character Portrait Prompt (Copy-Ready)",
+        "paragraphs": [
+          "A hyper-realistic studio portrait of a 22-year-old Indian male model wearing a simple black hoodie, dark messy hair, intense brown eyes, neutral facial expression, clean grey studio background, cinematic soft studio lighting, highly detailed 3D render style, 8k resolution, photorealistic."
+        ]
+      },
+      {
+        "heading": "Step 2: How to Use the `--cref` Parameter (Instant Setup)",
+        "paragraphs": [
+          "Base image generate karne ke baad, uska direct image URL copy karein (Discord me image par right-click karke 'Copy Link' karein). Ab, jab bhi aap koi naya scene, pose ya background generate karna chahein, to naye text prompt ke end me `--cref <URL>` parameter add karein.",
+          "Apne character ko cyber street background me dynamic pose me lane ke liye is prompt ka use karein:"
+        ]
+      },
+      {
+        "heading": "Pose Change: Crossed Arms in Cyber Street Prompt (Copy-Ready)",
+        "paragraphs": [
+          "A medium shot of the same Indian male model standing inside a glowing cyberpunk street at night, looking confidently at the camera with crossed arms, wet asphalt reflections, neon cyan lighting --cref [Insert_Base_Image_URL] --cw 100 --ar 16:9"
+        ]
+      },
+      {
+        "heading": "Step 3: Master the `--cw` (Character Weight) Modifier",
+        "paragraphs": [
+          "`--cw` parameter Midjourney copy engine ko batata hai ki character ke face structure ke sath-sath uske **kapde, baal, aur original accessories** ko kitna strictly match karna hai:",
+          "1. `--cw 100` (Default): Face, hairstyle, aur original dress structure ( hoodie, shirt) teenon ko follow karega.",
+          "2. `--cw 0`: Baal aur kapdo ko poori tarah ignore karega aur **sirf and sirf face structures** ko follow karega. Yeh sabse best option hai jab aap character ke kapde (outfits) aur hairstyle ko alag-alag scenes me change karna chahein!",
+          "Apne character ko library scene me green sweater me reading pose me lane ke liye niche diye gaye prompts ka use karein:"
+        ]
+      },
+      {
+        "heading": "Outfit Change: Reading a Book in Library Prompt (Copy-Ready)",
+        "paragraphs": [
+          "A close-up shot of the same Indian male model sitting in a warm library, wearing a dark green sweater and reading a book, soft window light --cref [Insert_Base_Image_URL] --cw 0 --ar 16:9"
+        ]
+      },
+      {
+        "heading": "Top 5 Pro Tips for 100% Character Consistency",
+        "paragraphs": [
+          "1. **Clarity First:** Base image me hamesha single character neutral studio style portrait use karein. Dual characters ya complex actions se bachein.",
+          "2. **Neutral Outfits:** Apne base prompt me solid neutral colors (jaise black/grey hoodie) define karein jise tracking bot asani se recognize kar sake.",
+          "3. **Change Outfits Using `--cw 0`:** Agar character ka dress badalna hai, to `--cw 0` use karein aur naye prompt me new outfit details explicit mention karein.",
+          "4. **Keep Style Consistent:** Agar base image realism style me hai, to action prompt bhi realism me likhein. Anime character ko realism prompt ke sath `--cref` dene par visual glitches aane lagte hain."
+        ]
+      },
+      {
+        "heading": "Frequently Asked Questions (FAQs)",
+        "paragraphs": [
+          "Q: Kya hum anime ya illustrative characters par `--cref` use kar sakte hain? - A: Bilkul! Midjourney `--cref` feature photo-realistic, anime, 3D clay, aur water-color illustration styles sabhi par equally effective kaam karta hai, bas base and action style match rakhin.",
+          "Q: Midjourney web version me `--cref` kaise lagayein? - A: Midjourney Alpha web view me image generate karne ke baad use click karein, and prompt editor input box me drop custom image as a 'Character Reference' icon selectively use karein."
+        ]
+      }
+    ]
+  },
+  {
     "slug": "how-create-viral-ai-reel-videos-luma-runway",
     "title": "How to Create Viral AI Reel Videos with Luma & Runway: Step-by-Step Guide (2026)",
     "seoTitle": "Create Viral AI Reels with Luma & Runway (2026 Guide)",
