@@ -17,37 +17,37 @@ export default async function PromptPage({ params }: PromptPageProps) {
   }
 
   return (
-    <article className="mx-auto max-w-4xl space-y-6">
-      <Link href="/prompt" className="theme-button theme-soft-hover inline-flex items-center rounded-sm px-4 py-2 text-sm font-semibold">
+    <article className="mx-auto max-w-4xl space-y-5">
+      <Link href="/prompt" className="theme-button theme-soft-hover inline-flex items-center rounded-none px-3.5 py-1.5 text-xs font-semibold">
         Back to Gallery
       </Link>
-      <div className="site-panel overflow-hidden rounded-2xl">
-        <div className="relative aspect-video border-b border-slate-200">
+      <div className="site-panel overflow-hidden rounded-none">
+        <div className="relative aspect-[1000/630] border-b border-slate-200">
           <Image src={prompt.image} alt={prompt.title} fill sizes="(max-width: 1024px) 100vw, 900px" className="object-cover" />
         </div>
-        <div className="space-y-5 px-6 py-8 sm:px-10 sm:py-10">
-          <div className="flex flex-wrap items-center gap-2">
+        <div className="space-y-4 px-5 py-6 sm:px-8 sm:py-8">
+          <div className="flex flex-wrap items-center gap-1.5">
             {prompt.tags.map((tag) => (
-              <span key={tag} className="theme-chip rounded-full px-3 py-1 text-xs font-semibold">
+              <span key={tag} className="theme-chip rounded-none px-2.5 py-0.5 text-[10px] font-semibold">
                 {tag}
               </span>
             ))}
           </div>
-          <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl">
+          <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-xl font-bold sm:text-2xl">
             {prompt.title}
           </h1>
-          <div className="rounded-2xl border border-dashed border-[#d6c7b6] px-4 py-4">
+          <div className="rounded-none border border-dashed border-[#d6c7b6] px-3.5 py-3.5">
             <div className="flex flex-wrap items-center justify-between gap-3">
-              <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.22em]">Prompt</p>
+              <p className="theme-kicker text-[10px] font-semibold uppercase tracking-[0.22em]">Prompt</p>
               <CopyButton text={prompt.prompt} />
             </div>
-            <p className="theme-text-secondary mt-3 text-sm leading-7">{prompt.prompt}</p>
+            <p className="theme-text-secondary mt-2.5 text-xs leading-6">{prompt.prompt}</p>
           </div>
           <a
             href={prompt.tryUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center rounded-full bg-[#159947] px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#159947]/25 transition hover:-translate-y-0.5 hover:bg-[#0d7a38]"
+            className="inline-flex items-center rounded-none bg-[#159947] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-[#159947]/25 transition hover:-translate-y-0.5 hover:bg-[#0d7a38]"
           >
             Try This Prompt
           </a>

@@ -46,7 +46,7 @@ export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; 
       <div className="mb-4">
         <div>
           <span className="theme-text-muted mb-2 block text-xs font-bold uppercase tracking-[0.18em]">Filter by Category</span>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {filters.map((item) => (
               <button
                 key={item}
@@ -54,7 +54,7 @@ export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; 
                 onClick={() => {
                   setCategory(item);
                 }}
-                className={`rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300 ${
+                className={`rounded-none px-3.5 py-1.5 text-xs font-semibold transition-all duration-300 ${
                   category === item ? "theme-chip-active shadow-sm" : "theme-chip theme-soft-hover"
                 }`}
               >
@@ -77,9 +77,9 @@ export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; 
           ))}
         </div>
       ) : (
-        <div className="site-panel rounded-2xl px-6 py-12 text-center">
-          <h2 className="theme-text-primary font-(family-name:--font-heading) text-2xl font-bold">No articles found</h2>
-          <p className="theme-text-secondary mt-3">Try a different search term or check another category.</p>
+        <div className="site-panel rounded-none px-5 py-10 text-center">
+          <h2 className="theme-text-primary font-(family-name:--font-heading) text-xl font-bold">No articles found</h2>
+          <p className="theme-text-secondary mt-2.5 text-xs">Try a different search term or check another category.</p>
         </div>
       )}
     </div>

@@ -78,12 +78,12 @@ export default function WebDevelopmentWithAiCoursePage() {
     <div className="mx-auto max-w-5xl space-y-10">
       <Link
         href="/#courses"
-        className="theme-button theme-soft-hover inline-flex items-center rounded-sm px-4 py-2 text-sm font-semibold"
+        className="theme-button theme-soft-hover inline-flex items-center rounded-none px-3.5 py-1.5 text-xs font-semibold"
       >
         Back to Courses
       </Link>
 
-      <section className="site-panel overflow-hidden rounded-2xl">
+      <section className="site-panel overflow-hidden rounded-none">
         <div className="relative aspect-[16/9]">
           <Image
             src="/posts/30dayweb-development.png"
@@ -94,23 +94,23 @@ export default function WebDevelopmentWithAiCoursePage() {
             className="object-cover"
           />
         </div>
-        <div className="space-y-5 px-6 py-8 sm:px-10">
-          <div className="theme-kicker text-xs font-semibold uppercase tracking-[0.24em]">Course Series</div>
-          <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-4xl font-bold sm:text-5xl">
+        <div className="space-y-4 px-5 py-6 sm:px-8">
+          <div className="theme-kicker text-[10px] font-semibold uppercase tracking-[0.24em]">Course Series</div>
+          <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-3xl font-bold sm:text-4xl">
             Web Development with AI (30 Days)
           </h1>
-          <p className="theme-text-secondary max-w-3xl text-base leading-7 sm:text-lg">
+          <p className="theme-text-secondary max-w-3xl text-sm leading-6">
             Beginner se लेकर practical project तक - हर दिन एक नई skill. AI ka use karke fast learning, clean code,
             aur real-world web pages banana सीखें।
           </p>
-          <div className="flex flex-wrap gap-3">
-            <span className="theme-surface theme-text-muted rounded-full px-4 py-2 text-xs font-semibold">
+          <div className="flex flex-wrap gap-2 pt-0.5">
+            <span className="theme-surface theme-text-muted rounded-none px-2.5 py-0.5 text-[10px] font-semibold">
               Beginner Friendly
             </span>
-            <span className="theme-surface theme-text-muted rounded-full px-4 py-2 text-xs font-semibold">
+            <span className="theme-surface theme-text-muted rounded-none px-2.5 py-0.5 text-[10px] font-semibold">
               Daily Lectures
             </span>
-            <span className="theme-surface theme-text-muted rounded-full px-4 py-2 text-xs font-semibold">
+            <span className="theme-surface theme-text-muted rounded-none px-2.5 py-0.5 text-[10px] font-semibold">
               Project Based
             </span>
           </div>
@@ -122,8 +122,8 @@ export default function WebDevelopmentWithAiCoursePage() {
           Lectures
         </h2>
         <div className="content-grid md:grid-cols-2">
-          <Link href="/courses/web-development-with-ai/lecture-01" className="tool-card group rounded-2xl p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+          <Link href="/courses/web-development-with-ai/lecture-01" className="tool-card group rounded-none p-3">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-none">
               <Image
                 src="/posts/lecture-01.png"
                 alt="Day 01 lecture thumbnail"
@@ -132,12 +132,12 @@ export default function WebDevelopmentWithAiCoursePage() {
                 className="object-cover transition duration-300 group-hover:scale-[1.02]"
               />
             </div>
-            <div className="mt-4 space-y-2">
-              <p className="theme-text-primary text-lg font-bold text-center">HTML Basics: Structure, tags, forms</p>
+            <div className="mt-3 space-y-1">
+              <p className="theme-text-primary text-sm font-bold text-center">HTML Basics: Structure, tags, forms</p>
             </div>
           </Link>
-          <Link href="/courses/web-development-with-ai/lecture-02" className="tool-card group rounded-2xl p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+          <Link href="/courses/web-development-with-ai/lecture-02" className="tool-card group rounded-none p-3">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-none">
               <Image
                 src="/posts/lecture-02.png"
                 alt="Day 02 lecture thumbnail"
@@ -146,12 +146,12 @@ export default function WebDevelopmentWithAiCoursePage() {
                 className="object-cover transition duration-300 group-hover:scale-[1.02]"
               />
             </div>
-            <div className="mt-4 space-y-2">
-              <p className="theme-text-primary text-lg font-bold text-center">HTML Basics: Build Simple webpage</p>
+            <div className="mt-3 space-y-1">
+              <p className="theme-text-primary text-sm font-bold text-center">HTML Basics: Build Simple webpage</p>
             </div>
           </Link>
-          <Link href="/courses/web-development-with-ai/lecture-03" className="tool-card group rounded-2xl p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+          <Link href="/courses/web-development-with-ai/lecture-03" className="tool-card group rounded-none p-3">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-none">
               <Image
                 src="/posts/lecture-03.png"
                 alt="Day 03 lecture thumbnail"
@@ -160,14 +160,14 @@ export default function WebDevelopmentWithAiCoursePage() {
                 className="object-cover transition duration-300 group-hover:scale-[1.02]"
               />
             </div>
-            <div className="mt-4 space-y-2">
-              <p className="theme-text-primary text-lg font-bold text-center">
+            <div className="mt-3 space-y-1">
+              <p className="theme-text-primary text-sm font-bold text-center">
                 CSS Basics: Flexbox, Grid, Responsive
               </p>
             </div>
           </Link>
-          <Link href="/courses/web-development-with-ai/lecture-04" className="tool-card group rounded-2xl p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+          <Link href="/courses/web-development-with-ai/lecture-04" className="tool-card group rounded-none p-3">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-none">
               <Image
                 src="/posts/lecture-04.png"
                 alt="Day 04 lecture thumbnail"
@@ -176,14 +176,14 @@ export default function WebDevelopmentWithAiCoursePage() {
                 className="object-cover transition duration-300 group-hover:scale-[1.02]"
               />
             </div>
-            <div className="mt-4 space-y-2">
-              <p className="theme-text-primary text-lg font-bold text-center">
+            <div className="mt-3 space-y-1">
+              <p className="theme-text-primary text-sm font-bold text-center">
                 Advanced CSS: Animations, Hover Effects, Modern UI Design
               </p>
             </div>
           </Link>
-          <Link href="/courses/web-development-with-ai/lecture-05" className="tool-card group rounded-2xl p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+          <Link href="/courses/web-development-with-ai/lecture-05" className="tool-card group rounded-none p-3">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-none">
               <Image
                 src="/posts/lecture-05.png"
                 alt="Day 05 lecture thumbnail"
@@ -192,14 +192,14 @@ export default function WebDevelopmentWithAiCoursePage() {
                 className="object-cover transition duration-300 group-hover:scale-[1.02]"
               />
             </div>
-            <div className="mt-4 space-y-2">
-              <p className="theme-text-primary text-lg font-bold text-center">
+            <div className="mt-3 space-y-1">
+              <p className="theme-text-primary text-sm font-bold text-center">
                 Advanced CSS: Product Card UI, Hover Effects, Animations
               </p>
             </div>
           </Link>
-          <Link href="/courses/web-development-with-ai/lecture-06" className="tool-card group rounded-2xl p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+          <Link href="/courses/web-development-with-ai/lecture-06" className="tool-card group rounded-none p-3">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-none">
               <Image
                 src="/posts/lecture-06.png"
                 alt="Day 06 lecture thumbnail"
@@ -208,14 +208,14 @@ export default function WebDevelopmentWithAiCoursePage() {
                 className="object-cover transition duration-300 group-hover:scale-[1.02]"
               />
             </div>
-            <div className="mt-4 space-y-2">
-              <p className="theme-text-primary text-lg font-bold text-center">
+            <div className="mt-3 space-y-1">
+              <p className="theme-text-primary text-sm font-bold text-center">
                 Mini Project 1: Portfolio Website (Basic)
               </p>
             </div>
           </Link>
-          <Link href="/courses/web-development-with-ai/lecture-07" className="tool-card group rounded-2xl p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+          <Link href="/courses/web-development-with-ai/lecture-07" className="tool-card group rounded-none p-3">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-none">
               <Image
                 src="/posts/lecture-07.png"
                 alt="Day 07 lecture thumbnail"
@@ -224,14 +224,14 @@ export default function WebDevelopmentWithAiCoursePage() {
                 className="object-cover transition duration-300 group-hover:scale-[1.02]"
               />
             </div>
-            <div className="mt-4 space-y-2">
-              <p className="theme-text-primary text-lg font-bold text-center">
+            <div className="mt-3 space-y-1">
+              <p className="theme-text-primary text-sm font-bold text-center">
                 Revision + GitHub Upload + Deployment + LinkedIn Post
               </p>
             </div>
           </Link>
-          <Link href="/courses/web-development-with-ai/lecture-08" className="tool-card group rounded-2xl p-4">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+          <Link href="/courses/web-development-with-ai/lecture-08" className="tool-card group rounded-none p-3">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-none">
               <Image
                 src="/posts/lecture-08.png"
                 alt="Day 08 lecture thumbnail"
@@ -240,8 +240,8 @@ export default function WebDevelopmentWithAiCoursePage() {
                 className="object-cover transition duration-300 group-hover:scale-[1.02]"
               />
             </div>
-            <div className="mt-4 space-y-2">
-              <p className="theme-text-primary text-lg font-bold text-center">
+            <div className="mt-3 space-y-1">
+              <p className="theme-text-primary text-sm font-bold text-center">
                 JavaScript Basics: Variables, Data Types, Functions & Conditions
               </p>
             </div>

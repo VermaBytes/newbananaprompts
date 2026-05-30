@@ -58,18 +58,18 @@ export function Navbar() {
             <img
               src="/main-logo.png"
               alt="NB Prompts Logo"
-              className="h-12 w-12 rounded-2xl object-cover shadow-[0_0_25px_rgba(56,189,248,0.45)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3"
+              className="h-10 w-10 rounded-none object-cover shadow-[0_0_20px_rgba(56,189,248,0.35)] transition-all duration-500 group-hover:scale-105 group-hover:rotate-1"
             />
 
-            <div className="absolute inset-0 rounded-2xl bg-cyan-400/20 blur-xl transition-all duration-500 group-hover:bg-cyan-400/40" />
+            <div className="absolute inset-0 rounded-none bg-cyan-400/20 blur-lg transition-all duration-500 group-hover:bg-cyan-400/40" />
           </div>
 
           <div className="hidden sm:block">
-            <h2 className="bg-gradient-to-r from-cyan-400 via-blue-400 to-orange-400 bg-clip-text text-lg font-extrabold tracking-wide text-transparent">
+            <h2 className="bg-gradient-to-r from-cyan-400 via-blue-400 to-orange-400 bg-clip-text text-sm font-extrabold tracking-wide text-transparent">
               NB Prompts
             </h2>
 
-            <p className="text-xs text-slate-400 transition-all duration-300 group-hover:text-slate-300">
+            <p className="text-[10px] text-slate-400 transition-all duration-300 group-hover:text-slate-300">
               AI Tools & Blogs Hub
             </p>
           </div>
@@ -78,22 +78,22 @@ export function Navbar() {
         {/* =========================
             DESKTOP NAVIGATION
         ========================= */}
-        <nav className="hidden items-center gap-2 lg:flex">
+        <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`group relative overflow-hidden rounded-full px-5 py-2 text-sm font-semibold transition-all duration-500 ${
+              className={`group relative overflow-hidden rounded-none px-3.5 py-1.5 text-xs font-semibold transition-all duration-500 ${
                 pathname === item.href
-                  ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-[0_0_25px_rgba(56,189,248,0.5)]"
+                  ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-[0_0_20px_rgba(56,189,248,0.4)]"
                   : "text-slate-300 hover:text-white"
               }`}
             >
               {/* HOVER GLOW */}
-              <span className="absolute inset-0 -z-10 scale-0 rounded-full bg-gradient-to-r from-cyan-500/20 to-orange-500/20 transition-all duration-500 group-hover:scale-100" />
+              <span className="absolute inset-0 -z-10 scale-0 rounded-none bg-gradient-to-r from-cyan-500/20 to-orange-500/20 transition-all duration-500 group-hover:scale-100" />
 
               {/* ACTIVE BORDER */}
-              <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-full bg-cyan-400 transition-all duration-500 group-hover:w-3/4" />
+              <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-none bg-cyan-400 transition-all duration-500 group-hover:w-3/4" />
 
               {item.label}
             </Link>
@@ -111,13 +111,13 @@ export function Navbar() {
             className="hidden lg:block"
           >
             <div className="relative">
-              <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-slate-400">
+              <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-400">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
-                  className="h-4 w-4"
+                  className="h-3.5 w-3.5"
                 >
                   <circle cx="11" cy="11" r="7" />
                   <path d="M16.65 16.65L21 21" />
@@ -131,7 +131,7 @@ export function Navbar() {
                   setSearchQuery(event.target.value)
                 }
                 placeholder="Search blogs..."
-                className="w-[260px] rounded-full border border-cyan-400/20 bg-white/5 px-4 py-3 pl-11 text-sm text-white shadow-[0_0_20px_rgba(56,189,248,0.08)] outline-none backdrop-blur-md transition-all duration-500 placeholder:text-slate-400 focus:border-cyan-400 focus:bg-white/10 focus:shadow-[0_0_35px_rgba(56,189,248,0.35)]"
+                className="w-[200px] rounded-none border border-cyan-400/20 bg-white/5 px-3 py-1.5 pl-9 text-xs text-white shadow-[0_0_15px_rgba(56,189,248,0.08)] outline-none backdrop-blur-md transition-all duration-500 placeholder:text-slate-400 focus:border-cyan-400 focus:bg-white/10 focus:shadow-[0_0_25px_rgba(56,189,248,0.25)]"
               />
             </div>
           </form>
@@ -140,7 +140,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen((open) => !open)}
-            className="inline-flex items-center justify-center rounded-full border border-cyan-400/20 bg-white/5 p-3 text-white shadow-[0_0_15px_rgba(56,189,248,0.08)] transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(56,189,248,0.25)] lg:hidden"
+            className="inline-flex items-center justify-center rounded-none border border-cyan-400/20 bg-white/5 p-2 text-white shadow-[0_0_10px_rgba(56,189,248,0.08)] transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(56,189,248,0.25)] lg:hidden"
             aria-label="Toggle navigation"
           >
             <svg
@@ -176,7 +176,7 @@ export function Navbar() {
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className={`rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-300 ${
+              className={`rounded-none px-3.5 py-2 text-xs font-semibold transition-all duration-300 ${
                 pathname === item.href
                   ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
                   : "text-slate-300 hover:bg-white/10 hover:text-white"
@@ -187,15 +187,15 @@ export function Navbar() {
           ))}
 
           {/* MOBILE SEARCH */}
-          <form onSubmit={handleSearch} className="pt-2">
+          <form onSubmit={handleSearch} className="pt-1.5">
             <div className="relative">
-              <span className="pointer-events-none absolute inset-y-0 left-4 flex items-center text-slate-400">
+              <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-400">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
-                  className="h-4 w-4"
+                  className="h-3.5 w-3.5"
                 >
                   <circle cx="11" cy="11" r="7" />
                   <path d="M16.65 16.65L21 21" />
@@ -209,7 +209,7 @@ export function Navbar() {
                   setSearchQuery(event.target.value)
                 }
                 placeholder="Search blogs..."
-                className="w-full rounded-full border border-cyan-400/20 bg-white/5 px-4 py-3 pl-11 text-sm text-white outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400 focus:bg-white/10"
+                className="w-full rounded-none border border-cyan-400/20 bg-white/5 px-3 py-2 pl-9 text-xs text-white outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400 focus:bg-white/10"
               />
             </div>
           </form>

@@ -1,155 +1,82 @@
 import Link from "next/link";
+import Image from "next/image";
+import type { BlogPost } from "@/lib/posts";
 
-export function HomeHero() {
+export function HomeHero({ latestPost }: { latestPost: BlogPost }) {
+  if (!latestPost) return null;
+
   return (
-    <section className="relative overflow-hidden rounded-[2rem] border border-cyan-400/10 bg-[#020617] px-6 py-8 md:py-10 md:px-8 shadow-[0_0_50px_rgba(56,189,248,0.06)] lg:min-h-[420px] lg:flex lg:items-center">
-      
-      {/* =========================
-          AI BACKGROUND EFFECTS
-      ========================= */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    <section className="relative overflow-hidden border-b border-slate-100 dark:border-cyan-950/20 pb-10 pt-1">
+      <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
         
-        {/* CYAN GLOW */}
-        <div className="absolute left-0 top-0 h-64 w-64 animate-pulse rounded-full bg-cyan-500/15 blur-3xl" />
+        {/* LEFT SIDE: MASSIVE THUMBNAIL (SHARP, CROP-FREE) */}
+        <Link
+          href={`/post/${latestPost.slug}`}
+          className="group relative block aspect-[1000/630] overflow-hidden w-full rounded-none border border-slate-200/60 dark:border-cyan-500/10 shadow-[0_10px_25px_rgba(0,0,0,0.06)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.25)] transition-all duration-500"
+        >
+          <Image
+            src={latestPost.image}
+            alt={latestPost.title}
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 750px"
+            className="object-cover transition duration-700 group-hover:scale-[1.015]"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#020617]/30 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
+        </Link>
 
-        {/* ORANGE GLOW */}
-        <div className="absolute bottom-0 right-0 h-64 w-64 animate-pulse rounded-full bg-orange-500/15 blur-3xl" />
-
-        {/* CENTER AI LIGHT */}
-        <div className="absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 animate-ping rounded-full bg-blue-500/5 blur-3xl" />
-
-        {/* GRID EFFECT */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px]" />
-      </div>
-
-      <div className="relative w-full grid gap-6 lg:grid-cols-[1.3fr_0.7fr] lg:items-center">
-        
-        {/* =========================
-            LEFT CONTENT
-        ========================= */}
-        <div className="space-y-4">
+        {/* RIGHT SIDE: EDITORIAL CONTENT (COMPACT & SHARP) */}
+        <div className="space-y-2.5 lg:pl-2">
           
-          {/* BADGE */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-500/10 px-3 py-1 text-[9px] font-bold uppercase tracking-[0.2em] text-cyan-300 shadow-[0_0_12px_rgba(56,189,248,0.08)]">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-400" />
-            AI Prompt & Blog Hub
+          {/* CATEGORY BADGE PILL */}
+          <div className="inline-flex items-center gap-1.5 rounded-none bg-cyan-500/10 dark:bg-cyan-500/20 px-2 py-0.5 text-[7.5px] font-extrabold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-300 border border-cyan-500/10 dark:border-cyan-400/20 shadow-sm">
+            <span className="h-1.5 w-1.5 rounded-none bg-cyan-500 dark:bg-cyan-400 animate-pulse" />
+            {latestPost.category}
           </div>
 
-          {/* HEADING */}
-          <div className="space-y-3">
-            <h1 className="max-w-2xl text-balance font-[family-name:var(--font-heading)] text-xl sm:text-2xl lg:text-[2.2rem] lg:leading-[1.15] font-extrabold tracking-tight text-white">
-              Create Stunning{" "}
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-orange-400 bg-clip-text text-transparent">
-                AI Images & Videos
-              </span>{" "}
-              with Powerful Creator Prompts.
-            </h1>
-
-            <p className="max-w-xl text-xs leading-5 text-slate-400">
-              Discover cinematic AI prompts, Midjourney ideas,
-              video generation workflows, blogging resources,
-              and modern creator tools designed for editors,
-              designers, marketers, and AI creators.
-            </p>
-          </div>
-
-          {/* BUTTONS */}
-          <div className="flex flex-wrap gap-2.5">
-            
-            <Link
-              href="#latest-posts"
-              className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-4.5 py-2.5 text-xs font-semibold text-white shadow-[0_0_15px_rgba(56,189,248,0.2)] transition-all duration-500 hover:scale-105"
+          {/* TITLE */}
+          <h1 className="font-[family-name:var(--font-heading)] text-lg sm:text-xl lg:text-[1.55rem] lg:leading-[1.25] font-extrabold tracking-tight text-slate-900 dark:text-white">
+            <Link 
+              href={`/post/${latestPost.slug}`} 
+              className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300"
             >
-              <span className="absolute inset-0 bg-white/10 opacity-0 transition duration-500 group-hover:opacity-100" />
-              <span className="relative z-10">Explore AI Prompts</span>
+              {latestPost.title}
             </Link>
+          </h1>
 
+          {/* DATE & AUTHOR WITH HIGH-FIDELITY ICONS */}
+          <div className="flex flex-wrap items-center gap-3 text-[10px] font-semibold text-slate-500 dark:text-slate-400 pt-0.5">
+            <span className="flex items-center gap-1.5">
+              <svg className="h-3.5 w-3.5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              {latestPost.dateLabel}
+            </span>
+            <span className="text-slate-300 dark:text-slate-700">|</span>
+            <span className="flex items-center gap-1.5">
+              <svg className="h-3.5 w-3.5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+              By {latestPost.author}
+            </span>
+          </div>
+
+          {/* EXCERPT */}
+          <p className="theme-text-secondary text-[11px] leading-relaxed max-w-xl font-medium">
+            {latestPost.description}
+          </p>
+
+          {/* PREMIUM CAPSULE CTA BUTTON */}
+          <div className="pt-1.5">
             <Link
-              href="/about"
-              className="rounded-lg border border-white/10 bg-white/5 px-4.5 py-2.5 text-xs font-semibold text-white backdrop-blur-md transition-all duration-500 hover:border-cyan-400/40 hover:text-cyan-300"
+              href={`/post/${latestPost.slug}`}
+              className="group inline-flex items-center gap-2 rounded-none bg-slate-900 dark:bg-white text-white dark:text-slate-950 px-3.5 py-2 text-[11px] font-bold shadow-[0_4px_15px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_20px_rgba(56,189,248,0.08)] hover:bg-cyan-600 dark:hover:bg-cyan-400 hover:text-white dark:hover:text-slate-950 transition-all duration-300 hover:scale-105"
             >
-              Learn More
+              Read Full Article
+              <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </Link>
-          </div>
-
-          {/* STATS */}
-          <div className="flex flex-wrap gap-3 pt-1">
-            
-            <div className="rounded-xl border border-white/5 bg-white/5 px-3.5 py-2 backdrop-blur-md">
-              <h3 className="text-base font-bold text-white">500+</h3>
-              <p className="text-[9px] text-slate-400">AI Prompts</p>
-            </div>
-
-            <div className="rounded-xl border border-white/5 bg-white/5 px-3.5 py-2 backdrop-blur-md">
-              <h3 className="text-base font-bold text-white">50+</h3>
-              <p className="text-[9px] text-slate-400">Creator Tools</p>
-            </div>
-
-            <div className="rounded-xl border border-white/5 bg-white/5 px-3.5 py-2 backdrop-blur-md">
-              <h3 className="text-base font-bold text-white">24/7</h3>
-              <p className="text-[9px] text-slate-400">AI Resources</p>
-            </div>
-          </div>
-        </div>
-
-        {/* =========================
-            RIGHT SIDE AI CARDS
-        ========================= */}
-        <div className="relative grid gap-3.5 md:grid-cols-2 lg:grid-cols-1">
-          
-          {/* CARD 1 */}
-          <div className="group relative overflow-hidden rounded-[1.2rem] border border-cyan-400/10 bg-white/5 p-4 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/20">
-            
-            <div className="absolute right-0 top-0 h-16 w-16 rounded-full bg-cyan-500/5 blur-xl" />
-
-            <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-cyan-300">
-              Trending AI Topics
-            </p>
-
-            <div className="mt-3 space-y-1.5 text-xs font-semibold text-white">
-              
-              <div className="flex items-center gap-2 rounded-lg border border-white/5 bg-white/5 px-2.5 py-1.5 transition-all duration-300 hover:bg-white/10">
-                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-                Midjourney Portrait Prompts
-              </div>
-
-              <div className="flex items-center gap-2 rounded-lg border border-white/5 bg-white/5 px-2.5 py-1.5 transition-all duration-300 hover:bg-white/10">
-                <span className="h-1.5 w-1.5 rounded-full bg-orange-400" />
-                AI Product Ad Prompts
-              </div>
-
-              <div className="flex items-center gap-2 rounded-lg border border-white/5 bg-white/5 px-2.5 py-1.5 transition-all duration-300 hover:bg-white/10">
-                <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
-                Cinematic Video Prompts
-              </div>
-            </div>
-          </div>
-
-          {/* CARD 2 */}
-          <div className="group relative overflow-hidden rounded-[1.2rem] border border-orange-400/10 bg-white/5 p-4 backdrop-blur-xl transition-all duration-500 hover:border-orange-400/20">
-            
-            <div className="absolute bottom-0 left-0 h-16 w-16 rounded-full bg-orange-500/5 blur-xl" />
-
-            <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-orange-300">
-              Why NB Prompts
-            </p>
-
-            <p className="mt-2 text-xs leading-relaxed text-slate-400">
-              Built for creators who want high-quality AI prompts,
-              SEO-friendly content, and modern workflows in one powerful platform.
-            </p>
-
-            {/* MINI FEATURES */}
-            <div className="mt-3 flex flex-wrap gap-1.5">
-              
-              <span className="rounded-full border border-cyan-400/20 bg-cyan-500/5 px-2.5 py-0.5 text-[8px] font-semibold text-cyan-300">
-                AI Prompts
-              </span>
-
-              <span className="rounded-full border border-orange-400/20 bg-orange-500/5 px-2.5 py-0.5 text-[8px] font-semibold text-orange-300">
-                Creator Tools
-              </span>
-            </div>
           </div>
         </div>
       </div>

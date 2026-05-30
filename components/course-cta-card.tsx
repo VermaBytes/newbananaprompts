@@ -23,12 +23,12 @@ export function CourseCtaCard({ ariaLabel }: CourseCtaCardProps) {
       type="button"
       aria-label={ariaLabel}
       onClick={handleClick}
-      className="tool-card group relative flex min-h-[180px] items-center justify-center rounded-[1.5rem] p-6 text-center"
+      className="tool-card group relative flex min-h-[150px] items-center justify-center rounded-none p-4 text-center"
     >
-      <div className="space-y-3">
-        <p className="theme-text-primary text-lg font-semibold tracking-wide">Start Learning</p>
+      <div className="space-y-2">
+        <p className="theme-text-primary text-base font-semibold tracking-wide">Start Learning</p>
         <span
-          className={`inline-flex items-center rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] transition ${
+          className={`inline-flex items-center rounded-none px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] transition ${
             showNotice ? "bg-[#0f766e] text-white" : "bg-transparent text-transparent"
           }`}
         >

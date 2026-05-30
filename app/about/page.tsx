@@ -22,14 +22,14 @@ export default function AboutPage() {
       </div>
 
       <div className="content-grid md:grid-cols-2">
-        <div className="theme-surface rounded-2xl p-6">
+        <div className="theme-surface rounded-none p-5">
           <h2 className="theme-text-primary text-xl font-bold">Our Mission</h2>
           <p className="theme-text-secondary mt-3 text-sm leading-7">
             Make prompt‑to‑image creation simple, professional, and reliable. We believe creators should spend less time
             experimenting and more time publishing.
           </p>
         </div>
-        <div className="theme-surface rounded-2xl p-6">
+        <div className="theme-surface rounded-none p-5">
           <h2 className="theme-text-primary text-xl font-bold">What We Offer</h2>
           <ul className="theme-text-secondary mt-3 text-sm leading-7">
             <li>Curated prompt packs for cinematic, devotional, and professional visuals.</li>
@@ -39,7 +39,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="theme-surface rounded-2xl p-6">
+      <div className="theme-surface rounded-none p-5">
         <h2 className="theme-text-primary text-xl font-bold">Why Creators Trust Us</h2>
         <p className="theme-text-secondary mt-3 text-sm leading-7">
           We test prompts across popular generators, keep layouts clean, and prioritize clarity. The goal is simple:
@@ -47,7 +47,7 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="theme-surface rounded-2xl p-6">
+      <div className="theme-surface rounded-none p-5">
         <h2 className="theme-text-primary text-xl font-bold">Contact</h2>
         <p className="theme-text-secondary mt-3 text-sm leading-7">
           For collaborations, prompt requests, or feedback, reach out at

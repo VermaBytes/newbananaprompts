@@ -4,16 +4,16 @@ export default function BlogsLoading() {
   return (
     <section className="space-y-5">
       <div className="space-y-2">
-        <div className="card-skeleton h-4 w-28 rounded-full" />
-        <div className="card-skeleton h-10 w-full max-w-lg rounded-2xl" />
-        <div className="card-skeleton h-5 w-full max-w-2xl rounded-xl" />
+        <div className="card-skeleton h-4 w-28 rounded-none" />
+        <div className="card-skeleton h-10 w-full max-w-lg rounded-none" />
+        <div className="card-skeleton h-5 w-full max-w-2xl rounded-none" />
       </div>
-      <div className="site-panel rounded-2xl p-5">
+      <div className="site-panel rounded-none p-5">
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
-          <div className="card-skeleton h-12 w-full rounded-xl" />
+          <div className="card-skeleton h-12 w-full rounded-none" />
           <div className="flex flex-wrap gap-2">
             {Array.from({ length: 4 }).map((_, index) => (
-              <div key={index} className="card-skeleton h-10 w-28 rounded-full" />
+              <div key={index} className="card-skeleton h-10 w-28 rounded-none" />
             ))}
           </div>
         </div>

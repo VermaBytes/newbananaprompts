@@ -469,3 +469,10 @@ html[data-theme="dark"] .sidebar-list button:hover {
   font-size: 1.125rem;
   font-weight: 700;
 }
+
+/* Force zero border radius everywhere for premium sharp, flat, enterprise look */
+*,
+*::before,
+*::after {
+  border-radius: 0px !important;
+}

@@ -46,15 +46,16 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const allPosts = getAllPosts();
-  const featuredPosts = allPosts.slice(0, 3);
-  const latestPosts = allPosts.slice(0, 6);
+  const latestPost = allPosts[0];
+  const featuredPosts = allPosts.slice(1, 4);
+  const latestPosts = allPosts.slice(1, 7);
 
   return (
     <div className="space-y-16">
       {/* =========================
           HERO SECTION
       ========================= */}
-      <HomeHero />
+      <HomeHero latestPost={latestPost} />
 
       {/* =========================
           FEATURED BLOGS
@@ -67,7 +68,7 @@ export default function HomePage() {
               Smart guides for AI prompts & tools.
             </h2>
           </div>
-          <Link href="/blogs" className="theme-button rounded-xl px-5 py-3 text-sm font-semibold transition hover:scale-105">
+          <Link href="/blogs" className="theme-button rounded-none px-3.5 py-2 text-xs font-semibold transition hover:scale-105">
             View All Articles
           </Link>
         </div>
@@ -96,7 +97,7 @@ export default function HomePage() {
           {/* TRACK 1 - DEVELOPER TRACK */}
           <Link
             href="/courses/web-development-with-ai"
-            className="tool-card group relative overflow-hidden rounded-[1.8rem] p-0"
+            className="tool-card group relative overflow-hidden rounded-none p-0"
             aria-label="Open Web Development with AI course"
           >
             <div className="relative aspect-[16/10]">
@@ -109,17 +110,17 @@ export default function HomePage() {
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition duration-300 group-hover:opacity-100">
-                <span className="hero-cta inline-flex items-center rounded-full px-5 py-3 text-sm font-semibold text-white shadow-lg">
+                <span className="hero-cta inline-flex items-center rounded-none px-4 py-2 text-xs font-semibold text-white shadow-lg">
                   Start Developer Track
                 </span>
               </div>
             </div>
-            <div className="space-y-3 px-6 py-6">
-              <span className="rounded-full bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 text-xs font-semibold text-cyan-300">
+            <div className="space-y-2.5 px-4.5 py-4.5">
+              <span className="rounded-none bg-cyan-500/10 border border-cyan-400/20 px-2 py-0.5 text-[10px] font-semibold text-cyan-300">
                 AI Developers Track
               </span>
-              <h3 className="theme-text-primary text-xl font-bold pt-1">Web Development with AI (30 Days)</h3>
-              <p className="theme-text-secondary text-sm leading-6">
+              <h3 className="theme-text-primary text-lg font-bold pt-0.5">Web Development with AI (30 Days)</h3>
+              <p className="theme-text-secondary text-xs leading-5">
                 Learn HTML, CSS, JavaScript, and modern layout structures 10x faster using AI prompts. (Lectures: 08/30 Complete)
               </p>
             </div>
@@ -127,7 +128,7 @@ export default function HomePage() {
 
           {/* TRACK 2 - CREATOR TRACK */}
           <div
-            className="tool-card group relative overflow-hidden rounded-[1.8rem] p-0 opacity-90 cursor-not-allowed"
+            className="tool-card group relative overflow-hidden rounded-none p-0 opacity-90 cursor-not-allowed"
           >
             <div className="relative aspect-[16/10]">
               <Image
@@ -139,17 +140,17 @@ export default function HomePage() {
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="bg-orange-500/90 text-white rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-wider shadow-lg">
+                <span className="bg-orange-500/90 text-white rounded-none px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider shadow-lg">
                   Coming Soon
                 </span>
               </div>
             </div>
-            <div className="space-y-3 px-6 py-6">
-              <span className="rounded-full bg-orange-500/10 border border-orange-400/20 px-3 py-1 text-xs font-semibold text-orange-300">
+            <div className="space-y-2.5 px-4.5 py-4.5">
+              <span className="rounded-none bg-orange-500/10 border border-orange-400/20 px-2 py-0.5 text-[10px] font-semibold text-orange-300">
                 AI Creators Track
               </span>
-              <h3 className="theme-text-primary text-xl font-bold pt-1">Prompt Engineering & Automation</h3>
-              <p className="theme-text-secondary text-sm leading-6">
+              <h3 className="theme-text-primary text-lg font-bold pt-0.5">Prompt Engineering & Automation</h3>
+              <p className="theme-text-secondary text-xs leading-5">
                 Master Midjourney art style codes, ChatGPT advanced prompt structures, and Zapier/Make AI automations.
               </p>
             </div>
@@ -169,7 +170,7 @@ export default function HomePage() {
               Fresh blog posts and prompt guides.
             </h2>
           </div>
-          <Link href="/blogs" className="theme-button rounded-xl px-5 py-3 text-sm font-semibold transition hover:scale-105">
+          <Link href="/blogs" className="theme-button rounded-none px-3.5 py-2 text-xs font-semibold transition hover:scale-105">
             Browse All Blogs
           </Link>
         </div>

@@ -160,7 +160,7 @@ export default async function PostPage({ params }: PostPageProps) {
       <div className="flex items-center">
         <Link
           href="/blogs"
-          className="theme-button theme-soft-hover inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition hover:scale-105"
+          className="theme-button theme-soft-hover inline-flex items-center gap-2 rounded-none px-3.5 py-1.5 text-xs font-semibold"
         >
           ← All Articles
         </Link>
@@ -175,7 +175,7 @@ export default async function PostPage({ params }: PostPageProps) {
             LEFT COLUMN: ARTICLE
         ========================= */}
         <div className="space-y-8">
-          <article className="site-panel overflow-hidden rounded-[2rem] shadow-lg border border-cyan-400/10 dark:border-white/10">
+          <article className="site-panel overflow-hidden rounded-none shadow-lg border border-cyan-400/10 dark:border-white/10">
             
             {/* FEATURED IMAGE */}
             <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-cyan-400/10 dark:border-white/10">
@@ -191,11 +191,11 @@ export default async function PostPage({ params }: PostPageProps) {
             </div>
 
             {/* ARTICLE CONTENTS */}
-            <div className="space-y-6 px-6 py-8 sm:px-10 sm:py-10">
+            <div className="space-y-5 px-5 py-6 sm:px-8 sm:py-8">
               
               {/* METADATA CHIPS */}
-              <div className="flex flex-wrap items-center gap-4 text-xs font-semibold uppercase tracking-wider">
-                <span className="rounded-full bg-cyan-500/10 border border-cyan-400/20 px-4 py-1.5 text-cyan-300">
+              <div className="flex flex-wrap items-center gap-3 text-[10px] font-semibold uppercase tracking-wider">
+                <span className="rounded-none bg-cyan-500/10 border border-cyan-400/20 px-2.5 py-0.5 text-cyan-300">
                   {post.category}
                 </span>
                 <span className="theme-text-muted">{post.dateLabel}</span>
@@ -203,47 +203,47 @@ export default async function PostPage({ params }: PostPageProps) {
               </div>
 
               {/* HEADING & SUBTITLE */}
-              <header className="space-y-4">
-                <h1 className="theme-text-primary text-balance font-[family-name:var(--font-heading)] text-2xl font-extrabold sm:text-3xl lg:text-[2.2rem] leading-tight tracking-tight">
+              <header className="space-y-3.5">
+                <h1 className="theme-text-primary text-balance font-[family-name:var(--font-heading)] text-xl font-extrabold sm:text-2xl lg:text-[1.85rem] leading-snug tracking-tight">
                   {post.title}
                 </h1>
-                <p className="theme-text-secondary text-base leading-8 sm:text-lg border-l-4 border-cyan-400 pl-4 py-1">
+                <p className="theme-text-secondary text-sm leading-7 border-l-4 border-cyan-400 pl-3 py-0.5">
                   {post.description}
                 </p>
               </header>
 
               {/* DYNAMIC POST CTA BOX */}
               {postCta ? (
-                <div className="theme-surface space-y-4 rounded-2xl px-4 py-4 text-center">
+                <div className="theme-surface space-y-3 rounded-none px-3.5 py-3.5 text-center">
                   {postCta.prompt ? (
-                    <div className="relative rounded-xl border border-dashed border-cyan-400/30 px-4 py-4 text-left">
+                    <div className="relative rounded-none border border-dashed border-cyan-400/30 px-3.5 py-3.5 text-left">
                       <div className="flex flex-wrap items-center justify-between gap-3">
-                        <p className="theme-kicker text-xs font-semibold uppercase tracking-[0.22em]">Main Prompt</p>
-                        <div className="flex items-center gap-2">
+                        <p className="theme-kicker text-[10px] font-semibold uppercase tracking-[0.22em]">Main Prompt</p>
+                        <div className="flex items-center gap-1.5">
                           <CopyButton text={postCta.prompt} />
                           <a
                             href={postCta.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center rounded-full bg-[#159947] px-4 py-2 text-xs font-semibold text-white shadow-lg shadow-[#159947]/25 transition hover:-translate-y-0.5 hover:bg-[#0d7a38]"
+                            className="inline-flex items-center rounded-none bg-[#159947] px-3 py-1.5 text-[10px] font-semibold text-white shadow-lg shadow-[#159947]/25 transition hover:-translate-y-0.5 hover:bg-[#0d7a38]"
                           >
                             Try Now
                           </a>
                         </div>
                       </div>
-                      <p className="theme-text-secondary mt-2 text-sm leading-7">{postCta.prompt}</p>
+                      <p className="theme-text-secondary mt-2 text-xs leading-6">{postCta.prompt}</p>
                     </div>
                   ) : null}
                 </div>
               ) : null}
 
               {/* SOCIAL SHARING COMPONENT */}
-              <div className="flex flex-wrap gap-2 pt-2 border-y border-cyan-400/5 py-4">
+              <div className="flex flex-wrap gap-1.5 pt-2 border-y border-cyan-400/5 py-3">
                 <a
                   href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="theme-button theme-soft-hover rounded-xl px-4 py-2 text-xs font-bold transition hover:scale-105"
+                  className="theme-button theme-soft-hover rounded-none px-3 py-1.5 text-[10px] font-bold transition hover:scale-105"
                 >
                   Share on X
                 </a>
@@ -251,7 +251,7 @@ export default async function PostPage({ params }: PostPageProps) {
                   href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="theme-button theme-soft-hover rounded-xl px-4 py-2 text-xs font-bold transition hover:scale-105"
+                  className="theme-button theme-soft-hover rounded-none px-3 py-1.5 text-[10px] font-bold transition hover:scale-105"
                 >
                   Share on Facebook
                 </a>
@@ -259,7 +259,7 @@ export default async function PostPage({ params }: PostPageProps) {
                   href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="theme-button theme-soft-hover rounded-xl px-4 py-2 text-xs font-bold transition hover:scale-105"
+                  className="theme-button theme-soft-hover rounded-none px-3 py-1.5 text-[10px] font-bold transition hover:scale-105"
                 >
                   Share on LinkedIn
                 </a>
@@ -280,14 +280,14 @@ export default async function PostPage({ params }: PostPageProps) {
                         {section.subheading ? (
                           <h3 className="theme-text-secondary text-sm font-semibold">{section.subheading}</h3>
                         ) : null}
-                        <div className="theme-surface space-y-3 rounded-2xl border border-dashed border-cyan-400/30 px-5 py-5 bg-cyan-950/5">
+                        <div className="theme-surface space-y-3 rounded-none border border-dashed border-cyan-400/30 px-4 py-4 bg-cyan-950/5">
                           <div className="flex flex-wrap items-center justify-between gap-3">
-                            <p className="theme-kicker text-xs font-bold uppercase tracking-[0.22em]">AI Prompt Box</p>
+                            <p className="theme-kicker text-[10px] font-bold uppercase tracking-[0.22em]">AI Prompt Box</p>
                             <CopyButton text={promptText} />
                           </div>
-                          <div className="space-y-4">
+                          <div className="space-y-3">
                             {section.paragraphs.map((paragraph) => (
-                              <p key={paragraph} className="theme-text-secondary text-sm leading-7">
+                              <p key={paragraph} className="theme-text-secondary text-xs leading-6">
                                 {paragraph}
                               </p>
                             ))}
@@ -327,41 +327,41 @@ export default async function PostPage({ params }: PostPageProps) {
         {/* =========================
             RIGHT COLUMN: STICKY SIDEBAR (Clean Editorial + Glowing AI effects)
         ========================= */}
-        <aside className="space-y-6 lg:sticky lg:top-24">
+        <aside className="space-y-5 lg:sticky lg:top-24">
           
           {/* SIDEBAR BLOCK: AI Academy Course CTA */}
-          <div className="group relative overflow-hidden rounded-[1.8rem] border border-cyan-400/20 bg-gradient-to-br from-cyan-950/40 to-slate-900/60 p-6 shadow-md backdrop-blur-xl transition hover:border-cyan-400/40">
-            <div className="absolute right-0 top-0 h-24 w-24 rounded-full bg-cyan-500/10 blur-2xl transition duration-500 group-hover:bg-cyan-500/25" />
-            <span className="rounded-full bg-cyan-500/10 border border-cyan-400/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-cyan-300">
+          <div className="group relative overflow-hidden rounded-none border border-cyan-400/20 bg-gradient-to-br from-cyan-950/40 to-slate-900/60 p-4.5 shadow-md backdrop-blur-xl transition hover:border-cyan-400/40">
+            <div className="absolute right-0 top-0 h-24 w-24 rounded-none bg-cyan-500/10 blur-2xl transition duration-500 group-hover:bg-cyan-500/25" />
+            <span className="rounded-none bg-cyan-500/10 border border-cyan-400/20 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-cyan-300">
               AI Academy Track
             </span>
-            <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-lg font-bold mt-3">
+            <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-base font-bold mt-2.5">
               Web Development with AI
             </h3>
-            <p className="mt-2 text-xs leading-5 text-slate-300">
+            <p className="mt-1.5 text-[11px] leading-4.5 text-slate-300">
               Structured lectures to build real skills using AI. Preserving Shobhit's complete Web Dev track!
             </p>
             <Link
               href="/courses/web-development-with-ai"
-              className="hero-cta mt-5 flex items-center justify-center rounded-xl py-3 text-xs font-bold text-white shadow-lg transition hover:scale-105"
+              className="hero-cta mt-4 flex items-center justify-center rounded-none py-2 text-[11px] font-bold text-white shadow-lg transition hover:scale-105"
             >
               Start Learning Now
             </Link>
           </div>
 
           {/* SIDEBAR BLOCK: Trending / Recent AI Guides */}
-          <div className="site-panel rounded-[1.8rem] p-6 space-y-4">
-            <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-base font-bold border-b border-cyan-400/10 pb-3">
+          <div className="site-panel rounded-none p-4.5 space-y-3">
+            <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-sm font-bold border-b border-cyan-400/10 pb-2.5">
               Trending AI Guides
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-3">
               {relatedPosts.slice(0, 4).map((entry) => (
                 <Link
                   key={entry.slug}
                   href={`/post/${entry.slug}`}
-                  className="group flex gap-3 items-center transition duration-300"
+                  className="group flex gap-2.5 items-center transition duration-300"
                 >
-                  <div className="relative h-14 w-20 shrink-0 overflow-hidden rounded-xl border border-slate-200/10">
+                  <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded-none border border-slate-200/10">
                     <Image
                       src={entry.image}
                       alt={entry.title}
@@ -370,11 +370,11 @@ export default async function PostPage({ params }: PostPageProps) {
                       className="object-cover transition duration-500 group-hover:scale-110"
                     />
                   </div>
-                  <div className="space-y-1">
-                    <h4 className="theme-text-primary text-xs font-bold leading-snug line-clamp-2 group-hover:text-cyan-400 transition-colors duration-200">
+                  <div className="space-y-0.5">
+                    <h4 className="theme-text-primary text-[11px] font-bold leading-snug line-clamp-2 group-hover:text-cyan-400 transition-colors duration-200">
                       {entry.title}
                     </h4>
-                    <span className="theme-text-muted text-[9px] uppercase font-bold tracking-wider">
+                    <span className="theme-text-muted text-[8.5px] uppercase font-bold tracking-wider">
                       {entry.category}
                     </span>
                   </div>
@@ -384,22 +384,22 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
 
           {/* SIDEBAR BLOCK: Subscription Box */}
-          <div className="site-panel rounded-[1.8rem] p-6 space-y-4">
-            <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-base font-bold">
+          <div className="site-panel rounded-none p-4.5 space-y-3">
+            <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-sm font-bold">
               Join AI Newsletter
             </h3>
-            <p className="theme-text-secondary text-xs leading-5">
+            <p className="theme-text-secondary text-[11px] leading-4.5">
               Copy-ready Midjourney prompt bundles and fresh AI tools directly in your inbox.
             </p>
             <div className="space-y-2">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full rounded-xl border border-cyan-400/20 bg-white/5 px-4 py-3 text-xs text-white outline-none focus:border-cyan-400"
+                className="w-full rounded-none border border-cyan-400/20 bg-white/5 px-3.5 py-2 text-xs text-white outline-none focus:border-cyan-400"
               />
               <button
                 type="button"
-                className="w-full rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 py-3 text-xs font-bold text-white shadow-lg transition hover:scale-105"
+                className="w-full rounded-none bg-gradient-to-r from-cyan-500 to-blue-500 py-2 text-[11px] font-bold text-white shadow-lg transition hover:scale-105"
               >
                 Subscribe Now
               </button>
