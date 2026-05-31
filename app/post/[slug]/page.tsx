@@ -83,6 +83,8 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   const relatedPosts = getRelatedPosts(post.slug, post.category);
+  const allPosts = getAllPosts();
+  const latestUpdates = allPosts.filter((p) => p.slug !== post.slug).slice(0, 4);
   const canonicalUrl = `${SITE_URL}/post/${post.slug}`;
   const encodedTitle = encodeURIComponent(post.title);
   const encodedUrl = encodeURIComponent(canonicalUrl);
@@ -287,9 +289,11 @@ export default async function PostPage({ params }: PostPageProps) {
                           </div>
                           <div className="space-y-3">
                             {section.paragraphs.map((paragraph) => (
-                              <p key={paragraph} className="theme-text-secondary text-xs leading-6">
-                                {paragraph}
-                              </p>
+                              <p 
+                                key={paragraph} 
+                                className="theme-text-secondary text-xs leading-6"
+                                dangerouslySetInnerHTML={{ __html: paragraph }}
+                              />
                             ))}
                           </div>
                         </div>
@@ -307,9 +311,11 @@ export default async function PostPage({ params }: PostPageProps) {
                       ) : null}
                       <div className="space-y-4">
                         {section.paragraphs.map((paragraph) => (
-                          <p key={paragraph} className="theme-text-secondary text-sm leading-7">
-                            {paragraph}
-                          </p>
+                          <p 
+                            key={paragraph} 
+                            className="theme-text-secondary text-sm leading-7"
+                            dangerouslySetInnerHTML={{ __html: paragraph }}
+                          />
                         ))}
                       </div>
                     </section>
@@ -356,6 +362,40 @@ export default async function PostPage({ params }: PostPageProps) {
             </h3>
             <div className="space-y-3">
               {relatedPosts.slice(0, 4).map((entry) => (
+                <Link
+                  key={entry.slug}
+                  href={`/post/${entry.slug}`}
+                  className="group flex gap-2.5 items-center transition duration-300"
+                >
+                  <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded-none border border-slate-200/10">
+                    <Image
+                      src={entry.image}
+                      alt={entry.title}
+                      fill
+                      sizes="80px"
+                      className="object-cover transition duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="space-y-0.5">
+                    <h4 className="theme-text-primary text-[11px] font-bold leading-snug line-clamp-2 group-hover:text-cyan-400 transition-colors duration-200">
+                      {entry.title}
+                    </h4>
+                    <span className="theme-text-muted text-[8.5px] uppercase font-bold tracking-wider">
+                      {entry.category}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* SIDEBAR BLOCK: Latest AI Updates */}
+          <div className="site-panel rounded-none p-4.5 space-y-3">
+            <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-sm font-bold border-b border-cyan-400/10 pb-2.5">
+              Latest AI Updates
+            </h3>
+            <div className="space-y-3">
+              {latestUpdates.map((entry) => (
                 <Link
                   key={entry.slug}
                   href={`/post/${entry.slug}`}

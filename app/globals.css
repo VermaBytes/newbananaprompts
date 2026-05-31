@@ -147,7 +147,7 @@ select {
 }
 
 .theme-text-primary {
-  color: #2d1f18;
+  color: #000000;
 }
 
 .theme-text-secondary {
@@ -239,6 +239,11 @@ select {
   color: #c2410c;
 }
 
+h1, h2, h3, h4, h5, h6,
+.theme-title-link {
+  color: #000000;
+}
+
 .theme-title-link:hover {
   color: #c2410c;
 }
@@ -255,7 +260,7 @@ select {
 
 .site-header,
 .site-footer {
-  background: #fdf574;;
+  background: #fdf574;
   border-color: #2a2620;
 }
 
@@ -265,9 +270,19 @@ select {
   }
 }
 
-html[data-theme="dark"] body,
-html[data-theme="dark"] .theme-text-primary {
+html[data-theme="dark"] body {
   color: #f8eee5;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+html[data-theme="dark"] .theme-text-primary,
+html[data-theme="dark"] .theme-title-link {
+  color: #ffffff !important;
 }
 
 html[data-theme="dark"] body {
@@ -437,7 +452,7 @@ html[data-theme="dark"] .post-content p {
 
 html[data-theme="dark"] .post-content h2,
 html[data-theme="dark"] .post-content h3 {
-  color: #f8eee5;
+  color: #ffffff;
 }
 
 html[data-theme="dark"] .sidebar-list a:hover,
@@ -457,7 +472,7 @@ html[data-theme="dark"] .sidebar-list button:hover {
 }
 
 .post-content h2 {
-  color: #2d1f18;
+  color: #000000;
   font-family: var(--font-heading);
   font-size: 1.75rem;
   font-weight: 700;
@@ -465,14 +480,14 @@ html[data-theme="dark"] .sidebar-list button:hover {
 }
 
 .post-content h3 {
-  color: #4c3a31;
+  color: #000000;
   font-size: 1.125rem;
   font-weight: 700;
 }
 
-/* Force zero border radius everywhere for premium sharp, flat, enterprise look */
+/* Force zero border radius everywhere by default for premium sharp, flat, enterprise look, allowing explicit utility overrides for circular icons */
 *,
 *::before,
 *::after {
-  border-radius: 0px !important;
+  border-radius: 0px;
 }

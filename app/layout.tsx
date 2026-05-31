@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { FloatingWidgets } from "@/components/floating-widgets";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -83,10 +84,11 @@ export default function RootLayout({
       <body>
         <div className="site-shell">
           <Navbar />
-          <main className="mx-auto min-h-[calc(100vh-13rem)] max-w-7xl px-4 pb-16 pt-28 sm:px-6 lg:px-8">
+          <main className="mx-auto min-h-[calc(100vh-13rem)] max-w-7xl px-4 pb-16 pt-20 sm:px-6 lg:px-8">
             {children}
           </main>
           <Footer />
+          <FloatingWidgets />
         </div>
       </body>
     </html>

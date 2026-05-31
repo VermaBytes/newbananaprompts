@@ -14,13 +14,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: SITE_URL,
       lastModified: new Date().toISOString(),
-      changeFrequency: "weekly",
-      priority: 1
+      changeFrequency: "daily",
+      priority: 1.0
+    },
+    {
+      url: `${SITE_URL}/blogs`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "daily",
+      priority: 0.9
     },
     {
       url: `${SITE_URL}/courses/web-development-with-ai`,
       lastModified: new Date().toISOString(),
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 0.7
     },
     {

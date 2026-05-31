@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -31,17 +32,14 @@ export function Navbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 overflow-hidden border-b border-cyan-400/10 bg-[#020617cc] shadow-[0_0_40px_rgba(56,189,248,0.08)] backdrop-blur-2xl">
+    <header className="fixed inset-x-0 top-0 z-50 overflow-hidden border-b border-slate-200/60 dark:border-cyan-400/10 bg-white/80 dark:bg-[#020617cc] shadow-[0_4px_30px_rgba(0,0,0,0.03)] dark:shadow-[0_0_40px_rgba(56,189,248,0.08)] backdrop-blur-2xl transition-all duration-300">
       
       {/* =========================
-          AI GLOW EFFECTS
-      ========================= */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        
+          AI GLOW EFFECTS (Subtle overlay)
+          ========================= */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-30 dark:opacity-100">
         <div className="absolute -left-20 top-0 h-40 w-40 animate-pulse rounded-full bg-cyan-500/20 blur-3xl" />
-
         <div className="absolute right-0 top-0 h-32 w-32 animate-pulse rounded-full bg-orange-500/20 blur-3xl" />
-
         <div className="absolute left-1/2 top-0 h-20 w-20 -translate-x-1/2 animate-ping rounded-full bg-blue-500/10 blur-2xl" />
       </div>
 
@@ -49,7 +47,7 @@ export function Navbar() {
         
         {/* =========================
             LOGO
-        ========================= */}
+            ========================= */}
         <Link
           href="/"
           className="group flex items-center gap-3"
@@ -60,16 +58,14 @@ export function Navbar() {
               alt="NB Prompts Logo"
               className="h-10 w-10 rounded-none object-cover shadow-[0_0_20px_rgba(56,189,248,0.35)] transition-all duration-500 group-hover:scale-105 group-hover:rotate-1"
             />
-
             <div className="absolute inset-0 rounded-none bg-cyan-400/20 blur-lg transition-all duration-500 group-hover:bg-cyan-400/40" />
           </div>
 
           <div className="hidden sm:block">
-            <h2 className="bg-gradient-to-r from-cyan-400 via-blue-400 to-orange-400 bg-clip-text text-sm font-extrabold tracking-wide text-transparent">
+            <h2 className="bg-gradient-to-r from-cyan-500 via-blue-500 to-orange-500 bg-clip-text text-sm font-extrabold tracking-wide text-transparent">
               NB Prompts
             </h2>
-
-            <p className="text-[10px] text-slate-400 transition-all duration-300 group-hover:text-slate-300">
+            <p className="text-[10px] text-slate-500 dark:text-slate-400 transition-all duration-300 group-hover:text-slate-700 dark:group-hover:text-slate-300">
               AI Tools & Blogs Hub
             </p>
           </div>
@@ -77,7 +73,7 @@ export function Navbar() {
 
         {/* =========================
             DESKTOP NAVIGATION
-        ========================= */}
+            ========================= */}
         <nav className="hidden items-center gap-1 lg:flex">
           {navItems.map((item) => (
             <Link
@@ -86,15 +82,13 @@ export function Navbar() {
               className={`group relative overflow-hidden rounded-none px-3.5 py-1.5 text-xs font-semibold transition-all duration-500 ${
                 pathname === item.href
                   ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-[0_0_20px_rgba(56,189,248,0.4)]"
-                  : "text-slate-300 hover:text-white"
+                  : "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
               }`}
             >
               {/* HOVER GLOW */}
-              <span className="absolute inset-0 -z-10 scale-0 rounded-none bg-gradient-to-r from-cyan-500/20 to-orange-500/20 transition-all duration-500 group-hover:scale-100" />
-
+              <span className="absolute inset-0 -z-10 scale-0 rounded-none bg-gradient-to-r from-cyan-500/10 to-orange-500/10 dark:from-cyan-500/20 dark:to-orange-500/20 transition-all duration-500 group-hover:scale-100" />
               {/* ACTIVE BORDER */}
-              <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-none bg-cyan-400 transition-all duration-500 group-hover:w-3/4" />
-
+              <span className="absolute bottom-0 left-1/2 h-[2px] w-0 -translate-x-1/2 rounded-none bg-cyan-500 dark:bg-cyan-400 transition-all duration-500 group-hover:w-3/4" />
               {item.label}
             </Link>
           ))}
@@ -102,21 +96,24 @@ export function Navbar() {
 
         {/* =========================
             RIGHT SECTION
-        ========================= */}
+            ========================= */}
         <div className="flex items-center gap-3">
           
+          {/* THEME TOGGLE */}
+          <ThemeToggle />
+
           {/* SEARCH */}
           <form
             onSubmit={handleSearch}
             className="hidden lg:block"
           >
             <div className="relative">
-              <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-400">
+              <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-400 dark:text-slate-500">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="2.5"
                   className="h-3.5 w-3.5"
                 >
                   <circle cx="11" cy="11" r="7" />
@@ -131,7 +128,7 @@ export function Navbar() {
                   setSearchQuery(event.target.value)
                 }
                 placeholder="Search blogs..."
-                className="w-[200px] rounded-none border border-cyan-400/20 bg-white/5 px-3 py-1.5 pl-9 text-xs text-white shadow-[0_0_15px_rgba(56,189,248,0.08)] outline-none backdrop-blur-md transition-all duration-500 placeholder:text-slate-400 focus:border-cyan-400 focus:bg-white/10 focus:shadow-[0_0_25px_rgba(56,189,248,0.25)]"
+                className="w-[200px] rounded-none border border-slate-200 dark:border-cyan-400/20 bg-slate-100/70 dark:bg-white/5 px-3 py-1.5 pl-9 text-xs text-slate-800 dark:text-white outline-none backdrop-blur-md transition-all duration-500 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-500 dark:focus:border-cyan-400 focus:bg-white dark:focus:bg-white/10"
               />
             </div>
           </form>
@@ -140,14 +137,14 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen((open) => !open)}
-            className="inline-flex items-center justify-center rounded-none border border-cyan-400/20 bg-white/5 p-2 text-white shadow-[0_0_10px_rgba(56,189,248,0.08)] transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(56,189,248,0.25)] lg:hidden"
+            className="inline-flex items-center justify-center rounded-none border border-slate-200 dark:border-cyan-400/20 bg-slate-100/70 dark:bg-white/5 p-2 text-slate-700 dark:text-white transition-all duration-300 hover:scale-105 hover:bg-slate-200/50 dark:hover:bg-white/10 lg:hidden"
             aria-label="Toggle navigation"
           >
             <svg
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.2"
               className="h-5 w-5"
             >
               {isOpen ? (
@@ -162,9 +159,9 @@ export function Navbar() {
 
       {/* =========================
           MOBILE MENU
-      ========================= */}
+          ========================= */}
       <div
-        className={`overflow-hidden border-t border-cyan-400/10 bg-[#020617f2] backdrop-blur-2xl transition-all duration-500 lg:hidden ${
+        className={`overflow-hidden border-t border-slate-200/70 dark:border-cyan-400/10 bg-white/95 dark:bg-[#020617f2] backdrop-blur-2xl transition-all duration-500 lg:hidden ${
           isOpen ? "max-h-[500px] py-5" : "max-h-0"
         }`}
       >
@@ -179,7 +176,7 @@ export function Navbar() {
               className={`rounded-none px-3.5 py-2 text-xs font-semibold transition-all duration-300 ${
                 pathname === item.href
                   ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white"
-                  : "text-slate-300 hover:bg-white/10 hover:text-white"
+                  : "text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
               }`}
             >
               {item.label}
@@ -189,12 +186,12 @@ export function Navbar() {
           {/* MOBILE SEARCH */}
           <form onSubmit={handleSearch} className="pt-1.5">
             <div className="relative">
-              <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-400">
+              <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-400 dark:text-slate-500">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
+                  strokeWidth="2.2"
                   className="h-3.5 w-3.5"
                 >
                   <circle cx="11" cy="11" r="7" />
@@ -209,7 +206,7 @@ export function Navbar() {
                   setSearchQuery(event.target.value)
                 }
                 placeholder="Search blogs..."
-                className="w-full rounded-none border border-cyan-400/20 bg-white/5 px-3 py-2 pl-9 text-xs text-white outline-none transition-all duration-300 placeholder:text-slate-400 focus:border-cyan-400 focus:bg-white/10"
+                className="w-full rounded-none border border-slate-200 dark:border-cyan-400/20 bg-slate-100/70 dark:bg-white/5 px-3 py-2 pl-9 text-xs text-slate-800 dark:text-white outline-none transition-all duration-300 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:border-cyan-500 dark:focus:border-cyan-400 focus:bg-white dark:focus:bg-white/10"
               />
             </div>
           </form>

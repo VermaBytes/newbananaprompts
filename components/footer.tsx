@@ -54,7 +54,7 @@ export function Footer() {
           <div className="mt-6 flex items-center gap-3">
             
             <a
-              href="https://youtube.com"
+              href="https://www.youtube.com/@ShobhitManar"
               target="_blank"
               rel="noreferrer"
               className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:scale-110 hover:border-red-500/50 hover:bg-red-500/10 hover:text-white"
@@ -63,7 +63,7 @@ export function Footer() {
             </a>
 
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/vermabanker?igsh=bWN4cGcyYXhkMW8x"
               target="_blank"
               rel="noreferrer"
               className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:scale-110 hover:border-pink-500/50 hover:bg-pink-500/10 hover:text-white"
@@ -72,7 +72,7 @@ export function Footer() {
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/shobhitverma838190/"
               target="_blank"
               rel="noreferrer"
               className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:scale-110 hover:border-blue-500/50 hover:bg-blue-500/10 hover:text-white"
@@ -81,7 +81,7 @@ export function Footer() {
             </a>
 
             <a
-              href="https://github.com"
+              href="https://github.com/VermaBytes"
               target="_blank"
               rel="noreferrer"
               className="flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition-all duration-300 hover:scale-110 hover:border-cyan-500/50 hover:bg-cyan-500/10 hover:text-white"

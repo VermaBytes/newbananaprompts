@@ -50,8 +50,61 @@ export default function HomePage() {
   const featuredPosts = allPosts.slice(1, 4);
   const latestPosts = allPosts.slice(1, 7);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://newbananaprompts.in/#website",
+        "url": "https://newbananaprompts.in",
+        "name": "NB Prompts",
+        "description": "NB Prompts is a professional AI blogging platform offering premium AI prompt ideas, step-by-step image tools tutorials, and AI engineering courses for creators.",
+        "publisher": {
+          "@id": "https://newbananaprompts.in/#organization"
+        },
+        "potentialAction": [
+          {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://newbananaprompts.in/search?query={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://newbananaprompts.in/#organization",
+        "name": "NB Prompts",
+        "url": "https://newbananaprompts.in",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://newbananaprompts.in/#logo",
+          "url": "https://newbananaprompts.in/main-logo.png",
+          "contentUrl": "https://newbananaprompts.in/main-logo.png",
+          "caption": "NB Prompts Logo"
+        },
+        "image": {
+          "@id": "https://newbananaprompts.in/#logo"
+        },
+        "sameAs": [
+          "https://www.youtube.com/@ShobhitManar",
+          "https://www.instagram.com/vermabanker?igsh=bWN4cGcyYXhkMW8x",
+          "https://www.linkedin.com/in/shobhitverma838190/",
+          "https://github.com/VermaBytes"
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="space-y-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* =========================
           HERO SECTION
       ========================= */}

@@ -1,4 +1,14 @@
+import type { Metadata } from "next";
 import { SearchResults } from "@/components/search-results";
+
+export const metadata: Metadata = {
+  title: "Search Results | NB Prompts",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true
+  }
+};
 
 type SearchPageProps = {
   searchParams?: { query?: string | string[] };
@@ -12,7 +22,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   return (
     <section className="space-y-6">
       <div className="space-y-2">
-        <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">Our Blogs</p>
+        <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">Search Results</p>
       </div>
       <SearchResults query={query} />
     </section>

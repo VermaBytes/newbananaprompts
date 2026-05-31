@@ -6,7 +6,7 @@ export function HomeHero({ latestPost }: { latestPost: BlogPost }) {
   if (!latestPost) return null;
 
   return (
-    <section className="relative overflow-hidden border-b border-slate-100 dark:border-cyan-950/20 pb-10 pt-1">
+    <section className="relative overflow-hidden border-b border-slate-100 dark:border-cyan-950/20">
       <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
         
         {/* LEFT SIDE: MASSIVE THUMBNAIL (SHARP, CROP-FREE) */}
@@ -35,10 +35,10 @@ export function HomeHero({ latestPost }: { latestPost: BlogPost }) {
           </div>
 
           {/* TITLE */}
-          <h1 className="font-[family-name:var(--font-heading)] text-lg sm:text-xl lg:text-[1.55rem] lg:leading-[1.25] font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h1 className="font-[family-name:var(--font-heading)] text-lg sm:text-xl lg:text-[1.55rem] lg:leading-[1.25] font-extrabold tracking-tight text-black dark:text-white">
             <Link 
               href={`/post/${latestPost.slug}`} 
-              className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300"
+              className="theme-title-link hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300"
             >
               {latestPost.title}
             </Link>
