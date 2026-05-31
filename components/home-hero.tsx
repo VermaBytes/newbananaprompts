@@ -7,7 +7,7 @@ export function HomeHero({ latestPost }: { latestPost: BlogPost }) {
 
   return (
     <section className="relative overflow-hidden border-b border-slate-100 dark:border-cyan-950/20 pb-10 pt-1">
-      <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-center">
+      <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
         
         {/* LEFT SIDE: MASSIVE THUMBNAIL (SHARP, CROP-FREE) */}
         <Link
@@ -19,7 +19,7 @@ export function HomeHero({ latestPost }: { latestPost: BlogPost }) {
             alt={latestPost.title}
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 750px"
+            sizes="(max-width: 1024px) 100vw, 700px"
             className="object-cover transition duration-700 group-hover:scale-[1.015]"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#020617]/30 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
