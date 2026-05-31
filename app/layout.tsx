@@ -70,7 +70,7 @@ export default function RootLayout({
             (function() {
               try {
                 var storedTheme = localStorage.getItem("theme");
-                var theme = storedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+                var theme = storedTheme || "light";
                 document.documentElement.dataset.theme = theme;
               } catch (error) {}
             })();

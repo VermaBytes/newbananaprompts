@@ -16,8 +16,7 @@ export function ThemeToggle() {
       setTheme(docTheme);
     } else {
       const storedTheme = localStorage.getItem("theme") as Theme | null;
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setTheme(storedTheme || (prefersDark ? "dark" : "light"));
+      setTheme(storedTheme || "light");
     }
   }, []);
 
