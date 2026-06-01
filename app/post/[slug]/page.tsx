@@ -180,16 +180,25 @@ export default async function PostPage({ params }: PostPageProps) {
           <article className="site-panel overflow-hidden rounded-none shadow-lg border border-cyan-400/10 dark:border-white/10">
             
             {/* FEATURED IMAGE */}
-            <div className="relative aspect-[16/9] w-full overflow-hidden border-b border-cyan-400/10 dark:border-white/10">
+            <div className="post-featured-image-frame relative aspect-[16/9] w-full overflow-hidden border-b border-cyan-400/10 dark:border-white/10">
+              <Image
+                src={post.image}
+                alt=""
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 850px"
+                className="post-featured-image-backdrop object-cover"
+                aria-hidden="true"
+              />
               <Image
                 src={post.image}
                 alt={post.title}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 850px"
-                className="object-cover"
+                className="post-featured-image-main object-contain"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#020617]/50 to-transparent" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#020617]/25 via-transparent to-white/10 dark:to-white/5" />
             </div>
 
             {/* ARTICLE CONTENTS */}

@@ -22,8 +22,22 @@ export default async function PromptPage({ params }: PromptPageProps) {
         Back to Gallery
       </Link>
       <div className="site-panel overflow-hidden rounded-none">
-        <div className="relative aspect-[1000/630] border-b border-slate-200">
-          <Image src={prompt.image} alt={prompt.title} fill sizes="(max-width: 1024px) 100vw, 900px" className="object-cover" />
+        <div className="post-featured-image-frame relative aspect-[1000/630] overflow-hidden border-b border-slate-200">
+          <Image
+            src={prompt.image}
+            alt=""
+            fill
+            sizes="(max-width: 1024px) 100vw, 900px"
+            className="post-featured-image-backdrop object-cover"
+            aria-hidden="true"
+          />
+          <Image
+            src={prompt.image}
+            alt={prompt.title}
+            fill
+            sizes="(max-width: 1024px) 100vw, 900px"
+            className="post-featured-image-main object-contain"
+          />
         </div>
         <div className="space-y-4 px-5 py-6 sm:px-8 sm:py-8">
           <div className="flex flex-wrap items-center gap-1.5">
