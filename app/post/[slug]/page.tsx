@@ -298,7 +298,7 @@ export default async function PostPage({ params }: PostPageProps) {
                           </div>
                           <div className="space-y-3">
                             {section.paragraphs.map((paragraph) => (
-                              <p 
+                              <div 
                                 key={paragraph} 
                                 className="theme-text-secondary text-xs leading-6"
                                 dangerouslySetInnerHTML={{ __html: paragraph }}
@@ -320,7 +320,7 @@ export default async function PostPage({ params }: PostPageProps) {
                       ) : null}
                       <div className="space-y-4">
                         {section.paragraphs.map((paragraph) => (
-                          <p 
+                          <div 
                             key={paragraph} 
                             className="theme-text-secondary text-sm leading-7"
                             dangerouslySetInnerHTML={{ __html: paragraph }}
