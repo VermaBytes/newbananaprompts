@@ -64,18 +64,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <Script id="theme-init" strategy="beforeInteractive">
-          {`
-            (function() {
-              try {
-                var storedTheme = localStorage.getItem("theme");
-                var theme = storedTheme || "light";
-                document.documentElement.dataset.theme = theme;
-              } catch (error) {}
-            })();
-          `}
-        </Script>
+       <head>
+  <Script id="theme-init" strategy="beforeInteractive">
+    {`
+      (function() {
+        try {
+          var storedTheme = localStorage.getItem("theme");
+          var theme = storedTheme || "light";
+          document.documentElement.dataset.theme = theme;
+        } catch (error) {}
+      })();
+    `}
+  </Script>
+
+  {/* Google Analytics */}
+  <Script
+    src="https://www.googletagmanager.com/gtag/js?id=G-CFRHNCTG1G"
+    strategy="afterInteractive"
+  />
+
+  <Script id="google-analytics" strategy="afterInteractive">
+    {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CFRHNCTG1G');
+    `}
+  </Script>
+
         <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
