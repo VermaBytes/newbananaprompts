@@ -29,9 +29,9 @@ export default async function BlogsPage({
         <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl">
           AI Prompts & Tools Blog
         </h1>
-        <p className="theme-text-secondary max-w-2xl text-sm leading-7 sm:text-base">
+        /* <p className="theme-text-secondary max-w-2xl text-sm leading-7 sm:text-base">
           High-quality articles, step-by-step AI tool tutorials, and copy-ready image prompts to skyrocket your productivity.
-        </p>
+        </p> */
       </div>
       <PostsExplorer posts={posts} query={query} />
     </section>
