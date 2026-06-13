@@ -14,6 +14,11 @@ const nextConfig = {
         source: "/prompt/:slug",
         destination: "/post/:slug",
         permanent: true
+      },
+      {
+        source: "/post/how-create-viral-ai-reel-videos-luma-runway",
+        destination: "/post/how-to-create-viral-ai-reel-videos-luma-runway",
+        permanent: true
       }
     ];
   }

@@ -48,6 +48,10 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     alternates: {
       canonical: canonicalUrl
     },
+    robots: {
+      index: true,
+      follow: true
+    },
     openGraph: {
       title: post.seoTitle,
       description: post.description,
@@ -251,12 +255,20 @@ export default async function PostPage({ params }: PostPageProps) {
               {/* SOCIAL SHARING COMPONENT */}
               <div className="flex flex-wrap gap-1.5 pt-2 border-y border-cyan-400/5 py-3">
                 <a
-                  href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
+                  href="https://www.instagram.com/vermabanker?igsh=bWN4cGcyYXhkMW8x"
                   target="_blank"
                   rel="noreferrer"
                   className="theme-button theme-soft-hover rounded-none px-3 py-1.5 text-[10px] font-bold transition hover:scale-105"
                 >
-                  Share on X
+                  Instagram
+                </a>
+                <a
+                  href="https://www.youtube.com/@ShobhitManar"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="theme-button theme-soft-hover rounded-none px-3 py-1.5 text-[10px] font-bold transition hover:scale-105"
+                >
+                  YouTube
                 </a>
                 <a
                   href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
