@@ -3,7 +3,6 @@
 import { useState, useEffect, type FormEvent } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -99,9 +98,6 @@ export function Navbar() {
             ========================= */}
         <div className="flex items-center gap-3">
           
-          {/* THEME TOGGLE */}
-          <ThemeToggle />
-
           {/* BELL NOTIFICATION */}
           <NavbarBell />
 
@@ -221,15 +217,26 @@ export function Navbar() {
 }
 
 function NavbarBell() {
-  const [subscriptionState, setSubscriptionState] = useState<"loading" | "subscribed" | "unsubscribed" | "blocked">("loading");
+  // Default to unsubscribed to avoid visible loading delay
+  const [subscriptionState, setSubscriptionState] = useState<"loading" | "subscribed" | "unsubscribed" | "blocked">("unsubscribed");
+  const [bellRinging, setBellRinging] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    // Read initial state from window property if available
+
+    // Read native permission state synchronously on mount to avoid OneSignal SDK loading delay
     if (typeof window !== "undefined") {
-      const state = (window as any).onesignalSubscriptionState || "unsubscribed";
-      setSubscriptionState(state);
+      const nativePermission = window.Notification ? window.Notification.permission : "default";
+      if (nativePermission === "denied") {
+        setSubscriptionState("blocked");
+      } else if (nativePermission === "granted") {
+        const optedOut = localStorage.getItem("onesignal_opted_out") === "true";
+        setSubscriptionState(optedOut ? "unsubscribed" : "subscribed");
+      } else {
+        const state = (window as any).onesignalSubscriptionState || "unsubscribed";
+        setSubscriptionState(state);
+      }
     }
 
     // Listen to state changes from OneSignalManager
@@ -243,63 +250,83 @@ function NavbarBell() {
     };
   }, []);
 
+  useEffect(() => {
+    const ringInterval = setInterval(() => {
+      if (subscriptionState === "unsubscribed") {
+        setBellRinging(true);
+        setTimeout(() => setBellRinging(false), 1000);
+      }
+    }, 15000);
+
+    return () => clearInterval(ringInterval);
+  }, [subscriptionState]);
+
   const handleBellClick = () => {
-    window.dispatchEvent(new CustomEvent("onesignal-bell-click"));
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("onesignal-bell-click"));
+    }
   };
 
   if (!mounted) return <div className="w-9 h-9" />;
 
   const tooltipText = {
-    loading: "Loading...",
+    loading: "Initializing...",
     subscribed: "Notifications Active",
     unsubscribed: "Subscribe to Updates",
-    blocked: "Notifications Blocked",
-  }[subscriptionState];
-
-  const colorClass = {
-    loading: "text-slate-400 dark:text-slate-500",
-    subscribed: "text-emerald-500 hover:text-emerald-600 dark:text-emerald-400 dark:hover:text-emerald-300",
-    unsubscribed: "text-cyan-500 hover:text-cyan-600 dark:text-cyan-400 dark:hover:text-cyan-300",
-    blocked: "text-rose-500 dark:text-rose-400 cursor-not-allowed",
+    blocked: "Notifications Blocked (Reset permission in address bar)",
   }[subscriptionState];
 
   return (
     <div className="relative group/bell">
+      <style>{`
+        @keyframes custom-bell-ring {
+          0%, 100% { transform: rotate(0); }
+          10%, 30%, 50%, 70%, 90% { transform: rotate(10deg); }
+          20%, 40%, 60%, 80% { transform: rotate(-10deg); }
+        }
+        .animate-bell-ring {
+          animation: custom-bell-ring 1s ease-in-out;
+          transform-origin: top center;
+        }
+      `}</style>
+
       {/* Tooltip */}
-      <div className="pointer-events-none absolute right-1/2 translate-x-1/2 top-full mt-2 hidden group-hover/bell:block whitespace-nowrap rounded-none border border-slate-200 dark:border-cyan-400/20 bg-white/95 dark:bg-[#020617]/95 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wider text-slate-800 dark:text-cyan-400 shadow-md backdrop-blur-md z-[9999]">
+      <div className="pointer-events-none absolute right-1/2 translate-x-1/2 top-full mt-2.5 hidden group-hover/bell:block whitespace-nowrap rounded-none border border-slate-200 dark:border-cyan-400/20 bg-white/95 dark:bg-[#020617]/95 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wider text-slate-800 dark:text-cyan-400 shadow-md backdrop-blur-md z-[9999]">
         {tooltipText}
       </div>
 
       <button
         type="button"
         onClick={handleBellClick}
-        className={`flex items-center justify-center w-9 h-9 rounded-none border-none bg-transparent transition-all duration-300 outline-none focus:outline-none focus:ring-0 cursor-pointer ${colorClass}`}
+        disabled={subscriptionState === "loading"}
+        className={`group flex h-9 w-9 items-center justify-center rounded-full text-white shadow-md transition-all duration-300 hover:scale-110 hover:shadow-amber-500/50 cursor-pointer relative ${
+          subscriptionState === "loading" ? "bg-amber-500/60 cursor-wait" : "bg-amber-500"
+        } ${bellRinging ? "animate-bell-ring" : ""}`}
         aria-label={tooltipText}
+        title={tooltipText}
       >
-        <div className="relative">
-          {/* Bell Icon SVG */}
-          <svg
-            className="w-5 h-5 fill-none stroke-current hover:scale-110 transition-transform duration-300"
-            viewBox="0 0 24 24"
-            strokeWidth="2.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
-            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+        {subscriptionState === "loading" ? (
+          /* SVG Spinner */
+          <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
           </svg>
+        ) : (
+          /* SVG Bell (Solid/Fill look matching FA style) */
+          <svg className="w-5 h-5 fill-current" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+            <path d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"/>
+          </svg>
+        )}
 
-          {/* Subscribed Dot (Green) */}
-          {subscriptionState === "subscribed" && (
-            <span className="absolute top-0.5 right-0.5 block h-2 w-2 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-[#020617]" />
-          )}
+        {/* Subscribed Dot (Green) */}
+        {subscriptionState === "subscribed" && (
+          <span className="absolute top-0.5 right-0.5 block h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-[#020617] animate-pulse" />
+        )}
 
-          {/* Blocked Dot (Red exclamation badge or dot) */}
-          {subscriptionState === "blocked" && (
-            <span className="absolute top-0.5 right-0.5 block h-2 w-2 rounded-full bg-rose-500 ring-2 ring-white dark:ring-[#020617]" />
-          )}
-        </div>
+        {/* Blocked Dot (Red) */}
+        {subscriptionState === "blocked" && (
+          <span className="absolute top-0.5 right-0.5 block h-2.5 w-2.5 rounded-full bg-rose-500 ring-2 ring-white dark:ring-[#020617]" />
+        )}
       </button>
     </div>
   );

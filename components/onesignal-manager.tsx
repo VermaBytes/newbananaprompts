@@ -9,6 +9,8 @@ declare global {
   interface Window {
     OneSignalDeferred?: any[];
     OneSignal?: any;
+    onesignalSubscriptionState?: string;
+    onesignal_pending_click?: boolean;
   }
 }
 
@@ -17,12 +19,27 @@ export function OneSignalManager() {
   const [mounted, setMounted] = useState(false);
   
   // "loading" | "subscribed" | "unsubscribed" | "blocked"
-  const [subscriptionState, setSubscriptionState] = useState<"loading" | "subscribed" | "unsubscribed" | "blocked">("loading");
-  const [showTooltip, setShowTooltip] = useState(false);
+  // Default to unsubscribed to avoid visible "loading" delay to the user.
+  const [subscriptionState, setSubscriptionState] = useState<"loading" | "subscribed" | "unsubscribed" | "blocked">("unsubscribed");
   const [bellRinging, setBellRinging] = useState(false);
 
   const isProd = process.env.NODE_ENV === "production";
   const appId = process.env.NEXT_PUBLIC_ONESIGNAL_APP_ID;
+
+  // Sync initial state on mount to avoid loading delay
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const nativePermission = window.Notification ? window.Notification.permission : "default";
+      if (nativePermission === "denied") {
+        setSubscriptionState("blocked");
+      } else if (nativePermission === "granted") {
+        const optedOut = localStorage.getItem("onesignal_opted_out") === "true";
+        setSubscriptionState(optedOut ? "unsubscribed" : "subscribed");
+      } else {
+        setSubscriptionState("unsubscribed");
+      }
+    }
+  }, []);
 
   // 1. Initial mounting and script initialization
   useEffect(() => {
@@ -60,7 +77,7 @@ export function OneSignalManager() {
       OneSignal.Slidedown.addEventListener("slidedownClosed", () => {
         setTimeout(() => {
           if (!OneSignal.User.pushSubscription.optedIn) {
-            localStorage.setItem("onesignal_prompt_dismissed", "true");
+            sessionStorage.setItem("onesignal_prompt_dismissed", "true");
             console.log("OneSignal: User dismissed the slidedown prompt.");
           }
         }, 500);
@@ -70,6 +87,15 @@ export function OneSignalManager() {
       OneSignal.User.pushSubscription.addEventListener("change", () => {
         updateSubscriptionState(OneSignal);
       });
+
+      // Check if there was a pending click queued while SDK was loading
+      if (window.onesignal_pending_click) {
+        delete window.onesignal_pending_click;
+        console.log("OneSignal: Executing pending bell click after SDK loaded.");
+        setTimeout(() => {
+          handleBellClick();
+        }, 200);
+      }
 
       // Check if there was a pending prompt triggered by routing/timer
       const pendingPrompt = sessionStorage.getItem("onesignal_pending_prompt") === "true";
@@ -106,7 +132,7 @@ export function OneSignalManager() {
     }
   }, [pathname]);
 
-  // 3. 10-seconds timer auto-prompt
+  // 3. 2-3 seconds timer auto-prompt for first-time visitors
   useEffect(() => {
     const timer = setTimeout(() => {
       if (typeof window !== "undefined" && window.OneSignal) {
@@ -114,7 +140,7 @@ export function OneSignalManager() {
       } else {
         sessionStorage.setItem("onesignal_pending_prompt", "true");
       }
-    }, 10000);
+    }, 2500); // 2.5 seconds (in the 2-3s range)
 
     return () => clearTimeout(timer);
   }, []);
@@ -136,15 +162,15 @@ export function OneSignalManager() {
 
     setSubscriptionState(state);
     if (typeof window !== "undefined") {
-      (window as any).onesignalSubscriptionState = state;
+      window.onesignalSubscriptionState = state;
       window.dispatchEvent(new CustomEvent("onesignal-state-change", { detail: state }));
     }
   };
 
-  // Dispatch initial subscriptionState changes
+  // Dispatch subscriptionState changes globally
   useEffect(() => {
     if (typeof window !== "undefined") {
-      (window as any).onesignalSubscriptionState = subscriptionState;
+      window.onesignalSubscriptionState = subscriptionState;
       window.dispatchEvent(new CustomEvent("onesignal-state-change", { detail: subscriptionState }));
     }
   }, [subscriptionState]);
@@ -158,21 +184,22 @@ export function OneSignalManager() {
     return () => {
       window.removeEventListener("onesignal-bell-click", handleBellClickEvent);
     };
-  }, [subscriptionState]);
+  }); // Re-bind on every render to prevent stale closure of handleBellClick
 
   // Helper to trigger slidedown prompt
   const triggerPrompt = (OneSignalInstance: any) => {
     if (!isProd) return;
-    const isDismissed = localStorage.getItem("onesignal_prompt_dismissed") === "true";
+    const isDismissed = sessionStorage.getItem("onesignal_prompt_dismissed") === "true";
     const nativePermission = typeof window !== "undefined" && window.Notification ? window.Notification.permission : "default";
 
+    // Only prompt if not already dismissed in this session AND browser permission is default
     if (!isDismissed && nativePermission === "default") {
       OneSignalInstance.Slidedown.promptPush();
       console.log("OneSignal: Slidedown permission prompt triggered.");
     }
   };
 
-  // Click handler
+  // Click handler - closure safe
   const handleBellClick = async () => {
     if (!isProd) {
       alert("OneSignal is in production-only mode. Notification bell mock clicked!");
@@ -181,7 +208,15 @@ export function OneSignalManager() {
       return;
     }
 
-    if (typeof window === "undefined" || !window.OneSignal) return;
+    if (typeof window === "undefined") return;
+
+    if (!window.OneSignal) {
+      console.log("OneSignal: SDK not loaded yet. Queueing click...");
+      window.onesignal_pending_click = true;
+      setSubscriptionState("loading");
+      window.dispatchEvent(new CustomEvent("onesignal-state-change", { detail: "loading" }));
+      return;
+    }
 
     const OneSignal = window.OneSignal;
     const nativePermission = window.Notification ? window.Notification.permission : "default";
@@ -191,13 +226,19 @@ export function OneSignalManager() {
       return;
     }
 
-    if (subscriptionState === "subscribed") {
+    const isPermissionGranted = OneSignal.Notifications.permission;
+    const isOptedIn = OneSignal.User.pushSubscription.optedIn;
+    const isSubscribed = isPermissionGranted && isOptedIn && nativePermission === "granted";
+
+    if (isSubscribed) {
       // Unsubscribe
+      localStorage.setItem("onesignal_opted_out", "true");
       await OneSignal.User.pushSubscription.optOut();
       setSubscriptionState("unsubscribed");
       console.log("OneSignal: User opted out of push notifications.");
     } else {
       // Subscribe / Prompt
+      localStorage.removeItem("onesignal_opted_out");
       if (nativePermission === "default") {
         await OneSignal.Slidedown.promptPush();
       } else {
@@ -210,4 +251,3 @@ export function OneSignalManager() {
 
   return null;
 }
-
