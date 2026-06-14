@@ -74,7 +74,7 @@ export function FloatingWidgets() {
       {/* ==========================================
           BOTTOM RIGHT: FLOATING SOCIAL ICONS VERTICAL STACK
           ========================================== */}
-      <div className="fixed bottom-6 right-5 z-[9999] flex flex-col gap-4">
+      <div className="fixed bottom-6 right-5 z-[9999] flex flex-row gap-4">
         
         {/* WhatsApp */}
         <a

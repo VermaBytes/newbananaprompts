@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -101,6 +101,9 @@ export function Navbar() {
           
           {/* THEME TOGGLE */}
           <ThemeToggle />
+
+          {/* BELL NOTIFICATION */}
+          <NavbarBell />
 
           {/* SEARCH */}
           <form
@@ -214,5 +217,90 @@ export function Navbar() {
       </div>
 
     </header>
+  );
+}
+
+function NavbarBell() {
+  const [subscriptionState, setSubscriptionState] = useState<"loading" | "subscribed" | "unsubscribed" | "blocked">("loading");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    // Read initial state from window property if available
+    if (typeof window !== "undefined") {
+      const state = (window as any).onesignalSubscriptionState || "unsubscribed";
+      setSubscriptionState(state);
+    }
+
+    // Listen to state changes from OneSignalManager
+    const handleStateChange = (event: any) => {
+      setSubscriptionState(event.detail);
+    };
+
+    window.addEventListener("onesignal-state-change", handleStateChange);
+    return () => {
+      window.removeEventListener("onesignal-state-change", handleStateChange);
+    };
+  }, []);
+
+  const handleBellClick = () => {
+    window.dispatchEvent(new CustomEvent("onesignal-bell-click"));
+  };
+
+  if (!mounted) return <div className="w-9 h-9" />;
+
+  const tooltipText = {
+    loading: "Loading...",
+    subscribed: "Notifications Active",
+    unsubscribed: "Subscribe to Updates",
+    blocked: "Notifications Blocked",
+  }[subscriptionState];
+
+  const colorClass = {
+    loading: "text-slate-400 dark:text-slate-500",
+    subscribed: "text-emerald-500 hover:text-emerald-600 dark:text-emerald-400 dark:hover:text-emerald-300",
+    unsubscribed: "text-cyan-500 hover:text-cyan-600 dark:text-cyan-400 dark:hover:text-cyan-300",
+    blocked: "text-rose-500 dark:text-rose-400 cursor-not-allowed",
+  }[subscriptionState];
+
+  return (
+    <div className="relative group/bell">
+      {/* Tooltip */}
+      <div className="pointer-events-none absolute right-1/2 translate-x-1/2 top-full mt-2 hidden group-hover/bell:block whitespace-nowrap rounded-none border border-slate-200 dark:border-cyan-400/20 bg-white/95 dark:bg-[#020617]/95 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-wider text-slate-800 dark:text-cyan-400 shadow-md backdrop-blur-md z-[9999]">
+        {tooltipText}
+      </div>
+
+      <button
+        type="button"
+        onClick={handleBellClick}
+        className={`flex items-center justify-center w-9 h-9 rounded-none border-none bg-transparent transition-all duration-300 outline-none focus:outline-none focus:ring-0 cursor-pointer ${colorClass}`}
+        aria-label={tooltipText}
+      >
+        <div className="relative">
+          {/* Bell Icon SVG */}
+          <svg
+            className="w-5 h-5 fill-none stroke-current hover:scale-110 transition-transform duration-300"
+            viewBox="0 0 24 24"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+          </svg>
+
+          {/* Subscribed Dot (Green) */}
+          {subscriptionState === "subscribed" && (
+            <span className="absolute top-0.5 right-0.5 block h-2 w-2 rounded-full bg-emerald-500 ring-2 ring-white dark:ring-[#020617]" />
+          )}
+
+          {/* Blocked Dot (Red exclamation badge or dot) */}
+          {subscriptionState === "blocked" && (
+            <span className="absolute top-0.5 right-0.5 block h-2 w-2 rounded-full bg-rose-500 ring-2 ring-white dark:ring-[#020617]" />
+          )}
+        </div>
+      </button>
+    </div>
   );
 }

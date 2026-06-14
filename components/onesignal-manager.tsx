@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
 import { SITE_URL } from "@/lib/site";
 
 // Declare global types for OneSignal Web SDK
@@ -126,14 +125,40 @@ export function OneSignalManager() {
     const isOptedIn = OneSignalInstance.User.pushSubscription.optedIn;
     const nativePermission = typeof window !== "undefined" && window.Notification ? window.Notification.permission : "default";
 
+    let state: "subscribed" | "unsubscribed" | "blocked" = "unsubscribed";
     if (nativePermission === "denied") {
-      setSubscriptionState("blocked");
+      state = "blocked";
     } else if (isPermissionGranted && isOptedIn) {
-      setSubscriptionState("subscribed");
+      state = "subscribed";
     } else {
-      setSubscriptionState("unsubscribed");
+      state = "unsubscribed";
+    }
+
+    setSubscriptionState(state);
+    if (typeof window !== "undefined") {
+      (window as any).onesignalSubscriptionState = state;
+      window.dispatchEvent(new CustomEvent("onesignal-state-change", { detail: state }));
     }
   };
+
+  // Dispatch initial subscriptionState changes
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      (window as any).onesignalSubscriptionState = subscriptionState;
+      window.dispatchEvent(new CustomEvent("onesignal-state-change", { detail: subscriptionState }));
+    }
+  }, [subscriptionState]);
+
+  // Listen to custom onesignal-bell-click events dispatched by NavbarBell
+  useEffect(() => {
+    const handleBellClickEvent = () => {
+      handleBellClick();
+    };
+    window.addEventListener("onesignal-bell-click", handleBellClickEvent);
+    return () => {
+      window.removeEventListener("onesignal-bell-click", handleBellClickEvent);
+    };
+  }, [subscriptionState]);
 
   // Helper to trigger slidedown prompt
   const triggerPrompt = (OneSignalInstance: any) => {
@@ -151,7 +176,8 @@ export function OneSignalManager() {
   const handleBellClick = async () => {
     if (!isProd) {
       alert("OneSignal is in production-only mode. Notification bell mock clicked!");
-      setSubscriptionState(subscriptionState === "subscribed" ? "unsubscribed" : "subscribed");
+      const nextState = subscriptionState === "subscribed" ? "unsubscribed" : "subscribed";
+      setSubscriptionState(nextState);
       return;
     }
 
@@ -182,84 +208,6 @@ export function OneSignalManager() {
     }
   };
 
-  if (!mounted) return null;
-
-  // Tooltip details based on subscription status
-  const tooltipText = {
-    loading: "Loading OneSignal...",
-    subscribed: "Notifications Enabled",
-    unsubscribed: "Subscribe to Updates",
-    blocked: "Notifications Blocked",
-  }[subscriptionState];
-
-  return (
-    <div className="fixed bottom-72 right-5 z-[9999]">
-      <div className="relative flex items-center justify-end">
-        {/* Tooltip on the left */}
-        <AnimatePresence>
-          {showTooltip && (
-            <motion.div
-              initial={{ opacity: 0, x: 10, scale: 0.95 }}
-              animate={{ opacity: 1, x: -12, scale: 1 }}
-              exit={{ opacity: 0, x: 10, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="absolute right-full whitespace-nowrap rounded-none border border-slate-200 dark:border-cyan-400/20 bg-white/95 dark:bg-[#020617]/95 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-wider text-slate-800 dark:text-cyan-400 shadow-md backdrop-blur-md"
-            >
-              {tooltipText}
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Circular Floating Bell Icon */}
-        <motion.button
-          onClick={handleBellClick}
-          onMouseEnter={() => setShowTooltip(true)}
-          onMouseLeave={() => setShowTooltip(false)}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-          animate={bellRinging ? {
-            rotate: [0, -15, 15, -15, 15, -10, 10, -5, 5, 0],
-            transition: { duration: 0.8 }
-          } : {}}
-          className={`flex h-14 w-14 items-center justify-center rounded-full text-white shadow-lg cursor-pointer transition-all duration-300 ${
-            subscriptionState === "subscribed"
-              ? "bg-gradient-to-tr from-green-500 to-emerald-600 shadow-green-500/20 hover:shadow-green-500/40"
-              : subscriptionState === "blocked"
-              ? "bg-slate-700/80 dark:bg-slate-800/80 shadow-slate-900/10"
-              : "bg-gradient-to-tr from-cyan-500 via-blue-500 to-indigo-600 shadow-cyan-500/20 hover:shadow-cyan-500/40"
-          }`}
-          aria-label={tooltipText}
-          title={tooltipText}
-        >
-          {/* Bell Icon SVG */}
-          <div className="relative">
-            <svg
-              className={`w-7 h-7 fill-none stroke-current ${bellRinging ? "animate-bounce" : ""}`}
-              viewBox="0 0 24 24"
-              strokeWidth="2"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-            </svg>
-
-            {/* Subscribed Badge (Green Checkmark) */}
-            {subscriptionState === "subscribed" && (
-              <span className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-white text-emerald-600 border border-emerald-500 shadow-sm">
-                <svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-              </span>
-            )}
-
-            {/* Blocked Badge (Red Slash or Dot) */}
-            {subscriptionState === "blocked" && (
-              <span className="absolute -top-1.5 -right-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 border border-white dark:border-slate-900 text-white shadow-sm font-bold text-[8px]">
-                !
-              </span>
-            )}
-          </div>
-        </motion.button>
-      </div>
-    </div>
-  );
+  return null;
 }
+
