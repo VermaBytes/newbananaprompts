@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { FloatingWidgets } from "@/components/floating-widgets";
+import { OneSignalManager } from "@/components/onesignal-manager";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -92,6 +93,12 @@ export default function RootLayout({
     `}
   </Script>
 
+  {/* OneSignal Web SDK */}
+  <Script
+    src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+    strategy="lazyOnload"
+  />
+
         <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -105,6 +112,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <FloatingWidgets />
+          <OneSignalManager />
         </div>
       </body>
     </html>

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "prebuild": "npx tsc scripts/send-notifications.ts --module commonjs --resolveJsonModule --esModuleInterop --skipLibCheck --outDir dist && node dist/scripts/send-notifications.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

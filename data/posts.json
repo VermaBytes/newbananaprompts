@@ -38,27 +38,39 @@
         "heading": "Quantitative Aptitude & Data Interpretation (Winner: ChatGPT)",
         "paragraphs": [
           "The Quantitative Aptitude section in Bank PO Mains is often renamed <strong>Data Analysis & Interpretation</strong>. It is notoriously difficult, featuring missing value tables, radar graphs, caselets, and probability-based arithmetic questions.",
-          "Using ChatGPT, you can break down the toughest math concepts, convert complex caselets into structured equations, and learn Vedic speed-calculation tricks. Copy the prompt below to clear your math doubts:",
-          "<strong>Bank PO Quantitative Aptitude Prompt:</strong>",
-          "<pre class='bg-cyan-500/10 border border-cyan-400/20 p-4 text-xs font-mono text-cyan-300 rounded-none overflow-x-auto my-3 whitespace-pre-wrap'>Act as a Senior Quantitative Aptitude Coach for Bank PO exams (SBI PO, IBPS PO). I am struggling with: [Insert Arithmetic Concept/DI Type, e.g., missing data table DI or compound interest ratio questions]. Explain it using this structure:\n1. **Core Mathematical Concept:** Clear formulas and underlying logic.\n2. **Vedic/Speed Shortcut:** Explain a time-saving calculation trick (e.g., cross-multiplication, ratio conversion, or digit sum) to solve it in under 30 seconds.\n3. **Mains Level Caselet:** Provide a sample Mains-level question with detailed step-by-step calculations.\n4. **2 Practice Questions:** Provide 1 moderate and 1 difficult practice question with detailed solutions.</pre>"
+          "Using ChatGPT, you can break down the toughest math concepts, convert complex caselets into structured equations, and learn Vedic speed-calculation tricks. Copy the prompt below to clear your math doubts:"
+        ]
+      },
+      {
+        "heading": "Bank PO Quantitative Aptitude Prompt",
+        "paragraphs": [
+          "Act as a Senior Quantitative Aptitude Coach for Bank PO exams (SBI PO, IBPS PO). I am struggling with: [Insert Arithmetic Concept/DI Type, e.g., missing data table DI or compound interest ratio questions]. Explain it using this structure:\n1. **Core Mathematical Concept:** Clear formulas and underlying logic.\n2. **Vedic/Speed Shortcut:** Explain a time-saving calculation trick (e.g., cross-multiplication, ratio conversion, or digit sum) to solve it in under 30 seconds.\n3. **Mains Level Caselet:** Provide a sample Mains-level question with detailed step-by-step calculations.\n4. **2 Practice Questions:** Provide 1 moderate and 1 difficult practice question with detailed solutions."
         ]
       },
       {
         "heading": "Reasoning Ability & Complex Puzzles (Winner: Claude 3.5 Sonnet)",
         "paragraphs": [
           "The Reasoning section in Bank PO is characterized by high-difficulty puzzles: circular seating with blood relations, multi-floor arrangements with variable age columns, and input-output coding.",
-          "Claude 3.5 Sonnet stands out as the most logical AI companion. It excels at breaking down complex puzzle clues into definite and conditional variables. Use this prompt in Claude to master puzzles:",
-          "<strong>Bank PO Reasoning Puzzle Prompt:</strong>",
-          "<pre class='bg-cyan-500/10 border border-cyan-400/20 p-4 text-xs font-mono text-cyan-300 rounded-none overflow-x-auto my-3 whitespace-pre-wrap'>Act as an expert Reasoning Instructor for SBI PO & IBPS PO. I will provide a puzzle. Help me construct the solution step-by-step. Follow this format:\n1. **Definite Placements:** Sort out clues that give absolute coordinates/positions.\n2. **Conditional Possibilities:** Create distinct layout cases (Case 1, Case 2) for uncertain clues.\n3. **Conflict Resolution:** Explain why secondary cases fail as other conditions are matched.\n4. **Final Visual Layout:** Provide a clear text-based representation of the final correct arrangement.\nHere is the puzzle: [Insert Puzzle / Seating Arrangement Text]</pre>"
+          "Claude 3.5 Sonnet stands out as the most logical AI companion. It excels at breaking down complex puzzle clues into definite and conditional variables. Use this prompt in Claude to master puzzles:"
+        ]
+      },
+      {
+        "heading": "Bank PO Reasoning Puzzle Prompt",
+        "paragraphs": [
+          "Act as an expert Reasoning Instructor for SBI PO & IBPS PO. I will provide a puzzle. Help me construct the solution step-by-step. Follow this format:\n1. **Definite Placements:** Sort out clues that give absolute coordinates/positions.\n2. **Conditional Possibilities:** Create distinct layout cases (Case 1, Case 2) for uncertain clues.\n3. **Conflict Resolution:** Explain why secondary cases fail as other conditions are matched.\n4. **Final Visual Layout:** Provide a clear text-based representation of the final correct arrangement.\nHere is the puzzle: [Insert Puzzle / Seating Arrangement Text]"
         ]
       },
       {
         "heading": "English Descriptive Test: Essay & Letter Grading (Winner: ChatGPT & Grammarly)",
         "paragraphs": [
           "Unlike clerk exams, the Bank PO Mains features a **50-mark descriptive writing test** right after the objective test. Candidates must type one Letter and one Essay on a computer screen under a strict 30-minute timer. This section is highly scoring but often ignored.",
-          "ChatGPT acts as an instant essay grader, pointing out flow inconsistencies, spelling errors, and passive-voice issues while assigning a mock score. Run this prompt to get immediate feedback:",
-          "<strong>Descriptive Essay Evaluation Prompt:</strong>",
-          "<pre class='bg-cyan-500/10 border border-cyan-400/20 p-4 text-xs font-mono text-cyan-300 rounded-none overflow-x-auto my-3 whitespace-pre-wrap'>Act as an English Examiner for the SBI/IBPS PO Descriptive Test. Grade the essay/letter I paste below out of 25 marks based on 3 criteria: Structure (7 marks), Grammar & Vocabulary (8 marks), and Content Relevance (10 marks). Provide the following evaluation:\n1. **Detailed Marks Breakdown:** Score for each of the 3 criteria.\n2. **Sentence-level Improvements:** Highlight weak or informal phrases and suggest formal academic alternatives.\n3. **Grammar & Spell Check:** Identify grammatical errors or typing spelling issues.\n4. **Rewritten Exemplary Version:** Provide a highly polished, formal version of my draft containing relevant statistics.\nHere is my written draft: [Insert Draft Here]</pre>"
+          "ChatGPT acts as an instant essay grader, pointing out flow inconsistencies, spelling errors, and passive-voice issues while assigning a mock score. Run this prompt to get immediate feedback:"
+        ]
+      },
+      {
+        "heading": "Descriptive Essay Evaluation Prompt",
+        "paragraphs": [
+          "Act as an English Examiner for the SBI/IBPS PO Descriptive Test. Grade the essay/letter I paste below out of 25 marks based on 3 criteria: Structure (7 marks), Grammar & Vocabulary (8 marks), and Content Relevance (10 marks). Provide the following evaluation:\n1. **Detailed Marks Breakdown:** Score for each of the 3 criteria.\n2. **Sentence-level Improvements:** Highlight weak or informal phrases and suggest formal academic alternatives.\n3. **Grammar & Spell Check:** Identify grammatical errors or typing spelling issues.\n4. **Rewritten Exemplary Version:** Provide a highly polished, formal version of my draft containing relevant statistics.\nHere is my written draft: [Insert Draft Here]"
         ]
       },
       {
