@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { FloatingWidgets } from "@/components/floating-widgets";
 import { OneSignalManager } from "@/components/onesignal-manager";
+import { AdsterraSocialBar } from "@/components/adsterra-social-bar";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -113,6 +114,7 @@ export default function RootLayout({
           <Footer />
           <FloatingWidgets />
           <OneSignalManager />
+          <AdsterraSocialBar />
         </div>
       </body>
     </html>

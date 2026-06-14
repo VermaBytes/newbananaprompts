@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AdPlaceholder } from "@/components/ad-placeholder";
 import { CopyButton } from "@/components/copy-button";
 import { RelatedPosts } from "@/components/related-posts";
+import { AdsterraBanner300x250 } from "@/components/adsterra-banner-300x250";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -347,8 +347,8 @@ export default async function PostPage({ params }: PostPageProps) {
             </div>
           </article>
 
-          {/* AD / PROMOTION PLACEHOLDER */}
-          <AdPlaceholder />
+          {/* ADSTERRA 300x250 DISPLAY BANNER */}
+          <AdsterraBanner300x250 />
         </div>
 
         {/* =========================

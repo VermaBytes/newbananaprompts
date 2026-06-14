@@ -4,6 +4,7 @@ import Link from "next/link";
 import { HomeHero } from "@/components/home-hero";
 import { PostCard } from "@/components/post-card";
 import { getAllPosts } from "@/lib/posts";
+import { AdsterraNativeBanner } from "@/components/adsterra-native-banner";
 
 export const metadata: Metadata = {
   title: "NB Prompts | Professional AI Blog & Creator Tools Guides",
@@ -211,6 +212,9 @@ export default function HomePage() {
 
         </div>
       </section>
+
+      {/* ADSTERRA NATIVE BANNER PLACEHOLDER */}
+      <AdsterraNativeBanner />
 
       {/* =========================
           LATEST POSTS
