@@ -109,10 +109,15 @@ async function run() {
     const alreadySentLocally = sentLog.some((entry: any) => entry.slug === post.slug);
     // Check if already sent in OneSignal history
     const alreadySentRemote = oneSignalSentUrls.has(postUrl);
+    const alreadySent = alreadySentLocally || alreadySentRemote;
 
-    if (alreadySentLocally || alreadySentRemote) {
+    console.log(`* Found post: ${post.slug}`);
+    console.log(`* Notification already sent: ${alreadySent}`);
+
+    if (alreadySent) {
       // If it is in remote history but not local log, sync local log
       if (alreadySentRemote && !alreadySentLocally) {
+        console.log(`* Syncing local log for ${post.slug} (already sent on remote)`);
         updatedSentLog.push({
           slug: post.slug,
           notificationId: "remote-synced",
@@ -129,7 +134,7 @@ async function run() {
     const message = post.description || "Read our latest article now!";
     const imageUrl = post.image ? (post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`) : undefined;
     
-    console.log(`OneSignal: Preparing notification for new post: "${post.title}"`);
+    console.log(`* Sending notification...`);
 
     // Use the existing sendBlogNotification utility
     const result = await sendBlogNotification({
@@ -139,8 +144,14 @@ async function run() {
       imageUrl
     });
 
-    if (result.success && result.data) {
-      console.log(`OneSignal: Successfully sent notification for "${post.title}". ID: ${result.data.id}`);
+    console.log(`* OneSignal response: ${JSON.stringify(result)}`);
+
+    const hasErrors = result.data?.errors && result.data.errors.length > 0;
+    const isSuccessful = !!(result.success && result.data && result.data.id && !hasErrors);
+
+    if (isSuccessful) {
+      console.log(`* OneSignal response ID: ${result.data.id}`);
+      console.log(`* Notification success/failure: success`);
 
       updatedSentLog.push({
         slug: post.slug,
@@ -151,7 +162,9 @@ async function run() {
       });
       newNotificationsSent = true;
     } else {
-      console.error(`OneSignal: Failed to send notification for "${post.title}":`, result.error);
+      console.log(`* Notification success/failure: failure`);
+      const errorMsg = result.error || (hasErrors ? result.data.errors.join(", ") : "Empty notification ID returned (no subscribed users or invalid request)");
+      console.error(`OneSignal: Failed to send notification for "${post.title}":`, errorMsg);
     }
   }
 

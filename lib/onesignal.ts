@@ -39,7 +39,7 @@ export async function sendBlogNotification({
       },
       body: JSON.stringify({
         app_id: appId,
-        included_segments: ["Subscribed Users"],
+        included_segments: ["Subscribed Users", "Active Subscriptions"],
         headings: { en: title },
         contents: { en: message },
         url: url,
