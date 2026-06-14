@@ -13,7 +13,12 @@ export function AdsterraNativeBanner() {
 
     const containerId = "container-9be433988f3627bdbebe4a665d1a9614";
     const container = document.getElementById(containerId);
-    if (!container) return;
+    if (!container) {
+      console.warn("Adsterra Native Banner: Ad container not found!");
+      return;
+    }
+    console.log("Adsterra Native Banner: Ad container found.");
+    console.log("Adsterra Native Banner: Native Banner initialized.");
 
     // Clear any previous elements to prevent duplicate script injection or duplicate ads
     container.innerHTML = "";
@@ -23,6 +28,14 @@ export function AdsterraNativeBanner() {
     script.src = "https://pl29743508.effectivecpmnetwork.com/9be433988f3627bdbebe4a665d1a9614/invoke.js";
     script.async = true;
     script.setAttribute("data-cfasync", "false");
+
+    script.onload = () => {
+      console.log("Adsterra Native Banner: Adsterra script loaded successfully.");
+    };
+    script.onerror = (e) => {
+      console.error("Adsterra Native Banner: Failed to load Adsterra script.", e);
+    };
+
     container.appendChild(script);
 
     return () => {

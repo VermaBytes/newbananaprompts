@@ -13,7 +13,12 @@ export function AdsterraBanner300x250() {
 
     const containerId = "adsterra-banner-300x250-container";
     const container = document.getElementById(containerId);
-    if (!container) return;
+    if (!container) {
+      console.warn("Adsterra Banner 300x250: Ad container not found!");
+      return;
+    }
+    console.log("Adsterra Banner 300x250: Ad container found.");
+    console.log("Adsterra Banner 300x250: Banner 300x250 initialized.");
 
     // Clear container to prevent duplicate script execution or duplicate ads
     container.innerHTML = "";
@@ -31,6 +36,14 @@ export function AdsterraBanner300x250() {
     const script = document.createElement("script");
     script.src = "https://www.highperformanceformat.com/5ab85ea4a2cd6db679e6e88c7e2b871d/invoke.js";
     script.async = true;
+
+    script.onload = () => {
+      console.log("Adsterra Banner 300x250: Adsterra script loaded successfully.");
+    };
+    script.onerror = (e) => {
+      console.error("Adsterra Banner 300x250: Failed to load Adsterra script.", e);
+    };
+
     container.appendChild(script);
 
     return () => {
