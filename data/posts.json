@@ -29,32 +29,52 @@
         "heading": "1. Summarizing Editorial Columns (The Hindu / Indian Express)",
         "paragraphs": [
           "Reading daily editorials is critical for comprehension and understanding multi-dimensional issues, especially for UPSC and Bank PO descriptive exams. However, summarizing an 800-word column manually can take up to 30 minutes. ChatGPT can do this in seconds while maintaining context.",
-          "To get the most out of editorials, do not just ask ChatGPT to \"summarize.\" Use a role-play prompt that instructs it to focus on exam-relevant points, key arguments, facts, and potential questions.",
-          "<strong>Copy-Paste Prompt:</strong><br/><pre class='bg-slate-900/60 p-4 rounded-md text-xs font-mono text-cyan-300 border border-cyan-500/20 overflow-x-auto whitespace-pre-wrap my-3'>Act as an expert current affairs mentor for competitive exams (UPSC, SSC CGL, Bank PO). I will paste a daily editorial below. Summarize it for me by structuring your response as follows:\n1. **Core Issue:** A 2-sentence summary of the main topic.\n2. **Key Arguments/Points:** 3-5 bullet points of the main arguments presented.\n3. **Important Facts & Statistics:** Any dates, percentages, names, or locations mentioned.\n4. **Exam Relevance:** How this topic connects to the syllabus (Polity, Economy, Environment, etc.) and a potential descriptive/analytical question based on it.\nHere is the editorial: [Paste Editorial Text Here]</pre>"
+          "To get the most out of editorials, do not just ask ChatGPT to \"summarize.\" Use a role-play prompt that instructs it to focus on exam-relevant points, key arguments, facts, and potential questions. Copy and use the prompt below in your study session:"
+        ]
+      },
+      {
+        "heading": "Daily Editorial Summarization Prompt",
+        "paragraphs": [
+          "Act as an expert current affairs mentor for competitive exams (UPSC, SSC CGL, Bank PO). I will paste a daily editorial below. Summarize it for me by structuring your response as follows:\n1. **Core Issue:** A 2-sentence summary of the main topic.\n2. **Key Arguments/Points:** 3-5 bullet points of the main arguments presented.\n3. **Important Facts & Statistics:** Any dates, percentages, names, or locations mentioned.\n4. **Exam Relevance:** How this topic connects to the syllabus (Polity, Economy, Environment, etc.) and a potential descriptive/analytical question based on it.\n\nHere is the editorial: [Paste Editorial Text Here]"
         ]
       },
       {
         "heading": "2. Deconstructing Government Schemes & Reports",
         "paragraphs": [
           "Government schemes, indices, and reports (like the Union Budget, Economic Survey, or NITI Aayog reports) are highly tested topics in general awareness. Memorizing their details—such as nodal ministries, targets, funding allocation, and eligibility criteria—is a common hurdle.",
-          "With ChatGPT, you can paste the text or details of a new scheme and convert it into a structured reference table that is easy to revise before the exam.",
-          "<strong>Copy-Paste Prompt:</strong><br/><pre class='bg-slate-900/60 p-4 rounded-md text-xs font-mono text-cyan-300 border border-cyan-500/20 overflow-x-auto whitespace-pre-wrap my-3'>Act as a General Awareness examiner. Analyze the government scheme or report details I paste below and construct a clean Markdown table with the following columns: Nodal Ministry/Department, Launch Year, Primary Objectives, Target Audience/Eligibility, Budgetary Allocation (if any), and Key Features. Below the table, list 3 potential MCQ questions that can be framed from this scheme.\nHere is the scheme details: [Paste Scheme Details Here]</pre>"
+          "With ChatGPT, you can paste the text or details of a new scheme and convert it into a structured reference table that is easy to revise before the exam. Copy the scheme deconstruction prompt below:"
+        ]
+      },
+      {
+        "heading": "Government Scheme Deconstruction Prompt",
+        "paragraphs": [
+          "Act as a General Awareness examiner. Analyze the government scheme or report details I paste below and construct a clean Markdown table with the following columns: Nodal Ministry/Department, Launch Year, Primary Objectives, Target Audience/Eligibility, Budgetary Allocation (if any), and Key Features. Below the table, list 3 potential MCQ questions that can be framed from this scheme.\n\nHere is the scheme details: [Paste Scheme Details Here]"
         ]
       },
       {
         "heading": "3. Generating Practice MCQs for Self-Assessment",
         "paragraphs": [
           "Active recall is the most effective way to consolidate what you have read. Instead of just highlighting your current affairs notes, you should test your knowledge immediately. ChatGPT can generate custom, exam-pattern multiple-choice questions from any news text.",
-          "Specify the difficulty level and require detailed explanations for each option to ensure you learn why an answer is correct or incorrect.",
-          "<strong>Copy-Paste Prompt:</strong><br/><pre class='bg-slate-900/60 p-4 rounded-md text-xs font-mono text-cyan-300 border border-cyan-500/20 overflow-x-auto whitespace-pre-wrap my-3'>Act as a paper setter for [Specify Exam, e.g., SSC CGL / SBI PO]. Based on the news text I paste below, generate 5 high-quality Multiple Choice Questions matching the latest exam pattern. Ensure:\n1. Each question has 4 options.\n2. The questions test both direct factual details and conceptual understanding.\n3. Provide the answer key at the very end, along with a detailed explanation of why the correct option is right and why other options are wrong.\nHere is the news text: [Paste News Article Here]</pre>"
+          "Specify the difficulty level and require detailed explanations for each option to ensure you learn why an answer is correct or incorrect. Copy and use this MCQ generator prompt:"
+        ]
+      },
+      {
+        "heading": "Current Affairs MCQ Generator Prompt",
+        "paragraphs": [
+          "Act as a paper setter for competitive exams. Based on the news text I paste below, generate 5 high-quality Multiple Choice Questions matching the latest exam pattern. Ensure:\n1. Each question has 4 options.\n2. The questions test both direct factual details and conceptual understanding.\n3. Provide the answer key at the very end, along with a detailed explanation of why the correct option is right and why other options are wrong.\n\nHere is the news text: [Paste News Article Here]"
         ]
       },
       {
         "heading": "4. Explaining Complex Economic and Polity Concepts",
         "paragraphs": [
           "Many current affairs events involve complex topics like RBI monetary policy actions (Repo Rate, CRR, MSF), Supreme Court constitutional judgments, international treaties, or cryptocurrency regulations. Rote learning these without understanding the underlying concepts leads to confusion.",
-          "Use ChatGPT to simplify these dry or complex concepts using plain English, real-world analogies, and stories.",
-          "<strong>Copy-Paste Prompt:</strong><br/><pre class='bg-slate-900/60 p-4 rounded-md text-xs font-mono text-cyan-300 border border-cyan-500/20 overflow-x-auto whitespace-pre-wrap my-3'>Act as an educator. Explain the financial/legal concept mentioned in this news update in simple, plain English like I am 12 years old. Use a real-world analogy to explain how it works and highlight its impact on the economy or general public.\nHere is the concept/update: [Insert Topic, e.g., 'RBI increases Repo Rate by 25 basis points to curb inflation']</pre>"
+          "Use ChatGPT to simplify these dry or complex concepts using plain English, real-world analogies, and stories. Copy the concept clarification prompt below:"
+        ]
+      },
+      {
+        "heading": "Complex Concept Clarification Prompt",
+        "paragraphs": [
+          "Act as an educator. Explain the financial/legal concept mentioned in this news update in simple, plain English like I am 12 years old. Use a real-world analogy to explain how it works and highlight its impact on the economy or general public.\n\nHere is the concept/update: [Insert Topic, e.g., 'RBI increases Repo Rate by 25 basis points to curb inflation']"
         ]
       },
       {
