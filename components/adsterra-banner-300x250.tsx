@@ -8,8 +8,17 @@ export function AdsterraBanner300x250() {
 
   useEffect(() => {
     setMounted(true);
+    console.log("Adsterra Banner 300x250: Mounted status set to true.");
+  }, []);
 
-    if (!isProd) return;
+  useEffect(() => {
+    if (!mounted) return;
+    console.log("Adsterra Banner 300x250: Mounted, checking for container...");
+
+    if (!isProd) {
+      console.log("Adsterra Banner 300x250: Development mode - skipping live script injection.");
+      return;
+    }
 
     const containerId = "adsterra-banner-300x250-container";
     const container = document.getElementById(containerId);
@@ -49,7 +58,7 @@ export function AdsterraBanner300x250() {
     return () => {
       container.innerHTML = "";
     };
-  }, [isProd]);
+  }, [mounted, isProd]);
 
   // Enforce absolute layout dimensions (300x250) under all states to prevent CLS
   return (

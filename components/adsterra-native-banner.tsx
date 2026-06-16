@@ -8,8 +8,17 @@ export function AdsterraNativeBanner() {
 
   useEffect(() => {
     setMounted(true);
+    console.log("Adsterra Native Banner: Mounted status set to true.");
+  }, []);
 
-    if (!isProd) return;
+  useEffect(() => {
+    if (!mounted) return;
+    console.log("Adsterra Native Banner: Mounted, checking for container...");
+
+    if (!isProd) {
+      console.log("Adsterra Native Banner: Development mode - skipping live script injection.");
+      return;
+    }
 
     const containerId = "container-9be433988f3627bdbebe4a665d1a9614";
     const container = document.getElementById(containerId);
@@ -41,7 +50,7 @@ export function AdsterraNativeBanner() {
     return () => {
       container.innerHTML = "";
     };
-  }, [isProd]);
+  }, [mounted, isProd]);
 
   if (!mounted) {
     // Reserved space to avoid layout shift (CLS) during SSR hydration
