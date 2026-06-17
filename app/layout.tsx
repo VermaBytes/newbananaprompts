@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { Footer } from "@/components/footer";
@@ -7,6 +7,13 @@ import { FloatingWidgets } from "@/components/floating-widgets";
 import { OneSignalManager } from "@/components/onesignal-manager";
 import { AdsterraSocialBar } from "@/components/adsterra-social-bar";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -66,39 +73,39 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-       <head>
-  <Script id="theme-init" strategy="beforeInteractive">
-    {`
-      (function() {
-        try {
-          var storedTheme = localStorage.getItem("theme");
-          var theme = storedTheme || "light";
-          document.documentElement.dataset.theme = theme;
-        } catch (error) {}
-      })();
-    `}
-  </Script>
+      <head>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`
+            (function() {
+              try {
+                var storedTheme = localStorage.getItem("theme");
+                var theme = storedTheme || "light";
+                document.documentElement.dataset.theme = theme;
+              } catch (error) {}
+            })();
+          `}
+        </Script>
 
-  {/* Google Analytics */}
-  <Script
-    src="https://www.googletagmanager.com/gtag/js?id=G-CFRHNCTG1G"
-    strategy="afterInteractive"
-  />
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-CFRHNCTG1G"
+          strategy="afterInteractive"
+        />
 
-  <Script id="google-analytics" strategy="afterInteractive">
-    {`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-CFRHNCTG1G');
-    `}
-  </Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CFRHNCTG1G');
+          `}
+        </Script>
 
-  {/* OneSignal Web SDK */}
-  <Script
-    src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
-    strategy="lazyOnload"
-  />
+        {/* OneSignal Web SDK */}
+        <Script
+          src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
+          strategy="lazyOnload"
+        />
 
         <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
