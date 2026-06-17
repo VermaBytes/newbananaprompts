@@ -513,21 +513,5 @@ html[data-theme="dark"] .sidebar-list button:hover {
   border-radius: 0px;
 }
 
-/* ── Adsterra Social Bar — force bottom placement ── */
-/* Adsterra injects a fixed-position div/iframe; override it to always sit at the bottom */
-div[id^="adsterra"],
-div[class*="social-bar"],
-div[class*="socialbar"],
-div[class*="adsterra"],
-iframe[src*="effectivecpmnetwork"],
-iframe[src*="adsterra"] {
-  position: fixed !important;
-  bottom: 0 !important;
-  top: auto !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  z-index: 9999 !important;
-  margin: 0 !important;
-}
+
 
