@@ -293,11 +293,15 @@ export default async function PostPage({ params }: PostPageProps) {
                 {post.sections.map((section) => {
                   const isPromptCard = section.heading.toLowerCase().includes("prompt");
                   const promptText = section.paragraphs.join("\n\n");
+                  const sectionId = section.heading.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
                   if (isPromptCard) {
                     return (
                       <section key={section.heading} className="space-y-4">
-                        <h2 className="theme-text-primary text-xl font-bold font-[family-name:var(--font-heading)]">
+                        <h2 
+                          id={sectionId}
+                          className="theme-text-primary text-xl font-bold font-[family-name:var(--font-heading)]"
+                        >
                           {section.heading}
                         </h2>
                         {section.subheading ? (
@@ -324,7 +328,10 @@ export default async function PostPage({ params }: PostPageProps) {
 
                   return (
                     <section key={section.heading} className="space-y-3">
-                      <h2 className="theme-text-primary text-2xl font-bold font-[family-name:var(--font-heading)] leading-tight pt-2">
+                      <h2 
+                        id={sectionId}
+                        className="theme-text-primary text-2xl font-bold font-[family-name:var(--font-heading)] leading-tight pt-2"
+                      >
                         {section.heading}
                       </h2>
                       {section.subheading ? (

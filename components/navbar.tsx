@@ -3,6 +3,7 @@
 import { useState, useEffect, type FormEvent } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -98,6 +99,9 @@ export function Navbar() {
             ========================= */}
         <div className="flex items-center gap-3">
           
+          {/* THEME TOGGLE */}
+          <ThemeToggle />
+
           {/* BELL NOTIFICATION */}
           <NavbarBell />
 
@@ -209,6 +213,12 @@ export function Navbar() {
               />
             </div>
           </form>
+
+          {/* MOBILE THEME TOGGLE */}
+          <div className="flex items-center justify-between border-t border-slate-200/40 dark:border-cyan-400/5 pt-3.5 mt-1">
+            <span className="text-xs font-semibold text-slate-500 dark:text-slate-400">Change Theme</span>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
 
