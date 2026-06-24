@@ -180,7 +180,7 @@ export default async function PostPage({ params }: PostPageProps) {
         {/* =========================
             LEFT COLUMN: ARTICLE
         ========================= */}
-        <div className="space-y-8">
+        <div className="space-y-8 min-w-0">
           <article className="site-panel overflow-hidden rounded-none shadow-lg border border-cyan-400/10 dark:border-white/10">
             
             {/* FEATURED IMAGE */}
