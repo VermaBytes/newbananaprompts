@@ -160,6 +160,33 @@ const linkPlan = [
     sectionIdx: 0, paraIdx: 0,
     replace: (t) => t + ` Agar aur bhi realistic AI image prompts chahiye toh <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts</a> aur social media ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> guide zaroor dekhein.`
   },
+
+  // === LINK TO NEW SEO POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-tools-for-content-creators-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " Additionally, if you want to rank your content and drive search traffic to your creations, check out our comprehensive guide on the <a href='/post/best-ai-seo-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI SEO Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-developers-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " If you are building search-optimized web apps or need to automate technical audits, explore our detailed list of the <a href='/post/best-ai-seo-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI SEO Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To focus specifically on driving search rankings and organic customer acquisition, be sure to read our review of the <a href='/post/best-ai-seo-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI SEO Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-designers-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To drive search traffic to your portfolio and visual layouts, optimize your site using the platforms listed in our <a href='/post/best-ai-seo-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI SEO Tools in 2026 (Tested & Compared)</a> guide."
+  },
+  {
+    postSlug: "best-ai-productivity-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " For teams looking to scale their search visibility and optimize operational content, check out our detailed guide on the <a href='/post/best-ai-seo-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI SEO Tools in 2026 (Tested & Compared)</a>."
+  }
 ];
 
 // Apply all link injections
