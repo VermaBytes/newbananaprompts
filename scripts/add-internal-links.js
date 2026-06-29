@@ -213,6 +213,33 @@ const linkPlan = [
     postSlug: "best-ai-tools-for-designers-in-2026",
     sectionIdx: 0, paraIdx: 0,
     replace: (t) => t + " To track freelance design requests and manage client pipelines, organize your workflow using the platforms in our <a href='/post/best-ai-crm-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI CRM Software in 2026 (Tested & Compared)</a> guide."
+  },
+
+  // === LINK TO NEW EMAIL MARKETING POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-crm-software-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate lead nurturing and capture contact inquiries through email, combine your pipeline with the <a href='/post/best-ai-email-marketing-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Email Marketing Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-seo-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To engage and monetize the search traffic landing on your posts, implement the systems reviewed in our <a href='/post/best-ai-email-marketing-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Email Marketing Tools in 2026 (Tested & Compared)</a> guide."
+  },
+  {
+    postSlug: "best-ai-tools-for-content-creators-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To nurture your audience and deliver exclusive updates directly to their inboxes, read our review of the <a href='/post/best-ai-email-marketing-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Email Marketing Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-developers-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " If you are building transactional mail pipelines or integrating SMTP services, check out our guide on the <a href='/post/best-ai-email-marketing-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Email Marketing Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate your email flows, improve campaign deliverability, and grow lists, explore our list of the <a href='/post/best-ai-email-marketing-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Email Marketing Tools in 2026 (Tested & Compared)</a>."
   }
 ];
 
