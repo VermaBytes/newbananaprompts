@@ -240,6 +240,33 @@ const linkPlan = [
     postSlug: "best-ai-marketing-tools-in-2026",
     sectionIdx: 0, paraIdx: 0,
     replace: (t) => t + " To automate your email flows, improve campaign deliverability, and grow lists, explore our list of the <a href='/post/best-ai-email-marketing-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Email Marketing Tools in 2026 (Tested & Compared)</a>."
+  },
+
+  // === LINK TO NEW SALES TOOLS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-email-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To align your email lists with automated outbound sales pipelines, integrate your campaigns with the platforms listed in our <a href='/post/best-ai-sales-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Sales Tools in 2026 (Compared)</a> guide."
+  },
+  {
+    postSlug: "best-ai-crm-software-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To supercharge your sales team with predictive pipeline and outreach automation, check out the <a href='/post/best-ai-sales-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Sales Tools in 2026 (Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-seo-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To convert organic search traffic into active corporate buyers and book live demos, explore the <a href='/post/best-ai-sales-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Sales Tools in 2026 (Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-content-creators-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To track brand deals and optimize B2B sponsor acquisitions, read our review of the <a href='/post/best-ai-sales-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Sales Tools in 2026 (Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-developers-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " If you are building custom database pipelines or syncing outreach APIs, check out our guide on the <a href='/post/best-ai-sales-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Sales Tools in 2026 (Compared)</a>."
   }
 ];
 
