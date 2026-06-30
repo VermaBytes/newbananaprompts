@@ -267,6 +267,33 @@ const linkPlan = [
     postSlug: "best-ai-tools-for-developers-in-2026",
     sectionIdx: 0, paraIdx: 0,
     replace: (t) => t + " If you are building custom database pipelines or syncing outreach APIs, check out our guide on the <a href='/post/best-ai-sales-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Sales Tools in 2026 (Compared)</a>."
+  },
+
+  // === LINK TO NEW AUTOMATION TOOLS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-sales-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate lead routing, trigger CRM status updates, and connect prospecting tools with custom API endpoints, read our review of the <a href='/post/best-ai-automation-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Automation Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-email-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To sync subscriber databases, trigger marketing campaigns, and automate follow-ups across tools, check out our guide on the <a href='/post/best-ai-automation-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Automation Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-crm-software-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To streamline contact updates, database logging, and lead transfers between channels, integrate your systems with the platforms in our <a href='/post/best-ai-automation-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Automation Tools in 2026 (Tested & Compared)</a> guide."
+  },
+  {
+    postSlug: "best-ai-seo-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate keyword research reporting, content publishing, and database backups, explore the <a href='/post/best-ai-automation-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Automation Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-content-creators-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate file conversions, script drafting, and cross-channel asset distribution, check out the <a href='/post/best-ai-automation-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Automation Tools in 2026 (Tested & Compared)</a>."
   }
 ];
 
