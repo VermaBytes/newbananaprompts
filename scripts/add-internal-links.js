@@ -375,6 +375,33 @@ const linkPlan = [
     postSlug: "best-ai-email-marketing-tools-in-2026",
     sectionIdx: 0, paraIdx: 0,
     replace: (t) => t + " To track newsletter click-through rates, calculate multi-channel campaign ROI, and optimize marketing attribution pathways, check out our guide on the <a href='/post/best-ai-analytics-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Analytics Tools in 2026 (Tested & Compared)</a>."
+  },
+
+  // === LINK TO NEW HR SOFTWARE POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-analytics-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To track candidate acquisition costs, measure employee timesheet records, and monitor corporate retention metrics across departments, explore the <a href='/post/best-ai-hr-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HR Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-project-management-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate employee onboarding milestones, coordinate team shift planning calendars, and align staffing requirements with project pipelines, check out the <a href='/post/best-ai-hr-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HR Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-customer-support-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To manage agent shift schedules, monitor hiring pipelines for support personnel, and track team feedback metrics, read our guide on the <a href='/post/best-ai-hr-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HR Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-automation-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate onboarding workflows, sync employee records across databases, and trigger custom payroll alerts, explore the <a href='/post/best-ai-hr-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HR Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-sales-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To track representative commissions, onboard new accounts personnel, and monitor sales team retention analytics, check out the <a href='/post/best-ai-hr-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HR Software in 2026 (Tested & Compared)</a>."
   }
 ];
 
