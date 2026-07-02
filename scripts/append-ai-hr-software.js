@@ -13,6 +13,8 @@ const post = {
   "image": "/posts/best-ai-hr-software-in-2026.jpg",
   "tags": [
     "Best AI HR Software",
+  
+     
     "AI Recruitment Platforms",
     "AI Payroll Software",
     "Global EOR Software",

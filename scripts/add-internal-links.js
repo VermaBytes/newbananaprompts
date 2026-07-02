@@ -402,6 +402,33 @@ const linkPlan = [
     postSlug: "best-ai-sales-tools-in-2026",
     sectionIdx: 0, paraIdx: 0,
     replace: (t) => t + " To track representative commissions, onboard new accounts personnel, and monitor sales team retention analytics, check out the <a href='/post/best-ai-hr-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HR Software in 2026 (Tested & Compared)</a>."
+  },
+
+  // === LINK TO NEW RIPPLING VS BAMBOOHR VS DEEL COMPARISON POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-hr-software-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To read a deep-dive head-to-head evaluation of the leading enterprise solutions, check out our comparison guide on <a href='/post/rippling-vs-bamboohr-vs-deel-2026' class='text-cyan-500 font-bold hover:underline'>Rippling vs BambooHR vs Deel (2026)</a>."
+  },
+  {
+    postSlug: "best-ai-analytics-tools-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To compare how unified data directories link benefits and IT fleets to employee files, explore our detailed buyer's guide comparing <a href='/post/rippling-vs-bamboohr-vs-deel-2026' class='text-cyan-500 font-bold hover:underline'>Rippling vs BambooHR vs Deel (2026)</a>."
+  },
+  {
+    postSlug: "best-ai-project-management-tools-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To see which HR directory unifies task routing with global EOR contractor legal setups, review our head-to-head analysis of <a href='/post/rippling-vs-bamboohr-vs-deel-2026' class='text-cyan-500 font-bold hover:underline'>Rippling vs BambooHR vs Deel (2026)</a>."
+  },
+  {
+    postSlug: "best-ai-customer-support-tools-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To see how to align team schedules with local legal entity payroll structures, check out our review of <a href='/post/rippling-vs-bamboohr-vs-deel-2026' class='text-cyan-500 font-bold hover:underline'>Rippling vs BambooHR vs Deel (2026)</a>."
+  },
+  {
+    postSlug: "best-ai-automation-tools-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To design automated workflows linking employee records to SaaS app configurations, check our detailed comparison of <a href='/post/rippling-vs-bamboohr-vs-deel-2026' class='text-cyan-500 font-bold hover:underline'>Rippling vs BambooHR vs Deel (2026)</a>."
   }
 ];
 
