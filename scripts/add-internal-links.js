@@ -456,6 +456,33 @@ const linkPlan = [
     postSlug: "best-ai-customer-support-tools-in-2026",
     sectionIdx: 0, paraIdx: 2,
     replace: (t) => t + " To pay your client support representatives on time and process state payroll taxes automatically, see the <a href='/post/best-ai-payroll-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Payroll Software for Small Businesses in 2026</a>."
+  },
+
+  // === LINK TO NEW RECRUITMENT SOFTWARE POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-payroll-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To optimize your applicant sourcing, resume screening scorecards, and collaborative hiring pipelines, see our guide on the <a href='/post/best-ai-recruitment-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Recruitment Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "rippling-vs-bamboohr-vs-deel-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To automate candidate screenings and manage custom applicant tracking boards across distributed teams, check out the <a href='/post/best-ai-recruitment-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Recruitment Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hr-software-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To build custom scorecard evaluations and syndicate open job posts to popular boards automatically, read our review of the <a href='/post/best-ai-recruitment-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Recruitment Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-analytics-tools-in-2026",
+    sectionIdx: 1, paraIdx: 0,
+    replace: (t) => t + " To monitor voluntary churn rates and analyze candidate acquisition costs across departments, see our comparison of the <a href='/post/best-ai-recruitment-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Recruitment Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-project-management-tools-in-2026",
+    sectionIdx: 1, paraIdx: 0,
+    replace: (t) => t + " To track new hire onboarding milestones and coordinate staffing needs with project pipelines, see our guide on the <a href='/post/best-ai-recruitment-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Recruitment Software for Small Businesses in 2026</a>."
   }
 ];
 
