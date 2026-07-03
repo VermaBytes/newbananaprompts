@@ -429,6 +429,33 @@ const linkPlan = [
     postSlug: "best-ai-automation-tools-in-2026",
     sectionIdx: 0, paraIdx: 1,
     replace: (t) => t + " To design automated workflows linking employee records to SaaS app configurations, check our detailed comparison of <a href='/post/rippling-vs-bamboohr-vs-deel-2026' class='text-cyan-500 font-bold hover:underline'>Rippling vs BambooHR vs Deel (2026)</a>."
+  },
+
+  // === LINK TO NEW PAYROLL SOFTWARE POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "rippling-vs-bamboohr-vs-deel-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To compare how modern setups handle direct deposits and local tax compliance payments, see our list of the <a href='/post/best-ai-payroll-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Payroll Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hr-software-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To automate state tax calculations, print paychecks, and setup direct deposits for W-2 staff, review our guide on the <a href='/post/best-ai-payroll-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Payroll Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-analytics-tools-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To track employee tax withholdings and monitor general ledger expense entries, check out the <a href='/post/best-ai-payroll-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Payroll Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-project-management-tools-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To sync employee timecards directly with payroll calculations and bookkeeping ledgers, explore the <a href='/post/best-ai-payroll-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Payroll Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-customer-support-tools-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To pay your client support representatives on time and process state payroll taxes automatically, see the <a href='/post/best-ai-payroll-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Payroll Software for Small Businesses in 2026</a>."
   }
 ];
 
