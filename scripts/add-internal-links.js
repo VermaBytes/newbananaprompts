@@ -483,6 +483,33 @@ const linkPlan = [
     postSlug: "best-ai-project-management-tools-in-2026",
     sectionIdx: 1, paraIdx: 0,
     replace: (t) => t + " To track new hire onboarding milestones and coordinate staffing needs with project pipelines, see our guide on the <a href='/post/best-ai-recruitment-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Recruitment Software for Small Businesses in 2026</a>."
+  },
+
+  // === LINK TO NEW HRIS SOFTWARE POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-recruitment-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To consolidate employee directories, track time off, and manage custom organizational charts, check out the <a href='/post/best-ai-hris-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HRIS Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-payroll-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To sync employee attendance calendars and administer benefits under a single unified console, explore the <a href='/post/best-ai-hris-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HRIS Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "rippling-vs-bamboohr-vs-deel-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To evaluate how unified profiles link shift planning to local tax entities, review our detailed guide comparing the <a href='/post/best-ai-hris-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HRIS Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hr-software-in-2026",
+    sectionIdx: 1, paraIdx: 0,
+    replace: (t) => t + " To manage team onboarding, track time-off balances, and generate detailed HR compliance reports, see the <a href='/post/best-ai-hris-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HRIS Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-analytics-tools-in-2026",
+    sectionIdx: 1, paraIdx: 1,
+    replace: (t) => t + " To monitor employee satisfaction metrics and forecast voluntary churn indicators across departments, see our review of the <a href='/post/best-ai-hris-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HRIS Software for Small Businesses in 2026</a>."
   }
 ];
 
