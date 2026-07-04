@@ -510,6 +510,33 @@ const linkPlan = [
     postSlug: "best-ai-analytics-tools-in-2026",
     sectionIdx: 1, paraIdx: 1,
     replace: (t) => t + " To monitor employee satisfaction metrics and forecast voluntary churn indicators across departments, see our review of the <a href='/post/best-ai-hris-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HRIS Software for Small Businesses in 2026</a>."
+  },
+
+  // === LINK TO NEW AI TOOLS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-hris-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To compare the leading applications for document wikis, visual design, sales pipelines, and task schedules, see our ultimate list of the <a href='/post/best-ai-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-recruitment-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To automate your accounting ledgers, design visual marketing assets, and build collaborative databases, read our buyer's guide comparing the <a href='/post/best-ai-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-payroll-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To sync employee directories, track custom tasks schedules, and write marketing content automatically, review our list of the <a href='/post/best-ai-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "rippling-vs-bamboohr-vs-deel-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To design automated workflows linking multiple applications to CRM databases and task dashboards, check out the <a href='/post/best-ai-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hr-software-in-2026",
+    sectionIdx: 1, paraIdx: 1,
+    replace: (t) => t + " To automate repetitive office tasks, coordinate sales cycles, and build collaborative project databases, see the <a href='/post/best-ai-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools for Small Businesses in 2026</a>."
   }
 ];
 
