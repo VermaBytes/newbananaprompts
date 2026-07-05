@@ -537,6 +537,33 @@ const linkPlan = [
     postSlug: "best-ai-hr-software-in-2026",
     sectionIdx: 1, paraIdx: 1,
     replace: (t) => t + " To automate repetitive office tasks, coordinate sales cycles, and build collaborative project databases, see the <a href='/post/best-ai-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools for Small Businesses in 2026</a>."
+  },
+
+  // === LINK TO NEW AI MARKETING TOOLS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To optimize your search engine optimization strategies, construct email automation sequences, and acquire customers, check our guide on the <a href='/post/best-ai-marketing-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Marketing Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hris-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To build custom lead capture channels, write copy variations, and rank higher on Google search results, see our review of the <a href='/post/best-ai-marketing-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Marketing Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-recruitment-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To track marketing analytics trends, automate email sequences, and accelerate content drafting times, check our buyer's guide comparing the <a href='/post/best-ai-marketing-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Marketing Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-payroll-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To map out complex customer communication paths, analyze conversion rates, and build marketing dashboards, review the <a href='/post/best-ai-marketing-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Marketing Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "rippling-vs-bamboohr-vs-deel-2026",
+    sectionIdx: 1, paraIdx: 0,
+    replace: (t) => t + " To deploy AI subject line generators, automate social post schedules, and boost organic search traffic, see our comprehensive guide on the <a href='/post/best-ai-marketing-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Marketing Tools for Small Businesses in 2026</a>."
   }
 ];
 
