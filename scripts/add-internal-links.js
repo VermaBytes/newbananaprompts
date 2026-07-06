@@ -591,6 +591,33 @@ const linkPlan = [
     postSlug: "best-ai-payroll-software-for-small-businesses-in-2026",
     sectionIdx: 0, paraIdx: 4,
     replace: (t) => t + " To invoice clients securely, track software expense overheads, and establish a profitable side business, read our step-by-step guide on <a href='/post/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Earn Money by Creating AI Thumbnails for YouTube in 2026</a>."
+  },
+
+  // === LINK TO NEW AI DESIGN BUSINESS GUIDE FROM LATEST 5 POSTS ===
+  {
+    postSlug: "how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To build your own agency infrastructure, get creator clients, and secure stable monthly retainer contracts, see our cornerstone guide on <a href='/post/how-to-start-an-ai-thumbnail-design-business-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Start an AI Thumbnail Design Business in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-marketing-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To expand your freelance side hustle into a sustainable agency, structure monthly package prices, and design high-converting templates, read <a href='/post/how-to-start-an-ai-thumbnail-design-business-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Start an AI Thumbnail Design Business in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To learn how visual designers build portfolios, invoice clients, and scale monthly recurring revenue, check out our guide on <a href='/post/how-to-start-an-ai-thumbnail-design-business-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Start an AI Thumbnail Design Business in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hris-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To manage customer acquisition pipelines and track business expenses for a freelance design services agency, explore our guide on <a href='/post/how-to-start-an-ai-thumbnail-design-business-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Start an AI Thumbnail Design Business in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-recruitment-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 5,
+    replace: (t) => t + " To build structured design onboarding checklists and coordinate client feedback loops, see our step-by-step overview of <a href='/post/how-to-start-an-ai-thumbnail-design-business-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Start an AI Thumbnail Design Business in 2026</a>."
   }
 ];
 
