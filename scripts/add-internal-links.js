@@ -564,6 +564,33 @@ const linkPlan = [
     postSlug: "rippling-vs-bamboohr-vs-deel-2026",
     sectionIdx: 1, paraIdx: 0,
     replace: (t) => t + " To deploy AI subject line generators, automate social post schedules, and boost organic search traffic, see our comprehensive guide on the <a href='/post/best-ai-marketing-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Marketing Tools for Small Businesses in 2026</a>."
+  },
+
+  // === LINK TO NEW YOUTUBE AI THUMBNAILS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-marketing-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To discover how to monetize your design skills and launch a profitable freelance side hustle, see our guide on <a href='/post/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Earn Money by Creating AI Thumbnails for YouTube in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To learn how creators build portfolios, get paying clients, and use AI image generators to make money, check out our guide on <a href='/post/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Earn Money by Creating AI Thumbnails for YouTube in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hris-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To explore how freelance designers structure their delivery schedules and charge premium monthly subscription packages, read <a href='/post/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Earn Money by Creating AI Thumbnails for YouTube in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-recruitment-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To understand client onboarding processes and how design agencies hire remote junior artists to scale visual assets, check out <a href='/post/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Earn Money by Creating AI Thumbnails for YouTube in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-payroll-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To invoice clients securely, track software expense overheads, and establish a profitable side business, read our step-by-step guide on <a href='/post/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Earn Money by Creating AI Thumbnails for YouTube in 2026</a>."
   }
 ];
 
