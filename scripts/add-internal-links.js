@@ -618,6 +618,33 @@ const linkPlan = [
     postSlug: "best-ai-recruitment-software-for-small-businesses-in-2026",
     sectionIdx: 0, paraIdx: 5,
     replace: (t) => t + " To build structured design onboarding checklists and coordinate client feedback loops, see our step-by-step overview of <a href='/post/how-to-start-an-ai-thumbnail-design-business-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Start an AI Thumbnail Design Business in 2026</a>."
+  },
+
+  // === LINK TO NEW AI IMAGE GENERATORS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "how-to-start-an-ai-thumbnail-design-business-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To compare all 12 AI image generators side by side and find the best tool for your workflow, see our comprehensive guide on the <a href='/post/best-ai-image-generators-for-youtube-thumbnails-in-2026' class='text-cyan-500 font-bold hover:underline'>12 Best AI Image Generators for YouTube Thumbnails in 2026</a>."
+  },
+  {
+    postSlug: "how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To discover which AI image generators deliver the best photorealistic assets and typography for client thumbnails, read our detailed comparison of the <a href='/post/best-ai-image-generators-for-youtube-thumbnails-in-2026' class='text-cyan-500 font-bold hover:underline'>12 Best AI Image Generators for YouTube Thumbnails in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-marketing-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To evaluate AI-powered design tools for creating high-CTR visual assets and marketing graphics, explore the <a href='/post/best-ai-image-generators-for-youtube-thumbnails-in-2026' class='text-cyan-500 font-bold hover:underline'>12 Best AI Image Generators for YouTube Thumbnails in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To find the best AI tools for generating stunning visual content and branded graphics, check our review of the <a href='/post/best-ai-image-generators-for-youtube-thumbnails-in-2026' class='text-cyan-500 font-bold hover:underline'>12 Best AI Image Generators for YouTube Thumbnails in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hris-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 5,
+    replace: (t) => t + " To optimize your visual branding and compare the top AI design platforms for marketing assets, see the <a href='/post/best-ai-image-generators-for-youtube-thumbnails-in-2026' class='text-cyan-500 font-bold hover:underline'>12 Best AI Image Generators for YouTube Thumbnails in 2026</a>."
   }
 ];
 
