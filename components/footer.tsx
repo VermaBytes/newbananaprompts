@@ -80,14 +80,21 @@ export function Footer() {
               href="/about"
               className="block text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400"
             >
-              About
+              About Us
             </Link>
 
             <Link
               href="/contact"
               className="block text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400"
             >
-              Contact
+              Contact Us
+            </Link>
+
+            <Link
+              href="/author"
+              className="block text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400"
+            >
+              Author & Team
             </Link>
           </div>
         </div>
@@ -150,10 +157,17 @@ export function Footer() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/cookie-policy"
               className="block text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400"
             >
-              Support
+              Cookie Policy
+            </Link>
+
+            <Link
+              href="/editorial-policy"
+              className="block text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400"
+            >
+              Editorial Policy
             </Link>
           </div>
         </div>

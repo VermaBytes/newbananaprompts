@@ -10,6 +10,7 @@ const navItems = [
   { href: "/blogs", label: "Blogs" },
   { href: "/#courses", label: "Courses" },
   { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export function Navbar() {

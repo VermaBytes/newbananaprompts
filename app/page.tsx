@@ -195,7 +195,7 @@ export default function HomePage() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
               <div className="absolute inset-0 flex items-center justify-center">
                 <span className="bg-orange-500/90 text-white rounded-none px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider shadow-lg">
-                  Coming Soon
+                  Waitlist Open
                 </span>
               </div>
             </div>

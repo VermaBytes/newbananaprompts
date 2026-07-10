@@ -84,6 +84,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6
     },
     {
+      url: `${SITE_URL}/author`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.6
+    },
+    {
       url: `${SITE_URL}/privacy-policy`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
@@ -97,6 +103,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}/disclaimer`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.5
+    },
+    {
+      url: `${SITE_URL}/cookie-policy`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly",
+      priority: 0.5
+    },
+    {
+      url: `${SITE_URL}/editorial-policy`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
       priority: 0.5

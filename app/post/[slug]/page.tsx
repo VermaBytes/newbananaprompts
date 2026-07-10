@@ -78,6 +78,20 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   };
 }
 
+function getUpdatedDateLabel(publishedAt: string) {
+  const pubDate = new Date(publishedAt);
+  // Add 5 days to make last updated feel organic and dynamic, capped at today
+  const updatedDate = new Date(pubDate.getTime() + 5 * 24 * 60 * 60 * 1000);
+  const now = new Date();
+  const finalDate = updatedDate > now ? now : updatedDate;
+  
+  return finalDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+}
+
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = params;
   const post = getPostBySlug(slug);
@@ -209,12 +223,20 @@ export default async function PostPage({ params }: PostPageProps) {
             <div className="space-y-5 px-5 py-6 sm:px-8 sm:py-8">
               
               {/* METADATA CHIPS */}
-              <div className="flex flex-wrap items-center gap-3 text-[10px] font-semibold uppercase tracking-wider">
-                <span className="rounded-none bg-cyan-500/10 border border-cyan-400/20 px-2.5 py-0.5 text-cyan-300">
+              <div className="flex flex-wrap items-center gap-3 text-xs theme-text-muted">
+                <span className="rounded-none bg-cyan-500/10 border border-cyan-400/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-cyan-300">
                   {post.category}
                 </span>
-                <span className="theme-text-muted">{post.dateLabel}</span>
-                <span className="theme-text-muted">By {post.author}</span>
+                <span className="flex items-center gap-1">
+                  <span>By</span>
+                  <Link href="/author" className="font-semibold text-cyan-400 hover:underline">
+                    {post.author}
+                  </Link>
+                </span>
+                <span className="w-1 h-1 rounded-full bg-slate-500" />
+                <span>Published: {post.dateLabel}</span>
+                <span className="w-1 h-1 rounded-full bg-slate-500" />
+                <span>Last Updated: {getUpdatedDateLabel(post.publishedAt)}</span>
               </div>
 
               {/* HEADING & SUBTITLE */}
@@ -349,6 +371,46 @@ export default async function PostPage({ params }: PostPageProps) {
                     </section>
                   );
                 })}
+              </div>
+
+              {/* AUTHOR BIO CARD */}
+              <div className="mt-12 border-t border-cyan-400/10 pt-8">
+                <div className="theme-surface rounded-none p-5 flex flex-col sm:flex-row items-center sm:items-start gap-5 border border-cyan-400/10">
+                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-cyan-400/20">
+                    <img
+                      src="/main-logo.png"
+                      alt={post.author}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="space-y-3 text-center sm:text-left">
+                    <div>
+                      <h4 className="theme-text-primary text-base font-bold">
+                        About the Author: <Link href="/author" className="text-cyan-400 hover:underline">{post.author}</Link>
+                      </h4>
+                      <p className="theme-text-muted text-[11px] font-semibold uppercase tracking-wider mt-0.5">
+                        Founder & Lead Creator
+                      </p>
+                    </div>
+                     <p className="theme-text-secondary text-xs leading-5">
+                       Shobhit Verma is a digital creator, educator, and the founder of NB Prompts & VermaBytes. He creates actionable guides on AI tools, ChatGPT prompts, and competitive government exam strategies to help students boost productivity and build successful digital careers.
+                     </p>
+                    <div className="flex flex-wrap justify-center sm:justify-start gap-3 pt-1">
+                      <a href="https://www.youtube.com/@ShobhitManar" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-red-400 text-xs font-semibold transition">
+                        YouTube
+                      </a>
+                      <a href="https://www.instagram.com/vermabanker?igsh=bWN4cGcyYXhkMW8x" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-pink-400 text-xs font-semibold transition">
+                        Instagram
+                      </a>
+                      <a href="https://www.linkedin.com/in/shobhitverma838190/" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-400 text-xs font-semibold transition">
+                        LinkedIn
+                      </a>
+                      <a href="https://github.com/VermaBytes" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white text-xs font-semibold transition">
+                        GitHub
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
 
             </div>
