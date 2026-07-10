@@ -101,6 +101,14 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Google AdSense Site Verification */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7598958516745914"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+
         {/* OneSignal Web SDK */}
         <Script
           src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
