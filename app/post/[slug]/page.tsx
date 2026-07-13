@@ -92,6 +92,46 @@ function getUpdatedDateLabel(publishedAt: string) {
   });
 }
 
+function extractFaqs(post: any) {
+  const faqSection = post.sections.find((s: any) => 
+    s.heading.toLowerCase().includes("faq") || 
+    s.heading.toLowerCase().includes("frequently asked questions")
+  );
+  if (!faqSection) return null;
+
+  const faqs: { question: string; answer: string }[] = [];
+  faqSection.paragraphs.forEach((paragraph: string) => {
+    const cleanParagraph = paragraph.replace(/<br\s*\/?>/gi, "\n");
+    const lines = cleanParagraph.split("\n");
+    if (lines.length >= 2) {
+      const qLine = lines[0].replace(/<\/?[^>]+(>|$)/g, "").trim();
+      const aLine = lines[1].replace(/<\/?[^>]+(>|$)/g, "").trim();
+      
+      const qMatch = qLine.match(/^Q\d*:\s*(.*)/i);
+      const aMatch = aLine.match(/^A:\s*(.*)/i);
+      
+      if (qMatch && aMatch) {
+        faqs.push({
+          question: qMatch[1].trim(),
+          answer: aMatch[1].trim()
+        });
+      }
+    } else {
+      const text = cleanParagraph.replace(/<\/?[^>]+(>|$)/g, "").trim();
+      const parts = text.split(/\s*-\s*A:\s*/i);
+      if (parts.length === 2) {
+        const qPart = parts[0].replace(/^Q\d*:\s*/i, "").trim();
+        faqs.push({
+          question: qPart.endsWith("?") ? qPart : qPart + "?",
+          answer: parts[1].trim()
+        });
+      }
+    }
+  });
+
+  return faqs.length > 0 ? faqs : null;
+}
+
 export default async function PostPage({ params }: PostPageProps) {
   const { slug } = params;
   const post = getPostBySlug(slug);
@@ -148,31 +188,78 @@ export default async function PostPage({ params }: PostPageProps) {
 
   const postCta = ctaLinks[post.slug];
 
-  const jsonLd = {
+  const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    headline: post.seoTitle,
-    description: post.description,
-    image: `${SITE_URL}${post.image}`,
-    datePublished: post.publishedAt,
-    author: {
+    "@type": "Article",
+    "headline": post.seoTitle,
+    "description": post.description,
+    "image": `${SITE_URL}${post.image}`,
+    "author": {
       "@type": "Person",
-      name: post.author
+      "name": post.author
     },
-    publisher: {
+    "publisher": {
       "@type": "Organization",
-      name: SITE_NAME,
-      logo: {
+      "name": SITE_NAME,
+      "logo": {
         "@type": "ImageObject",
-        url: `${SITE_URL}/logo.png`
+        "url": `${SITE_URL}/logo.png`
       }
     },
-    mainEntityOfPage: canonicalUrl
+    "datePublished": post.publishedAt,
+    "dateModified": new Date(post.publishedAt).toISOString(),
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    }
   };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": SITE_URL
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blogs",
+        "item": `${SITE_URL}/blogs`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": canonicalUrl
+      }
+    ]
+  };
+
+  const faqs = extractFaqs(post);
+  const faqSchema = faqs && faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  } : null;
 
   return (
     <div className="mx-auto max-w-7xl space-y-8">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {faqSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      )}
       
       {/* =========================
           BACK BUTTON
