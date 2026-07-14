@@ -1,5 +1,193 @@
 [
   {
+    "slug": "chatgpt-prompts-for-banking-exam-preparation",
+    "title": "ChatGPT Prompts for Banking Exam Preparation (SBI, IBPS, RBI)",
+    "seoTitle": "Best ChatGPT Prompts for Banking Exam Preparation (SBI, IBPS, RBI)",
+    "description": "Crack your SBI PO, IBPS, and RBI exams with these 15 advanced ChatGPT prompts. Learn to solve Quant, Reasoning, English, and Banking Awareness sections faster.",
+    "category": "AI Tools",
+    "author": "Shobhit Verma",
+    "publishedAt": "2026-07-14T08:00:00.000Z",
+    "dateLabel": "July 14, 2026",
+    "image": "/posts/chatgpt-prompts-for-banking-exam-preparation.jpg",
+    "tags": [
+      "banking exam preparation",
+      "ChatGPT prompts for banking",
+      "SBI PO prep AI",
+      "IBPS quant reasoning AI",
+      "RBI Grade B study plan",
+      "descriptive writing evaluator"
+    ],
+    "sections": [
+      {
+        "heading": "Introduction: The Banking Exam Grind & The AI Advantage",
+        "paragraphs": [
+          "Banking exams jaise SBI PO, IBPS Clerk, RRB NTPC, aur RBI Grade B India ke sabse highly competitive aur fast-paced exams me se ek hain. In exams me success pane ka formula sirf knowledge nahi, balki speed aur accuracy hai. English, Quantitative Aptitude (Quant), Reasoning Ability, aur General/Banking Awareness sections me speed maintain karne ke liye systematic practice mandatory ho chuki hai.",
+          "<strong>BLUF (Bottom Line Up Front):</strong> ChatGPT ko agar aap detailed roles aur parameters ke sath use karte hain, to ye aapki quantitative, reasoning, vocabulary aur banking current affairs limits ko enhance kar sakta hai. Is guide me hum share kar rahe hain **15 high-quality, copy-paste ChatGPT Prompts** jo aapke daily bank exam preparation structure ko automate karenge."
+        ]
+      },
+      {
+        "heading": "Clickable Table of Contents",
+        "paragraphs": [
+          "<ul><li><a href='#1-quantitative-aptitude-quant' class='text-cyan-400 font-bold hover:underline'>1. Quantitative Aptitude (Quant)</a></li><li><a href='#2-reasoning-ability' class='text-cyan-400 font-bold hover:underline'>2. Reasoning Ability</a></li><li><a href='#3-english-language' class='text-cyan-400 font-bold hover:underline'>3. English Language</a></li><li><a href='#4-general-and-banking-awareness' class='text-cyan-400 font-bold hover:underline'>4. General & Banking Awareness</a></li><li><a href='#5-mock-test-and-revision-strategy' class='text-cyan-400 font-bold hover:underline'>5. Mock Test & Revision Strategy</a></li><li><a href='#how-to-get-best-results-from-banking-prompts' class='text-cyan-400 font-bold hover:underline'>How to Get Best Results from Banking Prompts</a></li></ul>"
+        ]
+      },
+      {
+        "heading": "1. Quantitative Aptitude (Quant)",
+        "paragraphs": [
+          "Speed maths, Vedic calculations, and Data Interpretation (DI) are core to banking Quant. Use these prompts to simplify arithmetic concepts and solve caselets step-by-step."
+        ]
+      },
+      {
+        "heading": "Prompt 1: Speed Maths & Vedic Calculation Tricks",
+        "paragraphs": [
+          "Act as an expert banking quant tutor. Provide 5 speed maths shortcuts or Vedic maths calculation tricks specifically useful for fast multiplication, square roots, and percentage-to-fraction conversions in the SBI PO / IBPS PO Prelims exam."
+        ]
+      },
+      {
+        "heading": "Prompt 2: DI (Data Interpretation) Caselet Structural Breakdown",
+        "paragraphs": [
+          "Act as a bank exam tutor. I will provide you with a raw data caselet paragraph. Parse the data and organize it into a structured matrix table (rows and columns) and write down the step-by-step linear equations to solve it. Here is the caselet: [Insert Caselet Text]"
+        ]
+      },
+      {
+        "heading": "Prompt 3: Arithmetic Concept Simplifier (PO Mains Level)",
+        "paragraphs": [
+          "Explain the mathematical concept of [insert topic, e.g., Probability / Partnership / Mixtures and Alligations] in the context of banking exams. Provide the core formulas, standard traps to avoid, and 3 SBI PO Mains level solved examples."
+        ]
+      },
+      {
+        "heading": "2. Reasoning Ability",
+        "paragraphs": [
+          "Seating arrangements, syllogisms, and new-pattern coding-decoding require high logical accuracy. These prompts help clarify core rules and arrangement logic."
+        ]
+      },
+      {
+        "heading": "Prompt 4: Seating Arrangement & Puzzle Breakdown",
+        "paragraphs": [
+          "Explain the logical step-by-step workflow to solve a [insert type, e.g., Circular Seating Arrangement with Variable / Linear double-row puzzle]. Give me a checklist of clues I should look for first and how to manage multiple possibilities systematically."
+        ]
+      },
+      {
+        "heading": "Prompt 5: Syllogism 'Only a Few' Logic Resolver",
+        "paragraphs": [
+          "Act as a logical reasoning mentor. Explain the rules of 'Only a few' and 'Some not' syllogism statements. Provide 3 mock statements with different conclusion scenarios (definite true, possibility, false) and describe their Venn diagram representations."
+        ]
+      },
+      {
+        "heading": "Prompt 6: New-Pattern Coding-Decoding Logic Finder",
+        "paragraphs": [
+          "I will provide a set of input and output statements from a new-pattern coding-decoding question. Identify the underlying logic (rules for symbols, letters shifting, and numbers coding) and explain it step-by-step. Here are the statements: [Insert Input & Output Code]"
+        ]
+      },
+      {
+        "heading": "3. English Language",
+        "paragraphs": [
+          "Improve your reading comprehension speed, vocabulary, error-spotting accuracy, and descriptive writing skills with these direct templates."
+        ]
+      },
+      {
+        "heading": "Prompt 7: Reading Comprehension Central Theme & Tone Identifier",
+        "paragraphs": [
+          "I will paste a banking Reading Comprehension passage. Identify: 1. The central theme/main idea, 2. The author's tone (with reasoning), and 3. Provide a 3-bullet point summary. Here is the passage: [Insert Passage]"
+        ]
+      },
+      {
+        "heading": "Prompt 8: Top 10 Repeated Error Spotting Rules",
+        "paragraphs": [
+          "Act as an English language coach for banking exams. Provide the 10 most frequently tested grammar rules (such as subject-verb agreement, parallel structures, pronoun rules) for the error spotting section, along with examples of typical incorrect bank test questions."
+        ]
+      },
+      {
+        "heading": "Prompt 9: Cloze Test & Contextual Vocabulary Practice",
+        "paragraphs": [
+          "Generate a 150-word cloze test paragraph based on current financial/economic news. Include 5 blanks with 5 options for each blank (A, B, C, D, E) suitable for the IBPS PO level. Provide the correct answers with contextual vocabulary explanations."
+        ]
+      },
+      {
+        "heading": "4. General & Banking Awareness",
+        "paragraphs": [
+          "General Awareness (GA) and Banking Awareness are crucial score boosters in Mains. Simplify financial definitions and summarize news for banking purposes."
+        ]
+      },
+      {
+        "heading": "Prompt 10: Core Banking Terminology Simplifier (CRR, SLR, MSF)",
+        "paragraphs": [
+          "Explain the banking concepts: [insert terms, e.g., CRR, SLR, Repo Rate, MSF, and Capital Adequacy Ratio] in simple, layperson's terms. Highlight how RBI uses them for inflation control and their directly tested exam aspects."
+        ]
+      },
+      {
+        "heading": "Prompt 11: Financial Current Affairs Summary Compiler",
+        "paragraphs": [
+          "Act as a current affairs editor for bank exams. Summarize the following news article, focusing strictly on points relevant to banking exams (such as statutory bodies, financial limits, project costs, and committee heads): [Insert News Article]"
+        ]
+      },
+      {
+        "heading": "Prompt 12: Union Budget & Economic Survey Figures Summarizer",
+        "paragraphs": [
+          "Analyze the latest Union Budget details regarding the [insert sector, e.g., Banking / Agriculture / Infrastructure]. Extract the 5 most important financial allocations, scheme updates, and fiscal metrics likely to be asked in GK sections."
+        ]
+      },
+      {
+        "heading": "5. Mock Test & Revision Strategy",
+        "paragraphs": [
+          "Analyze your test scores, build daily timetables, and evaluate descriptive PO writing using these feedback prompts."
+        ]
+      },
+      {
+        "heading": "Prompt 13: Mock Test Analytics & Weakness Improver",
+        "paragraphs": [
+          "I recently attempted an [SBI PO / IBPS PO] Prelims mock test. Here are my section-wise scores: Quant [insert score/attempts], Reasoning [insert score/attempts], English [insert score/attempts]. My accuracy is [insert percentage]. Analyze my performance and suggest a 7-day study target to improve my weak areas."
+        ]
+      },
+      {
+        "heading": "Prompt 14: 30-Day Banking Study Planner",
+        "paragraphs": [
+          "Create a structured 30-day study timetable for [insert exam, e.g., IBPS Clerk]. I can study for 4 hours daily. Balance the schedule to include daily speed maths, puzzle practice, editorial reading, current affairs, and weekly mock test revisions."
+        ]
+      },
+      {
+        "heading": "Prompt 15: Descriptive Letter & Essay Writing Evaluator",
+        "paragraphs": [
+          "Act as a bank descriptive test evaluator. Grade my draft essay/letter below based on: 1. Word count limits, 2. Formal tone and structure, 3. Grammar and punctuation, and 4. Vocabulary relevance. Suggest improvements. Here is my prompt topic: [Insert Topic] and my draft text: [Insert Essay/Letter Draft]"
+        ]
+      },
+      {
+        "heading": "How to Get Best Results from Banking Prompts",
+        "paragraphs": [
+          "To maximize efficiency while studying with AI models, follow these guidelines:",
+          "<strong>1. Define Roles:</strong> Always begin prompts with 'Act as an expert banking quant/reasoning tutor' to get professional and concise solutions.",
+          "<strong>2. Focus on Logic:</strong> Ask ChatGPT to 'explain step-by-step' rather than just giving direct answers, so you can learn the underlying concept.",
+          "<strong>3. Verify Data:</strong> General Awareness facts (especially dynamic policy rates and appointments) must be cross-checked with official RBI/PIB portals, as AI knowledge bases can have lag.",
+          "For additional exam preparation tools and productivity resources, read our detailed guide on: <a href='/post/top-10-ai-tools-every-ssc-cgl-aspirant-should-use-in-2026' class='text-cyan-500 font-bold hover:underline'>Top AI Tools for Competitive Exams</a>."
+        ]
+      },
+      {
+        "heading": "Related Articles & Exam Strategies Guides",
+        "paragraphs": [
+          "Explore more study strategies and digital tools guides to boost your exam scores:",
+          "• <a href='/post/best-ai-tools-for-bank-po-preparation-2026' class='text-cyan-400 font-bold hover:underline'>Best AI Tools for Bank PO Prep</a><br/>• <a href='/post/10-chatgpt-prompts-every-sbi-clerk-aspirant-should-use-in-2026' class='text-cyan-400 font-bold hover:underline'>ChatGPT Prompts for SBI Clerk</a><br/>• <a href='/post/best-free-ai-tools-for-students-2026' class='text-cyan-400 font-bold hover:underline'>Best Free AI Tools for Students</a>"
+        ]
+      },
+      {
+        "heading": "Post Metadata and Image Optimization Details",
+        "paragraphs": [
+          "<strong>Focus Keyword:</strong> ChatGPT Prompts for Banking Exam Preparation",
+          "<strong>20 SEO Tags:</strong> banking exam preparation, ChatGPT prompts for banking, SBI PO prep AI, IBPS PO quant reasoning, RBI Grade B study plan, bank exam study hacks, SBI Clerk vocabulary prep, IBPS Clerk reasoning puzzle solver, descriptive writing letter PO, banking awareness repo rate, speed maths Vedic shortcuts, quantitative aptitude study guide, bank exam mocks analysis, bank exams revision timetable, AI mock test grader, bank coaching online free, IBPS current affairs digest, banking descriptive letter evaluator.",
+          "<strong>5 Image Alt Texts:</strong><br/>1. ChatGPT prompts for banking exam preparation concept illustration.<br/>2. Quant and reasoning mock syllabus checklist notebook.<br/>3. A student sitting in front of banking exam books with AI dashboard.<br/>4. SBI and IBPS exam preparation study plan calendar.<br/>5. Banking terminology and RBI repo rate concepts explained by AI.",
+          "<strong>Pinterest Title:</strong> 15 Best ChatGPT Prompts to Crack SBI & IBPS PO Exams",
+          "<strong>Pinterest Description:</strong> Prep smarter for your banking exams! Get our list of 15 copy-paste ChatGPT prompts for Quant, Reasoning, English, and General Awareness.",
+          "<strong>Twitter / X Title:</strong> Study Smarter: 15 ChatGPT Prompts for SBI, IBPS, and RBI Exams",
+          "<strong>Open Graph Title:</strong> ChatGPT Prompts for Banking Exam Preparation (Complete Guide)",
+          "<strong>Open Graph Description:</strong> Master your banking exam prep. Discover 15 custom ChatGPT prompts to solve speed math, puzzles, error spotters, and bank terminology.",
+          "<strong>Suggested Category:</strong> AI Tools",
+          "<strong>Suggested Breadcrumb:</strong> Home > AI Tools > ChatGPT Prompts for Banking Exam Preparation",
+          "<strong>Reading Time:</strong> 10 minutes",
+          "<strong>Image Optimization Info:</strong><br/>• Title: ChatGPT Prompts for Banking Exam Preparation<br/>• Alt Text: ChatGPT prompts for banking exam preparation banner with quant, reasoning, and english study blocks.<br/>• Caption: ChatGPT Prompts for Banking Exam Preparation: Solve mock tests and puzzles with AI guides.<br/>• Description: Student holding a notebook with banking subjects checklist next to a stack of study books labeled SBI, IBPS, RBI, and LIC."
+        ]
+      }
+    ]
+  },
+  {
     "slug": "best-ai-email-assistants-in-2026",
     "title": "Best AI Email Assistants in 2026 (Free & Paid)",
     "seoTitle": "Best AI Email Assistants in 2026 (Free & Paid)",
