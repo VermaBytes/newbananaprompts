@@ -10,11 +10,14 @@ export type BlogPost = {
   slug: string;
   title: string;
   seoTitle: string;
+  metaTitle?: string;
   description: string;
   category: "Image Prompts" | "Video Prompts" | "AI Tools" | "Earn Money" | "Courses";
   author: string;
   publishedAt: string;
+  updatedAt?: string;
   image: string;
+  imageAlt?: string;
   tags: string[];
   sections: PostSection[];
   dateLabel: string;

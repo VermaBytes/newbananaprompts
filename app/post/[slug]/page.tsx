@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   );
 
   return {
-    title: post.seoTitle,
+    title: post.metaTitle ?? post.seoTitle,
     description: post.description,
     keywords,
     alternates: {
@@ -65,7 +65,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
           url: `${SITE_URL}${post.image}`,
           width: 1200,
           height: 630,
-          alt: post.title
+          alt: post.imageAlt ?? post.title
         }
       ]
     },
@@ -90,6 +90,10 @@ function getUpdatedDateLabel(publishedAt: string) {
     month: "long",
     day: "numeric"
   });
+}
+
+function getSchemaModifiedDate(post: { publishedAt: string; updatedAt?: string }) {
+  return post.updatedAt ?? post.publishedAt;
 }
 
 function extractFaqs(post: any) {
@@ -130,6 +134,29 @@ function extractFaqs(post: any) {
   });
 
   return faqs.length > 0 ? faqs : null;
+}
+
+
+function extractItemList(post: { sections: { heading: string }[] }) {
+  const items = post.sections
+    .map((section) => {
+      const match = section.heading.match(/^(\d+)\.\s+(.+)$/);
+      return match ? { position: Number(match[1]), name: match[2].trim() } : null;
+    })
+    .filter((item): item is { position: number; name: string } => Boolean(item))
+    .sort((left, right) => left.position - right.position);
+
+  return items.length > 0
+    ? {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: items.map((item) => ({
+          "@type": "ListItem",
+          position: item.position,
+          name: item.name
+        }))
+      }
+    : null;
 }
 
 export default async function PostPage({ params }: PostPageProps) {
@@ -207,7 +234,7 @@ export default async function PostPage({ params }: PostPageProps) {
       }
     },
     "datePublished": post.publishedAt,
-    "dateModified": new Date(post.publishedAt).toISOString(),
+    "dateModified": new Date(getSchemaModifiedDate(post)).toISOString(),
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": canonicalUrl
@@ -240,6 +267,7 @@ export default async function PostPage({ params }: PostPageProps) {
   };
 
   const faqs = extractFaqs(post);
+  const itemListSchema = extractItemList(post);
   const faqSchema = faqs && faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -257,6 +285,9 @@ export default async function PostPage({ params }: PostPageProps) {
     <div className="mx-auto max-w-7xl space-y-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {itemListSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      )}
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
