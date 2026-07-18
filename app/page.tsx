@@ -47,9 +47,14 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const allPosts = getAllPosts();
-  const latestPost = allPosts[0];
-  const featuredPosts = allPosts.slice(1, 4);
-  const latestPosts = allPosts.slice(1, 7);
+  const homePosts = [...allPosts].sort(
+    (left, right) =>
+      new Date(right.updatedAt ?? right.publishedAt).getTime() -
+      new Date(left.updatedAt ?? left.publishedAt).getTime()
+  );
+  const latestPost = homePosts[0];
+  const featuredPosts = homePosts.slice(1, 4);
+  const latestPosts = homePosts.slice(1, 7);
 
   const jsonLd = {
     "@context": "https://schema.org",

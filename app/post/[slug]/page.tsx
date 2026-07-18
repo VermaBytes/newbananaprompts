@@ -78,7 +78,15 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   };
 }
 
-function getUpdatedDateLabel(publishedAt: string) {
+function getUpdatedDateLabel(publishedAt: string, updatedAt?: string) {
+  if (updatedAt) {
+    return new Date(updatedAt).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+  }
+
   const pubDate = new Date(publishedAt);
   // Add 5 days to make last updated feel organic and dynamic, capped at today
   const updatedDate = new Date(pubDate.getTime() + 5 * 24 * 60 * 60 * 1000);
@@ -354,7 +362,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 <span className="w-1 h-1 rounded-full bg-slate-500" />
                 <span>Published: {post.dateLabel}</span>
                 <span className="w-1 h-1 rounded-full bg-slate-500" />
-                <span>Last Updated: {getUpdatedDateLabel(post.publishedAt)}</span>
+                <span>Last Updated: {getUpdatedDateLabel(post.publishedAt, post.updatedAt)}</span>
               </div>
 
               {/* HEADING & SUBTITLE */}
