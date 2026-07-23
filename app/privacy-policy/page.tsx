@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Read the Privacy Policy for NB Prompts, detailing information collection, cookies, Google Analytics, third-party advertising, and user rights.",
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png"
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png"
   }
 };
 

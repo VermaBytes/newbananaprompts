@@ -11,8 +11,7 @@ import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  themeColor: "#020617",
 };
 
 export const metadata: Metadata = {
@@ -41,8 +40,24 @@ export const metadata: Metadata = {
     "prompt ideas"
   ],
   applicationName: SITE_NAME,
+  authors: [{ name: "Shobhit Verma", url: `${SITE_URL}/author` }],
+  creator: "Shobhit Verma",
+  publisher: SITE_NAME,
+  category: "technology",
+  manifest: "/manifest.json",
   alternates: {
     canonical: "/"
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
   },
   openGraph: {
     title: `${SITE_NAME} | Best AI Prompts & Free Online Tools`,
@@ -51,13 +66,22 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_US",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/main-logo.png`,
+        width: 1792,
+        height: 2380,
+        alt: `${SITE_NAME} logo`
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE_NAME} | ${SITE_TAGLINE}`,
     description:
-      "Best AI prompts, image tools, blogging tips, and online creator resources."
+      "Best AI prompts, image tools, blogging tips, and online creator resources.",
+    images: [`${SITE_URL}/main-logo.png`]
   },
   icons: {
     icon: "/favicon.ico",

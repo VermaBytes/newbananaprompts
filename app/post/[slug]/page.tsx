@@ -59,6 +59,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       type: "article",
       siteName: SITE_NAME,
       publishedTime: post.publishedAt,
+      modifiedTime: getSchemaModifiedDate(post),
       authors: [post.author],
       images: [
         {
@@ -238,7 +239,7 @@ export default async function PostPage({ params }: PostPageProps) {
       "name": SITE_NAME,
       "logo": {
         "@type": "ImageObject",
-        "url": `${SITE_URL}/logo.png`
+        "url": `${SITE_URL}/main-logo.png`
       }
     },
     "datePublished": post.publishedAt,
@@ -329,14 +330,13 @@ export default async function PostPage({ params }: PostPageProps) {
                 src={post.image}
                 alt=""
                 fill
-                priority
                 sizes="(max-width: 1024px) 100vw, 850px"
                 className="post-featured-image-backdrop object-cover"
                 aria-hidden="true"
               />
               <Image
                 src={post.image}
-                alt={post.title}
+                alt={post.imageAlt ?? post.title}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 850px"

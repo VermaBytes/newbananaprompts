@@ -5,6 +5,7 @@ import { HomeHero } from "@/components/home-hero";
 import { PostCard } from "@/components/post-card";
 import { getAllPosts } from "@/lib/posts";
 import { AdsterraNativeBanner } from "@/components/adsterra-native-banner";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "NB Prompts | Professional AI Blog & Creator Tools Guides",
@@ -25,23 +26,32 @@ export const metadata: Metadata = {
     canonical: "/"
   },
   icons: {
-    icon: "/logo.png",
-    shortcut: "/logo.png",
-    apple: "/logo.png"
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png"
   },
   openGraph: {
     title: "NB Prompts | Professional AI Blog & Creator Tools Guides",
     description:
       "Discover cinematic AI prompts, free tools guides, and professional blogging tutorials on NB Prompts — designed for creators, marketers, and bloggers.",
-    url: "https://newbananaprompts.in",
-    siteName: "NB Prompts",
-    type: "website"
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/main-logo.png`,
+        width: 1792,
+        height: 2380,
+        alt: `${SITE_NAME} logo`
+      }
+    ]
   },
   twitter: {
     card: "summary_large_image",
     title: "NB Prompts | Professional AI Blog & Creator Tools Guides",
     description:
-      "Discover cinematic AI prompts, free tools guides, and professional blogging tutorials on NB Prompts — designed for creators, marketers, and bloggers."
+      "Discover cinematic AI prompts, free tools guides, and professional blogging tutorials on NB Prompts — designed for creators, marketers, and bloggers.",
+    images: [`${SITE_URL}/main-logo.png`]
   }
 };
 
