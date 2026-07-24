@@ -4,3 +4,8 @@ npm-debug.log*
 .env
 .env*.local
 dist
+
+# Large data files - do not track in git
+data/posts.json
+data/sent-notifications.json
+data/social-backlink-posts.txt
