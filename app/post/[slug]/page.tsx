@@ -105,6 +105,35 @@ function getSchemaModifiedDate(post: { publishedAt: string; updatedAt?: string }
   return post.updatedAt ?? post.publishedAt;
 }
 
+function stripHtml(value: string) {
+  return value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function getSectionId(heading: string) {
+  return heading.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+function getReadingTime(post: { sections: { heading: string; paragraphs: string[] }[] }) {
+  const words = post.sections
+    .flatMap((section) => [section.heading, ...section.paragraphs])
+    .map(stripHtml)
+    .join(" ")
+    .split(/\s+/)
+    .filter(Boolean).length;
+
+  return Math.max(1, Math.ceil(words / 220));
+}
+
+function getTocItems(post: { sections: { heading: string }[] }) {
+  return post.sections
+    .filter((section) => !section.heading.toLowerCase().includes("faq"))
+    .slice(0, 18)
+    .map((section) => ({
+      id: getSectionId(section.heading),
+      label: section.heading.replace(/^\d+\.\s*/, "")
+    }));
+}
+
 function extractFaqs(post: any) {
   const faqSection = post.sections.find((s: any) => 
     s.heading.toLowerCase().includes("faq") || 
@@ -182,6 +211,8 @@ export default async function PostPage({ params }: PostPageProps) {
   const canonicalUrl = `${SITE_URL}/post/${post.slug}`;
   const encodedTitle = encodeURIComponent(post.title);
   const encodedUrl = encodeURIComponent(canonicalUrl);
+  const readingTime = getReadingTime(post);
+  const tocItems = getTocItems(post);
 
   const ctaLinks: Record<string, { label: string; href: string; prompt?: string }> = {
     "remove-background-from-image-online-free-easy-method-2026": {
@@ -292,6 +323,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
     <div className="mx-auto max-w-7xl space-y-8">
+      <div className="reading-progress pointer-events-none fixed left-0 top-0 z-50 h-1 w-full origin-left bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {itemListSchema && (
@@ -363,6 +395,11 @@ export default async function PostPage({ params }: PostPageProps) {
                 <span>Published: {post.dateLabel}</span>
                 <span className="w-1 h-1 rounded-full bg-slate-500" />
                 <span>Last Updated: {getUpdatedDateLabel(post.publishedAt, post.updatedAt)}</span>
+                <span className="w-1 h-1 rounded-full bg-slate-500" />
+                <span>{readingTime} min read</span>
+                <span className="rounded-none bg-emerald-500/10 border border-emerald-400/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
+                  Featured Guide
+                </span>
               </div>
 
               {/* HEADING & SUBTITLE */}
@@ -441,7 +478,7 @@ export default async function PostPage({ params }: PostPageProps) {
                 {post.sections.map((section) => {
                   const isPromptCard = section.heading.toLowerCase().includes("prompt");
                   const promptText = section.paragraphs.join("\n\n");
-                  const sectionId = section.heading.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+                  const sectionId = getSectionId(section.heading);
 
                   if (isPromptCard) {
                     return (
@@ -550,6 +587,24 @@ export default async function PostPage({ params }: PostPageProps) {
             RIGHT COLUMN: STICKY SIDEBAR (Clean Editorial + Glowing AI effects)
         ========================= */}
         <aside className="space-y-5 lg:sticky lg:top-24">
+          {tocItems.length > 0 ? (
+            <div className="site-panel rounded-none p-4.5 space-y-3">
+              <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-sm font-bold border-b border-cyan-400/10 pb-2.5">
+                Table of Contents
+              </h3>
+              <nav className="space-y-2">
+                {tocItems.map((item) => (
+                  <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    className="block text-[11px] leading-4 text-slate-400 transition hover:text-cyan-300"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          ) : null}
           
           {/* SIDEBAR BLOCK: AI Academy Course CTA */}
           <div className="group relative overflow-hidden rounded-none border border-cyan-400/20 bg-gradient-to-br from-cyan-950/40 to-slate-900/60 p-4.5 shadow-md backdrop-blur-xl transition hover:border-cyan-400/40">
