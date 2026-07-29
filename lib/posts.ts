@@ -20,6 +20,7 @@ export type BlogPost = {
   imageAlt?: string;
   tags: string[];
   sections: PostSection[];
+  schemas?: Record<string, unknown>[];
   dateLabel: string;
 };
 

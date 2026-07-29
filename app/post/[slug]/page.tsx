@@ -308,6 +308,7 @@ export default async function PostPage({ params }: PostPageProps) {
 
   const faqs = extractFaqs(post);
   const itemListSchema = extractItemList(post);
+  const extraSchemas = post.schemas ?? [];
   const faqSchema = faqs && faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -332,6 +333,13 @@ export default async function PostPage({ params }: PostPageProps) {
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
+      {extraSchemas.map((schema, index) => (
+        <script
+          key={`extra-schema-${index}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       
       {/* =========================
           BACK BUTTON
