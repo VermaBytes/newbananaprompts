@@ -596,7 +596,7 @@ export default async function PostPage({ params }: PostPageProps) {
         ========================= */}
         <aside className="space-y-5 lg:sticky lg:top-24">
           {tocItems.length > 0 ? (
-            <div className="site-panel rounded-none p-4.5 space-y-3">
+            <div className="site-panel toc-panel rounded-none p-4.5 space-y-3">
               <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-sm font-bold border-b border-cyan-400/10 pb-2.5">
                 Table of Contents
               </h3>
@@ -605,7 +605,7 @@ export default async function PostPage({ params }: PostPageProps) {
                   <a
                     key={item.id}
                     href={`#${item.id}`}
-                    className="block text-[11px] leading-4 text-slate-400 transition hover:text-cyan-300"
+                    className="toc-link block text-[11px] leading-4 text-slate-400 transition hover:text-cyan-300"
                   >
                     {item.label}
                   </a>
