@@ -96,12 +96,21 @@ async function run() {
   const updatedSentLog = [...sentLog];
   let newNotificationsSent = false;
 
-  for (const post of posts) {
-    // Only notify for posts that are published (publishedAt <= now)
-    const publishDate = new Date(post.publishedAt);
-    if (publishDate > now) {
-      continue; // Skip future scheduled posts
-    }
+  // Notify only the single newest published post. This prevents a deployment from
+  // sending a backlog of notifications for older posts that are absent from the log.
+  const latestPost = posts
+    .filter((post: any) => new Date(post.publishedAt) <= now)
+    .sort(
+      (left: any, right: any) =>
+        new Date(right.publishedAt).getTime() - new Date(left.publishedAt).getTime()
+    )[0];
+
+  if (!latestPost) {
+    console.log("OneSignal: No published posts found. Skipping notification check.");
+    return;
+  }
+
+  for (const post of [latestPost]) {
 
     const postUrl = `${SITE_URL}/post/${post.slug}`;
     
