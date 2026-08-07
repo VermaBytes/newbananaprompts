@@ -367,7 +367,10 @@ export default async function PostPage({ params }: PostPageProps) {
             {/* FEATURED IMAGE */}
             <div
               className={`post-featured-image-frame relative w-full overflow-hidden border-b border-cyan-400/10 dark:border-white/10 ${
-                post.slug === "best-ai-tools-for-digital-marketers-2026"
+                [
+                  "best-ai-tools-for-digital-marketers-2026",
+                  "25-best-ai-tools-for-graphic-designers-2026"
+                ].includes(post.slug)
                   ? "aspect-[3/2]"
                   : "aspect-[16/9]"
               }`}
