@@ -365,7 +365,13 @@ export default async function PostPage({ params }: PostPageProps) {
           <article className="site-panel overflow-hidden rounded-none shadow-lg border border-cyan-400/10 dark:border-white/10">
             
             {/* FEATURED IMAGE */}
-            <div className="post-featured-image-frame relative aspect-[16/9] w-full overflow-hidden border-b border-cyan-400/10 dark:border-white/10">
+            <div
+              className={`post-featured-image-frame relative w-full overflow-hidden border-b border-cyan-400/10 dark:border-white/10 ${
+                post.slug === "best-ai-tools-for-digital-marketers-2026"
+                  ? "aspect-[3/2]"
+                  : "aspect-[16/9]"
+              }`}
+            >
               <Image
                 src={post.image}
                 alt=""
@@ -596,11 +602,11 @@ export default async function PostPage({ params }: PostPageProps) {
         ========================= */}
         <aside className="space-y-5 lg:sticky lg:top-24">
           {tocItems.length > 0 ? (
-            <div className="site-panel toc-panel rounded-none p-4.5 space-y-3">
+            <div className="site-panel toc-panel rounded-none px-5 py-4 space-y-3">
               <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-sm font-bold border-b border-cyan-400/10 pb-2.5">
                 Table of Contents
               </h3>
-              <nav className="space-y-2">
+              <nav className="space-y-2 pr-1">
                 {tocItems.map((item) => (
                   <a
                     key={item.id}
