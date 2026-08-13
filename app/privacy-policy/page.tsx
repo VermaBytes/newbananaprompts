@@ -9,7 +9,8 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png"
-  }
+  },
+  alternates: { canonical: "/privacy-policy" }
 };
 
 export default function PrivacyPolicyPage() {
@@ -62,7 +63,7 @@ export default function PrivacyPolicyPage() {
             Third-party ad servers or ad networks may use technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on {SITE_NAME}, which are sent directly to users' browsers. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their campaigns and/or to personalize the advertising content.
           </p>
           <p className="theme-text-secondary text-sm leading-7">
-            <strong>Google AdSense (If enabled in the future):</strong> We may display advertisements through advertising networks such as Google AdSense in the future. If enabled, Google (as a third-party vendor) will use cookies, including the DoubleClick DART cookie, to serve ads based on user visits to {SITE_NAME} and other websites on the internet. You can opt-out of personalized ads by visiting the Google Ad and Content Network Privacy Policy at <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noreferrer" className="theme-kicker hover:underline">https://policies.google.com/technologies/ads</a>.
+            <strong>Google AdSense:</strong> Our site loads Google AdSense advertising technology. Google and its partners may use cookies or similar technologies to serve, measure, and personalize ads, or to serve non-personalized ads where applicable. You can manage personalized advertising through <a href="https://adssettings.google.com/" target="_blank" rel="noreferrer" className="theme-kicker hover:underline">Google Ads Settings</a> and learn more in <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noreferrer" className="theme-kicker hover:underline">Google&apos;s advertising policies</a>.
           </p>
         </section>
 
@@ -95,9 +96,9 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="theme-text-primary text-xl font-bold">9. Contact Us</h2>
+          <h2 className="theme-text-primary text-xl font-bold">9. Policy Updates and Contact</h2>
           <p className="theme-text-secondary text-sm leading-7">
-            If you have questions or concerns regarding this policy, reach out at <span className="theme-text-primary font-semibold">shoverashop@gmail.com</span>.
+            We may update this policy when our practices or services change. The date above indicates the latest revision. For questions or privacy requests, email <a href="mailto:shoverashop@gmail.com" className="theme-kicker font-semibold hover:underline">shoverashop@gmail.com</a>.
           </p>
         </section>
       </div>

@@ -344,6 +344,15 @@ export default async function PostPage({ params }: PostPageProps) {
       {/* =========================
           BACK BUTTON
       ========================= */}
+      <nav aria-label="Breadcrumb" className="theme-text-muted overflow-x-auto text-xs">
+        <ol className="flex min-w-max items-center gap-2">
+          <li><Link href="/" className="hover:text-cyan-400 hover:underline">Home</Link></li>
+          <li aria-hidden="true">/</li>
+          <li><Link href="/blogs" className="hover:text-cyan-400 hover:underline">Blogs</Link></li>
+          <li aria-hidden="true">/</li>
+          <li className="max-w-[55vw] truncate theme-text-secondary" aria-current="page">{post.title}</li>
+        </ol>
+      </nav>
       <div className="flex items-center">
         <Link
           href="/blogs"

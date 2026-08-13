@@ -143,6 +143,8 @@ export function Navbar() {
             onClick={() => setIsOpen((open) => !open)}
             className="inline-flex items-center justify-center rounded-none border border-slate-200 dark:border-cyan-400/20 bg-slate-100/70 dark:bg-white/5 p-2 text-slate-700 dark:text-white transition-all duration-300 hover:scale-105 hover:bg-slate-200/50 dark:hover:bg-white/10 lg:hidden"
             aria-label="Toggle navigation"
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
           >
             <svg
               viewBox="0 0 24 24"
@@ -165,6 +167,8 @@ export function Navbar() {
           MOBILE MENU
           ========================= */}
       <div
+        id="mobile-navigation"
+        aria-hidden={!isOpen}
         className={`overflow-hidden border-t border-slate-200/70 dark:border-cyan-400/10 bg-white/95 dark:bg-[#020617f2] backdrop-blur-2xl transition-all duration-500 lg:hidden ${
           isOpen ? "max-h-[500px] py-5" : "max-h-0"
         }`}

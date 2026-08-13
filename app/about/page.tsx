@@ -5,7 +5,8 @@ import { SITE_NAME } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About Us | NB Prompts",
   description:
-    "Learn about NB Prompts — a comprehensive AI tools, prompt engineering, and educational prep hub designed for creators, students, and competitive exam aspirants."
+    "Learn about NB Prompts — a comprehensive AI tools, prompt engineering, and educational prep hub designed for creators, students, and competitive exam aspirants.",
+  alternates: { canonical: "/about" }
 };
 
 export default function AboutPage() {

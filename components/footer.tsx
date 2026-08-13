@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="relative mt-24 overflow-hidden border-t border-cyan-400/10 bg-[#020617]">
       
@@ -180,7 +181,7 @@ export function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-sm text-slate-500 sm:flex-row sm:px-6 lg:px-8">
           
           <p>
-            © 2026 {SITE_NAME}. All rights reserved.
+            © {currentYear} {SITE_NAME}. All rights reserved.
           </p>
 
           {/* SOCIAL ICONS (CENTERED) */}

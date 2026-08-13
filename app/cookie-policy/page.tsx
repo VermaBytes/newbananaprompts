@@ -38,7 +38,7 @@ export default function CookiePolicyPage() {
             <li><strong>Essential Cookies:</strong> Necessary for core site functionality, such as maintaining user preferences and security controls.</li>
             <li><strong>Analytical Cookies:</strong> Help us measure traffic, popular articles, and user behavior using tools like Google Analytics.</li>
             <li><strong>Functional Cookies:</strong> Used to enable features like push notifications (via OneSignal) or embedded media.</li>
-            <li><strong>Advertising Cookies (Future-Ready):</strong> May be used by advertising partners (such as Google AdSense) to serve personalized or non-personalized ads based on your visit to this and other websites.</li>
+            <li><strong>Advertising Cookies:</strong> May be used by advertising partners such as Google AdSense to serve, limit, and measure personalized or non-personalized ads.</li>
           </ul>
         </section>
 
@@ -50,7 +50,7 @@ export default function CookiePolicyPage() {
           <ul className="list-disc pl-6 theme-text-secondary text-sm leading-7 space-y-1.5">
             <li><strong>Google Analytics:</strong> Collects anonymous usage data to help us optimize page load times and content layout. (Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer" className="theme-kicker hover:underline">Google Privacy & Terms</a>)</li>
             <li><strong>OneSignal:</strong> Used to send push notifications to users who opt-in to receive prompt updates and new blog posts.</li>
-            <li><strong>Google AdSense (Future Integration):</strong> If integrated, Google uses cookies (like the DoubleClick DART cookie) to serve ads based on your visits to our site and other internet sites. You can opt-out of personalized ads by visiting Google Ads Settings.</li>
+            <li><strong>Google AdSense:</strong> Google and its partners may use cookies or similar technologies to serve and measure ads. You can manage personalized ads in <a href="https://adssettings.google.com/" target="_blank" rel="noreferrer" className="theme-kicker hover:underline">Google Ads Settings</a>.</li>
           </ul>
         </section>
 
