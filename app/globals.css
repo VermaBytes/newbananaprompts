@@ -654,6 +654,43 @@ html[data-theme="dark"] .sidebar-list button:hover {
   border-radius: 0px;
 }
 
+.post-content img,
+.post-content video,
+.post-content iframe {
+  max-width: 100%;
+}
+
+.post-content a,
+.post-content code {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 414px) {
+  .post-content p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .post-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .post-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .post-content ul,
+  .post-content ol {
+    margin-left: 1.25rem;
+  }
+
+  .post-content pre {
+    padding: 0.875rem;
+    font-size: 0.8rem;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 @supports (animation-timeline: scroll()) {
   .reading-progress {
     animation: reading-progress-scale linear both;

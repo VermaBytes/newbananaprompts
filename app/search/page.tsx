@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SearchResults } from "@/components/search-results";
+import { getPostPreviews } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Search Results | NB Prompts",
@@ -15,6 +16,7 @@ type SearchPageProps = {
 };
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
+  const posts = getPostPreviews();
   const resolved = searchParams;
   const rawQuery = resolved?.query;
   const query = Array.isArray(rawQuery) ? rawQuery.join(" ") : rawQuery ?? "";
@@ -24,7 +26,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       <div className="space-y-2">
         <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">Search Results</p>
       </div>
-      <SearchResults query={query} />
+      <SearchResults posts={posts} query={query} />
     </section>
   );
 }

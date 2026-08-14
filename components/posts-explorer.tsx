@@ -2,13 +2,13 @@
 
 import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import type { BlogPost } from "@/lib/posts";
+import type { PostPreview } from "@/lib/posts";
 import { PostCard } from "@/components/post-card";
 import { PostCardSkeleton } from "@/components/post-card-skeleton";
 
-const filters = ["All", "Image Prompts", "AI Tools"] as const;
+const filters = ["All", "Image Prompts", "Video Prompts", "AI Tools", "Earn Money", "Courses"] as const;
 
-export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; query?: string }) {
+export function PostsExplorer({ posts = [], query = "" }: { posts?: PostPreview[]; query?: string }) {
   const searchParams = useSearchParams();
   const urlQuery = searchParams.get("query") ?? "";
   const effectiveQuery = urlQuery || query;
@@ -27,10 +27,7 @@ export function PostsExplorer({ posts = [], query = "" }: { posts?: BlogPost[]; 
         ...post.tags
       ].join(" ").toLowerCase();
 
-      const matchesCategory =
-        category === "All" ||
-        (category === "Image Prompts" && post.category === "Image Prompts") ||
-        (category === "AI Tools" && post.category === "AI Tools");
+      const matchesCategory = category === "All" || post.category === category;
 
       const matchesQuery = normalizedQuery.length === 0 || searchableText.includes(normalizedQuery);
 

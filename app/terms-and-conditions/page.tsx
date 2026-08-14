@@ -53,7 +53,7 @@ export default function TermsAndConditionsPage() {
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">5. Third-Party Links</h2>
           <p className="theme-text-secondary text-sm leading-7">
-            Our articles and guides may contain links to external third-party websites (such as Midjourney, Bing Image Creator, government portals, or affiliate tools). We have no control over the privacy policies, terms, or content of these external sites and bear no responsibility for their operations.
+            Our articles and guides may contain links to external third-party websites, such as AI tool providers and government portals. We have no control over the privacy policies, terms, or content of these external sites and bear no responsibility for their operations.
           </p>
         </section>
 

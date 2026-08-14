@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { BlogPost } from "@/lib/posts";
+import type { PostPreview } from "@/lib/posts";
 
-export function PostCard({ post }: { post: BlogPost }) {
+export function PostCard({ post }: { post: PostPreview }) {
   return (
     <article className="prompt-card group flex flex-col h-full overflow-hidden rounded-none border border-cyan-400/5">
       <Link href={`/post/${post.slug}`} className="relative block aspect-[1000/630] overflow-hidden w-full">

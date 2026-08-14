@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PostsExplorer } from "@/components/posts-explorer";
-import { getAllPosts } from "@/lib/posts";
+import { getPostPreviews } from "@/lib/posts";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ export default async function BlogsPage({
 }: {
   searchParams?: { query?: string | string[] };
 }) {
-  const posts = getAllPosts();
+  const posts = getPostPreviews();
   const resolvedParams = searchParams;
   const rawQuery = resolvedParams?.query;
   const query = Array.isArray(rawQuery) ? rawQuery.join(" ") : rawQuery ?? "";

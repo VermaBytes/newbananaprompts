@@ -24,12 +24,21 @@ export type BlogPost = {
   dateLabel: string;
 };
 
+export type PostPreview = Pick<
+  BlogPost,
+  "slug" | "title" | "seoTitle" | "description" | "category" | "author" | "publishedAt" | "updatedAt" | "image" | "imageAlt" | "tags" | "dateLabel"
+>;
+
 const allPosts = (posts as BlogPost[]).sort(
   (left, right) => new Date(right.publishedAt).getTime() - new Date(left.publishedAt).getTime()
 );
 
 export function getAllPosts() {
   return allPosts;
+}
+
+export function getPostPreviews(): PostPreview[] {
+  return allPosts.map(({ sections, schemas, metaTitle, ...preview }) => preview);
 }
 
 export function getPostBySlug(slug: string) {

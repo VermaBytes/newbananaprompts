@@ -35,6 +35,20 @@ if (fs.existsSync(envPath)) {
 async function run() {
   console.log("OneSignal: Checking for new blog posts to notify...");
 
+  // A local `npm run build` should never make external API calls or send a real
+  // push notification. Vercel sets VERCEL=1 during deployments; other CI
+  // providers can opt in explicitly with SEND_ONESIGNAL_NOTIFICATIONS=true.
+  const notificationsEnabled =
+    process.env.VERCEL === "1" ||
+    process.env.SEND_ONESIGNAL_NOTIFICATIONS === "true";
+
+  if (!notificationsEnabled) {
+    console.log(
+      "OneSignal: Skipping notifications outside deployment (set SEND_ONESIGNAL_NOTIFICATIONS=true to opt in)."
+    );
+    return;
+  }
+
   const appId = process.env.NEXT_PUBLIC_ONESIGNAL_APP_ID;
   const apiKey = process.env.ONESIGNAL_REST_API_KEY;
 

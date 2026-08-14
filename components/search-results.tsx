@@ -2,10 +2,9 @@
 
 import { useMemo } from "react";
 import { PostCard } from "@/components/post-card";
-import { getAllPosts } from "@/lib/posts";
+import type { PostPreview } from "@/lib/posts";
 
-export function SearchResults({ query = "" }: { query?: string }) {
-  const posts = getAllPosts();
+export function SearchResults({ posts, query = "" }: { posts: PostPreview[]; query?: string }) {
   const normalized = query.trim().toLowerCase();
 
   const postMatches = useMemo(() => {

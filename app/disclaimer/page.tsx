@@ -55,9 +55,9 @@ export default function DisclaimerPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="theme-text-primary text-xl font-bold">5. Advertising and Affiliate Disclosure</h2>
+          <h2 className="theme-text-primary text-xl font-bold">5. Advertising and Commercial Disclosure</h2>
           <p className="theme-text-secondary text-sm leading-7">
-            {SITE_NAME} may display advertisements from third-party networks, including Google AdSense, to support the operation of this site. Additionally, we may include affiliate links in some of our review guides. Clicking on or purchasing products through these links may earn us a small commission at no additional cost to you. We only recommend products or tools we believe bring value to our readers.
+            {SITE_NAME} may display advertisements from third-party networks, including Google AdSense, to support the operation of this site. The current website code does not identify affiliate-tracking links. If a future article contains a sponsored or affiliate relationship, it will be disclosed clearly in the relevant content.
           </p>
         </section>
 

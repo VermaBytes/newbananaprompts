@@ -720,29 +720,6 @@ export default async function PostPage({ params }: PostPageProps) {
             </div>
           </div>
 
-          {/* SIDEBAR BLOCK: Subscription Box */}
-          <div className="site-panel rounded-none p-4.5 space-y-3">
-            <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-sm font-bold">
-              Join AI Newsletter
-            </h3>
-            <p className="theme-text-secondary text-[11px] leading-4.5">
-              Copy-ready Midjourney prompt bundles and fresh AI tools directly in your inbox.
-            </p>
-            <div className="space-y-2">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full rounded-none border border-cyan-400/20 bg-white/5 px-3.5 py-2 text-xs text-white outline-none focus:border-cyan-400"
-              />
-              <button
-                type="button"
-                className="w-full rounded-none bg-gradient-to-r from-cyan-500 to-blue-500 py-2 text-[11px] font-bold text-white shadow-lg transition hover:scale-105"
-              >
-                Subscribe Now
-              </button>
-            </div>
-          </div>
-
         </aside>
 
       </div>
