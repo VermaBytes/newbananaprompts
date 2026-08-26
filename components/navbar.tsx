@@ -7,8 +7,10 @@ import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/blogs", label: "Blogs" },
-  { href: "/#courses", label: "Courses" },
+  { href: "/category/ai-tools", label: "AI Tools" },
+  { href: "/category/ai-prompts", label: "AI Prompts" },
+  { href: "/category/earn-money", label: "Earn Money" },
+  { href: "/courses/web-development-with-ai", label: "Courses" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact Us" },
 ];

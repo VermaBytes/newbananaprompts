@@ -8,9 +8,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: [
         "/api/",
-        "/search",
-        "/prompt",
-        "/prompt/*"
+        "/search"
       ]
     },
     sitemap: `${SITE_URL}/sitemap.xml`

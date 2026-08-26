@@ -12,7 +12,7 @@ export type BlogPost = {
   seoTitle: string;
   metaTitle?: string;
   description: string;
-  category: "Image Prompts" | "Video Prompts" | "AI Tools" | "Earn Money" | "Courses";
+  category: "AI Prompts" | "Image Prompts" | "Video Prompts" | "AI Tools" | "Earn Money" | "Courses";
   author: string;
   publishedAt: string;
   updatedAt?: string;

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { HomeHero } from "@/components/home-hero";
 import { PostCard } from "@/components/post-card";
 import { getAllPosts } from "@/lib/posts";
-import { AdsterraNativeBanner } from "@/components/adsterra-native-banner";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -228,9 +227,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ADSTERRA NATIVE BANNER PLACEHOLDER */}
-      <AdsterraNativeBanner />
-
       {/* =========================
           LATEST POSTS
       ========================= */}
@@ -255,4 +251,3 @@ export default function HomePage() {
     </div>
   );
 }
-

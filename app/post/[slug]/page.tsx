@@ -1,10 +1,10 @@
+
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyButton } from "@/components/copy-button";
 import { RelatedPosts } from "@/components/related-posts";
-import { AdsterraBanner300x250 } from "@/components/adsterra-banner-300x250";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -80,21 +80,8 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 }
 
 function getUpdatedDateLabel(publishedAt: string, updatedAt?: string) {
-  if (updatedAt) {
-    return new Date(updatedAt).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric"
-    });
-  }
-
-  const pubDate = new Date(publishedAt);
-  // Add 5 days to make last updated feel organic and dynamic, capped at today
-  const updatedDate = new Date(pubDate.getTime() + 5 * 24 * 60 * 60 * 1000);
-  const now = new Date();
-  const finalDate = updatedDate > now ? now : updatedDate;
-  
-  return finalDate.toLocaleDateString("en-US", {
+  const targetDate = updatedAt ? new Date(updatedAt) : new Date(publishedAt);
+  return targetDate.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
     day: "numeric"
@@ -593,8 +580,7 @@ export default async function PostPage({ params }: PostPageProps) {
                       </a>
                       <a href="https://www.linkedin.com/in/shobhitverma838190/" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-blue-400 text-xs font-semibold transition">
                         LinkedIn
-                      </a>
-                      <a href="https://github.com/VermaBytes" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white text-xs font-semibold transition">
+                      </a>                      <a href="https://github.com/VermaBytes" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white text-xs font-semibold transition">
                         GitHub
                       </a>
                     </div>
@@ -604,9 +590,6 @@ export default async function PostPage({ params }: PostPageProps) {
 
             </div>
           </article>
-
-          {/* ADSTERRA 300x250 DISPLAY BANNER */}
-          <AdsterraBanner300x250 />
         </div>
 
         {/* =========================

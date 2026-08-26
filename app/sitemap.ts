@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/posts";
+import { promptCards } from "@/data/prompt-cards";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -8,6 +9,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: post.updatedAt ?? post.publishedAt,
     changeFrequency: "monthly" as const,
     priority: 0.8
+  }));
+
+  const promptEntries = promptCards.map((card) => ({
+    url: `${SITE_URL}/prompt/${card.slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7
+  }));
+
+  const categoryEntries = ["ai-tools", "ai-prompts", "earn-money", "courses"].map((cat) => ({
+    url: `${SITE_URL}/category/${cat}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: "weekly" as const,
+    priority: 0.85
   }));
 
   return [
@@ -23,6 +38,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.9
     },
+    {
+      url: `${SITE_URL}/prompt`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "weekly",
+      priority: 0.8
+    },
+    ...categoryEntries,
     {
       url: `${SITE_URL}/courses/web-development-with-ai`,
       lastModified: new Date().toISOString(),
@@ -125,6 +147,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5
     },
+    ...promptEntries,
     ...postEntries
   ];
 }
