@@ -20,7 +20,7 @@ export default function EditorialPolicyPage() {
         <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl">
           Editorial Policy
         </h1>
-        <p className="theme-text-muted text-sm">Last Updated: July 2026</p>
+        <p className="theme-text-muted text-sm">Last updated: August 29, 2026</p>
 
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">1. Editorial Philosophy & Purpose</h2>
@@ -35,30 +35,30 @@ export default function EditorialPolicyPage() {
             We hold our publications to a high standard of accuracy:
           </p>
           <ul className="list-disc pl-6 theme-text-secondary text-sm leading-7 space-y-1.5">
-            <li><strong>AI Prompt Testing:</strong> Every prompt published in our database is tested across multiple AI model variants (such as Midjourney, ChatGPT, Gemini, etc.) to ensure they generate useful and aesthetically pleasing results before listing.</li>
-            <li><strong>Exam & Career Information:</strong> Any information relating to public examinations (like SSC, UPSC, Banking, or Railways) is compiled from official government websites. We strive to check syllabus updates, dates, and instructions, but we encourage our users to cross-verify all details on official portals.</li>
-            <li><strong>Tool Reviews:</strong> Our software and tool recommendations are based on practical usage, feature testing, and developer feedback to ensure they provide authentic value.</li>
+            <li><strong>AI prompts:</strong> We edit prompts for clarity and label examples as inspiration, not guaranteed outputs. Results vary by model, version, settings, and input image.</li>
+            <li><strong>Exam and career information:</strong> Time-sensitive claims should link to the responsible organization where practical. Readers must verify dates, eligibility, syllabus, and applications on the official portal.</li>
+            <li><strong>Tool guides:</strong> We distinguish documented features from our own observations. Prices, free plans, limits, and availability must be checked on the provider&apos;s website before purchase or use.</li>
           </ul>
         </section>
 
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">3. Human-in-the-Loop Content Creation</h2>
           <p className="theme-text-secondary text-sm leading-7">
-            We follow a strict <strong>AI-Human Hybrid Model</strong>. While we leverage generative AI tools to assist in outlining, structuring, and brainstorming drafts, we do not publish low-value, automated, or copy-paste AI outputs. Every article is written, reviewed, fact-checked, and expanded by human editors. This process ensures that the voice remains authentic, formatting is clean, and the content provides original value to our readers.
+            Generative AI may assist with brainstorming, outlines, or language editing. The named author remains responsible for selecting the topic, reviewing the draft, checking important claims, adding context, and deciding what is published. We do not treat an AI-generated answer as a source.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">4. Regular Content Audits & Updates</h2>
           <p className="theme-text-secondary text-sm leading-7">
-            The tech and academic worlds move fast. We conduct regular reviews of our older articles, updates to prompt syntax, and revisions to exam prep guides to maintain relevance. Major edits or corrections are recorded silently, and article dates may be updated to reflect the latest audit.
+            Technology and examination information changes quickly. An article&apos;s updated date is changed only after a meaningful editorial review. Older pages may still contain outdated details; readers can use the correction channel below to flag them.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">5. Correction & Feedback Policy</h2>
           <p className="theme-text-secondary text-sm leading-7">
-            We strive for accuracy but acknowledge that errors can happen. If you notice a typo, an outdated link, an incorrect syllabus reference, or a broken prompt, please reach out to us immediately via our <Link href="/contact" className="theme-kicker hover:underline">Contact Page</Link>. We aim to review and correct verified issues within 48 business hours.
+            If you notice a typo, outdated link, incorrect claim, or broken prompt, send the page URL and supporting source through our <Link href="/contact" className="theme-kicker hover:underline">Contact Page</Link>. We review specific, verifiable reports and correct confirmed errors as soon as practical.
           </p>
         </section>
       </div>

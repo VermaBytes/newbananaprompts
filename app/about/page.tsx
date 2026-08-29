@@ -28,7 +28,7 @@ export default function AboutPage() {
         <div className="theme-surface rounded-none p-6 space-y-3">
           <h2 className="theme-text-primary text-lg font-bold">1. AI Prompt Engineering</h2>
           <p className="theme-text-secondary text-sm leading-6">
-            We build and catalog copy-ready prompts for Midjourney, ChatGPT, Claude, and Bing Image Creator. Our focus is helping creators, bloggers, and designers achieve professional visuals and text outputs instantly without endless trial and error.
+            We publish adaptable prompt examples for popular AI tools. Outputs vary by model and settings, so readers should treat examples as starting points and review every result before use.
           </p>
         </div>
         <div className="theme-surface rounded-none p-6 space-y-3">
@@ -40,13 +40,13 @@ export default function AboutPage() {
         <div className="theme-surface rounded-none p-6 space-y-3">
           <h2 className="theme-text-primary text-lg font-bold">3. Student Productivity</h2>
           <p className="theme-text-secondary text-sm leading-6">
-            From free online converters (JPG to PNG, background removers) to PDF and document tools, we build and recommend productivity software that saves students time, increases focus, and streamlines college or university assignments.
+            We publish practical guides to image, document, and AI tools that can simplify common student and creator workflows.
           </p>
         </div>
         <div className="theme-surface rounded-none p-6 space-y-3">
           <h2 className="theme-text-primary text-lg font-bold">4. Online Learning & Careers</h2>
           <p className="theme-text-secondary text-sm leading-6">
-            Through our free **AI Academy** tracks (including our 30-Day Web Development course), we teach modern programming and content creation workflows, showing how to leverage AI to code faster, build side hustles, and launch careers.
+            Through our free AI Academy lessons, including the Web Development with AI course, we teach foundational programming and responsible AI-assisted workflows.
           </p>
         </div>
       </div>
@@ -55,7 +55,7 @@ export default function AboutPage() {
       <div className="theme-surface rounded-none p-6 space-y-4">
         <h2 className="theme-text-primary text-xl font-bold">Our Philosophy & Editorial Standards</h2>
         <p className="theme-text-secondary text-sm leading-7">
-          Founded by developer and educator <strong>Shobhit Verma</strong>, {SITE_NAME} follows a strict editorial policy. We believe in the "AI-Human Hybrid Model" — using technology to handle repetitive drafting while maintaining rigorous human research, fact-checking, and personalization. 
+          Founded by Shobhit Verma, {SITE_NAME} is an independent educational website. AI may assist with outlines or language editing, while the named author remains responsible for research, review, context, and publication decisions.
         </p>
         <p className="theme-text-secondary text-sm leading-7">
           Our goal is simple: deliver content that is compliant, useful, trustworthy, and actionable. We are committed to maintaining a fast, ad-safe, and highly responsive mobile-friendly portal.

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { SITE_URL } from "@/lib/site";
 
 // Declare global types for OneSignal Web SDK
@@ -15,7 +14,6 @@ declare global {
 }
 
 export function OneSignalManager() {
-  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
   
   // "loading" | "subscribed" | "unsubscribed" | "blocked"
@@ -115,35 +113,6 @@ export function OneSignalManager() {
 
     return () => clearInterval(ringInterval);
   }, [appId, isProd, subscriptionState]);
-
-  // 2. Route path views counter
-  useEffect(() => {
-    // Record page views in sessionStorage
-    const views = Number(sessionStorage.getItem("onesignal_page_views") || "0");
-    const newViews = views + 1;
-    sessionStorage.setItem("onesignal_page_views", String(newViews));
-
-    if (newViews >= 2) {
-      if (typeof window !== "undefined" && window.OneSignal) {
-        triggerPrompt(window.OneSignal);
-      } else {
-        sessionStorage.setItem("onesignal_pending_prompt", "true");
-      }
-    }
-  }, [pathname]);
-
-  // 3. 2-3 seconds timer auto-prompt for first-time visitors
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (typeof window !== "undefined" && window.OneSignal) {
-        triggerPrompt(window.OneSignal);
-      } else {
-        sessionStorage.setItem("onesignal_pending_prompt", "true");
-      }
-    }, 2500); // 2.5 seconds (in the 2-3s range)
-
-    return () => clearTimeout(timer);
-  }, []);
 
   // Sync state helper
   const updateSubscriptionState = (OneSignalInstance: any) => {

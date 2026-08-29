@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { CopyButton } from "@/components/copy-button";
 import { RelatedPosts } from "@/components/related-posts";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
+import { isPostReadyForIndexing } from "@/data/content-quality";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 type PostPageProps = {
@@ -29,32 +30,20 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
   }
 
   const canonicalUrl = `${SITE_URL}/post/${post.slug}`;
-  const keywords = Array.from(
-    new Set([
-      ...post.tags,
-      post.category,
-      post.title,
-      "AI prompts",
-      "free online tools",
-      "blogging tips",
-      "image tools"
-    ]).values()
-  );
-
+  const metaDescription = getMetaDescription(post.description);
   return {
     title: post.metaTitle ?? post.seoTitle,
-    description: post.description,
-    keywords,
+    description: metaDescription,
     alternates: {
       canonical: canonicalUrl
     },
     robots: {
-      index: true,
+      index: isPostReadyForIndexing(post.slug),
       follow: true
     },
     openGraph: {
       title: post.seoTitle,
-      description: post.description,
+      description: metaDescription,
       url: canonicalUrl,
       type: "article",
       siteName: SITE_NAME,
@@ -73,7 +62,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     twitter: {
       card: "summary_large_image",
       title: post.seoTitle,
-      description: post.description,
+      description: metaDescription,
       images: [`${SITE_URL}${post.image}`]
     }
   };
@@ -94,6 +83,12 @@ function getSchemaModifiedDate(post: { publishedAt: string; updatedAt?: string }
 
 function stripHtml(value: string) {
   return value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function getMetaDescription(description: string) {
+  if (description.length <= 160) return description;
+  const shortened = description.slice(0, 157).replace(/\s+\S*$/, "").trim();
+  return `${shortened}…`;
 }
 
 function getSectionId(heading: string) {
@@ -200,6 +195,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const encodedUrl = encodeURIComponent(canonicalUrl);
   const readingTime = getReadingTime(post);
   const tocItems = getTocItems(post);
+  const isIndexable = isPostReadyForIndexing(post.slug);
 
   const ctaLinks: Record<string, { label: string; href: string; prompt?: string }> = {
     "remove-background-from-image-online-free-easy-method-2026": {
@@ -250,7 +246,8 @@ export default async function PostPage({ params }: PostPageProps) {
     "image": `${SITE_URL}${post.image}`,
     "author": {
       "@type": "Person",
-      "name": post.author
+      "name": post.author,
+      "url": `${SITE_URL}/author`
     },
     "publisher": {
       "@type": "Organization",
@@ -424,6 +421,21 @@ export default async function PostPage({ params }: PostPageProps) {
                   {post.description}
                 </p>
               </header>
+
+              {!isIndexable ? (
+                <aside className="border border-amber-400/30 bg-amber-500/10 px-4 py-3 text-xs leading-6 theme-text-secondary">
+                  This page is undergoing editorial review and is temporarily excluded from search results. Verify time-sensitive details with primary sources.
+                </aside>
+              ) : null}
+
+              <aside className="theme-surface space-y-2 border-l-4 border-emerald-400 px-4 py-3" aria-label="Editorial note">
+                <h2 className="theme-text-primary text-sm font-bold">How this guide was prepared</h2>
+                <p className="theme-text-secondary text-xs leading-6">
+                  This article was researched and edited by {post.author}. Product features, prices, exam rules, and AI outputs can change, so verify important details on the linked official source before acting. See our{" "}
+                  <Link href="/editorial-policy" className="font-semibold text-cyan-400 hover:underline">editorial policy</Link>
+                  {" "}or <Link href="/contact" className="font-semibold text-cyan-400 hover:underline">report a correction</Link>.
+                </p>
+              </aside>
 
               {/* DYNAMIC POST CTA BOX */}
               {postCta ? (

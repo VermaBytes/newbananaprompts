@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -7,6 +8,18 @@ import { CopyButton } from "@/components/copy-button";
 type PromptPageProps = {
   params: { slug: string };
 };
+
+export async function generateMetadata({ params }: PromptPageProps): Promise<Metadata> {
+  const prompt = promptCards.find((card) => card.slug === params.slug);
+
+  return {
+    title: prompt?.title ?? "Prompt not found",
+    description: prompt
+      ? `Copy the ${prompt.title} AI image prompt and adapt it for your own creative project.`
+      : undefined,
+    robots: { index: false, follow: true }
+  };
+}
 
 export default async function PromptPage({ params }: PromptPageProps) {
   const { slug } = params;

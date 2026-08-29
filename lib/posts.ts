@@ -1,4 +1,5 @@
 import posts from "@/data/posts.json";
+import { isPostReadyForIndexing } from "@/data/content-quality";
 
 export type PostSection = {
   heading: string;
@@ -34,11 +35,11 @@ const allPosts = (posts as BlogPost[]).sort(
 );
 
 export function getAllPosts() {
-  return allPosts;
+  return allPosts.filter((post) => isPostReadyForIndexing(post.slug));
 }
 
 export function getPostPreviews(): PostPreview[] {
-  return allPosts.map(({ sections, schemas, metaTitle, ...preview }) => preview);
+  return getAllPosts().map(({ sections, schemas, metaTitle, ...preview }) => preview);
 }
 
 export function getPostBySlug(slug: string) {
@@ -46,8 +47,9 @@ export function getPostBySlug(slug: string) {
 }
 
 export function getRelatedPosts(slug: string, category: BlogPost["category"]) {
-  const categoryMatches = allPosts.filter((post) => post.category === category && post.slug !== slug);
-  const fallbackMatches = allPosts.filter((post) => post.slug !== slug);
+  const publicPosts = getAllPosts();
+  const categoryMatches = publicPosts.filter((post) => post.category === category && post.slug !== slug);
+  const fallbackMatches = publicPosts.filter((post) => post.slug !== slug);
 
   return [...categoryMatches, ...fallbackMatches].filter(
     (post, index, array) => array.findIndex((entry) => entry.slug === post.slug) === index

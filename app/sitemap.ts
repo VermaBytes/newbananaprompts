@@ -1,26 +1,26 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/posts";
-import { promptCards } from "@/data/prompt-cards";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const postEntries = getAllPosts().map((post) => ({
+  const publicPosts = getAllPosts();
+  const siteUpdatedAt = publicPosts.reduce(
+    (latest, post) => {
+      const candidate = new Date(post.updatedAt ?? post.publishedAt);
+      return candidate > latest ? candidate : latest;
+    },
+    new Date("2026-01-01T00:00:00.000Z")
+  );
+  const postEntries = publicPosts.map((post) => ({
     url: `${SITE_URL}/post/${post.slug}`,
     lastModified: post.updatedAt ?? post.publishedAt,
     changeFrequency: "monthly" as const,
     priority: 0.8
   }));
 
-  const promptEntries = promptCards.map((card) => ({
-    url: `${SITE_URL}/prompt/${card.slug}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: "monthly" as const,
-    priority: 0.7
-  }));
-
-  const categoryEntries = ["ai-tools", "ai-prompts", "earn-money", "courses"].map((cat) => ({
+  const categoryEntries = ["ai-tools", "ai-prompts", "earn-money"].map((cat) => ({
     url: `${SITE_URL}/category/${cat}`,
-    lastModified: new Date().toISOString(),
+    lastModified: siteUpdatedAt,
     changeFrequency: "weekly" as const,
     priority: 0.85
   }));
@@ -28,21 +28,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: SITE_URL,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "daily",
       priority: 1.0
     },
     {
       url: `${SITE_URL}/blogs`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "daily",
       priority: 0.9
-    },
-    {
-      url: `${SITE_URL}/prompt`,
-      lastModified: new Date().toISOString(),
-      changeFrequency: "weekly",
-      priority: 0.8
     },
     ...categoryEntries,
     {
@@ -147,7 +141,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5
     },
-    ...promptEntries,
     ...postEntries
   ];
 }

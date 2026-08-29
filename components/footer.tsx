@@ -98,6 +98,9 @@ export function Footer() {
             <Link href="/editorial-policy" className="block text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400">
               Editorial Policy
             </Link>
+            <a href="/sitemap.xml" className="block text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400">
+              XML Sitemap
+            </a>
           </div>
         </div>
       </div>
@@ -147,7 +150,7 @@ export function Footer() {
           </div>
 
           <p className="text-xs tracking-wide text-slate-600">
-            Built with AI • Next.js • Modern Web Experience
+            Independent guides for responsible AI use
           </p>
         </div>
       </div>

@@ -20,11 +20,6 @@ const categoryMap: Record<string, { name: string; description: string; metaTitle
     metaTitle: "Legit Ways to Earn Money with AI & Blogging | NB Prompts",
     description: "Learn actionable strategies, freelancing guides, and side hustle workflows to earn online using AI tools and content creation."
   },
-  "courses": {
-    name: "Courses",
-    metaTitle: "Structured AI Academy & Web Dev Courses | NB Prompts",
-    description: "Syllabus-based structured courses to master web development, prompt engineering, and AI automation."
-  }
 };
 
 type CategoryPageProps = {

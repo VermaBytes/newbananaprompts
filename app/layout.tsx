@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 import { FloatingWidgets } from "@/components/floating-widgets";
 import { OneSignalManager } from "@/components/onesignal-manager";
+import { PrivacyScripts } from "@/components/privacy-scripts";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 
 export const viewport: Viewport = {
@@ -21,23 +22,6 @@ export const metadata: Metadata = {
   },
   description:
     "NB Prompts is a creator-first hub for AI prompt ideas, free online image tools, blogging tips, SEO guides, and quick content workflow solutions.",
-  keywords: [
-    "NB Prompts",
-    "AI prompts",
-    "free online tools",
-    "image tools",
-    "blogging tips",
-    "SEO friendly blog",
-    "background remover",
-    "image compressor",
-    "JPG to PNG",
-    "image optimization",
-    "AI writing prompts",
-    "content creation",
-    "creator tools",
-    "online converter",
-    "prompt ideas"
-  ],
   applicationName: SITE_NAME,
   authors: [{ name: "Shobhit Verma", url: `${SITE_URL}/author` }],
   creator: "Shobhit Verma",
@@ -110,35 +94,6 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-CFRHNCTG1G"
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-CFRHNCTG1G');
-          `}
-        </Script>
-
-        {/* Google AdSense Site Verification */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7598958516745914"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-
-        {/* OneSignal Web SDK */}
-        <Script
-          src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
-          strategy="lazyOnload"
-        />
-
         <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
@@ -153,6 +108,7 @@ export default function RootLayout({
           <Footer />
           <FloatingWidgets />
           <OneSignalManager />
+          <PrivacyScripts />
         </div>
       </body>
     </html>

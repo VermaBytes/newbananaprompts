@@ -10,17 +10,6 @@ export const metadata: Metadata = {
   title: "NB Prompts | Professional AI Blog & Creator Tools Guides",
   description:
     "NB Prompts is a professional AI blogging platform offering premium AI prompt ideas, step-by-step image tools tutorials, and AI engineering courses for creators.",
-  keywords: [
-    "NB Prompts",
-    "AI prompts",
-    "AI tools blog",
-    "blogging tips",
-    "midjourney prompts",
-    "chatgpt prompts",
-    "free online tools",
-    "prompt engineering course",
-    "creator resources"
-  ],
   alternates: {
     canonical: "/"
   },

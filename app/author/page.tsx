@@ -46,10 +46,10 @@ export default function AuthorPage() {
             Welcome to {SITE_NAME}! My name is <strong>Shobhit Verma</strong>, and I am a digital creator and educator passionate about technology, educational accessibility, and AI tools. I founded this platform to serve as a comprehensive hub for AI tools, prompts, career advice, and productivity guides.
           </p>
           <p>
-            My goal is to provide simple, actionable, and structured advice. Whether it is configuring a prompt to generate artwork or preparing study roadmaps for exams like SSC, Banking, or Railways, I strive to help combine smart technology with traditional study study methods for peak efficiency.
+            My goal is to provide simple, actionable, and structured advice. I aim to show readers how AI can complement established study methods without replacing official sources, teachers, or independent judgment.
           </p>
           <p>
-            I believe that in the age of generative AI, the most valuable skill is not just memorization, but the ability to direct these tools effectively. That is why I built the **AI Academy** here, offering free learning tracks alongside daily guides on blogging, prompt engineering, and technology to help students and creators build sustainable digital careers.
+            I believe responsible AI use requires clear instructions, source checking, and human judgment. That is why I publish free learning tracks alongside guides on prompt engineering, technology, and creator workflows.
           </p>
         </div>
 

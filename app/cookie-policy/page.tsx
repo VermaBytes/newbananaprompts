@@ -20,7 +20,7 @@ export default function CookiePolicyPage() {
         <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl">
           Cookie Policy
         </h1>
-        <p className="theme-text-muted text-sm">Last Updated: July 2026</p>
+        <p className="theme-text-muted text-sm">Last updated: August 29, 2026</p>
 
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">1. What Are Cookies?</h2>
@@ -57,7 +57,7 @@ export default function CookiePolicyPage() {
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">4. How to Manage and Disable Cookies</h2>
           <p className="theme-text-secondary text-sm leading-7">
-            You have the right to accept or decline cookies. Most web browsers automatically accept cookies, but you can usually modify your browser settings to decline them if you prefer. Please note that disabling cookies may affect the layout, features, and performance of this website.
+            On your first visit, our consent panel lets you accept optional technologies or continue with essential storage only. Essential storage remembers site preferences and your consent choice. Optional analytics, advertising, and push-notification scripts are not loaded unless you select “Accept optional.” You can clear this site&apos;s stored data in your browser to reset the choice.
           </p>
           <p className="theme-text-secondary text-sm leading-7">
             To learn how to manage cookies on popular browsers, visit:
@@ -73,7 +73,7 @@ export default function CookiePolicyPage() {
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">5. Consent</h2>
           <p className="theme-text-secondary text-sm leading-7">
-            By continuing to browse our website without changing your browser settings, you consent to our use of cookies in accordance with this Cookie Policy.
+            Continuing to browse does not count as consent for optional technologies. We record your explicit choice in local storage. If you choose essential only, the site remains available without Google Analytics, AdSense, or OneSignal scripts being loaded by our application.
           </p>
         </section>
 
