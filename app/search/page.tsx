@@ -4,9 +4,12 @@ import { getPostPreviews } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Search Results | NB Prompts",
+  alternates: {
+    canonical: "/search"
+  },
   robots: {
     index: false,
-    follow: false,
+    follow: true,
     nocache: true
   }
 };

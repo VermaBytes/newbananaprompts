@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 
@@ -19,9 +20,11 @@ export function Footer() {
         {/* BRAND */}
         <div>
           <div className="flex items-center gap-3">
-            <img
+            <Image
               src="/main-logo.png"
               alt="NB Prompts Logo"
+              width={56}
+              height={56}
               className="h-14 w-14 rounded-2xl object-cover shadow-[0_0_25px_rgba(56,189,248,0.4)]"
             />
             <div>

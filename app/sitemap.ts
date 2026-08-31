@@ -41,103 +41,103 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...categoryEntries,
     {
       url: `${SITE_URL}/courses/web-development-with-ai`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "weekly",
       priority: 0.7
     },
     {
       url: `${SITE_URL}/courses/web-development-with-ai/lecture-01`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.65
     },
     {
       url: `${SITE_URL}/courses/web-development-with-ai/lecture-02`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.65
     },
     {
       url: `${SITE_URL}/courses/web-development-with-ai/lecture-03`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.65
     },
     {
       url: `${SITE_URL}/courses/web-development-with-ai/lecture-04`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.65
     },
     {
       url: `${SITE_URL}/courses/web-development-with-ai/lecture-05`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.65
     },
     {
       url: `${SITE_URL}/courses/web-development-with-ai/lecture-06`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.65
     },
     {
       url: `${SITE_URL}/courses/web-development-with-ai/lecture-07`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.65
     },
     {
       url: `${SITE_URL}/courses/web-development-with-ai/lecture-08`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.65
     },
     {
       url: `${SITE_URL}/about`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.6
     },
     {
       url: `${SITE_URL}/author`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.6
     },
     {
       url: `${SITE_URL}/privacy-policy`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.5
     },
     {
       url: `${SITE_URL}/terms-and-conditions`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.5
     },
     {
       url: `${SITE_URL}/disclaimer`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.5
     },
     {
       url: `${SITE_URL}/cookie-policy`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.5
     },
     {
       url: `${SITE_URL}/editorial-policy`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.5
     },
     {
       url: `${SITE_URL}/contact`,
-      lastModified: new Date().toISOString(),
+      lastModified: siteUpdatedAt,
       changeFrequency: "monthly",
       priority: 0.5
     },

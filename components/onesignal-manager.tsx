@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable react-hooks/exhaustive-deps -- SDK callbacks intentionally use the current OneSignal instance. */
 
 import { useEffect, useState } from "react";
 import { SITE_URL } from "@/lib/site";

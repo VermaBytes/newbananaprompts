@@ -565,9 +565,11 @@ export default async function PostPage({ params }: PostPageProps) {
               <div className="mt-12 border-t border-cyan-400/10 pt-8">
                 <div className="theme-surface rounded-none p-5 flex flex-col sm:flex-row items-center sm:items-start gap-5 border border-cyan-400/10">
                   <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-cyan-400/20">
-                    <img
+                    <Image
                       src="/main-logo.png"
                       alt={post.author}
+                      width={80}
+                      height={80}
                       className="h-full w-full object-cover"
                     />
                   </div>

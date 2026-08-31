@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect, type FormEvent } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
@@ -56,9 +57,11 @@ export function Navbar() {
           className="group flex items-center gap-3"
         >
           <div className="relative">
-            <img
+            <Image
               src="/main-logo.png"
               alt="NB Prompts Logo"
+              width={40}
+              height={40}
               className="h-10 w-10 rounded-none object-cover shadow-[0_0_20px_rgba(56,189,248,0.35)] transition-all duration-500 group-hover:scale-105 group-hover:rotate-1"
             />
             <div className="absolute inset-0 rounded-none bg-cyan-400/20 blur-lg transition-all duration-500 group-hover:bg-cyan-400/40" />

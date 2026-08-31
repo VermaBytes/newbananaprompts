@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SITE_NAME } from "@/lib/site";
 
@@ -23,9 +24,11 @@ export default function AuthorPage() {
         {/* Header Block */}
         <div className="flex flex-col gap-6 md:flex-row md:items-center">
           <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border border-cyan-400/20 shadow-[0_0_20px_rgba(56,189,248,0.25)]">
-            <img
+            <Image
               src="/main-logo.png"
               alt="Shobhit Verma Profile"
+              width={112}
+              height={112}
               className="h-full w-full object-cover"
             />
           </div>
