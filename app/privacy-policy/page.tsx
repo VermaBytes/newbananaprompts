@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
         <h1 className="theme-text-primary font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl">
           Privacy Policy
         </h1>
-        <p className="theme-text-muted text-sm">Last Updated: July 2026</p>
+        <p className="theme-text-muted text-sm">Last Updated: September 1, 2026</p>
 
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">1. Introduction</h2>
@@ -65,6 +65,9 @@ export default function PrivacyPolicyPage() {
           <p className="theme-text-secondary text-sm leading-7">
             <strong>Google AdSense:</strong> Our site loads Google AdSense advertising technology. Google and its partners may use cookies or similar technologies to serve, measure, and personalize ads, or to serve non-personalized ads where applicable. You can manage personalized advertising through <a href="https://adssettings.google.com/" target="_blank" rel="noreferrer" className="theme-kicker hover:underline">Google Ads Settings</a> and learn more in <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noreferrer" className="theme-kicker hover:underline">Google&apos;s advertising policies</a>.
           </p>
+          <p className="theme-text-secondary text-sm leading-7">
+            The AdSense publisher identifier associated with newbananaprompts.in is <strong>pub-7598958516745914</strong>. Advertising cookies and the AdSense script are treated as optional technologies by our application and are loaded after the visitor accepts optional cookies.
+          </p>
         </section>
 
         <section className="space-y-3">
@@ -98,7 +101,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">9. Policy Updates and Contact</h2>
           <p className="theme-text-secondary text-sm leading-7">
-            We may update this policy when our practices or services change. The date above indicates the latest revision. For questions or privacy requests, email <a href="mailto:shoverashop@gmail.com" className="theme-kicker font-semibold hover:underline">shoverashop@gmail.com</a>.
+            We may update this policy when our practices or services change. The date above indicates the latest revision. For questions or privacy requests, email <a href="mailto:contact@newbananaprompts.in" className="theme-kicker font-semibold hover:underline">contact@newbananaprompts.in</a>.
           </p>
         </section>
       </div>
