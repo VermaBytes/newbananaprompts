@@ -43,7 +43,12 @@ export function getPostPreviews(): PostPreview[] {
 }
 
 export function getPostBySlug(slug: string) {
-  return allPosts.find((post) => post.slug === slug);
+  // Articles awaiting editorial review are drafts, not merely noindex pages.
+  // Keeping them out of the public route prevents low-value or unverified
+  // material from remaining accessible to visitors and policy reviewers.
+  return allPosts.find(
+    (post) => post.slug === slug && isPostReadyForIndexing(post.slug)
+  );
 }
 
 export function getRelatedPosts(slug: string, category: BlogPost["category"]) {

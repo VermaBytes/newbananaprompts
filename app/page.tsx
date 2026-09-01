@@ -47,8 +47,8 @@ export default function HomePage() {
   const allPosts = getAllPosts();
   const homePosts = [...allPosts].sort(
     (left, right) =>
-      new Date(right.publishedAt).getTime() -
-      new Date(left.publishedAt).getTime()
+      new Date(right.updatedAt ?? right.publishedAt).getTime() -
+      new Date(left.updatedAt ?? left.publishedAt).getTime()
   );
   const latestPost = homePosts[0];
   const featuredPosts = homePosts.slice(1, 4);

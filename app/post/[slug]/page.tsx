@@ -15,6 +15,10 @@ type PostPageProps = {
   };
 };
 
+// Only editorially approved slugs are generated. Unknown and review-required
+// slugs must return a real HTTP 404 instead of a streamed soft-404 response.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
@@ -25,7 +29,14 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
 
   if (!post) {
     return {
-      title: "Post Not Found"
+      title: "Post Not Found",
+      robots: {
+        index: false,
+        follow: false
+      },
+      alternates: {
+        canonical: `${SITE_URL}/post/${slug}`
+      }
     };
   }
 
@@ -93,6 +104,16 @@ function getMetaDescription(description: string) {
 
 function getSectionId(heading: string) {
   return heading.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+function sanitizeArticleHtml(html: string) {
+  // Editorial-review posts are not public routes. Preserve the useful anchor
+  // text while removing links that would otherwise lead visitors to a 404.
+  return html.replace(
+    /<a\b[^>]*href=(["'])\/post\/([^"'#?]+)[^"']*\1[^>]*>([\s\S]*?)<\/a>/gi,
+    (match, _quote: string, slug: string, label: string) =>
+      isPostReadyForIndexing(slug) ? match : label
+  );
 }
 
 function getReadingTime(post: { sections: { heading: string; paragraphs: string[] }[] }) {
@@ -292,7 +313,6 @@ export default async function PostPage({ params }: PostPageProps) {
 
   const faqs = extractFaqs(post);
   const itemListSchema = extractItemList(post);
-  const extraSchemas = post.schemas ?? [];
   const faqSchema = faqs && faqs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -317,13 +337,6 @@ export default async function PostPage({ params }: PostPageProps) {
       {faqSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
-      {extraSchemas.map((schema, index) => (
-        <script
-          key={`extra-schema-${index}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
       
       {/* =========================
           BACK BUTTON
@@ -407,9 +420,6 @@ export default async function PostPage({ params }: PostPageProps) {
                 <span>Last Updated: {getUpdatedDateLabel(post.publishedAt, post.updatedAt)}</span>
                 <span className="w-1 h-1 rounded-full bg-slate-500" />
                 <span>{readingTime} min read</span>
-                <span className="rounded-none bg-emerald-500/10 border border-emerald-400/20 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">
-                  Featured Guide
-                </span>
               </div>
 
               {/* HEADING & SUBTITLE */}
@@ -429,9 +439,9 @@ export default async function PostPage({ params }: PostPageProps) {
               ) : null}
 
               <aside className="theme-surface space-y-2 border-l-4 border-emerald-400 px-4 py-3" aria-label="Editorial note">
-                <h2 className="theme-text-primary text-sm font-bold">How this guide was prepared</h2>
+                <h2 className="theme-text-primary text-sm font-bold">Editorial transparency</h2>
                 <p className="theme-text-secondary text-xs leading-6">
-                  This article was researched and edited by {post.author}. Product features, prices, exam rules, and AI outputs can change, so verify important details on the linked official source before acting. See our{" "}
+                  This article is published under {post.author}&apos;s byline and reviewed against our editorial checklist. AI tools may assist research organization or drafting, but they do not replace human editing. Product features, prices, exam rules, and AI outputs can change, so verify important details on the linked official source before acting. See our{" "}
                   <Link href="/editorial-policy" className="font-semibold text-cyan-400 hover:underline">editorial policy</Link>
                   {" "}or <Link href="/contact" className="font-semibold text-cyan-400 hover:underline">report a correction</Link>.
                 </p>
@@ -527,7 +537,7 @@ export default async function PostPage({ params }: PostPageProps) {
                               <div 
                                 key={paragraph} 
                                 className="theme-text-secondary text-xs leading-6"
-                                dangerouslySetInnerHTML={{ __html: paragraph }}
+                                dangerouslySetInnerHTML={{ __html: sanitizeArticleHtml(paragraph) }}
                               />
                             ))}
                           </div>
@@ -552,7 +562,7 @@ export default async function PostPage({ params }: PostPageProps) {
                           <div 
                             key={paragraph} 
                             className="theme-text-secondary text-sm leading-7"
-                            dangerouslySetInnerHTML={{ __html: paragraph }}
+                            dangerouslySetInnerHTML={{ __html: sanitizeArticleHtml(paragraph) }}
                           />
                         ))}
                       </div>

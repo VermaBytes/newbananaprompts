@@ -5,6 +5,15 @@ import type { BlogPost } from "@/lib/posts";
 export function HomeHero({ latestPost }: { latestPost: BlogPost }) {
   if (!latestPost) return null;
 
+  const displayDate = new Date(latestPost.updatedAt ?? latestPost.publishedAt).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric"
+  });
+  const datePrefix = latestPost.updatedAt && latestPost.updatedAt !== latestPost.publishedAt
+    ? "Updated"
+    : "Published";
+
   return (
     <section className="relative overflow-hidden border-b border-slate-100 dark:border-cyan-950/20">
       <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
@@ -50,7 +59,7 @@ export function HomeHero({ latestPost }: { latestPost: BlogPost }) {
               <svg className="h-3.5 w-3.5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              {latestPost.dateLabel}
+              {datePrefix}: {displayDate}
             </span>
             <span className="text-slate-300 dark:text-slate-700">|</span>
             <span className="flex items-center gap-1.5">
