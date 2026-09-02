@@ -54,7 +54,7 @@ export default function AboutPage() {
           <h2 className="theme-text-primary text-lg font-bold">Contact details</h2>
           <ul className="theme-text-secondary space-y-2 text-sm leading-7">
             <li><strong>Email:</strong> <a href={`mailto:${CONTACT_EMAIL}`} className="theme-kicker hover:underline">{CONTACT_EMAIL}</a></li>
-            <li><strong>Location:</strong> Sakethu, Lakhimpur Kheri, Uttar Pradesh 262701, India</li>
+            <li><strong>Location:</strong> Sakethu, Lakhimpur Kheri, Uttar Pradesh 262728, India</li>
           </ul>
           <div className="flex flex-wrap gap-3 pt-2">
             <Link href="/contact" className="theme-button inline-flex min-h-10 items-center px-4 text-xs font-semibold">Contact</Link>

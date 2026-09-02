@@ -101,7 +101,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">9. Policy Updates and Contact</h2>
           <p className="theme-text-secondary text-sm leading-7">
-            We may update this policy when our practices or services change. The date above indicates the latest revision. For questions or privacy requests, email <a href="mailto:contact@newbananaprompts.in" className="theme-kicker font-semibold hover:underline">contact@newbananaprompts.in</a>.
+            We may update this policy when our practices or services change. The date above indicates the latest revision. For questions or privacy requests, email <a href="mailto:contact@newbananaprompts.in" className="theme-kicker font-semibold hover:underline">newbananaprompts.in@gmail.com</a>.
           </p>
         </section>
       </div>
