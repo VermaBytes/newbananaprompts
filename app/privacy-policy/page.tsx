@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
         <section className="space-y-3">
           <h2 className="theme-text-primary text-xl font-bold">1. Introduction</h2>
           <p className="theme-text-secondary text-sm leading-7">
-            At {SITE_NAME}, accessible from <a href="https://newbananaprompts.in" className="theme-kicker hover:underline">https://newbananaprompts.in</a>, the privacy of our visitors is one of our main priorities. This Privacy Policy document contains types of information that is collected and recorded by {SITE_NAME} and how we use it. If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
+            At {SITE_NAME}, accessible from <a href={SITE_URL} className="theme-kicker hover:underline">{SITE_URL}</a>, the privacy of our visitors is one of our main priorities. This Privacy Policy document contains types of information that is collected and recorded by {SITE_NAME} and how we use it. If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
           </p>
         </section>
 

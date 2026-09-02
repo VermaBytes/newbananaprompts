@@ -59,19 +59,19 @@ export default function HomePage() {
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://newbananaprompts.in/#website",
-        "url": "https://newbananaprompts.in",
+        "@id": `${SITE_URL}/#website`,
+        "url": SITE_URL,
         "name": "NB Prompts",
         "description": "NB Prompts is a professional AI blogging platform offering premium AI prompt ideas, step-by-step image tools tutorials, and AI engineering courses for creators.",
         "publisher": {
-          "@id": "https://newbananaprompts.in/#organization"
+          "@id": `${SITE_URL}/#organization`
         },
         "potentialAction": [
           {
             "@type": "SearchAction",
             "target": {
               "@type": "EntryPoint",
-              "urlTemplate": "https://newbananaprompts.in/search?query={search_term_string}"
+              "urlTemplate": `${SITE_URL}/search?query={search_term_string}`
             },
             "query-input": "required name=search_term_string"
           }
@@ -80,18 +80,18 @@ export default function HomePage() {
       },
       {
         "@type": "Organization",
-        "@id": "https://newbananaprompts.in/#organization",
+        "@id": `${SITE_URL}/#organization`,
         "name": "NB Prompts",
-        "url": "https://newbananaprompts.in",
+        "url": SITE_URL,
         "logo": {
           "@type": "ImageObject",
-          "@id": "https://newbananaprompts.in/#logo",
-          "url": "https://newbananaprompts.in/main-logo.png",
-          "contentUrl": "https://newbananaprompts.in/main-logo.png",
+          "@id": `${SITE_URL}/#logo`,
+          "url": `${SITE_URL}/main-logo.png`,
+          "contentUrl": `${SITE_URL}/main-logo.png`,
           "caption": "NB Prompts Logo"
         },
         "image": {
-          "@id": "https://newbananaprompts.in/#logo"
+          "@id": `${SITE_URL}/#logo`
         },
         "sameAs": [
           "https://www.youtube.com/@ShobhitManar",
