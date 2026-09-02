@@ -31362,84 +31362,168 @@
   },
   {
     "slug": "midjourney-consistent-characters-generate-same-character-different-poses",
-    "title": "Midjourney Consistent Characters Guide: How to Generate Same Character in Different Poses",
-    "seoTitle": "Midjourney Consistent Characters: Generate Same Character in Multiple Poses",
-    "description": "Master the ultimate Midjourney consistent character workflow using --cref and --cw. Generate the same character in different poses, outfits, and scenes step-by-step.",
+    "title": "Midjourney Consistent Characters: Same Character in Different Poses (V8.2 Guide)",
+    "seoTitle": "Midjourney Consistent Characters in V8.2: Step-by-Step Guide",
+    "description": "Create a consistent Midjourney character across poses, outfits and scenes. Updated V8.2 Edit Model workflow plus V7 --oref and V6 --cref examples.",
     "category": "AI Tools",
     "author": "Shobhit Verma",
     "publishedAt": "2026-05-29T10:00:00.000Z",
-    "dateLabel": "May 29, 2026",
+    "updatedAt": "2026-09-02T10:00:00.000Z",
+    "dateLabel": "Updated September 2, 2026",
     "image": "/posts/midjourney-consistent-character.jpg",
     "tags": [
-      "midjourney cref",
-      "consistent characters",
-      "ai image prompt",
-      "midjourney guide",
-      "character reference"
+      "midjourney consistent characters",
+      "midjourney v8.2",
+      "midjourney edit model",
+      "midjourney omni reference",
+      "midjourney character reference",
+      "ai character prompts"
     ],
     "sections": [
       {
-        "heading": "Introduction: Character Consistency Ka Sabse Bada Solution",
+        "heading": "Quick Answer: Midjourney Me Same Character Kaise Banaye?",
         "paragraphs": [
-          "AI image generation and story-boarding ki duniya me sabse badi samasya hamesha se character consistency (ek hi character ko alag-alag scenes me same facial features aur details ke sath generate karna) rahi hai. Pehle iske liye seed parameters aur dense image blending models ki zaroorat hoti thi, par Midjourney ne isko solve karne ke liye powerful `--cref` (Character Reference) feature launch kiya hai. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega. Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega.",
-          "Is comprehensive step-by-step guide me hum seekhenge ki kaise `--cref` aur `--cw` (Character Weight) ka use karke aap kisi bhi AI character ko alag-alag poses, settings, aur outfits me absolute accuracy ke sath generate kar sakte hain."
+          "September 2026 me Midjourney ka default model <strong>V8.2</strong> hai. Is version me consistent character banane ka current workflow <strong>Edit Model</strong> hai: ek clear reference image attach karein, character ki stable visual details text me likhein, aur har new scene me sirf pose, action, camera aur environment change karein. V8.x me purane Character Reference aur V7 Omni Reference ki jagah Edit Model use karna official recommendation hai.",
+          "Agar aap specifically V7 chala rahe hain, to ek image ko Omni Reference bana kar Discord me <code>--oref IMAGE_URL</code> aur zarurat ke hisaab se <code>--ow</code> use karein. V6 ya Niji 6 ke liye legacy syntax <code>--cref IMAGE_URL</code> aur <code>--cw</code> hai. Model aur parameter ko mix na karein—ye sabse common setup mistake hai.",
+          "Important expectation: reference tools identity aur design ko guide karte hain, pixel-perfect copy guarantee nahi karte. Freckles, logos, jewellery, fingers aur outfit ke tiny patterns drift kar sakte hain. Isliye professional workflow me generation ke baad selection, variation aur local editing bhi hoti hai."
         ]
       },
       {
-        "heading": "Step 1: Create Your Base Reference Character",
+        "heading": "2026 Workflow Comparison: V8.2 vs V7 vs V6",
         "paragraphs": [
-          "Sabse pehle aapko ek high-quality base image generate karni hogi jisme character ka face bilkul clear, focused, aur direct forward-looking (neutral front portrait view) ho. Isse Midjourney ke facial tracking algorithms ko facial details map karne me maximum speed and efficiency milti hai.",
-          "Apna unique base character create karne ke liye niche diye gaye copy-ready prompt ka use karein:"
+          "<div class='overflow-x-auto'><table class='w-full border-collapse'><thead><tr><th class='border p-3 text-left'>Model</th><th class='border p-3 text-left'>Use this method</th><th class='border p-3 text-left'>Best for</th></tr></thead><tbody><tr><td class='border p-3'><strong>V8.2 / V8.x</strong></td><td class='border p-3'>Edit Model with attached reference image</td><td class='border p-3'>Current projects and natural-language edits</td></tr><tr><td class='border p-3'><strong>V7</strong></td><td class='border p-3'>Omni Reference; Discord: <code>--oref</code> and optional <code>--ow</code></td><td class='border p-3'>Legacy V7 workflows involving a person, creature or object</td></tr><tr><td class='border p-3'><strong>V6 / Niji 6</strong></td><td class='border p-3'>Character Reference; Discord: <code>--cref</code> and optional <code>--cw</code></td><td class='border p-3'>Older saved workflows and compatible anime projects</td></tr></tbody></table></div>",
+          "New project start kar rahe hain to V8.2 se shuru karein. Purane prompt ko blindly copy karne se pehle uska model check karein. Parameter list me V7 ke liye Omni Reference ne Character Reference ko replace kiya tha, aur V8.x me Edit Model ne dono older reference systems ko replace kar diya."
         ]
       },
       {
-        "heading": "Base Character Portrait Prompt (Copy-Ready)",
+        "heading": "Step 1: Strong Base Character Reference Banayein",
         "paragraphs": [
-          "A hyper-realistic studio portrait of a 22-year-old Indian male model wearing a simple black hoodie, dark messy hair, intense brown eyes, neutral facial expression, clean grey studio background, cinematic soft studio lighting, highly detailed 3D render style, 8k resolution, photorealistic."
+          "Consistency ki quality reference image se start hoti hai. Ek single, clearly visible character choose karein. Face unobstructed ho, lighting balanced ho aur hairstyle, age range, skin tone, clothing silhouette jaise identity anchors readable hon. Heavy motion blur, sunglasses, extreme shadows, cropped forehead ya group photo avoid karein.",
+          "Pehle ek neutral three-quarter ya front portrait generate karna practical hai. Full-body scenes ke liye ek clean full-body reference bhi useful ho sakta hai. V8 Edit Model multiple references accept kar sakta hai, lekin similar identity aur art direction wali images use karein; conflicting references model ko confuse kar sakte hain.",
+          "<strong>Base portrait prompt:</strong><br><code>Character reference portrait of Mira, a 24-year-old Indian woman with an oval face, warm brown skin, almond-shaped dark brown eyes, a small beauty mark below her left eye, shoulder-length wavy black hair with a copper streak, teal bomber jacket over a plain white T-shirt, neutral expression, soft window light, simple gray background, realistic editorial photography, front three-quarter view</code>"
         ]
       },
       {
-        "heading": "Step 2: How to Use the `--cref` Parameter (Instant Setup)",
+        "heading": "Step 2: Character Bible Likhein",
         "paragraphs": [
-          "Base image generate karne ke baad, uska direct image URL copy karein (Discord me image par right-click karke 'Copy Link' karein). Ab, jab bhi aap koi naya scene, pose ya background generate karna chahein, to naye text prompt ke end me `--cref <URL>` parameter add karein.",
-          "Apne character ko cyber street background me dynamic pose me lane ke liye is prompt ka use karein:"
+          "Reference image akeli enough nahi hoti. Ek short <strong>character bible</strong> banayein aur har prompt me core description unchanged rakhein. Isme sirf identifiable, visually observable details hon: approximate age, face shape, skin tone, eye color, hairstyle, one signature feature, body build aur default outfit. Personality words tabhi add karein jab expression ya posture par unka visual effect chahiye.",
+          "Mira ke liye reusable identity block: <code>Mira, a 24-year-old Indian woman, oval face, warm brown skin, almond-shaped dark brown eyes, small beauty mark below her left eye, shoulder-length wavy black hair with one copper streak, slim athletic build</code>. Is exact block ko har scene me copy karein. Synonyms badalne se interpretation bhi badal sakti hai.",
+          "Do lists maintain karein: <strong>locked details</strong> jo kabhi nahi badlenge, aur <strong>scene variables</strong> jaise pose, outfit, location, lighting aur lens. Ye separation prompt ko predictable aur troubleshooting ko fast banata hai."
         ]
       },
       {
-        "heading": "Pose Change: Crossed Arms in Cyber Street Prompt (Copy-Ready)",
+        "heading": "Step 3: V8.2 Edit Model Workflow",
         "paragraphs": [
-          "A medium shot of the same Indian male model standing inside a glowing cyberpunk street at night, looking confidently at the camera with crossed arms, wet asphalt reflections, neon cyan lighting --cref [Insert_Base_Image_URL] --cw 100 --ar 16:9"
+          "Midjourney website par reference image open ya upload karein, Edit Model me use karein, phir natural-language instruction likhein. Instruction me pehle identity preservation, uske baad desired change specify karein. Example: <code>Keep the same character identity, facial structure, eye color, beauty mark, hairstyle and copper streak. Show her standing at a metro platform, hands in jacket pockets, full-body composition, cool evening light. Keep the teal jacket unchanged.</code>",
+          "Ek edit me bahut saare conflicting changes na maangein. Pehle pose aur framing settle karein; next pass me background ya wardrobe refine karein. Agar output identity se door chala jaye, best matching result ko new reference banane ke bajay original approved reference par wapas jaakar instruction simplify karein.",
+          "Edit Model ka benefit ye hai ki V8.x me aap plain language se reference-based changes kar sakte hain. Lekin reference ko exact clone samajhna galat hai: output ko face landmarks, hair silhouette, signature mark, body proportions aur costume continuity ke against manually inspect karein."
         ]
       },
       {
-        "heading": "Step 3: Master the `--cw` (Character Weight) Modifier",
+        "heading": "Reusable Prompt Formula",
         "paragraphs": [
-          "`--cw` parameter Midjourney copy engine ko batata hai ki character ke face structure ke sath-sath uske kapde, baal, aur original accessories ko kitna strictly match karna hai:",
-          "1. `--cw 100` (Default): Face, hairstyle, aur original dress structure ( hoodie, shirt) teenon ko follow karega.",
-          "2. `--cw 0`: Baal aur kapdo ko poori tarah ignore karega aur sirf and sirf face structures ko follow karega. Yeh sabse best option hai jab aap character ke kapde (outfits) aur hairstyle ko alag-alag scenes me change karna chahein!",
-          "Apne character ko library scene me green sweater me reading pose me lane ke liye niche diye gaye prompts ka use karein:"
+          "Har shot ke liye ye order follow karein: <strong>identity block + action/pose + outfit + environment + camera/framing + lighting + visual style + aspect ratio</strong>. Identity block stable rakhein; baaki slots project ki zarurat ke mutabik change karein.",
+          "<code>[IDENTITY BLOCK], [ACTION AND POSE], wearing [OUTFIT], in [ENVIRONMENT], [SHOT TYPE AND CAMERA ANGLE], [LIGHTING], [VISUAL STYLE], [ASPECT RATIO]</code>",
+          "Prompt me contradictory directions avoid karein, jaise “close-up full-body shot” ya “hard midday light with soft shadowless face.” Short but specific prompt usually ek keyword pile se better control deta hai."
         ]
       },
       {
-        "heading": "Outfit Change: Reading a Book in Library Prompt (Copy-Ready)",
+        "heading": "Prompt 1: Full-Body Standing Pose",
         "paragraphs": [
-          "A close-up shot of the same Indian male model sitting in a warm library, wearing a dark green sweater and reading a book, soft window light --cref [Insert_Base_Image_URL] --cw 0 --ar 16:9"
+          "<code>Keep the exact same character identity and distinctive facial features. Mira, a 24-year-old Indian woman with an oval face, warm brown skin, almond-shaped dark brown eyes, a beauty mark below her left eye, and shoulder-length wavy black hair with one copper streak, standing confidently with her weight on one leg and hands in the pockets of her teal bomber jacket, clean studio background, full-body eye-level fashion photograph, soft directional light, realistic proportions --ar 2:3</code>",
+          "Full-body output me face chhota hota hai, isliye face detail drift ko 100% zoom par judge karein. Storyboard ke liye acceptable image print campaign ke close crop me acceptable ho, ye zaroori nahi."
         ]
       },
       {
-        "heading": "Top 5 Pro Tips for 100% Character Consistency",
+        "heading": "Prompt 2: Walking Side Profile",
         "paragraphs": [
-          "1. Clarity First: Base image me hamesha single character neutral studio style portrait use karein. Dual characters ya complex actions se bachein.",
-          "2. Neutral Outfits: Apne base prompt me solid neutral colors (jaise black/grey hoodie) define karein jise tracking bot asani se recognize kar sake.",
-          "3. Change Outfits Using `--cw 0`: Agar character ka dress badalna hai, to `--cw 0` use karein aur naye prompt me new outfit details explicit mention karein.",
-          "4. Keep Style Consistent: Agar base image realism style me hai, to action prompt bhi realism me likhein. Anime character ko realism prompt ke sath `--cref` dene par visual glitches aane lagte hain."
+          "<code>Keep the same character identity, face shape, beauty mark, hairstyle and copper streak. Mira walking across a rainy city crossing, natural mid-stride pose, side profile with her face still visible, teal bomber jacket, dark straight-leg jeans and white sneakers, reflections on wet pavement, medium full shot, 50mm street photography, cinematic blue-hour light --ar 3:2</code>",
+          "Side profile me nose, jawline aur hairline anchors important hain. Agar likeness weak ho, pure 90-degree profile ke bajay three-quarter profile try karein, phir selected output se stronger side-view reference prepare karein."
         ]
       },
       {
-        "heading": "Frequently Asked Questions (FAQs)",
+        "heading": "Prompt 3: Sitting and Reading",
         "paragraphs": [
-          "Q: Kya hum anime ya illustrative characters par `--cref` use kar sakte hain? - A: Bilkul! Midjourney `--cref` feature photo-realistic, anime, 3D clay, aur water-color illustration styles sabhi par equally effective kaam karta hai, bas base and action style match rakhin.",
-          "Q: Midjourney web version me `--cref` kaise lagayein? - A: Midjourney Alpha web view me image generate karne ke baad use click karein, and prompt editor input box me drop custom image as a 'Character Reference' icon selectively use karein."
+          "<code>Preserve the same character identity and facial landmarks. Mira sitting naturally in a wooden library chair, one ankle resting over the other, reading an open hardcover book, shoulder-length wavy black hair with a copper streak, cream knit sweater, warm shelves in the background, medium shot, soft afternoon window light, realistic editorial photograph --ar 4:5</code>",
+          "Outfit change karte waqt identity block intact rakhein aur new clothing ko simple terms me describe karein. Complex logos ya exact typography consistency ke liye generation par depend na karein; final design workflow me manually add karna safer hai."
+        ]
+      },
+      {
+        "heading": "Prompt 4: Action Pose",
+        "paragraphs": [
+          "<code>Keep Mira's identity unchanged: oval face, warm brown skin, almond-shaped dark brown eyes, beauty mark below the left eye, wavy black hair with a copper streak. She is sprinting on an outdoor athletics track, determined expression, arms and legs in believable running form, teal performance jacket and black running tights, low-angle full-body sports photograph, early morning backlight, crisp subject with subtle background motion --ar 16:9</code>",
+          "Extreme motion me face aur hands sabse pehle drift karte hain. Pehle moderate action pose generate karein, phir successful frame ko stronger motion ke liye edit karein. Anatomy error ko identity error se alag assess karein."
+        ]
+      },
+      {
+        "heading": "Prompt 5: Expression Sheet",
+        "paragraphs": [
+          "<code>Character expression reference sheet of the same Mira, identical face, hairstyle, copper streak and beauty mark in every panel, six separate head-and-shoulder portraits showing neutral, joyful, worried, surprised, angry and thoughtful expressions, consistent camera angle and soft studio lighting, plain light-gray background, clean evenly spaced grid, no text --ar 3:2</code>",
+          "Ek generated grid ko automatically six perfect assets na samjhein. Har panel me eye spacing, mole position, hair part aur jaw shape check karein. Best expressions ko individual crop ya edit pass me refine karna production-friendly approach hai."
+        ]
+      },
+      {
+        "heading": "Prompt 6: Camera Angles Sheet",
+        "paragraphs": [
+          "<code>Turnaround reference sheet for the same character Mira, consistent identity and proportions, front view, three-quarter view, side view and back view, neutral standing pose, teal bomber jacket, white T-shirt, dark jeans and white sneakers, even studio lighting, plain background, four clearly separated full-body panels, no labels, no text --ar 16:9</code>",
+          "Turnaround sheet concept art ke liye helpful starting point hai, lekin technical model sheet ki geometric accuracy assume na karein. Back-view details jo original reference me visible nahi hain model invent karega; unhe approve karke character bible me document karein."
+        ]
+      },
+      {
+        "heading": "V7 Legacy Workflow: --oref and --ow",
+        "paragraphs": [
+          "V7 project continue karne ke liye website me uploaded image ko <strong>Omni Reference</strong> slot me drag karein. Discord syntax: <code>Mira waiting at a train station, full-body cinematic photograph --oref https://example.com/mira.jpg --ow 100 --v 7</code>. URL direct supported image file par point karna chahiye.",
+          "Official docs ke mutabik <code>--ow</code> range 1–1000 hai aur default 100 hai. High value reference influence badha sakti hai, lekin 400 se upar results unpredictable ho sakte hain unless stylize bhi bahut high ho. Pehle default 100 test karein; ek hi variable ko small increments me change karke compare karein.",
+          "V7 Omni Reference ek image accept karta hai, text prompt required hai, aur intricate freckles ya clothing logos perfectly match nahi bhi kar sakte. Ye regular V7 generation ke comparison me double GPU time use karta hai aur kuch editing/generation features ke saath incompatible hai; current compatibility ke liye official docs check karein."
+        ]
+      },
+      {
+        "heading": "V6 and Niji 6 Legacy Workflow: --cref and --cw",
+        "paragraphs": [
+          "Saved V6 workflow me Discord prompt ke end par <code>--cref IMAGE_URL</code> add karein. Example: <code>Mira standing on a rooftop at sunrise, medium full shot, cinematic realism --cref https://example.com/mira.jpg --cw 100 --v 6.1</code>. Multiple Character Reference URLs space se separate kiye ja sakte hain.",
+          "<code>--cw 100</code> default hai aur face, hair aur clothing jaise maximum available details pull karne ki koshish karta hai. <code>--cw 0</code> mainly face par focus karta hai, isliye outfit change ke liye lower value useful ho sakti hai. Character Reference official docs ke mutabik Midjourney V6 aur Niji 6 ke saath compatible hai.",
+          "V8.2 prompt me <code>--cref</code> paste karna current workflow nahi hai. Isi tarah V6 prompt me <code>--oref</code> expect na karein. Purane tutorials follow karte waqt version date aur model flag zaroor dekhein."
+        ]
+      },
+      {
+        "heading": "Style Consistency Identity Se Alag Hai",
+        "paragraphs": [
+          "Same face aur same art style do separate goals hain. Character reference identity/form influence karta hai, jabki Style Reference look and feel ko guide karta hai. Agar comic series bana rahe hain to character reference ke saath stable style description ya supported Style Reference use karein.",
+          "Lighting, lens, color palette, line weight aur rendering medium ko bhi style bible me lock karein. Example: <code>flat editorial illustration, navy and coral palette, clean ink outlines, subtle paper grain</code>. Har prompt me random style artist names jodne se continuity degrade hogi.",
+          "Realistic portrait prompting ke aur examples ke liye <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>realistic AI image prompt guide</a> dekhein; prompt structure ko Midjourney ke correct reference workflow ke saath adapt karein."
+        ]
+      },
+      {
+        "heading": "Common Problems and Practical Fixes",
+        "paragraphs": [
+          "<strong>Face changes:</strong> scene prompt simplify karein, front ya three-quarter face visibility maangein, identity block repeat karein aur clearer source image use karein. <strong>Hair or signature mark disappears:</strong> us feature ko visual location ke saath text me explicitly mention karein.",
+          "<strong>Outfit refuses to change:</strong> V6 me lower <code>--cw</code> test karein; V7 me lower Omni weight aur stronger new-outfit description try karein; V8.2 me edit instruction me clearly batayein ki identity preserve karni hai but wardrobe replace karna hai. <strong>Character looks pasted into scene:</strong> subject aur background ke liye same lighting direction, color temperature aur camera perspective specify karein.",
+          "<strong>Two characters merge:</strong> simple composition, distinct positions and distinct clothing use karein—“Mira on the left in teal; Arjun on the right in rust orange.” Complex interaction later pass me add karein. <strong>Every rerun changes everything:</strong> prompt, aspect ratio and model freeze karke only one variable change karein."
+        ]
+      },
+      {
+        "heading": "Quality-Control Checklist Before Publishing",
+        "paragraphs": [
+          "Final image ko sirf attractive thumbnail size par approve na karein. 100% view par ye points compare karein: face shape, eye color and spacing, nose and jaw silhouette, skin tone, hair part and length, signature mark position, body proportions, outfit construction, hands, shadows and background interaction.",
+          "Series ke liye approved reference, character bible, exact prompt, model version, aspect ratio aur selected output ID ko project sheet me record karein. Har approved image ko A, B ya C score dein: A is publish-ready, B needs local edit, C regenerate. Isse aesthetic preference measurable review process me convert hoti hai.",
+          "Character ko real person ya client likeness par base kar rahe hain to permission, intended use and disclosure requirements verify karein. Deceptive impersonation, misleading endorsement aur unauthorized commercial likeness se bachein."
+        ]
+      },
+      {
+        "heading": "Frequently Asked Questions",
+        "paragraphs": [
+          "<strong>Is Midjourney character consistency 100% accurate?</strong><br>No. References guide generation, exact copying guarantee nahi karte. Tiny facial and clothing details drift kar sakte hain; selection aur editing normal workflow ka part hain.",
+          "<strong>V8.2 me --cref use karna chahiye?</strong><br>No. Current V8.x guidance Edit Model use karne ki hai. <code>--cref/--cw</code> V6 and Niji 6 workflow hai; V7 uses <code>--oref/--ow</code>.",
+          "<strong>Kya same seed se same character milega?</strong><br>Seed experimentation me useful ho sakta hai, lekin identity control ka replacement nahi hai. Current model-appropriate reference tool, stable prompt and manual review use karein.",
+          "<strong>Outfit change karte hue face kaise preserve karein?</strong><br>Identity features ko locked text block me rakhein aur wardrobe ko separate change instruction banayein. Ek pass me pose, angle, outfit, lighting aur style sab dramatically change na karein.",
+          "<strong>Kitni reference images use karni chahiye?</strong><br>Tool/version par depend karta hai. V7 Omni Reference ek image leta hai; legacy V6 Character Reference multiple URLs accept karta hai; V8.x Edit Model current reference-based route hai. Similar, approved references choose karein."
+        ]
+      },
+      {
+        "heading": "Official Sources and Update Note",
+        "paragraphs": [
+          "This guide was fact-checked and updated on <strong>September 2, 2026</strong>. Midjourney features change quickly, so production use se pehle current documentation verify karein: <a href='https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version' target='_blank' rel='noopener noreferrer' class='text-cyan-500 font-bold hover:underline'>Version guide</a>, <a href='https://docs.midjourney.com/hc/en-us/articles/33329329805581-Modifying-Your-Creations' target='_blank' rel='noopener noreferrer' class='text-cyan-500 font-bold hover:underline'>Edit Model overview</a>, <a href='https://docs.midjourney.com/hc/en-us/articles/36285124473997-Omni-Reference' target='_blank' rel='noopener noreferrer' class='text-cyan-500 font-bold hover:underline'>Omni Reference</a>, and <a href='https://docs.midjourney.com/hc/en-us/articles/32162917505293-Character-Reference' target='_blank' rel='noopener noreferrer' class='text-cyan-500 font-bold hover:underline'>Character Reference</a>.",
+          "Bottom line: V8.2 me Edit Model se start karein, identity description stable rakhein, ek time par limited variables change karein, aur every output ko continuity checklist se inspect karein. Isi repeatable process se different poses aur scenes me believable character continuity milti hai."
         ]
       }
     ]
