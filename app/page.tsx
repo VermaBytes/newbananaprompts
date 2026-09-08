@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { HomeHero } from "@/components/home-hero";
 import { PostCard } from "@/components/post-card";
+import { AdsterraNativeBanner } from "@/components/adsterra-native-banner";
 import { getAllPosts } from "@/lib/posts";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -113,6 +114,7 @@ export default function HomePage() {
           HERO SECTION
       ========================= */}
       <HomeHero latestPost={latestPost} />
+      <AdsterraNativeBanner />
 
       {/* =========================
           FEATURED BLOGS

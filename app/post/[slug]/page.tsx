@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyButton } from "@/components/copy-button";
 import { RelatedPosts } from "@/components/related-posts";
+import { AdsterraBanner300x250 } from "@/components/adsterra-banner-300x250";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { isPostReadyForIndexing } from "@/data/content-quality";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
@@ -620,6 +621,7 @@ export default async function PostPage({ params }: PostPageProps) {
             RIGHT COLUMN: STICKY SIDEBAR (Clean Editorial + Glowing AI effects)
         ========================= */}
         <aside className="space-y-5 lg:sticky lg:top-24">
+          <AdsterraBanner300x250 />
           {tocItems.length > 0 ? (
             <div className="site-panel toc-panel rounded-none px-5 py-4 space-y-3">
               <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-sm font-bold border-b border-cyan-400/10 pb-2.5">

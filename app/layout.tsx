@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navbar";
 import { FloatingWidgets } from "@/components/floating-widgets";
 import { OneSignalManager } from "@/components/onesignal-manager";
 import { PrivacyScripts } from "@/components/privacy-scripts";
+import { AdsterraSocialBar } from "@/components/adsterra-social-bar";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 
 export const viewport: Viewport = {
@@ -109,6 +110,7 @@ export default function RootLayout({
           <FloatingWidgets />
           <OneSignalManager />
           <PrivacyScripts />
+          <AdsterraSocialBar />
         </div>
       </body>
     </html>
