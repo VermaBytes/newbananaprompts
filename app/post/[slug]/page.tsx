@@ -621,7 +621,6 @@ export default async function PostPage({ params }: PostPageProps) {
             RIGHT COLUMN: STICKY SIDEBAR (Clean Editorial + Glowing AI effects)
         ========================= */}
         <aside className="space-y-5 lg:sticky lg:top-24">
-          <AdsterraBanner300x250 />
           {tocItems.length > 0 ? (
             <div className="site-panel toc-panel rounded-none px-5 py-4 space-y-3">
               <h3 className="theme-text-primary font-[family-name:var(--font-heading)] text-sm font-bold border-b border-cyan-400/10 pb-2.5">
@@ -641,7 +640,7 @@ export default async function PostPage({ params }: PostPageProps) {
             </div>
           ) : null}
           
-          {/* SIDEBAR BLOCK: AI Academy Course CTA */}
+          {/* SIDEBAR BLOCK: AI Academy Course CTA
           <div className="group relative overflow-hidden rounded-none border border-cyan-400/20 bg-gradient-to-br from-cyan-950/40 to-slate-900/60 p-4.5 shadow-md backdrop-blur-xl transition hover:border-cyan-400/40">
             <div className="absolute right-0 top-0 h-24 w-24 rounded-none bg-cyan-500/10 blur-2xl transition duration-500 group-hover:bg-cyan-500/25" />
             <span className="rounded-none bg-cyan-500/10 border border-cyan-400/20 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-cyan-300">
@@ -659,7 +658,7 @@ export default async function PostPage({ params }: PostPageProps) {
             >
               Start Learning Now
             </Link>
-          </div>
+          </div> */}
 
           {/* SIDEBAR BLOCK: Trending / Recent AI Guides */}
           <div className="site-panel rounded-none p-4.5 space-y-3">

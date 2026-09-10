@@ -110,7 +110,6 @@ export default function RootLayout({
           <FloatingWidgets />
           <OneSignalManager />
           <PrivacyScripts />
-          <AdsterraSocialBar />
         </div>
       </body>
     </html>

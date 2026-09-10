@@ -114,7 +114,6 @@ export default function HomePage() {
           HERO SECTION
       ========================= */}
       <HomeHero latestPost={latestPost} />
-      <AdsterraNativeBanner />
 
       {/* =========================
           FEATURED BLOGS
@@ -141,7 +140,7 @@ export default function HomePage() {
       {/* =========================
           COURSES / ACADEMY
       ========================= */}
-      <section id="courses" className="space-y-6">
+      {/* <section id="courses" className="space-y-6">
         <div className="space-y-2">
           <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">AI Academy</p>
           <h2 className="theme-text-primary font-[family-name:var(--font-heading)] text-xl font-bold sm:text-2xl">
@@ -153,7 +152,7 @@ export default function HomePage() {
         </div>
         <div className="content-grid md:grid-cols-2">
           
-          {/* TRACK 1 - DEVELOPER TRACK */}
+
           <Link
             href="/courses/web-development-with-ai"
             className="tool-card group relative overflow-hidden rounded-none p-0"
@@ -185,7 +184,6 @@ export default function HomePage() {
             </div>
           </Link>
 
-          {/* TRACK 2 - CREATOR TRACK */}
           <div
             className="tool-card group relative overflow-hidden rounded-none p-0 opacity-90 cursor-not-allowed"
           >
@@ -216,7 +214,7 @@ export default function HomePage() {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
       {/* =========================
           LATEST POSTS
