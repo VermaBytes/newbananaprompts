@@ -1,6 +1,9 @@
 // Pages held out of search and site discovery until a human editorial review
 // removes duplicated, off-topic, or substantially thin material.
 export const REVIEW_REQUIRED_POSTS = new Set([
+  // Off-topic posts — not related to AI niche (permanently excluded).
+  "upcisb-recruitment-2026-up-cooperative-bank-various-posts",
+
   // Earning-focused pages with unsupported projections or overly certain framing.
   "how-students-can-earn-money-using-ai-2026",
   "10-real-ways-to-make-money-with-ai-in-2026",
