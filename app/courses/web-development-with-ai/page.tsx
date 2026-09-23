@@ -77,10 +77,10 @@ export default function WebDevelopmentWithAiCoursePage() {
   return (
     <div className="mx-auto max-w-5xl space-y-10">
       <Link
-        href="/#courses"
+        href="/"
         className="theme-button theme-soft-hover inline-flex items-center rounded-none px-3.5 py-1.5 text-xs font-semibold"
       >
-        Back to Courses
+        Back to Home
       </Link>
 
       <section className="site-panel overflow-hidden rounded-none">

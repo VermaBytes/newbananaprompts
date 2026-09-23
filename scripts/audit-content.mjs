@@ -40,8 +40,18 @@ for (const post of posts) {
   }
 
   const addIssue = (severity, issue) => issues.push({ severity, slug: post.slug, indexable: !reviewRequired.has(post.slug), issue });
+  // Compare prose within blocks; repeated notes in separate table rows are valid.
+  for (const paragraph of post.sections.flatMap(section => section.paragraphs).flatMap(text => text.split(/<\/tr\s*>/i))) {
+    const sentences = stripHtml(paragraph).split(/[.!?]+\s*/).map(normalize).filter(text => text.split(" ").length >= 12);
+    const counts = new Map();
+    for (const sentence of sentences) counts.set(sentence, (counts.get(sentence) ?? 0) + 1);
+    for (const [sentence, count] of counts) {
+      if (count >= 3) addIssue("high", `sentence repeated ${count} times in one paragraph: ${sentence.slice(0, 100)}`);
+    }
+  }
+  // Word thresholds are editorial heuristics, not Google approval requirements.
   if (words < 700) addIssue("high", `thin article (${words} words)`);
-  else if (words < 1000) addIssue("medium", `limited depth (${words} words)`);
+  else if (words < 1000) addIssue("medium", `word-count review (${words} words; assess usefulness manually)`);
   if (!post.description || post.description.length < 90) addIssue("medium", `meta description length ${post.description?.length ?? 0}`);
   if (!post.sections.length) addIssue("high", "no article sections");
   if (!fs.existsSync(imagePath)) addIssue("high", `missing image ${post.image}`);
@@ -67,8 +77,8 @@ const publicRepeatedParagraphs = repeatedParagraphs.filter((item) =>
 
 const summary = {
   articles: posts.length,
-  indexableArticles: posts.length - reviewRequired.size,
-  quarantinedArticles: reviewRequired.size,
+  indexableArticles: posts.filter(post => !reviewRequired.has(post.slug)).length,
+  quarantinedArticles: posts.filter(post => reviewRequired.has(post.slug)).length,
   issues: {
     high: publicIssues.filter((item) => item.severity === "high").length,
     medium: publicIssues.filter((item) => item.severity === "medium").length

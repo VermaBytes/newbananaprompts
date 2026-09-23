@@ -649,6 +649,8 @@ const linkPlan = [
 ];
 
 // Apply all link injections
+module.exports = { linkPlan };
+if (require.main === module) {
 let updatedCount = 0;
 for (const plan of linkPlan) {
   const postIdx = posts.findIndex(p => p.slug === plan.postSlug);
@@ -658,6 +660,9 @@ for (const plan of linkPlan) {
   const section = post.sections[plan.sectionIdx];
   if (!section.paragraphs || !section.paragraphs[plan.paraIdx]) { console.log("NO PARA:", plan.postSlug, plan.sectionIdx, plan.paraIdx); continue; }
   const original = section.paragraphs[plan.paraIdx];
+  // A plan must not append the same recommendations on every run.
+  const plannedLinks = [...plan.replace("AI image generators have become incredibly powerful").matchAll(/href=['"]([^'"]+)['"]/g)].map(match => match[1]);
+  if (plannedLinks.some(href => original.includes(href))) continue;
   const updated = plan.replace(original);
   if (updated !== original) {
     section.paragraphs[plan.paraIdx] = updated;
@@ -670,3 +675,4 @@ for (const plan of linkPlan) {
 
 fs.writeFileSync(POSTS_PATH, JSON.stringify(posts, null, 2));
 console.log(`\nDone! Updated ${updatedCount}/${linkPlan.length} posts with internal links.`);
+}

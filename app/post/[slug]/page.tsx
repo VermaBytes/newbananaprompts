@@ -512,8 +512,8 @@ export default async function PostPage({ params }: PostPageProps) {
               {/* DYNAMIC ARTICLE SECTIONS */}
               <div className="post-content space-y-8 pt-4">
                 {post.sections.map((section) => {
-                  const isPromptCard = section.heading.toLowerCase().includes("prompt");
-                  const promptText = section.paragraphs.join("\n\n");
+                  const isPromptCard = /^prompt\s*\d+\b|\bcopy-ready\b|\bprompt$/i.test(section.heading);
+                  const promptText = section.paragraphs.map(stripHtml).join("\n\n");
                   const sectionId = getSectionId(section.heading);
 
                   if (isPromptCard) {

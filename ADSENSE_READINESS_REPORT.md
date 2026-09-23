@@ -1,5 +1,66 @@
 # AdSense Readiness Audit — newbananaprompts.in
 
+## September 23, 2026 update (supersedes historical findings below)
+
+The reported rejection is **Low value content**. This pass addresses identifiable
+content and navigation defects; it does not certify Google approval.
+
+- Removed 1,465 repeated internal-link blocks from 36 articles and made the
+  injection script safe to rerun without duplicating recommendations.
+- Expanded or rewrote seven flagged articles with worked examples, decision
+  steps, troubleshooting, limitations, and relevant official references.
+- Reviewed two additional study/career guides, removing invented ATS scoring,
+  fixed growth claims, and guaranteed score-improvement wording.
+- Corrected the Nano Banana guide's definition against Google's documentation
+  and removed unsupported reliability claims and outdated tool rankings.
+- Removed claims of guaranteed virality, universal commercial-use permission,
+  unlimited free-credit workarounds, and fixed-time image compression from the
+  revised articles. Examples are identified as illustrative, not test results.
+- Added two original composition diagrams, replacing unrelated devotional
+  article covers. They are labeled as diagrams, not generated outputs.
+- Prompt-copy boxes now target actual prompt sections rather than every heading
+  containing the word “prompt”; copied text excludes HTML markup.
+- Fixed the course return link to a real homepage destination.
+- Build-time push notifications now require explicit opt-in, rather than being
+  triggered merely by a Vercel deployment.
+
+### Content checks
+
+There are 113 stored articles, **70 public articles and 43 stored drafts**.
+One additional blocked slug has no stored article, which the old counter
+incorrectly subtracted from the public total. Public routes and draft status
+were not changed in this revision.
+
+The content audit has **zero high-severity findings** and zero detected exact
+long-paragraph duplication between public articles. Eight 700–999-word articles
+retain advisory word-count flags. They were reviewed for concrete usefulness;
+no filler was added merely to reach 1,000 words. These thresholds are local
+editorial heuristics, not Google requirements or proof of originality.
+
+The seven main revisions cover SSC CGL practice, Luma/Runway reels, cyberpunk
+portraits, digital-nomad thumbnails, Krishna devotional art, personal devotional
+portraits, and image compression under 20KB. The additional reviews cover SBI
+Clerk practice and student/job-seeker workflows.
+
+### Validation and deployment
+
+- Final production build, including Next.js lint and TypeScript checks: passed.
+- Local production HTTP checks: all 10 revised article pages include the new
+  sections and update dates; 12 supporting URLs return 200; a draft URL returns
+  404; ads.txt matches the publisher record.
+- Regression checks: repeated sentences are detected within a paragraph;
+  consecutive internal-link injection runs do not duplicate content.
+- Cleanup rerun: zero further changes; link injection was checked on a temporary
+  dataset and produced identical content on consecutive runs.
+- GitHub production deployment history and live response identify Vercel as the
+  active host. The historical Netlify outage below is not the current status.
+- Deployment and live URL checks must complete before requesting AdSense review.
+
+Google references: [site readiness](https://support.google.com/adsense/answer/7299563?hl=en)
+and [requesting another review](https://support.google.com/adsense/answer/12176698?hl=en).
+
+## Historical audit (August 29, 2026)
+
 Audit date: August 29, 2026  
 Overall status: **RED — do not resubmit yet**
 
