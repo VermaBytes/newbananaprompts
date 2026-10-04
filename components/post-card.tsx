@@ -1,37 +1,30 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import type { PostPreview } from "@/lib/posts";
 
 export function PostCard({ post }: { post: PostPreview }) {
+  const date = post.updatedAt ?? post.publishedAt;
+  const displayDate = new Date(date).toLocaleDateString("en-GB", {
+    day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Kolkata"
+  });
+
   return (
-    <article className="prompt-card group flex flex-col h-full overflow-hidden rounded-none border border-cyan-400/5">
-      <Link href={`/post/${post.slug}`} className="relative block aspect-[1000/630] overflow-hidden w-full">
-        <Image
-          src={post.image}
-          alt={post.title}
-          fill
-          loading="lazy"
-          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          className="object-cover transition duration-500 group-hover:scale-[1.03]"
-        />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
+    <article className="prompt-card group flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 transition-shadow hover:shadow-lg dark:border-cyan-900/30">
+      <Link href={`/post/${post.slug}`} className="relative block aspect-[1000/630] w-full overflow-hidden">
+        <Image src={post.image} alt={post.imageAlt ?? post.title} fill loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]" />
       </Link>
-      <div className="prompt-card-body flex-1 flex flex-col justify-between p-4 gap-3">
-        <div className="space-y-1.5">
-          <p className="theme-text-muted text-[10px] font-semibold uppercase tracking-[0.15em]">{post.dateLabel}</p>
-          <h2 className="theme-text-primary font-[family-name:var(--font-heading)] text-sm sm:text-base font-bold leading-snug">
-            <Link href={`/post/${post.slug}`} className="theme-title-link">
-              {post.title}
-            </Link>
-          </h2>
+      <div className="prompt-card-body flex flex-1 flex-col gap-4 p-5 sm:p-6">
+        <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+          <span className="theme-kicker font-semibold">{post.category}</span>
+          <time dateTime={date} className="theme-text-muted">{post.updatedAt ? "Updated " : ""}{displayDate}</time>
         </div>
-        <div className="pt-1">
-          <Link
-            href={`/post/${post.slug}`}
-            className="inline-flex items-center gap-1 text-xs font-bold text-[#06b6d4] hover:text-[#22d3ee] transition-colors"
-          >
-            Read More →
-          </Link>
+        <h2 className="theme-text-primary font-[family-name:var(--font-heading)] text-lg font-bold leading-snug">
+          <Link href={`/post/${post.slug}`} className="theme-title-link">{post.title}</Link>
+        </h2>
+        <p className="theme-text-secondary line-clamp-3 text-sm leading-6">{post.description}</p>
+        <div className="mt-auto flex items-center justify-between gap-3 border-t border-slate-200 pt-4 dark:border-slate-800">
+          <span className="theme-text-muted text-xs">{post.author}</span>
+          <Link href={`/post/${post.slug}`} className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-cyan-700 transition-colors hover:text-cyan-600 dark:text-cyan-400">Read article <span aria-hidden="true">&rarr;</span></Link>
         </div>
       </div>
     </article>

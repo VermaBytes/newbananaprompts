@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { HomeHero } from "@/components/home-hero";
 import { PostCard } from "@/components/post-card";
-import { AdsterraNativeBanner } from "@/components/adsterra-native-banner";
 import { getAllPosts } from "@/lib/posts";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -53,7 +51,7 @@ export default function HomePage() {
   );
   const latestPost = homePosts[0];
   const featuredPosts = homePosts.slice(1, 4);
-  const latestPosts = homePosts.slice(1, 7);
+  const latestPosts = homePosts.slice(4, 10);
 
   const jsonLd = {
     "@context": "https://schema.org",

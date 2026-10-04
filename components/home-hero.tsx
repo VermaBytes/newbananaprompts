@@ -1,93 +1,41 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import type { BlogPost } from "@/lib/posts";
 
-export function HomeHero({ latestPost }: { latestPost: BlogPost }) {
+export function HomeHero({ latestPost }: { latestPost?: BlogPost }) {
   if (!latestPost) return null;
 
-  const displayDate = new Date(latestPost.updatedAt ?? latestPost.publishedAt).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric"
+  const date = latestPost.updatedAt ?? latestPost.publishedAt;
+  const displayDate = new Date(date).toLocaleDateString("en-GB", {
+    year: "numeric", month: "long", day: "numeric", timeZone: "Asia/Kolkata"
   });
-  const datePrefix = latestPost.updatedAt && latestPost.updatedAt !== latestPost.publishedAt
-    ? "Updated"
-    : "Published";
 
   return (
-    <section className="relative overflow-hidden border-b border-slate-100 dark:border-cyan-950/20">
-      <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-        
-        {/* LEFT SIDE: MASSIVE THUMBNAIL (SHARP, CROP-FREE) */}
-        <Link
-          href={`/post/${latestPost.slug}`}
-          className="group relative block aspect-[1000/630] overflow-hidden w-full rounded-none border border-slate-200/60 dark:border-cyan-500/10 shadow-[0_10px_25px_rgba(0,0,0,0.06)] dark:shadow-[0_15px_40px_rgba(0,0,0,0.25)] transition-all duration-500"
-        >
-          <Image
-            src={latestPost.image}
-            alt={latestPost.title}
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 700px"
-            className="object-cover transition duration-700 group-hover:scale-[1.015]"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#020617]/30 via-transparent to-transparent opacity-0 transition duration-500 group-hover:opacity-100" />
-        </Link>
-
-        {/* RIGHT SIDE: EDITORIAL CONTENT (COMPACT & SHARP) */}
-        <div className="space-y-2.5 lg:pl-2">
-          
-          {/* CATEGORY BADGE PILL */}
-          <div className="inline-flex items-center gap-1.5 rounded-none bg-cyan-500/10 dark:bg-cyan-500/20 px-2 py-0.5 text-[7.5px] font-extrabold uppercase tracking-[0.2em] text-cyan-600 dark:text-cyan-300 border border-cyan-500/10 dark:border-cyan-400/20 shadow-sm">
-            <span className="h-1.5 w-1.5 rounded-none bg-cyan-500 dark:bg-cyan-400 animate-pulse" />
-            {latestPost.category}
+    <section aria-labelledby="featured-article-title" className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-cyan-900/40 dark:bg-slate-950">
+      <div className="grid items-center gap-6 p-4 sm:gap-8 sm:p-6 lg:grid-cols-[1.15fr_1fr] lg:p-8">
+        <div className="order-last flex min-w-0 flex-col justify-center gap-4 pb-2 sm:gap-5 lg:py-2">
+          <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
+            <span className="theme-kicker">Featured article</span>
+            <span className="rounded-full bg-cyan-500/10 px-3 py-1 text-cyan-700 dark:text-cyan-300">{latestPost.category}</span>
           </div>
-
-          {/* TITLE */}
-          <h1 className="font-[family-name:var(--font-heading)] text-lg sm:text-xl lg:text-[1.55rem] lg:leading-[1.25] font-extrabold tracking-tight text-black dark:text-white">
-            <Link 
-              href={`/post/${latestPost.slug}`} 
-              className="theme-title-link hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-300"
-            >
-              {latestPost.title}
-            </Link>
+          <h1 id="featured-article-title" className="theme-text-primary font-[family-name:var(--font-heading)] text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-[2rem]">
+            <Link href={`/post/${latestPost.slug}`} className="theme-title-link">{latestPost.title}</Link>
           </h1>
-
-          {/* DATE & AUTHOR WITH HIGH-FIDELITY ICONS */}
-          <div className="flex flex-wrap items-center gap-3 text-[10px] font-semibold text-slate-500 dark:text-slate-400 pt-0.5">
-            <span className="flex items-center gap-1.5">
-              <svg className="h-3.5 w-3.5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              {datePrefix}: {displayDate}
-            </span>
-            <span className="text-slate-300 dark:text-slate-700">|</span>
-            <span className="flex items-center gap-1.5">
-              <svg className="h-3.5 w-3.5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-              </svg>
-              By {latestPost.author}
-            </span>
+          <p className="theme-text-secondary max-w-xl text-sm leading-7 sm:text-base">{latestPost.description}</p>
+          <div className="theme-text-muted flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm">
+            <span>By {latestPost.author}</span>
+            <span>{latestPost.updatedAt ? "Updated" : "Published"} <time dateTime={date}>{displayDate}</time></span>
           </div>
-
-          {/* EXCERPT */}
-          <p className="theme-text-secondary text-[11px] leading-relaxed max-w-xl font-medium">
-            {latestPost.description}
-          </p>
-
-          {/* PREMIUM CAPSULE CTA BUTTON */}
-          <div className="pt-1.5">
-            <Link
-              href={`/post/${latestPost.slug}`}
-              className="group inline-flex items-center gap-2 rounded-none bg-slate-900 dark:bg-white text-white dark:text-slate-950 px-3.5 py-2 text-[11px] font-bold shadow-[0_4px_15px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_20px_rgba(56,189,248,0.08)] hover:bg-cyan-600 dark:hover:bg-cyan-400 hover:text-white dark:hover:text-slate-950 transition-all duration-300 hover:scale-105"
-            >
-              Read Full Article
-              <svg className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
+          <div className="flex flex-wrap items-center gap-4 pt-1">
+            <Link href={`/post/${latestPost.slug}`} className="inline-flex items-center gap-3 rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-cyan-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-500 dark:bg-cyan-400 dark:text-slate-950 dark:hover:bg-cyan-300">
+              Read the guide <span aria-hidden="true">&rarr;</span>
             </Link>
+            <Link href="/blogs" className="theme-title-link theme-text-primary text-sm font-semibold">Explore all articles <span aria-hidden="true">&rarr;</span></Link>
           </div>
         </div>
+        <Link href={`/post/${latestPost.slug}`} aria-label={`Read ${latestPost.title}`} className="order-first relative block aspect-video w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-900">
+          <Image src={latestPost.image} alt={latestPost.imageAlt ?? latestPost.title} fill priority sizes="(max-width: 640px) calc(100vw - 66px), (max-width: 1023px) calc(100vw - 98px), (max-width: 1280px) 52vw, 600px" className="object-contain" />
+        </Link>
       </div>
     </section>
   );
