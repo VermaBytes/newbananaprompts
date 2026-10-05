@@ -31382,7 +31382,7 @@
     "slug": "how-to-create-viral-ai-reel-videos-luma-runway",
     "title": "How to Create AI Reel Videos with Luma and Runway: Storyboard to Final Edit",
     "seoTitle": "AI Reels with Luma and Runway: Practical Editing Workflow",
-    "description": "Plan a three-shot AI reel, write motion instructions, troubleshoot drifting subjects, and edit a coherent short video with Luma or Runway.",
+    "description": "Create a coherent three-shot AI reel with Luma or Runway: copy-ready motion prompts, a practical troubleshooting checklist, and a clear editing and export workflow.",
     "category": "AI Tools",
     "author": "Shobhit Verma",
     "publishedAt": "2026-05-26T10:00:00.000Z",
@@ -31430,10 +31430,24 @@
         ]
       },
       {
+        "heading": "Shot three motion prompt (copy-ready)",
+        "paragraphs": [
+          "A cup rests on the cafe table beside the window. A faint curl of steam rises from the cup while rain runs down the glass in the background. The camera stays still. Keep the cup and table in place throughout the shot.",
+          "Use this close-up as the payoff to the traveller entering the cafe. Keep the warm interior colours consistent with the previous shot. If the steam deforms the cup or obscures the scene, simplify the prompt to rain moving outside a stationary cup. Add any title or closing message in your editor rather than asking the video model to generate readable text."
+        ]
+      },
+      {
         "heading": "Review a generation before spending more credits",
         "paragraphs": [
           "Watch the whole clip, then examine the first, middle, and last frames. Does the face change, does the jacket become a different colour, or does the doorway move? Pick the most important defect and revise only the instruction related to it. If the camera moves too much, request a stationary camera. If the subject performs several actions, reduce the instruction to a single turn.",
           "Keep a small record with the starting-image filename, exact instruction, model selected, and reason for accepting or rejecting the clip. Two clips that look similar may differ in whether the last frame is usable for a cut. Compare them for the story you planned, not just for sharpness. The review process is more useful than adding cinematic or ultra-realistic to every sentence."
+        ]
+      },
+      {
+        "heading": "Troubleshoot one issue at a time",
+        "paragraphs": [
+          "If a face or outfit changes, start from a clearer reference image and reduce the action to one small movement. If the camera drifts, remove competing camera instructions and describe a stationary view. If the scene flickers, try a shorter usable portion of the clip before spending credits on another generation. These are revision strategies, not guaranteed fixes.",
+          "For each attempt, note the defect, the single change you made, and whether the resulting clip supports the storyboard. Keep an accepted clip unchanged while you work on the next shot. This prevents an endless cycle of regenerating every scene because one transition is weak."
         ]
       },
       {
@@ -31457,7 +31471,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-09-23T08:00:00.000Z"
+    "updatedAt": "2026-10-05T06:30:00.000Z"
   },
   {
     "slug": "how-students-job-seekers-use-ai-grow-faster",

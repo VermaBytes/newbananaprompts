@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import type { PostPreview } from "@/lib/posts";
 
@@ -9,7 +9,7 @@ export function PostCard({ post }: { post: PostPreview }) {
   });
 
   return (
-    <article className="prompt-card group flex h-full flex-col overflow-hidden rounded-xl border border-slate-200 transition-shadow hover:shadow-lg dark:border-cyan-900/30">
+    <article className="prompt-card group flex h-full flex-col overflow-hidden rounded-none border border-slate-200 transition-shadow hover:shadow-lg dark:border-cyan-900/30">
       <Link href={`/post/${post.slug}`} className="relative block aspect-[1000/630] w-full overflow-hidden">
         <Image src={post.image} alt={post.imageAlt ?? post.title} fill loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]" />
       </Link>
