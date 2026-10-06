@@ -393,7 +393,7 @@
     "category": "AI Tools",
     "author": "Shobhit Verma",
     "publishedAt": "2026-09-08T06:30:00.000Z",
-    "updatedAt": "2026-09-08T06:30:00.000Z",
+    "updatedAt": "2026-10-06T03:30:00.000Z",
     "dateLabel": "September 8, 2026",
     "image": "/posts/chatgpt-prompts-upsc-mains-answer-writing-2026.png",
     "imageAlt": "50+ ChatGPT Prompts for UPSC Mains Answer Writing 2026 Masterclass Guide",
@@ -621,6 +621,19 @@
         "paragraphs": [
           "To maximize benefit while maintaining human creativity and exam readiness:",
           "<ul><li><strong>Handwrite First, Prompt Second:</strong> Always write your answer on physical UPSC answer sheets before pasting your text into ChatGPT for review.</li><li><strong>Fact-Check AI Data:</strong> AI models can hallucinate specific dates or case names. Cross-verify statistics with Economic Survey, PIB, or standard textbooks.</li><li><strong>Build an Answer Bank:</strong> Save high-quality AI-generated model frameworks and diagrams in your digital notes (Notion/Evernote) organized by GS paper.</li></ul>"
+        ]
+      },
+      {
+        "heading": "October 6 Update: Evidence-Based Answer Practice and Self-Review",
+        "paragraphs": [
+          "<p>This update adds a repeatable practice session: write your answer independently, check whether it answers the directive, verify supporting evidence, and rewrite only the weakest part. The prompts below are practice instructions, not official UPSC questions or marking guidance.</p>",
+          "<h3>Prompt 20: Review an Answer Using Only Your Supplied Notes</h3><pre>Question: [paste question]\nDirective: [discuss / examine / critically analyse]\nWord limit: [paste the limit from your practice question]\nMy answer: [paste your own draft]\nVerified source notes: [paste extracts with source titles and page numbers]\nReview my answer only against the question and these notes. Identify which parts address the directive, which claims lack support, and which points repeat. Quote the relevant sentence from my answer for each comment. If the notes do not support a claim, label it unverified rather than inventing evidence. Suggest three specific improvements before offering any rewritten passage. Do not assign an official UPSC score.</pre>",
+          "<p><strong>How to use the feedback:</strong> Check each comment against your notes before editing. If a useful argument has no supporting source, record it as a research task. Keep your original draft beside the revision so you can see whether your reasoning improved, rather than judging only how polished the prose sounds.</p>",
+          "<h3>Prompt 21: Make a Balanced Argument Without Inventing Facts</h3><pre>Practice question: Discuss how digital public services can improve access while creating barriers for some citizens.\nMy outline: [paste your outline]\nSource material: [paste your verified notes]\nIdentify the benefits and access barriers already supported by my notes. Flag any missing perspective as a question for further reading. Help me connect each supported argument to a practical example from the supplied material. Do not invent statistics, scheme names, court judgments, or quotations. Finish with an outline I can write in my own words.</pre>",
+          "<h3>Prompt 22: Compress an Answer While Preserving Its Reasoning</h3><pre>My draft: [paste answer]\nRequired word limit: [insert limit]\nFind repetition, unnecessary background, and sentences that do not answer the question. Suggest cuts in priority order and explain what each cut preserves or removes. Keep qualifications, counterarguments, and source attribution where they affect meaning. Produce a shorter draft only after listing the cuts. I will verify the final word count myself.</pre>",
+          "<p><strong>A practical session:</strong> Choose one question from your existing practice material and set a timer appropriate to your current stage. Write without assistance, use Prompt 20 for feedback, and verify one disputed claim in the original source. Rewrite the introduction or body paragraph that most needs work. End by recording one actionable lesson for your next attempt, such as addressing the directive earlier or replacing a vague example.</p>",
+          "<h3>Self-Review Checklist Before Saving Your Final Answer</h3><ul><li>Does the opening directly address the question?</li><li>Does each body paragraph contribute a distinct argument?</li><li>Have I checked factual claims, quotations, dates, and examples in their original sources?</li><li>Have I included a relevant limitation or counterargument where the directive calls for evaluation?</li><li>Does the conclusion follow from the arguments already made?</li><li>Have I checked the word count and written the final version in my own words?</li></ul>",
+          "<p>Track the question, your main mistake, the source checked, and the next practice action in a simple revision log. After several attempts, look for recurring weaknesses. Feedback becomes useful when it changes the next answer you write.</p>"
         ]
       },
       {
