@@ -32013,79 +32013,136 @@
   },
   {
     "slug": "dark-moody-cyberpunk-portrait-prompt",
-    "title": "Dark Moody Cyberpunk Portrait Prompt: Neon Glow 4K",
-    "seoTitle": "Dark Cyberpunk Portrait Prompt (Neon 4K)",
-    "description": "Build a cyberpunk portrait with controlled neon lighting: copy-ready scene, composition choices, a revision example, and fixes for plastic skin or clutter.",
+    "title": "Dark Moody Cyberpunk Portrait Prompt: 6 Neon AI Styles",
+    "seoTitle": "Dark Moody Cyberpunk Portrait Prompt: 6 Neon AI Styles",
+    "description": "Create a dark moody cyberpunk portrait with 6 copy-ready AI prompts, neon lighting tips, photo-reference guidance, crop choices and fixes for common mistakes.",
     "category": "AI Prompts",
     "author": "Shobhit Verma",
     "publishedAt": "2026-04-04T10:30:00.000Z",
     "dateLabel": "April 4, 2026",
     "image": "/posts/image1.png",
     "tags": [
-      "cyberpunk portrait",
-      "neon glow",
-      "moody lighting",
-      "cinematic"
+      "cyberpunk portrait prompt",
+      "dark moody portrait",
+      "neon AI portrait",
+      "AI image prompts",
+      "cinematic lighting"
     ],
     "sections": [
       {
-        "heading": "Introduction: Cyberpunk Aesthetics Ka Magic",
+        "heading": "Dark Moody Cyberpunk Portrait: Quick Start",
         "paragraphs": [
-          "Cyberpunk style hamesha se hi futuristic, dark, aur eye-catching hota hai. Neon lights, glowing reflections, aur moody shadows ka combination kisi bhi visual ko instant premium look deta hai. Agar aap Midjourney mein consistent characters banana chahte hain toh <a href='/post/midjourney-consistent-characters-generate-same-character-different-poses' class='text-cyan-500 font-bold hover:underline'>Midjourney Consistent Characters Guide</a> zaroor padhein. Aur 3D social media avatars ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> guide bhi helpful rahega.",
-          "Agar aap apne social media profile, gaming channel, ya digital art collection ke liye ek cinematic cyberpunk face portrait banana chahte hain, to niche diya gaya AI prompt aapki help karega."
+          "Ek dark moody cyberpunk portrait ke liye sabse useful starting point hai: readable face, ek controlled neon accent, aur simple futuristic background. Sirf neon, cinematic aur ultra-detailed keywords repeat karne ke bajaye batayein ki light kahan se aa rahi hai, subject kya pehne hai aur background kitna visible hona chahiye. Is guide mein aapko six copy-ready prompts, lighting choices, editing instructions aur final image review ka practical workflow milega.",
+          "Profile picture ke liye shoulder-up framing se shuru karein. Wallpaper ke liye vertical composition aur head ke upar empty space maangein. Neeche ke prompts creative starting points hain; yeh kisi particular generator par tested results ya guaranteed likeness ka claim nahi karte. Har variation mein subject, pose aur light ko clearly describe kiya gaya hai, taaki aap apne output ke hisaab se ek change at a time kar sakein."
         ]
       },
       {
-        "heading": "The Moody Cyberpunk Prompt (Copy-Ready)",
+        "heading": "Prompt 1: Realistic Cyan and Magenta Portrait",
         "paragraphs": [
-          "A dark moody close-up portrait of a mysterious character in a high-tech cyberpunk street at night. Intense neon rim lighting in cyan and magenta, wet street reflections, cinematic volumetric shadows, rain drops on face, highly detailed skin textures, sharp glow eyes, shot on 85mm lens, f/1.4, photorealistic, 4K resolution."
+          "Create a cinematic shoulder-up portrait of an adult fictional traveller on a quiet futuristic street at night. The subject wears a charcoal technical jacket and looks slightly toward the camera with a calm expression. Soft neutral light reveals both eyes and natural facial texture. A narrow cyan rim light outlines the right shoulder; distant magenta signs form gentle background bokeh. Include subtle rain droplets on the jacket, restrained wet reflections, a clear silhouette, and deep but readable shadows. Keep the face as the brightest area of interest, with realistic eyes and no lettering or logos. Square composition with space around the head for a circular avatar crop."
         ]
       },
       {
-        "heading": "Variations to Try",
+        "heading": "How to Use and Customize the Portrait",
         "paragraphs": [
-          "Anime Style: Add 'cyberpunk anime illustration style, bold lines, vibrant colors, neon glows, highly detailed' to the beginning of the prompt.",
-          "Warm Electric Orange: Change 'cyan and magenta' to 'electric orange and deep purple' to get a completely different color scheme and warmer cyberpunk aesthetic."
+          "Prompt copy karein aur apne image tool ke prompt box mein paste karein. Tool mein size ya aspect-ratio controls available hon toh output ke purpose ke hisaab se set karein. Pehli image ko final samajhne ke bajaye composition check karein: kya dono eyes readable hain, kya head crop ho raha hai aur kya background face se zyada attention le raha hai? In observations ke baad hi next version banayein.",
+          "Apne character ke liye traveller ko adult mechanic, musician ya night-shift courier se replace kar sakte hain. Jacket ke material ko matte fabric, worn leather ya reflective panels mein se ek rakhein. Ek hi prompt mein multiple conflicting outfits add karna avoid karein. Agar existing image edit kar rahe hain, explicitly batayein kaunsi details preserve karni hain: face shape, hairstyle, expression, camera angle aur jacket.",
+          "Agar output achha hai lekin face dark hai, sirf yeh edit request karein: Keep the same subject, framing, outfit and background. Add soft neutral fill light to the face so both eyes are visible. Preserve the cyan edge light and keep the street dark. Is instruction ka purpose lighting change ko isolate karna hai; exact identity preservation output dekhkar hi assess karein."
+        ]
+      },
+      {
+        "heading": "A Reusable Cyberpunk Portrait Formula",
+        "paragraphs": [
+          "Useful structure hai: subject + framing + expression + clothing + main light + accent light + background + intended crop. Example: adult courier, shoulder-up portrait, quiet confident expression, matte black jacket, soft neutral face light, faint purple edge light, blurred rainy alley, square avatar. Is order ko rigid rule samajhne ki zaroorat nahi; yeh missing details pakadne ka checklist hai.",
+          "Main light face ko readable banati hai; accent light mood aur outline define karti hai. Background mein ek ya do visual cues kaafi ho sakte hain, jaise blurred sign aur wet pavement. Agar aap flying vehicles, crowds, wires, holograms, smoke aur billboards sab ek close portrait mein maangte hain, image ka focus diffuse ho sakta hai. Pehle clear portrait banayein, phir zaroorat ke hisaab se environment add karein."
+        ]
+      },
+      {
+        "heading": "Prompt 2: Neon Anime Character",
+        "paragraphs": [
+          "Create a shoulder-up anime illustration of an adult cyberpunk courier at night. Use crisp linework, deliberate cel shading, an expressive but calm face, and a dark high-collar jacket. Light the face with a soft pale key light and add a slim cyan highlight along the hair and jacket edge. Place two blurred magenta light shapes in the distant rainy street. Keep the eyes readable, the silhouette clean and the background simpler than the character. Square avatar composition, no lettering, no logos."
+        ]
+      },
+      {
+        "heading": "Prompt 3: Electric Orange and Deep Purple",
+        "paragraphs": [
+          "Create a realistic chest-up portrait of an adult fictional street mechanic in a quiet futuristic workshop doorway. Use warm electric-orange light from the left and a faint deep-purple edge light from behind. Show a worn charcoal work jacket, a thoughtful expression, natural skin texture and restrained reflections on metal fittings. Keep the background mostly dark with a single blurred workshop light. Preserve detail in the eyes and avoid glowing skin. Vertical composition with comfortable space around the head and shoulders, no text or logos."
+        ]
+      },
+      {
+        "heading": "Prompt 4: Rainy Night Phone Wallpaper",
+        "paragraphs": [
+          "Create a vertical cyberpunk character wallpaper featuring an adult traveller standing beneath a narrow shelter on a rainy futuristic street. Place the character in the lower middle of the frame, with the face clearly visible and the upper quarter mostly dark and uncluttered for a phone clock. Use soft neutral facial light, a restrained teal edge light and distant rose-coloured bokeh. Show a long dark coat and subtle wet pavement reflections. Keep the atmosphere quiet, the facial features natural and the silhouette distinct. No lettering, logos or bright signs above the head."
+        ]
+      },
+      {
+        "heading": "Prompt 5: Minimal Black and White Portrait",
+        "paragraphs": [
+          "Create a monochrome shoulder-up portrait of an adult fictional cyberpunk investigator. Use a dark textured jacket with one small futuristic collar detail, soft side lighting, a subtle pale rim light and a quiet shadowed background. Preserve natural facial texture and detail in the eyes. Suggest the futuristic setting through clothing and a single blurred geometric light rather than busy machinery. Restrained contrast, calm expression, clean silhouette, square composition with room for a circular crop. No text or logos."
+        ]
+      },
+      {
+        "heading": "Prompt 6: Gaming Channel Banner Composition",
+        "paragraphs": [
+          "Create a wide cinematic cyberpunk portrait composition for a gaming channel banner. Position an adult fictional character on the right third, framed from the chest up in a matte dark technical jacket. Keep the central and left portions mostly dark with low-detail smoky blue atmosphere for separately added channel text. Use neutral light on the face and a narrow cyan rim light, with a few distant magenta reflections behind the character. Keep the face readable at small size and avoid lettering or logos. Leave generous margins so the layout can be adapted to different screen crops."
+        ]
+      },
+      {
+        "heading": "Choose Lighting, Framing and Colour Deliberately",
+        "paragraphs": [
+          "Cyan aur magenta ek possible palette hai, compulsory cyberpunk formula nahi. Orange aur purple se warmer interpretation try kar sakte hain; monochrome se clothing aur silhouette par focus rahega. Skin par neutral light rakhkar neon ko edges aur background tak limit karna ek useful design option hai. Agar intentionally stylized face chahiye, coloured facial light maangein, lekin result mein eyes aur expression ki readability check karein.",
+          "Avatar mein close portrait aur clear head outline prioritize karein. Wallpaper mein empty space aur background ka balance dekhein. Banner mein subject ko side par rakhkar text ke liye quiet area reserve karein, phir platform ke current crop preview mein final design check karein. Prompt mein space for text likhne se layout ka intent clear hota hai; actual title ko editor mein separately add karna aapko font, spelling aur alignment par direct control deta hai.",
+          "Photographic phrases jaise portrait lens look aur shallow depth of field visual direction dene ke liye use kar sakte hain. Inhe actual camera metadata, guaranteed optical effect ya file resolution samajhkar publish na karein. Agar background blur face ko bhi soft bana raha hai, instruction simplify karein: face and eyes in clear focus, background softly blurred."
+        ]
+      },
+      {
+        "heading": "Negative Instructions Without Overloading the Scene",
+        "paragraphs": [
+          "Unwanted elements ko plain language mein specify karein: no lettering, no logos, no glowing eyes, no heavy fog across the face. Agar aapke chosen tool mein separate negative-prompt field ho, uske supported controls ke hisaab se use karein. Kisi doosre generator ke parameter strings blindly paste karne ke bajaye normal descriptive instructions se shuru karein.",
+          "Ek long generic negative list har image ki problem solve nahi karti. Pehle output ka actual defect identify karein. Example: cheeks par excessively shiny highlights hon toh restrained skin highlights request karein; background mein random signs hon toh single blurred light shape, no readable signage request karein. Positive replacement batana useful hai, kyunki sirf remove neon kehne se desired lighting direction missing reh jaati hai."
+        ]
+      },
+      {
+        "heading": "Troubleshooting: Dark Faces, Plastic Skin and Busy Streets",
+        "paragraphs": [
+          "<ul><li><strong>Face too dark:</strong> ask for soft frontal fill and visible detail in both eyes, while keeping the background subdued.</li><li><strong>Plastic skin:</strong> remove flawless, porcelain and overly glossy descriptions; request natural texture and restrained highlights.</li><li><strong>Neon overwhelms the subject:</strong> reduce to one accent colour and move the second colour into distant background lights.</li><li><strong>Cluttered city:</strong> keep one blurred light shape and a simple street silhouette; remove crowds and extra vehicles.</li><li><strong>Hands look distorted:</strong> use shoulder-up framing if hands are irrelevant; otherwise simplify the pose and inspect every visible finger.</li><li><strong>Head gets cropped:</strong> request additional space above and beside the head, then check the actual exported crop.</li></ul>",
+          "Revision ko controlled rakhein. Version A mein original prompt save karein. Version B mein sirf lighting change karein. Version C mein selected lighting ke saath background simplify karein. Yeh ek suggested comparison process hai, model benchmark nahi. Dono previews ko intended size par compare karein: full-screen par impressive street lights small avatar mein distracting blobs ban sakti hain."
+        ]
+      },
+      {
+        "heading": "Using Your Own Photo as a Reference",
+        "paragraphs": [
+          "Apni photo ko cyberpunk style mein edit karna ho toh aisi image choose karein jisme face clearly visible ho. Image-reference ya editing support available ho toh tool ke us workflow ko use karein. Photo upload karne se pehle relevant privacy settings check karein aur sirf apni ya permission wali photo use karein. Text-only description se exact personal resemblance assume na karein.",
+          "Suggested edit instruction: Preserve the visible facial proportions, hairstyle and expression of the reference person. Change the setting to a quiet rainy futuristic street, replace the outfit with a matte charcoal technical jacket and add a subtle cyan rim light. Keep neutral light on the face, natural skin texture and a simple blurred background. Do not add glowing eyes, text or logos. Output mein resemblance inspect karein; significant pose ya lighting change ke baad face drift ho sakta hai."
+        ]
+      },
+      {
+        "heading": "Crop, Resolution and Final Export Checklist",
+        "paragraphs": [
+          "Square avatar ko circular mask mein preview karein: hairstyle, chin aur jacket collar safe area mein hain ya nahi? Vertical wallpaper ko phone preview mein dekhein, especially clock aur notification placement ke saath. Banner ke liye desktop aur mobile crops compare karein. Composition ko pehle settle karna repeated upscaling se zyada useful ho sakta hai jab main issue framing ho.",
+          "Prompt mein 4K likhna output ko automatically 3840 × 2160 pixels nahi banata. Downloaded image ki actual dimensions inspect karein aur apne destination ke required size se compare karein. Available export ya upscale controls use karne ke baad eyes, hair edges, jacket seams aur skin texture phir review karein. Upscaling ke baad bhi original composition aur facial accuracy separately check karni hoti hai.",
+          "Final file ko clear naam dein, jaise cyan-cyberpunk-portrait-avatar.webp. Web par image use karte waqt concise alt text mein visible subject aur useful visual details describe karein; keywords ki list repeat na karein. Generated portrait ko real unedited photograph ki tarah present karne ke bajaye context ke hisaab se AI artwork ya edited image label dein."
         ]
       },
       {
         "heading": "Frequently Asked Questions (FAQs)",
         "paragraphs": [
-          "Q: Mobile wallpaper ke liye perfect aspect ratio kya hai? - A: Use 9:16 aspect ratio (e.g. --ar 9:16 in Midjourney) to generate high-quality phone wallpapers.",
-          "Q: Face ko realistic kaise banayein? - A: Add keywords like 'photorealistic skin texture, sharp focus, 85mm portrait lens' to avoid blurry or plastic-looking faces."
+          "Q: Dark moody cyberpunk portrait ke liye best starting prompt kya hai? - A: Prompt 1 se shuru karein: clear shoulder-up subject, neutral face light, cyan rim light aur distant magenta bokeh. Apne first output ke baad ek lighting ya framing change karke compare karein.",
+          "Q: Kya yeh prompts har AI image generator mein same result denge? - A: Nahi. Yeh plain-language creative briefs hain. Har tool instructions ko differently interpret kar sakta hai; supported size aur editing controls us tool mein separately choose karein.",
+          "Q: Cyberpunk portrait mein skin realistic kaise rakhein? - A: Natural texture, restrained highlights aur neutral facial light request karein. Flawless skin aur glowing eyes jaise conflicting instructions remove karein, phir full-size face inspect karein.",
+          "Q: Kya 4K keyword se actual 4K image milegi? - A: Nahi. Actual resolution export settings aur downloaded file dimensions se confirm hoti hai. 4K wording ko guaranteed output size na samjhein.",
+          "Q: Apne face ke saath neon cyberpunk photo kaise banayein? - A: Permission wali clear reference photo aur available image-editing workflow use karein. Facial proportions preserve karne ko kahein, background aur lighting gradually change karein aur resemblance manually check karein.",
+          "Q: Profile picture aur wallpaper ke prompts mein kya difference hai? - A: Profile picture mein face aur circular crop prioritize karein. Wallpaper mein vertical layout aur clock ke liye uncluttered space reserve karein."
         ]
       },
       {
-        "heading": "Build the portrait in three decisions",
+        "heading": "Related AI Portrait and Image Prompt Guides",
         "paragraphs": [
-          "First decide where the image will appear. A profile avatar needs a face that remains readable in a small circular crop. A phone wallpaper can leave empty space above the head for the clock. A poster can show more of the jacket and street. Make that choice before generating; cropping a wide city scene into an avatar often leaves too little detail in the face.",
-          "Second choose a main light and an accent. For this scene, use soft neutral light on the face and a narrow cyan light along one shoulder. Put magenta signs farther into the background. If every surface emits bright neon, the face loses its place as the subject. Third choose a simple expression and pose, such as a calm face turned slightly toward the main light. Extra action is unnecessary for a portrait."
-        ]
-      },
-      {
-        "heading": "A controlled revision example",
-        "paragraphs": [
-          "The following is a design exercise, not a report of a model test. Start with: Close portrait of an adult traveller in a dark jacket, looking slightly left, quiet futuristic street behind them, soft neutral light on the face, narrow cyan edge light on the right shoulder, distant magenta signs out of focus, natural skin texture. This version separates the facial light from the background colour.",
-          "If the face is too dark, keep the subject, pose, and background unchanged and request: Increase the soft frontal fill so both eyes remain visible; keep the background subdued. If the colours are too strong, change only the accent instruction to a faint cyan edge. Save the original and revised versions with the exact instruction. Changing clothing, lighting, camera distance, and hairstyle together prevents a useful comparison."
-        ]
-      },
-      {
-        "heading": "Troubleshooting common portrait failures",
-        "paragraphs": [
-          "Plastic skin: remove instructions that ask for flawless or porcelain skin. Describe ordinary pores, gentle cheek shadows, and restrained highlights. Do not try to solve every defect by adding more detail words. Glowing eyes can also conflict with a natural portrait; retain them only if you intentionally want a fantasy character.",
-          "Cluttered background: reduce the scene to one blurred sign and one wet reflection. Ask for a clear silhouette between the jacket and street. Distorted hands: use a shoulder-up composition when hands are irrelevant. If a hand must appear, simplify the pose and inspect the fingers before publishing. A convincing thumbnail can still contain obvious errors at full size.",
-          "Weak resemblance: a text description cannot reliably reproduce your face. Use an image-reference or editing workflow if your chosen tool provides one, with a photo you have permission to use. Keep expectations realistic: identity can drift when the pose or lighting changes substantially. Do not describe a generated likeness as an unedited photograph."
-        ]
-      },
-      {
-        "heading": "Crop, export, and review",
-        "paragraphs": [
-          "Make a square crop for the avatar and preview it inside a circle before committing to the composition. For a vertical wallpaper, check whether the forehead overlaps the clock area. Inspect the downloaded file dimensions rather than assuming that writing 4K in a prompt controls the export. Resolution depends on the tool and export settings; lens and aperture phrases are visual cues, not actual camera metadata.",
-          "For Midjourney, an aspect-ratio parameter belongs at the end of the prompt; see the <a href=\"https://docs.midjourney.com/hc/en-us/articles/31894244298125-Aspect-Ratio\" class=\"text-cyan-600 underline\">Midjourney aspect-ratio documentation</a>. In other tools, use their size controls instead of pasting unsupported syntax. Compare two variations at the intended display size and keep the one with the clearest expression. This workflow aims for readable composition, not a promised level of realism."
+          "Realistic scenes ke aur examples ke liye <a href=\"/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026\" class=\"text-cyan-500 font-bold hover:underline\">25 realistic AI image prompts</a> padhein. Rounded illustrative avatar style explore karna ho toh <a href=\"/post/viral-3d-social-media-neon-avatar-prompts-bing-creator\" class=\"text-cyan-500 font-bold hover:underline\">3D neon avatar prompt guide</a> dekhein. Dono guides ko alag visual direction samajhkar use karein; is portrait mein ek clear lighting brief aur readable face se shuru karein."
         ]
       }
     ],
-    "updatedAt": "2026-09-23T08:00:00.000Z"
+    "updatedAt": "2026-10-07T00:00:00.000Z"
   },
   {
     "slug": "digital-nomad-challenge-thumbnail-prompt-2026",

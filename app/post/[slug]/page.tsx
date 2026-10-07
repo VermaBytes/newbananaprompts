@@ -254,7 +254,7 @@ export default async function PostPage({ params }: PostPageProps) {
       label: "Try It",
       href: "https://www.bing.com/images/create",
       prompt:
-        "Dark moody portrait of a mysterious person in low light, neon glow highlights, cinematic shadows, cyberpunk atmosphere, ultra detailed, high contrast, 4K wallpaper style"
+        "Create a cinematic shoulder-up portrait of an adult fictional traveller on a quiet futuristic street at night. The subject wears a charcoal technical jacket and looks slightly toward the camera with a calm expression. Soft neutral light reveals both eyes and natural facial texture. A narrow cyan rim light outlines the right shoulder; distant magenta signs form gentle background bokeh. Include subtle rain droplets on the jacket, restrained wet reflections, a clear silhouette, and deep but readable shadows. Keep the face as the brightest area of interest, with realistic eyes and no lettering or logos. Square composition with space around the head for a circular avatar crop."
     }
   };
 
