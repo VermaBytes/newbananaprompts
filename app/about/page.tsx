@@ -26,7 +26,7 @@ export default function AboutPage() {
             alt="Shobhit Verma, founder of NewBananaPrompts"
             width={144}
             height={144}
-            priority
+            loading="lazy"
             className="relative z-10 h-36 w-36 rounded-full border-4 border-white object-cover object-top shadow-2xl transition duration-500 group-hover:scale-105 dark:border-slate-950 motion-reduce:transition-none"
           />
           <span className="absolute bottom-3 right-3 z-20 h-4 w-4 rounded-full border-2 border-white bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)] dark:border-slate-950" aria-hidden="true" />

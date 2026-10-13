@@ -1,12 +1,18 @@
 
+import { getImageDimensions } from "@/lib/image-dimensions";
+import { OutputExample } from "@/components/output-example";
+import { MyTestNotes } from "@/components/my-test-notes";
+import { getPromptReferences } from "@/lib/prompt-examples.mjs";
+
 import type { Metadata } from "next";
+import { formatPostDate, getPostModifiedDate, hasPostUpdate } from "@/lib/post-dates";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CopyButton } from "@/components/copy-button";
 import { RelatedPosts } from "@/components/related-posts";
 import { AdsterraBanner300x250 } from "@/components/adsterra-banner-300x250";
-import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
+import { getAllPosts, getPostBySlug, getRelatedPosts, isPostIndexable } from "@/lib/posts";
 import { isPostReadyForIndexing } from "@/data/content-quality";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -50,8 +56,12 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       canonical: canonicalUrl
     },
     robots: {
-      index: isPostReadyForIndexing(post.slug),
-      follow: true
+      index: isPostIndexable(post),
+      follow: true,
+      googleBot: {
+        index: isPostIndexable(post),
+        follow: true
+      }
     },
     openGraph: {
       title: post.seoTitle,
@@ -60,7 +70,7 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       type: "article",
       siteName: SITE_NAME,
       publishedTime: post.publishedAt,
-      modifiedTime: getSchemaModifiedDate(post),
+      modifiedTime: getPostModifiedDate(post),
       authors: [post.author],
       images: [
         {
@@ -78,19 +88,6 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
       images: [`${SITE_URL}${post.image}`]
     }
   };
-}
-
-function getUpdatedDateLabel(publishedAt: string, updatedAt?: string) {
-  const targetDate = updatedAt ? new Date(updatedAt) : new Date(publishedAt);
-  return targetDate.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric"
-  });
-}
-
-function getSchemaModifiedDate(post: { publishedAt: string; updatedAt?: string }) {
-  return post.updatedAt ?? post.publishedAt;
 }
 
 function stripHtml(value: string) {
@@ -216,6 +213,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const encodedTitle = encodeURIComponent(post.title);
   const encodedUrl = encodeURIComponent(canonicalUrl);
   const readingTime = getReadingTime(post);
+  const promptReferences = getPromptReferences(post.sections);
   const tocItems = getTocItems(post);
   const isIndexable = isPostReadyForIndexing(post.slug);
 
@@ -280,7 +278,8 @@ export default async function PostPage({ params }: PostPageProps) {
       }
     },
     "datePublished": post.publishedAt,
-    "dateModified": new Date(getSchemaModifiedDate(post)).toISOString(),
+    "inLanguage": post.language,
+    "dateModified": getPostModifiedDate(post),
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": canonicalUrl
@@ -385,16 +384,16 @@ export default async function PostPage({ params }: PostPageProps) {
               <Image
                 src={post.image}
                 alt=""
-                fill
+                {...getImageDimensions(post.image)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                 sizes="(max-width: 1024px) 100vw, 850px"
                 className="post-featured-image-backdrop object-cover"
-                aria-hidden="true"
+                aria-hidden="true" loading="lazy"
               />
               <Image
                 src={post.image}
                 alt={post.imageAlt ?? post.title}
-                fill
-                priority
+                {...getImageDimensions(post.image)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+                loading="lazy"
                 sizes="(max-width: 1024px) 100vw, 850px"
                 className="post-featured-image-main object-contain"
               />
@@ -416,9 +415,13 @@ export default async function PostPage({ params }: PostPageProps) {
                   </Link>
                 </span>
                 <span className="w-1 h-1 rounded-full bg-slate-500" />
-                <span>Published: {post.dateLabel}</span>
-                <span className="w-1 h-1 rounded-full bg-slate-500" />
-                <span>Last Updated: {getUpdatedDateLabel(post.publishedAt, post.updatedAt)}</span>
+                <span>Published: <time dateTime={post.publishedAt}>{formatPostDate(post.publishedAt)}</time></span>
+                {hasPostUpdate(post) ? (
+                  <>
+                    <span className="w-1 h-1 rounded-full bg-slate-500" />
+                    <span>Last Updated: <time dateTime={getPostModifiedDate(post)}>{formatPostDate(getPostModifiedDate(post))}</time></span>
+                  </>
+                ) : null}
                 <span className="w-1 h-1 rounded-full bg-slate-500" />
                 <span>{readingTime} min read</span>
               </div>
@@ -511,7 +514,11 @@ export default async function PostPage({ params }: PostPageProps) {
 
               {/* DYNAMIC ARTICLE SECTIONS */}
               <div className="post-content space-y-8 pt-4">
-                {post.sections.map((section) => {
+                {post.sections.map((section, sectionIndex) => {
+                  const outputExamples = promptReferences.filter((prompt) => prompt.sectionIndex === sectionIndex).map((prompt) => (
+                    <OutputExample key={prompt.promptNumber} promptNumber={prompt.promptNumber}
+                      example={post.outputExamples?.find((example) => example.promptNumber === prompt.promptNumber)} />
+                  ));
                   const isPromptCard = /^prompt\s*\d+\b|\bcopy-ready\b|\bprompt$/i.test(section.heading);
                   const promptText = section.paragraphs.map(stripHtml).join("\n\n");
                   const sectionId = getSectionId(section.heading);
@@ -543,6 +550,7 @@ export default async function PostPage({ params }: PostPageProps) {
                             ))}
                           </div>
                         </div>
+                        {outputExamples}
                       </section>
                     );
                   }
@@ -567,12 +575,14 @@ export default async function PostPage({ params }: PostPageProps) {
                           />
                         ))}
                       </div>
+                      {outputExamples}
                     </section>
                   );
                 })}
               </div>
 
               {/* AUTHOR BIO CARD */}
+              {post.category === "AI Prompts" ? <MyTestNotes notes={post.testNotes} /> : null}
               <div className="mt-12 border-t border-cyan-400/10 pt-8">
                 <div className="theme-surface rounded-none p-5 flex flex-col sm:flex-row items-center sm:items-start gap-5 border border-cyan-400/10">
                   <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-cyan-400/20">
@@ -581,7 +591,7 @@ export default async function PostPage({ params }: PostPageProps) {
                       alt={post.author}
                       width={80}
                       height={80}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover" loading="lazy"
                     />
                   </div>
                   <div className="space-y-3 text-center sm:text-left">
@@ -676,9 +686,9 @@ export default async function PostPage({ params }: PostPageProps) {
                     <Image
                       src={entry.image}
                       alt={entry.title}
-                      fill
+                      {...getImageDimensions(entry.image)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                       sizes="80px"
-                      className="object-cover transition duration-500 group-hover:scale-110"
+                      className="object-cover transition duration-500 group-hover:scale-110" loading="lazy"
                     />
                   </div>
                   <div className="space-y-0.5">
@@ -710,9 +720,9 @@ export default async function PostPage({ params }: PostPageProps) {
                     <Image
                       src={entry.image}
                       alt={entry.title}
-                      fill
+                      {...getImageDimensions(entry.image)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                       sizes="80px"
-                      className="object-cover transition duration-500 group-hover:scale-110"
+                      className="object-cover transition duration-500 group-hover:scale-110" loading="lazy"
                     />
                   </div>
                   <div className="space-y-0.5">

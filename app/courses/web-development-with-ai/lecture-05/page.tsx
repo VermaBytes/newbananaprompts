@@ -1,3 +1,5 @@
+
+import { getImageDimensions } from "@/lib/image-dimensions";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -115,8 +117,8 @@ export default function Lecture05Page() {
           <Image
             src="/posts/lecture-05.png"
             alt="Day 05 Advanced CSS"
-            fill
-            priority
+            {...getImageDimensions("/posts/lecture-05.png")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+            loading="lazy"
             className="object-cover"
           />
         </div>

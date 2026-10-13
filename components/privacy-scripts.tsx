@@ -26,14 +26,14 @@ export function PrivacyScripts() {
     <>
       {consent === "accepted" ? (
         <>
-          <Script src="https://www.googletagmanager.com/gtag/js?id=G-CFRHNCTG1G" strategy="afterInteractive" />
+          <Script src="https://www.googletagmanager.com/gtag/js?id=G-CFRHNCTG1G" strategy="lazyOnload" />
           <Script id="google-analytics" strategy="afterInteractive">
             {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CFRHNCTG1G');`}
           </Script>
           <Script
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7598958516745914"
             crossOrigin="anonymous"
-            strategy="afterInteractive"
+            strategy="lazyOnload"
           />
           <Script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" strategy="lazyOnload" />
         </>

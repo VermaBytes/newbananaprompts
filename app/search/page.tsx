@@ -4,6 +4,7 @@ import { getPostPreviews } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Search Results | NB Prompts",
+  description: "Search NB Prompts articles by topic, tool, or prompt to find relevant AI guides and tutorials.",
   alternates: {
     canonical: "/search"
   },
@@ -27,7 +28,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   return (
     <section className="space-y-6">
       <div className="space-y-2">
-        <p className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">Search Results</p>
+        <h1 className="theme-kicker text-sm font-semibold uppercase tracking-[0.22em]">Search Results</h1>
       </div>
       <SearchResults posts={posts} query={query} />
     </section>

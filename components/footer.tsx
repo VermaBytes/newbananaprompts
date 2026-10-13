@@ -25,7 +25,7 @@ export function Footer() {
               alt="NB Prompts Logo"
               width={56}
               height={56}
-              className="h-14 w-14 rounded-2xl object-cover shadow-[0_0_25px_rgba(56,189,248,0.4)]"
+              className="h-14 w-14 rounded-2xl object-cover shadow-[0_0_25px_rgba(56,189,248,0.4)]" loading="lazy"
             />
             <div>
               <h2 className="bg-gradient-to-r from-cyan-400 via-blue-400 to-orange-400 bg-clip-text text-2xl font-extrabold text-transparent">

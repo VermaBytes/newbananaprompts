@@ -1,4 +1,6 @@
 "use client";
+import { getImageDimensions } from "@/lib/image-dimensions";
+
 
 import { useState } from "react";
 import Image from "next/image";
@@ -32,9 +34,9 @@ export function PromptCard({ slug, title, image, prompt, tags = [], tryUrl }: Pr
         <Image
           src={image}
           alt={title}
-          fill
+          {...getImageDimensions(image)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-          className="object-cover transition duration-500 group-hover:scale-[1.05]"
+          className="object-cover transition duration-500 group-hover:scale-[1.05]" loading="lazy"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
       </Link>

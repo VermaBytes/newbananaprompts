@@ -1,3 +1,5 @@
+
+import { getImageDimensions } from "@/lib/image-dimensions";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -88,8 +90,8 @@ export default function WebDevelopmentWithAiCoursePage() {
           <Image
             src="/posts/30dayweb-development.png"
             alt="Web Development with AI 30 Days course thumbnail"
-            fill
-            priority
+            {...getImageDimensions("/posts/30dayweb-development.png")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+            loading="lazy"
             sizes="(max-width: 1024px) 100vw, 1100px"
             className="object-cover"
           />
@@ -127,9 +129,9 @@ export default function WebDevelopmentWithAiCoursePage() {
               <Image
                 src="/posts/lecture-01.png"
                 alt="Day 01 lecture thumbnail"
-                fill
+                {...getImageDimensions("/posts/lecture-01.png")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                 sizes="(max-width: 1024px) 100vw, 520px"
-                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy"
               />
             </div>
             <div className="mt-3 space-y-1">
@@ -141,9 +143,9 @@ export default function WebDevelopmentWithAiCoursePage() {
               <Image
                 src="/posts/lecture-02.png"
                 alt="Day 02 lecture thumbnail"
-                fill
+                {...getImageDimensions("/posts/lecture-02.png")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                 sizes="(max-width: 1024px) 100vw, 520px"
-                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy"
               />
             </div>
             <div className="mt-3 space-y-1">
@@ -155,9 +157,9 @@ export default function WebDevelopmentWithAiCoursePage() {
               <Image
                 src="/posts/lecture-03.png"
                 alt="Day 03 lecture thumbnail"
-                fill
+                {...getImageDimensions("/posts/lecture-03.png")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                 sizes="(max-width: 1024px) 100vw, 520px"
-                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy"
               />
             </div>
             <div className="mt-3 space-y-1">
@@ -171,9 +173,9 @@ export default function WebDevelopmentWithAiCoursePage() {
               <Image
                 src="/posts/lecture-04.png"
                 alt="Day 04 lecture thumbnail"
-                fill
+                {...getImageDimensions("/posts/lecture-04.png")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                 sizes="(max-width: 1024px) 100vw, 520px"
-                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy"
               />
             </div>
             <div className="mt-3 space-y-1">
@@ -187,9 +189,9 @@ export default function WebDevelopmentWithAiCoursePage() {
               <Image
                 src="/posts/lecture-05.png"
                 alt="Day 05 lecture thumbnail"
-                fill
+                {...getImageDimensions("/posts/lecture-05.png")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                 sizes="(max-width: 1024px) 100vw, 520px"
-                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy"
               />
             </div>
             <div className="mt-3 space-y-1">
@@ -203,9 +205,9 @@ export default function WebDevelopmentWithAiCoursePage() {
               <Image
                 src="/posts/lecture-06.png"
                 alt="Day 06 lecture thumbnail"
-                fill
+                {...getImageDimensions("/posts/lecture-06.png")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                 sizes="(max-width: 1024px) 100vw, 520px"
-                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy"
               />
             </div>
             <div className="mt-3 space-y-1">
@@ -219,9 +221,9 @@ export default function WebDevelopmentWithAiCoursePage() {
               <Image
                 src="/posts/lecture-07.png"
                 alt="Day 07 lecture thumbnail"
-                fill
+                {...getImageDimensions("/posts/lecture-07.png")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                 sizes="(max-width: 1024px) 100vw, 520px"
-                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy"
               />
             </div>
             <div className="mt-3 space-y-1">
@@ -235,9 +237,9 @@ export default function WebDevelopmentWithAiCoursePage() {
               <Image
                 src="/posts/lecture-08.png"
                 alt="Day 08 lecture thumbnail"
-                fill
+                {...getImageDimensions("/posts/lecture-08.png")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
                 sizes="(max-width: 1024px) 100vw, 520px"
-                className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                className="object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy"
               />
             </div>
             <div className="mt-3 space-y-1">

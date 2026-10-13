@@ -1,9 +1,12 @@
+
+import { getImageDimensions } from "@/lib/image-dimensions";
+import { getPostModifiedDate, hasPostUpdate } from "@/lib/post-dates";
 import Image from "next/image";
 import Link from "next/link";
 import type { PostPreview } from "@/lib/posts";
 
 export function PostCard({ post }: { post: PostPreview }) {
-  const date = post.updatedAt ?? post.publishedAt;
+  const date = getPostModifiedDate(post);
   const displayDate = new Date(date).toLocaleDateString("en-GB", {
     day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Kolkata"
   });
@@ -11,12 +14,12 @@ export function PostCard({ post }: { post: PostPreview }) {
   return (
     <article className="prompt-card group flex h-full flex-col overflow-hidden rounded-none border border-slate-200 transition-shadow hover:shadow-lg dark:border-cyan-900/30">
       <Link href={`/post/${post.slug}`} className="relative block aspect-[1000/630] w-full overflow-hidden">
-        <Image src={post.image} alt={post.imageAlt ?? post.title} fill loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]" />
+        <Image src={post.image} alt={post.imageAlt ?? post.title} {...getImageDimensions(post.image)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} loading="lazy" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]" />
       </Link>
       <div className="prompt-card-body flex flex-1 flex-col gap-4 p-5 sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
           <span className="theme-kicker font-semibold">{post.category}</span>
-          <time dateTime={date} className="theme-text-muted">{post.updatedAt ? "Updated " : ""}{displayDate}</time>
+          <time dateTime={date} className="theme-text-muted">{hasPostUpdate(post) ? "Updated " : ""}{displayDate}</time>
         </div>
         <h2 className="theme-text-primary font-[family-name:var(--font-heading)] text-lg font-bold leading-snug">
           <Link href={`/post/${post.slug}`} className="theme-title-link">{post.title}</Link>

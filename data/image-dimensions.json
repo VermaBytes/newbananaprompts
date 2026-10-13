@@ -1,0 +1,646 @@
+{
+  "/apple-touch-icon.png": {
+    "width": 180,
+    "height": 180
+  },
+  "/favicon-32x32.png": {
+    "width": 32,
+    "height": 32
+  },
+  "/favicon.png": {
+    "width": 1792,
+    "height": 2380
+  },
+  "/favicon.svg": {
+    "width": 512,
+    "height": 512
+  },
+  "/icon-16.png": {
+    "width": 16,
+    "height": 16
+  },
+  "/icon-180.png": {
+    "width": 180,
+    "height": 180
+  },
+  "/icon-192.png": {
+    "width": 192,
+    "height": 192
+  },
+  "/icon-32.png": {
+    "width": 32,
+    "height": 32
+  },
+  "/icon-48.png": {
+    "width": 48,
+    "height": 48
+  },
+  "/icon-512.png": {
+    "width": 512,
+    "height": 512
+  },
+  "/logo.png": {
+    "width": 512,
+    "height": 512
+  },
+  "/main-logo.png": {
+    "width": 1792,
+    "height": 2380
+  },
+  "/posts/00.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/10-ai-side-hustles-you-can-start-with-zero-investment-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/10-chatgpt-prompts-every-sbi-clerk-aspirant-should-use-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/10-real-ways-to-make-money-with-ai-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/10.png": {
+    "width": 2816,
+    "height": 1536
+  },
+  "/posts/100-best-chatgpt-prompts-to-make-money-online-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/11.png": {
+    "width": 2816,
+    "height": 1536
+  },
+  "/posts/15-best-ai-tools-for-ibps-aspirants-2026.png": {
+    "width": 1672,
+    "height": 941
+  },
+  "/posts/23-may.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/25-best-ai-tools-for-graphic-designers-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/25-best-ai-tools-for-ssc-cgl-aspirants-2026.png": {
+    "width": 1672,
+    "height": 941
+  },
+  "/posts/25-best-ai-tools-for-students-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/25-best-chatgpt-prompts-to-make-money-online-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/25-best-nano-banana-prompts-for-realistic-ai-images-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/25-chatgpt-prompts-for-upsc-answer-writing-practice.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/30-chatgpt-prompts-for-ssc-cgl-preparation-notes-and-mock-tests.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/30dayweb-development.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/3d-image-banner.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/ai-customer-support-automation-guide-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/ai-for-railway-exam-preparation-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/ai-for-ssc-preparation-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/ai-image-prompts-for-product-photography-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/ai-productivity-measure-workflow.webp": {
+    "width": 1200,
+    "height": 630
+  },
+  "/posts/best-ai-analytics-tools-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-automation-tools-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-automation-tools-small-businesses-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-automation-tools-small-businesses-2026.webp": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-business-tools-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/best-ai-coding-agents-2026.png": {
+    "width": 1672,
+    "height": 941
+  },
+  "/posts/best-ai-coding-tools-for-developers-2026.png": {
+    "width": 1672,
+    "height": 941
+  },
+  "/posts/best-ai-crm-software-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-crm-software-small-businesses-2026.png": {
+    "width": 1280,
+    "height": 720
+  },
+  "/posts/best-ai-customer-support-tools-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-email-assistants-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-email-marketing-tools-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-hr-software-in-2026.jpg": {
+    "width": 1024,
+    "height": 576
+  },
+  "/posts/best-ai-hris-software-for-small-businesses-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-image-generators-for-youtube-thumbnails-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-marketing-tools-for-small-businesses-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-marketing-tools-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-meeting-assistants-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-meeting-assistants-in-2026.webp": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-payroll-software-for-small-businesses-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-productivity-tools-for-professionals-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-productivity-tools-for-professionals-2026.webp": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-productivity-tools-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-project-management-tools-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-prompts-for-upsc-preparation-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/best-ai-recruitment-software-for-small-businesses-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-sales-tools-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-seo-tools-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-assignment-writing-2026-free.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-assignment-writing-2026-free.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/best-ai-tools-for-bank-po-preparation-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-college-students-2026-free.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-competitive-exam-preparation-2026.jpg": {
+    "width": 1024,
+    "height": 576
+  },
+  "/posts/best-ai-tools-for-content-creators-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/best-ai-tools-for-content-creators-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-designers-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-developers-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-digital-marketers-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/best-ai-tools-for-freelancers-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/best-ai-tools-for-freelancers-in-2026-complete-guide.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-ibps-aspirants-2026.webp": {
+    "width": 1296,
+    "height": 864
+  },
+  "/posts/best-ai-tools-for-small-business-owners-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-small-businesses-in-2026-complete-guide.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-small-businesses-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-teachers-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-for-upsc-aspirants-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-to-make-money-online-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-tools-to-make-money-online-2026.png": {
+    "width": 1024,
+    "height": 1024
+  },
+  "/posts/best-ai-translation-tools-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-ai-translation-tools-in-2026.png": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-free-ai-resume-builders-for-freshers-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/best-free-ai-tools-for-youtubers-2026.jpg": {
+    "width": 1024,
+    "height": 576
+  },
+  "/posts/best-free-ai-websites-for-students-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/bgremove.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/blog-system.svg": {
+    "width": 1200,
+    "height": 720
+  },
+  "/posts/chat-blog.png": {
+    "width": 3018,
+    "height": 1376
+  },
+  "/posts/chat-gpt-blog.png": {
+    "width": 2752,
+    "height": 948
+  },
+  "/posts/chatgpt-for-english-speaking.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/chatgpt-productivity-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/chatgpt-prompts-for-banking-exam-preparation.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/chatgpt-prompts-for-railway-exam-ntpc-group-d-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/chatgpt-prompts-for-upsc-aspirants-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/chatgpt-prompts-for-youtube-creators-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/chatgpt-prompts-government-job-interview-preparation-2026.png": {
+    "width": 1672,
+    "height": 941
+  },
+  "/posts/chatgpt-prompts-upsc-mains-answer-writing-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/chatgpt-team-vs-claude-team-vs-gemini-for-business-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/chatgpt-vs-gemini-for-students-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/chatgptand gemini.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/claude-gpt-alternatives.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/compress-Image.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/content-clusters.svg": {
+    "width": 1200,
+    "height": 720
+  },
+  "/posts/cursor-vs-github-copilot-vs-windsurf-2026.png": {
+    "width": 1672,
+    "height": 941
+  },
+  "/posts/day-1-best-free-ai-tools-for-government-exam-preparation-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/earn-money.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/edge-computing.svg": {
+    "width": 1200,
+    "height": 720
+  },
+  "/posts/favicon.ico.png": {
+    "width": 2048,
+    "height": 2048
+  },
+  "/posts/free-ai-tools-for-uppsc-upsssc-aspirants-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/google-gemini-study-notebooks-guide-2026.jpg": {
+    "width": 1024,
+    "height": 576
+  },
+  "/posts/haier.webp": {
+    "width": 1024,
+    "height": 765
+  },
+  "/posts/how-students-can-earn-money-using-ai-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/how-to-earn-money-online-in-2026.png": {
+    "width": 1672,
+    "height": 941
+  },
+  "/posts/how-to-start-an-ai-thumbnail-design-business-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/how-to-use-ai-for-product-photography-and-marketing-in-2026.png": {
+    "width": 1672,
+    "height": 941
+  },
+  "/posts/how-to-use-ai-for-sbi-clerk-preparation-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/how-to-use-chatgpt-for-daily-current-affairs-preparation-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/how-to-use-chatgpt-for-usa-job-search-and-resume-writing-in-2026.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/how-to-use-chatgpt-to-start-a-freelancing-business-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/image1.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/improve-english-speaking-ai.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/improve-english-speaking-ai.png": {
+    "width": 1024,
+    "height": 1024
+  },
+  "/posts/jpg-png.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/kamada-eakdashi.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/krishna-composition-guide.png": {
+    "width": 1200,
+    "height": 630
+  },
+  "/posts/lecture-01.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/lecture-02.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/lecture-03.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/lecture-04.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/lecture-05.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/lecture-06.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/lecture-07.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/lecture-08.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/lecture-09.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/luma-runway-ai-video.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/matarani-banner.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/midjourney-consistent-character.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/mobiletomoney.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/personal-devotional-composition.png": {
+    "width": 1200,
+    "height": 630
+  },
+  "/posts/prepare-government-exams-ai-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/rippling-vs-bamboohr-vs-deel-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/seo-blog-guide.png": {
+    "width": 1024,
+    "height": 1024
+  },
+  "/posts/ssc-cgl-2026-preparation-strategy-complete-6-month-study-plan.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/student-ai-guide.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/student.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/thamnail1.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/thamnail2.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/thamnial.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/posts/top-10-ai-tools-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/top-10-ai-tools-every-ssc-cgl-aspirant-should-use-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/top-10-chatgpt-prompts-every-student-should-use-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/top-10-free-ai-tools-upsc-aspirant-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/top-15-chatgpt-prompts-every-ssc-cgl-aspirant-2026.jpg.png": {
+    "width": 1536,
+    "height": 1024
+  },
+  "/posts/top-20-free-ai-tools-for-ssc-banking-and-railway-students-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/top-25-ai-business-ideas-that-can-make-money-in-2026.jpg": {
+    "width": 1024,
+    "height": 682
+  },
+  "/posts/video.png": {
+    "width": 2752,
+    "height": 1536
+  },
+  "/shobhit-verma.webp": {
+    "width": 480,
+    "height": 600
+  }
+}

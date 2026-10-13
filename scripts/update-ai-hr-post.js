@@ -64,6 +64,15 @@ if (currentHeading || currentParagraphs.length > 0) {
   });
 }
 
+// Require the actual editorial revision timestamp; reruns must not invent freshness.
+const editedAt = process.argv[2];
+if (!editedAt || !Number.isFinite(Date.parse(editedAt))) {
+  throw new Error("Provide the real edit date as an ISO timestamp argument.");
+}
+if (Date.parse(editedAt) < Date.parse(posts[postIndex].publishedAt)) {
+  throw new Error("The edit date cannot precede publication.");
+}
+
 // Update the post object
 const post = posts[postIndex];
 
@@ -71,7 +80,7 @@ post.title = "Best AI HR Software in 2026: Top 30 AI Recruiting & HR Platforms C
 post.seoTitle = "Best AI HR Software in 2026: Top 30 HR & Recruiting Tools";
 post.description = "Compare the 30 best AI HR software in 2026. Review top AI recruiting platforms, ATS, payroll, employee engagement, and enterprise HR automation tools with pricing.";
 post.dateLabel = "July 27, 2026";
-post.updatedAt = new Date().toISOString();
+post.updatedAt = editedAt;
 post.sections = sections;
 
 // Add schema markup

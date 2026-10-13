@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { headers } from "next/headers";
+import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { DocumentLanguage } from "@/components/document-language";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
@@ -74,13 +77,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const slug = (await headers()).get("x-post-slug");
+  const language = slug ? getPostBySlug(slug)?.language ?? "en" : "en";
+  const languages = Object.fromEntries(getAllPosts().map((post) => [post.slug, post.language]));
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={language} suppressHydrationWarning>
       <head>
         <meta name="google-adsense-account" content="ca-pub-7598958516745914" />
         <Script id="theme-init" strategy="beforeInteractive">
@@ -101,6 +107,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
       </head>
       <body>
+        <DocumentLanguage languages={languages} />
         <div className="site-shell">
           <Navbar />
           <main className="mx-auto min-h-[calc(100vh-13rem)] max-w-7xl px-4 pb-16 pt-20 sm:px-6 lg:px-8">

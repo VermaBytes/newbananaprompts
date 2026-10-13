@@ -29,7 +29,7 @@ export default function AuthorPage() {
               alt="Shobhit Verma Profile"
               width={112}
               height={112}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover" loading="lazy"
             />
           </div>
           <div className="space-y-2">

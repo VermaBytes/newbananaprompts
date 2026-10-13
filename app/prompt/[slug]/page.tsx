@@ -1,3 +1,5 @@
+
+import { getImageDimensions } from "@/lib/image-dimensions";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,17 +41,17 @@ export default async function PromptPage({ params }: PromptPageProps) {
           <Image
             src={prompt.image}
             alt=""
-            fill
+            {...getImageDimensions(prompt.image)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
             sizes="(max-width: 1024px) 100vw, 900px"
             className="post-featured-image-backdrop object-cover"
-            aria-hidden="true"
+            aria-hidden="true" loading="lazy"
           />
           <Image
             src={prompt.image}
             alt={prompt.title}
-            fill
+            {...getImageDimensions(prompt.image)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
             sizes="(max-width: 1024px) 100vw, 900px"
-            className="post-featured-image-main object-contain"
+            className="post-featured-image-main object-contain" loading="lazy"
           />
         </div>
         <div className="space-y-4 px-5 py-6 sm:px-8 sm:py-8">
