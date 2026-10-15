@@ -1,0 +1,184 @@
+diff --git a/data/posts.json b/data/posts.json
+index e1c98ad..d0c28a3 100644
+--- a/data/posts.json
++++ b/data/posts.json
+@@ -27820,14 +27820,14 @@
+   {
+     "slug": "best-free-ai-resume-builders-for-freshers-2026",
+     "language": "en",
+-    "title": "5 Best Free AI Resume Builders for Freshers in 2026",
+-    "seoTitle": "5 Best Free AI Resume Builders for Freshers in 2026 (ATS Friendly)",
+-    "description": "Discover the best free AI resume builders for freshers in 2026. Create ATS-friendly resumes, generate professional summaries, and tailor your CV to land job interviews.",
++    "title": "5 Free AI Resume Builders for Freshers in 2026: Plans and Limits",
++    "seoTitle": "5 Free AI Resume Builders for Freshers: Plans and Limits",
++    "description": "Compare five resume builders for freshers by free PDF exports, AI limits, and setup. Use a fact-based writing workflow, prompts, and a download checklist.",
+     "category": "AI Tools",
+     "author": "Shobhit Verma",
+     "publishedAt": "2026-06-14T13:00:00.000Z",
+     "dateLabel": "June 14, 2026",
+-    "image": "/posts/best-free-ai-resume-builders-for-freshers-2026.jpg",
++    "image": "/posts/resume-builder-free-plan-checklist.svg",
+     "tags": [
+       "free AI resume builder",
+       "best resume builder for freshers",
+@@ -27837,73 +27837,128 @@
+     ],
+     "sections": [
+       {
+-        "heading": "Introduction: Navigating the 2026 Job Market as a Fresher",
++        "heading": "Start with the file you need to submit",
+         "paragraphs": [
+-          "Entering the job market as a fresher in 2026 presents unique challenges. With Applicant Tracking Systems (ATS) filtering out over 70% of resumes before they ever reach a human recruiter, having a standard, text-heavy CV is no longer enough. Recruiters are looking for impact, specific skill mappings, and clean formatting. Resume banana ke baad aapko apni productivity aur skills bhi AI se boost karni chahiye — iske liye hamara <a href='/post/how-students-job-seekers-use-ai-grow-faster' class='text-cyan-500 font-bold hover:underline'>Students aur Job Seekers ke liye AI Guide</a> bahut helpful rahega. Aur AI tools ke aur bhi free options ke liye <a href='/post/best-free-ai-tools-for-students-2026' class='text-cyan-500 font-bold hover:underline'>Best Free AI Tools for Students</a> padhein.",
+-          "Fortunately, artificial intelligence has leveled the playing field. In 2026, you don't need to hire professional resume writers or spend thousands on premium templates. Free AI resume builders can draft achievement-oriented bullet points, suggest industry keywords, and check your ATS compatibility score instantly.",
+-          "<strong>BLUF (Bottom Line Up Front):</strong> Freshers can construct highly professional, ATS-optimized resumes completely for free. Tools like <strong>Reactive Resume</strong> offer a 100% free open-source portal with no paywalls, while <strong>Kickresume</strong> and <strong>Rezi</strong> provide powerful AI writers to refine bullet points. For visual resumes, <strong>Canva</strong> remains the top designer choice, and <strong>Teal</strong> is unmatched for job-specific customization."
++          "A fresher choosing a resume builder has three different questions: can I edit a resume for free, can I download the finished file for free, and can I use its AI writer without paying? A yes to one does not establish the other two. Check those conditions before spending an evening moving your project details into a template.",
++          "This guide keeps five options: Reactive Resume, Kickresume, Rezi, Teal, and Canva. They cover different needs rather than a ranked winner: a free editor, a small template selection, limited export allowances, application tracking, or visual layout work. Start with the employer's requested file type, then choose the simplest tool that can deliver it within your budget.",
++          "Resume banana ke baad aapko apni productivity aur skills bhi AI se boost karni chahiye — iske liye hamara <a href='/post/how-students-job-seekers-use-ai-grow-faster' class='text-cyan-500 font-bold hover:underline'>Students aur Job Seekers ke liye AI Guide</a> bahut helpful rahega. Aur AI tools ke aur bhi free options ke liye <a href='/post/best-free-ai-tools-for-students-2026' class='text-cyan-500 font-bold hover:underline'>Best Free AI Tools for Students</a> padhein."
+         ]
+       },
+       {
+-        "heading": "1. Reactive Resume: The 100% Free Open-Source Champion",
++        "heading": "How We Evaluated These Tools",
++        "paragraphs": [
++          "This is an editorial comparison of official product documentation and plan pages, checked on October 15, 2026. We compared editing access, export restrictions, AI access, setup effort, and the ability to keep a useful master copy. The recommendations below are judgments about those documented conditions, not scores from accounts we tested or evidence of interview success.",
++          "An acceptable choice for a fresher should let you complete the actual application: read the file format requirement, choose a permitted template, check the export allowance, and identify whether AI needs a paid plan or separate provider account. This comparison avoids paid-price quotations because billing periods, currencies, taxes, and offers differ; the linked plan pages are the place to inspect checkout terms."
++        ]
++      },
++      {
++        "heading": "Compare free editing, exports, and AI separately",
++        "paragraphs": [
++          "Use the table to eliminate unsuitable tools, not to predict which resume an employer will prefer. In particular, a builder's own score is feedback inside that product, not an employer's hiring threshold.",
++          "<div class=\"overflow-x-auto\"><table class=\"w-full text-left text-sm\"><caption class=\"pb-3 text-left\">Documented free-plan boundaries, checked October 15, 2026</caption><thead><tr><th scope=\"col\" class=\"p-3\">Builder</th><th scope=\"col\" class=\"p-3\">Free route</th><th scope=\"col\" class=\"p-3\">AI boundary</th><th scope=\"col\" class=\"p-3\">Decision point</th></tr></thead><tbody><tr><th scope=\"row\" class=\"p-3\">Reactive Resume</th><td class=\"p-3\">Free open-source builder; PDF export documented</td><td class=\"p-3\">Provider connection required for AI</td><td class=\"p-3\">Comfortable handling AI setup separately?</td></tr><tr><th scope=\"row\" class=\"p-3\">Kickresume</th><td class=\"p-3\">Four basic resume templates; unlimited downloads</td><td class=\"p-3\">AI writer listed under Premium</td><td class=\"p-3\">Does a basic template meet the requirement?</td></tr><tr><th scope=\"row\" class=\"p-3\">Rezi</th><td class=\"p-3\">One resume; three PDF downloads</td><td class=\"p-3\">Limited free AI access</td><td class=\"p-3\">How many final exports will you need?</td></tr><tr><th scope=\"row\" class=\"p-3\">Teal</th><td class=\"p-3\">Free builder and unlimited resume downloads</td><td class=\"p-3\">Limited AI credits; advanced features are paid</td><td class=\"p-3\">Need job tracking alongside resume versions?</td></tr><tr><th scope=\"row\" class=\"p-3\">Canva</th><td class=\"p-3\">Free templates/assets; PDF export</td><td class=\"p-3\">Plan-based AI allowance</td><td class=\"p-3\">Can you keep the design simple and avoid paid assets?</td></tr></tbody></table></div>"
++        ]
++      },
++      {
++        "heading": "1. Reactive Resume: a free editor with separate AI setup",
++        "paragraphs": [
++          "<a href=\"https://rxresu.me/\" class=\"text-cyan-600 underline\">Reactive Resume</a> describes a free, open-source builder with PDF export. Its <a href=\"https://github.com/reactive-resume/reactive-resume/blob/main/docs/guides/using-ai.mdx\" class=\"text-cyan-600 underline\">AI connection guide</a> separates the editor from the AI provider: personal provider connections can incur charges from that provider. An administrator may configure a shared provider on a self-hosted instance. Free software is not the same as free model usage.",
++          "Choose it if you want to manage the resume structure independently of an AI subscription. Start with manual text, pick a straightforward layout, and export a sample. If you only need a completed document, provider configuration is unnecessary; it is a poor first choice if your main requirement is ready-to-use AI without setup."
++        ]
++      },
++      {
++        "heading": "2. Kickresume: basic templates without assuming free AI",
++        "paragraphs": [
++          "The <a href=\"https://www.kickresume.com/en/pricing/\" class=\"text-cyan-600 underline\">Kickresume pricing comparison</a> lists four basic resume templates and unlimited downloads on Free, with the AI writer under Premium. The earlier version of this guide blurred that distinction. A free template can still be useful when you already have project notes to enter manually.",
++          "Use the basic-template route if its layout meets the application instructions. Check that the selected design and features remain in your plan before entering the whole document. Do not choose it on the assumption that the advertised AI writer is included in the standard free tier. No particular underlying model is needed to make that decision."
++        ]
++      },
++      {
++        "heading": "3. Rezi: plan around the PDF allowance",
++        "paragraphs": [
++          "<a href=\"https://www.rezi.ai/pricing\" class=\"text-cyan-600 underline\">Rezi's plan page</a> lists one resume and three PDF downloads for Free, alongside limited AI access. Treat the export allowance as a constraint: make substantive edits in your master text before spending an export on each small change. Its own analysis is a revision aid, not a hiring probability.",
++          "This route may fit a single application-ready document. It is less suitable if you expect many role-specific versions and repeated PDF exports without paying. Compare the remaining allowance with your actual application plan before investing in its workflow."
++        ]
++      },
++      {
++        "heading": "4. Teal: a resume builder alongside job tracking",
++        "paragraphs": [
++          "Teal documents a free resume builder with unlimited downloads on its <a href=\"https://www.tealhq.com/tools/resume-builder\" class=\"text-cyan-600 underline\">builder page</a>. The <a href=\"https://www.tealhq.com/pricing\" class=\"text-cyan-600 underline\">plan comparison</a> separates basic features and limited AI credits from paid analysis and matching capabilities. Its <a href=\"https://help.tealhq.com/en/articles/9592114-frequently-asked-questions-faq\" class=\"text-cyan-600 underline\">help FAQ</a> and pricing materials can describe different trial-credit amounts, so this guide does not promise a fixed credit count.",
++          "Consider it when keeping application records and resume versions together matters. Use keyword feedback to locate evidence already in your projects; do not add a skill merely to improve a match score. A free builder is still useful after an AI allowance is exhausted if you can edit the text yourself."
++        ]
++      },
++      {
++        "heading": "5. Canva: visual control with a simpler application version",
++        "paragraphs": [
++          "Canva's <a href=\"https://www.canva.com/create/resumes/\" class=\"text-cyan-600 underline\">resume-builder page</a> describes free templates and PDF export. Keep the design within free templates and assets. Its current <a href=\"https://www.canva.com/help/ai-access/\" class=\"text-cyan-600 underline\">AI usage guidance</a> describes plan-based allowances; access to the editor does not mean unlimited Magic Write usage.",
++          "Choose it when you need control over presentation, such as a resume accompanying a portfolio. For an application form, keep a separate plain version with ordinary headings and a readable text order. A decorative layout is not evidence of stronger qualifications. If arranging text boxes becomes the main task, return to a simpler template rather than spending the evening adjusting icons."
++        ]
++      },
++      {
++        "heading": "A practical workflow for a fresher with a college project",
+         "paragraphs": [
+-          "If you are tired of builders that let you design a resume only to lock the PDF download button behind a paywall, <strong>Reactive Resume</strong> is the ultimate solution. It is a completely free, open-source project designed by developers, for job seekers.",
+-          "It integrates with OpenAI to help generate and proofread content, supports real-time editing, and offers multiple clean, single-column templates that are extremely easy for ATS software to parse. Best of all, there are no advertisements, no premium lockouts, and your data remains entirely yours."
++          "First, make an evidence sheet outside the builder: project goal, your contribution, tools actually used, what works, what remains incomplete, and any result you can explain. Do not begin by asking AI to invent an impressive professional identity. Keep a copy of the relevant job description with the application date so you can trace why a version was tailored.",
++          "Second, try an export with dummy text before adding contact details. Confirm the file type, any watermark, remaining download allowance, and whether a paid template or asset was selected. This small check answers a more useful question than a feature list: can this account produce the file you need today?",
++          "Third, draft the content and choose headings such as Education, Projects, Experience, and Skills. Put the most relevant evidence where a recruiter can find it. Tailoring means selecting and explaining true details, not repeating every phrase in the vacancy. Save a master text file so changing builders does not require reconstructing your experience.",
++          "Fourth, export and review using the checklist below. Then save a named application copy and prepare to discuss the project without reading the resume. For the next stage, our <a href=\"/post/how-to-use-chatgpt-for-usa-job-search-and-resume-writing-in-2026\" class=\"text-cyan-600 underline\">US job-search workflow</a> includes interview and outreach exercises; use the relevant parts for your target market rather than copying US-specific conventions into every application."
+         ]
+       },
+       {
+-        "heading": "2. Kickresume: Best for Quick AI Drafting & Templates",
++        "heading": "Worked example: improve a bullet without inventing an outcome",
+         "paragraphs": [
+-          "<strong>Kickresume</strong> is powered by GPT-4 and is one of the most user-friendly builders for entry-level candidates. By simply entering your job title (e.g., 'Graduate Software Engineer' or 'Marketing Intern'), its AI generates complete, professionally worded bullet points and summaries.",
+-          "For freshers who struggle to articulate their college projects or volunteer experiences, Kickresume's pre-written phrases and AI assistant act as an excellent starting block, turning simple descriptions into action-oriented statements."
++          "Consider this fictional teaching brief: a student built a React weather app using a public API; their contribution was the search form, loading state, and error message. There are no recorded users, performance measurements, or deployment results. This is an editing exercise, not a tool output or a claim about a real applicant.",
++          "A vague draft is: 'Worked on an innovative weather application.' A more useful version is: 'Built a React weather-search interface that displays API forecasts and handles loading and failed-request states.' The second version identifies the work and its behavior using only the supplied facts. It does not imply a production launch, a user count, or a percentage improvement.",
++          "If there is a repository, use its actual title and add a link you control. Add a measure only when you can explain how it was obtained. The original X-Y-Z idea remains useful when you have evidence for the result; without a measurement, describe the action, method, and deliverable instead of filling the gap with a plausible number."
+         ]
+       },
+       {
+-        "heading": "3. Rezi: The Ultimate ATS-Optimization Engine",
++        "heading": "Prompt 1: write evidence-based project bullets",
+         "paragraphs": [
+-          "<strong>Rezi</strong> is built with one specific goal: getting your resume past automated filters. It features a real-time 'Rezi Score' which analyzes your resume for keyword density, formatting errors, length, and content quality.",
+-          "For freshers applying to tech companies or large MNCs that rely heavily on ATS, Rezi's AI content writer helps inject relevant keywords directly from the job description. The free tier gives you access to a solid resume builder and daily credits to generate AI content."
++          "<strong>When to use it:</strong> You have rough project notes but need concise resume text. Supply your contribution and known limitations. Expect three drafts plus questions about missing evidence, not a finished claim to accept automatically.",
++          "<pre class=\"whitespace-pre-wrap\">Act as a careful resume editor. Using only the facts below, draft three alternative bullets of at most 30 words each for [target role]. Each should state my action, the method or tools, and a supported deliverable or result. Use an X-Y-Z structure only if a measurement is supplied. Do not invent percentages, users, awards, job titles, or team leadership. After each bullet, list the facts used and one clarification question. Facts: [paste redacted project notes]. My contribution: [details]. Measurements actually recorded: [details or none].</pre>"
+         ]
+       },
+       {
+-        "heading": "4. Teal: Best for Job-Specific Customization",
++        "heading": "Prompt 2: map a vacancy to evidence and gaps",
+         "paragraphs": [
+-          "One of the biggest mistakes freshers make is sending the exact same resume to fifty different jobs. <strong>Teal</strong> solves this by offering an all-in-one job tracking and resume tailoring system.",
+-          "You can bookmark jobs directly from LinkedIn, and Teal's AI will analyze the job description to highlight which keywords, skills, and certifications you need to add to your resume. It allows you to toggle bullet points on and off dynamically to match the specific job you are applying for."
++          "<strong>When to use it:</strong> You are tailoring the same project for a specific vacancy. Supply the job description and your evidence sheet. Expect a comparison you can check, including requirements you have not demonstrated.",
++          "<pre class=\"whitespace-pre-wrap\">Compare this vacancy with my evidence sheet. Return a table with requirement, supporting fact, evidence location, and status: supported, partly supported, or not demonstrated. Quote the requirement briefly. Suggest edits only for supported facts. Keep missing skills in a separate learning list, outside the resume. Do not turn a class exercise into employment. Vacancy: [paste]. Evidence sheet: [paste redacted facts].</pre>"
+         ]
+       },
+       {
+-        "heading": "5. Canva: Best for Creative & Designer Resumes",
++        "heading": "Prompt 3: review extracted resume text before submission",
+         "paragraphs": [
+-          "If you are applying for creative roles, UI/UX design, marketing, or startup jobs, a standard black-and-white resume might feel too rigid. <strong>Canva</strong> offers thousands of beautifully designed templates.",
+-          "Using Canva's <strong>Magic Write</strong> (their built-in AI writing assistant), freshers can write summary statements and refine their tone. However, keep in mind that highly decorative or multi-column Canva layouts can sometimes confuse older ATS scanners, so stick to clean designs if applying to traditional corporate roles."
++          "<strong>When to use it:</strong> You have exported a file and copied its text into a plain editor. Supply the intended section order and extracted text. Expect a list of possible reading-order or evidence problems to investigate; the model cannot reproduce the employer's parser.",
++          "<pre class=\"whitespace-pre-wrap\">Review this extracted resume text. Compare it with the intended section order. Flag merged lines, detached dates, missing headings, repeated claims, and statements that need evidence. Give the exact text and a suggested manual check for each issue. Do not assign an ATS score or predict hiring outcomes. Intended order: [list]. Extracted text: [paste with contact details redacted].</pre>"
+         ]
+       },
+       {
+-        "heading": "Comparing the Top AI Resume Builders",
++        "heading": "Export checks that a score cannot replace",
+         "paragraphs": [
+-          "To help you choose the right tool for your job hunt, here is a quick head-to-head comparison of their core features:",
+-          "<div class='overflow-x-auto my-4 border border-cyan-400/20 rounded-none'><table class='w-full text-left text-xs border-collapse'><thead class='bg-cyan-500/10 border-b border-cyan-400/20 text-cyan-300 font-bold'><tr><th class='p-3'>Resume Builder</th><th class='p-3'>Best Feature for Freshers</th><th class='p-3'>ATS Optimization</th><th class='p-3'>Free Tier Status</th></tr></thead><tbody class='divide-y divide-cyan-400/10'><tr class='hover:bg-cyan-500/5'><td class='p-3 font-semibold theme-text-primary'>Reactive Resume</td><td class='p-3'>No paywalls or premium lockouts</td><td class='p-3'>High (Standard clean layouts)</td><td class='p-3'>100% Free / Open-source</td></tr><tr class='hover:bg-cyan-500/5'><td class='p-3 font-semibold theme-text-primary'>Kickresume</td><td class='p-3'>GPT-4 summary and bullet writer</td><td class='p-3'>Medium-High (Template dependent)</td><td class='p-3'>Free basic templates & AI credits</td></tr><tr class='hover:bg-cyan-500/5'><td class='p-3 font-semibold theme-text-primary'>Rezi</td><td class='p-3'>Real-time ATS parsing score</td><td class='p-3'>Very High (Tailored for ATS)</td><td class='p-3'>Free limited tier / daily AI credits</td></tr><tr class='hover:bg-cyan-500/5'><td class='p-3 font-semibold theme-text-primary'>Teal</td><td class='p-3'>Job description keyword matching</td><td class='p-3'>High (Tailored formatting)</td><td class='p-3'>Free basic builder & job tracker</td></tr><tr class='hover:bg-cyan-500/5'><td class='p-3 font-semibold theme-text-primary'>Canva</td><td class='p-3'>Outstanding creative designs & Magic Write</td><td class='p-3'>Medium (Requires simple templates)</td><td class='p-3'>Free basic features & visual templates</td></tr></tbody></table></div>"
++          "<ol class=\"list-decimal pl-6 space-y-2\"><li>Follow the employer's requested file format. A PDF download is not useful if the application explicitly requires another format.</li><li>Open the actual exported file, not just the builder preview. Check line wrapping, page breaks, links, missing characters, and contact details.</li><li>Select text and paste it into a plain editor. If the order is scrambled, simplify the layout. A clean copy-paste result is a diagnostic, not proof that every ATS will parse it identically.</li><li>Inspect the application's populated fields when available. Correct dates, role names, and education that were imported incorrectly.</li><li>Compare each factual statement with your notes. Keep certificates, measurements, and project links available for an interview.</li></ol>",
++          "Before using an AI writer, remove identification numbers, full home addresses, private client material, and API keys from the input. Add necessary contact information to the final document yourself. For a broader explanation of AI as a drafting aid, see the university-authored guidance on <a href=\"https://careerservices.fas.harvard.edu/ai-resumes-and-cover-letters/\" class=\"text-cyan-600 underline\">using AI for resumes and cover letters</a>."
+         ]
+       },
+       {
+-        "heading": "ChatGPT Prompt to Write High-Impact Resume Bullet Points",
++        "heading": "Frequently Asked Questions",
+         "paragraphs": [
+-          "Act as a professional career coach and expert resume editor. Help me write 3 high-impact, ATS-optimized resume bullet points for a college project or internship. I will provide the raw details of what I did, and you must structure the bullet points using the <strong>X-Y-Z formula</strong> (Accomplished [X] as measured by [Y], by doing [Z]).",
+-          "Ensure each bullet point starts with a strong action verb, highlights the technical skills or tools used, and quantifies the results where possible. Keep the tone professional, objective, and clear.",
+-          "Here are the raw details of my project/internship: [Insert details here, e.g., 'Built a weather app in React that calls an API and shows forecasts']"
++          "Q1: Can a fresher create a usable resume without paying?<br/>A: Yes, the documented free routes in the table can produce a resume, subject to their template and export conditions. The separate question is whether you need paid AI features; manual editing remains an option.",
++          "Q2: Which option should I try first if I do not need AI?<br/>A: Compare a basic Kickresume template with Reactive Resume's editor, then try a dummy-text export. Choose the one that produces the required file with less setup for you.",
++          "Q3: Should I pay for a higher ATS score?<br/>A: First inspect the flagged issue and the actual application requirements. A paid score is not an employer's decision rule. Fix an unreadable document or a missing true detail before considering paid analysis.",
++          "Q4: What can I write if I have no internship?<br/>A: Use relevant coursework, personal projects, volunteering, or responsibilities you actually held. Label each accurately. A college project belongs under Projects rather than an invented employer.",
++          "Q5: What if I have no numbers for a project result?<br/>A: Describe the function, your contribution, and the tools. Ask whether a useful measurement exists in your records. Do not add an estimated improvement merely because a bullet-writing formula includes a number.",
++          "Q6: Can I submit the same resume to every role?<br/>A: Keep one evidence-based master, then select the relevant projects and wording for each vacancy. Save each submitted version so you can discuss what the employer actually received.",
++          "Q7: What should I do when the free export allowance runs out?<br/>A: Check the current plan terms and remaining allowance before paying. Your saved master text lets you move to another suitable editor. A different builder may solve an export constraint without improving the underlying content."
+         ]
+       },
+       {
+-        "heading": "Pro Tips for Freshers Using AI Resume Builders",
++        "heading": "Choose the smallest workflow that completes the application",
+         "paragraphs": [
+-          "<strong>1. Don't Copy-Paste AI Output blindly:</strong> Recruiters can spot generic, overly complex AI sentences from a mile away. Use the AI suggestions as a draft, then rephrase them in your own natural voice.",
+-          "<strong>2. Quantify Your Achievements:</strong> Even in class projects, mention numbers if possible. For example, 'Optimized website performance by 20%' or 'Managed a group project with 4 team members'.",
+-          "<strong>3. Verify PDF Export Formatting:</strong> After exporting your resume as a PDF, select all text (Ctrl+A / Cmd+A) and copy-paste it into a plain text file. If the letters are jumbled or out of order, the ATS scanner will read it the same way. In that case, switch to a simpler template.",
+-          "Building a strong resume is your first step toward launching a successful career. Use these AI tools to polish your profile, customize it for each application, and present your skills in the best possible light. Good luck!"
++          "Choose a builder for the document it can produce under your account's current conditions. Keep the evidence sheet and master text; treat AI drafts, template choices, and checker feedback as separate editing decisions. Finish when the submitted file is readable, accurate to your experience, and relevant to the vacancy, rather than when a dashboard displays a flattering score."
+         ]
+       }
+-    ]
++    ],
++    "imageAlt": "Resume-builder checklist separating free editing, PDF downloads, and AI access, followed by a sample-export check before entering personal details.",
++    "updatedAt": "2026-10-15T04:38:14.000Z"
+   },
+   {
+     "slug": "best-ai-tools-for-bank-po-preparation-2026",

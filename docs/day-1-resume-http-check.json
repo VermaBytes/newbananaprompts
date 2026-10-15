@@ -1,0 +1,12 @@
+{
+  "http": 200,
+  "h1": 1,
+  "articleSchema": 1,
+  "breadcrumbSchema": 1,
+  "faqSchema": 1,
+  "faqQuestions": 7,
+  "dateModified": "2026-10-15T04:38:14.000Z",
+  "sitemapDateMatches": true,
+  "internalTargetsHTTP200": 3,
+  "imageHTTP200": true
+}
