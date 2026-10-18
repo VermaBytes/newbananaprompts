@@ -14,7 +14,6 @@ export const REVIEW_REQUIRED_POSTS = new Set([
 
   // Indexable pages that the content audit found lacked sufficient depth.
   "day-1-best-free-ai-tools-for-government-exam-preparation-in-2026",
-  "improve-english-speaking-summer-vacation-ai-2026",
   "chatgpt-search-seo-rank-blog-in-ai-search",
   "studio-side-profile-portrait-ai-prompt",
   "cricket-player-selfie-fan-ai-prompt",
