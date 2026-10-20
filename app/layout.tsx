@@ -88,7 +88,7 @@ export default async function RootLayout({
   return (
     <html lang={language} suppressHydrationWarning>
       <head>
-        <meta name="google-adsense-account" content="ca-pub-7598958516745914" />
+        <meta name="google-adsense-account" content="ca-pub-6456487197514606" />
         <Script id="theme-init" strategy="beforeInteractive">
           {`
             (function() {

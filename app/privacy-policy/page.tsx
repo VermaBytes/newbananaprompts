@@ -66,7 +66,7 @@ export default function PrivacyPolicyPage() {
             <strong>Google AdSense:</strong> Our site loads Google AdSense advertising technology. Google and its partners may use cookies or similar technologies to serve, measure, and personalize ads, or to serve non-personalized ads where applicable. You can manage personalized advertising through <a href="https://adssettings.google.com/" target="_blank" rel="noreferrer" className="theme-kicker hover:underline">Google Ads Settings</a> and learn more in <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noreferrer" className="theme-kicker hover:underline">Google&apos;s advertising policies</a>.
           </p>
           <p className="theme-text-secondary text-sm leading-7">
-            The AdSense publisher identifier associated with newbananaprompts.in is <strong>pub-7598958516745914</strong>. Advertising cookies and the AdSense script are treated as optional technologies by our application and are loaded after the visitor accepts optional cookies.
+            The AdSense publisher identifier associated with newbananaprompts.in is <strong>pub-6456487197514606</strong>. Advertising cookies and the AdSense script are treated as optional technologies by our application and are loaded after the visitor accepts optional cookies.
           </p>
         </section>
 

@@ -30,7 +30,7 @@ export function AdSense({ slot, className = "" }: AdSenseProps) {
     <ins
       className={`adsbygoogle block ${className}`.trim()}
       style={{ display: "block" }}
-      data-ad-client="ca-pub-7598958516745914"
+      data-ad-client="ca-pub-6456487197514606"
       data-ad-slot={slot}
       data-ad-format="auto"
       data-full-width-responsive="true"

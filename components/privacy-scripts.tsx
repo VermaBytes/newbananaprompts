@@ -31,7 +31,7 @@ export function PrivacyScripts() {
             {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CFRHNCTG1G');`}
           </Script>
           <Script
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7598958516745914"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6456487197514606"
             crossOrigin="anonymous"
             strategy="lazyOnload"
           />
