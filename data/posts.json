@@ -33318,6 +33318,22 @@
         ]
       },
       {
+        "heading": "Turn the upload instructions into a short checklist",
+        "paragraphs": [
+          "Write the requirements down before opening an editor. A useful checklist has six fields: purpose of the image, accepted format, required pixel dimensions, minimum bytes, maximum bytes, and appearance rules. Copy these from the actual upload page. If the page says only a maximum file size, do not invent a minimum. If it specifies a width and height, record which number is the width so that you do not export a landscape image when a portrait image is required.",
+          "Keep units separate. A requirement expressed in pixels describes the digital image grid; a requirement expressed in KB describes the stored file. Changing a print-resolution label alone does not prove that either requirement has been met. After exporting, inspect the pixel dimensions and file size independently. When instructions mention physical dimensions as well, follow the receiving service's conversion guidance rather than guessing from a print setting.",
+          "For several applications, create a separate folder for each set of requirements. Keep the original in a source folder and name the final copy clearly, for example photo-application-a.jpg. Record the measured dimensions and bytes alongside it. This small step prevents a previously accepted photo from being reused for a different form with different limits."
+        ]
+      },
+      {
+        "heading": "Crop to the correct shape without distorting the subject",
+        "paragraphs": [
+          "An aspect ratio describes the relationship between width and height. In the fictional 200 by 230 pixel example above, the shape is 20:23. A 400 by 460 crop has the same proportions and can be resized to 200 by 230 without stretching. A 400 by 400 square does not have the same proportions. Forcing that square into the example dimensions would distort the subject unless you crop or add permitted space first.",
+          "Start by choosing a crop with the required proportions, then position the subject inside it. Check that the top of the head, chin, and any required shoulder area remain visible. For a signature, leave enough space around the entire mark so that long strokes and dots are not cut off. These framing checks should happen before compression because lowering export quality cannot repair a missing part of the image.",
+          "Adding borders or blank space may change the shape, but it may also conflict with the portal's appearance rules. Use that method only when allowed. If the required crop cannot fit the complete subject, take a better source photograph or scan. Do not stretch a face or shorten a signature just to make the dimensions match."
+        ]
+      },
+      {
         "heading": "A repeatable compression workflow",
         "paragraphs": [
           "Open a copy in an editor with resize and export controls. Crop according to the form instructions, keeping the required face, shoulders, or complete signature visible. Set the required dimensions while preserving proportions. If the required shape differs from the original, crop to that shape rather than stretching the face or squeezing the signature.",
@@ -33347,6 +33363,31 @@
         ]
       },
       {
+        "heading": "Use different clarity checks for photographs and signatures",
+        "paragraphs": [
+          "For a photograph, inspect the face at the final display size. Look at the eyes, outline of the face, hair edges, and separation from the background. Compression damage may appear as blocky patches or smudged detail. Zooming in can help diagnose the damage, but also return to normal size: a tiny image enlarged across a full screen will naturally look rough. The useful question is whether the required identifying details survive in the actual submitted image.",
+          "For a signature, pay attention to thin strokes, small loops, dots, and gaps between lines. An export can be small enough while making two separate strokes merge. Start with a clean, evenly lit capture and remove unnecessary surrounding area through a permitted crop. Avoid heavy filters that erase faint parts of the mark. If the portal permits multiple formats, compare permitted exports by readability and measured size instead of assuming that one format always produces the smallest usable file.",
+          "Do not reuse settings blindly between the two tasks. A photo with a textured background and a signature on plain paper contain different visual information. Keep separate final copies, compare each against its own instructions, and open both files once more before upload. If you need to recapture the original, correct focus and lighting first rather than trying to hide blur with stronger compression."
+        ]
+      },
+      {
+        "heading": "Troubleshoot one failed requirement at a time",
+        "paragraphs": [
+          "<strong>The file looks right but the portal rejects its size:</strong> inspect the final file's detailed properties and confirm the selected filename. A rounded display such as 20KB is not enough to establish compliance with a strict byte limit. Export with a little more margin if quality allows, while remaining above any stated minimum. Do not repeatedly upload the same file after changing only its name.",
+          "<strong>The size passes but the preview is sideways:</strong> open the final export in an editor, rotate it to the correct upright orientation, save a new copy, and inspect that copy before uploading. Recheck bytes and dimensions after saving because the output may have changed. Verify the portal preview again; the appearance in your original photo viewer is only one check.",
+          "<strong>The file passes local checks but the form still fails:</strong> note the exact error text and check whether it refers to the photo, signature, or another attachment. Confirm filename rules and accepted file types. Then reselect the final file using the upload control. If the error persists, use the portal's help channel with the measured properties and error message. Avoid sharing identity images publicly while asking for troubleshooting help."
+        ]
+      },
+      {
+        "heading": "Frequently asked questions about a 20KB image limit",
+        "paragraphs": [
+          "<strong>Does the image have to be exactly 20KB?</strong> Only if the receiving service explicitly says so. A maximum of 20KB usually asks for a file within an allowed range, not a file that lands on a particular rounded number. Check for a separate minimum and preserve enough detail to make the image usable.",
+          "<strong>Can I compress the same downloaded JPEG again?</strong> You can export it again, but another lossy export can discard more detail. Keep the original and make new attempts from that source. Compare the final versions using their actual bytes and visible quality; avoid building a chain of progressively degraded downloads.",
+          "<strong>Why is another photo smaller with the same settings?</strong> File size depends on the image content as well as its dimensions and encoding settings. Fine patterns and busy backgrounds can require different amounts of stored information. A quality value is an export control, so verify the resulting bytes for every image.",
+          "<strong>What if no readable version fits?</strong> Check that you have not kept unnecessary pixels or used the wrong format. If required dimensions are fixed and permitted quality adjustments make the subject unreadable, return to a sharper, better framed source. Seek clarification from the receiving service if its requirements cannot be met with a usable file. Do not submit an altered identity image or silently violate the required dimensions."
+        ]
+      },
+      {
         "heading": "Technical reference and final checklist",
         "paragraphs": [
           "For developers building an image export tool, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob\" class=\"text-cyan-600 underline\">MDN documents canvas image export and lossy quality controls</a>. The quality argument applies to supported lossy formats; it is not a target-byte-size setting. A tool still needs to inspect the exported file and report whether it meets the requested limit.",
@@ -33354,7 +33395,7 @@
         ]
       }
     ],
-    "updatedAt": "2026-09-23T08:00:00.000Z"
+    "updatedAt": "2026-10-20T00:00:00.000Z"
   },
   {
     "slug": "free-ai-tools-for-uppsc-upsssc-aspirants-2026",
