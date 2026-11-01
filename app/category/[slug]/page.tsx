@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PostCard } from "@/components/post-card";
+import { ToolCard } from "@/components/tool-card";
 import { getAllPosts } from "@/lib/posts";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -106,6 +107,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           {categoryInfo.description}
         </p>
       </header>
+
+      {slug === "ai-tools" && <section aria-label="Free creator tools" className="content-grid md:grid-cols-2 xl:grid-cols-3"><ToolCard title="AI Prompt Generator" description="Create structured prompts for writing, images, coding, and more with free category-specific templates." href="/tools/ai-prompt-generator" linkLabel="Open Generator" /></section>}
 
       {posts.length > 0 ? (
         <div className="content-grid md:grid-cols-2 xl:grid-cols-3">

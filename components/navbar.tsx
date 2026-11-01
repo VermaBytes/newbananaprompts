@@ -9,6 +9,7 @@ import { ThemeToggle } from "./theme-toggle";
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/category/ai-tools", label: "AI Tools" },
+  { href: "/tools", label: "Tools" },
   { href: "/category/ai-prompts", label: "AI Prompts" },
   { href: "/category/earn-money", label: "Earn Money" },
   // { href: "/courses/web-development-with-ai", label: "Courses" },

@@ -31,6 +31,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9
     },
     ...categoryEntries,
+    { url: `${SITE_URL}/tools`, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${SITE_URL}/tools/ai-prompt-generator`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/tools/color-palette-generator`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/tools/cps-checker`, changeFrequency: "monthly", priority: 0.8 },
     {
       url: `${SITE_URL}/courses/web-development-with-ai`,
       changeFrequency: "weekly",

@@ -4,9 +4,10 @@ type ToolCardProps = {
   title: string;
   description: string;
   href: string;
+  linkLabel?: string;
 };
 
-export function ToolCard({ title, description, href }: ToolCardProps) {
+export function ToolCard({ title, description, href, linkLabel }: ToolCardProps) {
   const isExternal = href.startsWith("http");
 
   return (
@@ -25,7 +26,7 @@ export function ToolCard({ title, description, href }: ToolCardProps) {
         </a>
       ) : (
         <Link href={href} className="prompt-read-more mt-4 inline-flex rounded-none px-3.5 py-1.5 text-xs font-semibold">
-          Open Tool Guide
+          {linkLabel ?? "Open Tool Guide"}
         </Link>
       )}
     </article>
