@@ -33393,9 +33393,16 @@
           "For developers building an image export tool, <a href=\"https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob\" class=\"text-cyan-600 underline\">MDN documents canvas image export and lossy quality controls</a>. The quality argument applies to supported lossy formats; it is not a target-byte-size setting. A tool still needs to inspect the exported file and report whether it meets the requested limit.",
           "Before submission, check the original requirement against the final file: accepted format, required pixel dimensions, allowed byte range, complete subject, and readable detail. Keep an untouched original and the accepted compressed copy. The goal is a valid, usable upload, not merely the smallest number shown by a compressor."
         ]
+      },
+      {
+        "heading": "Updated November 19, 2026: final upload checklist",
+        "paragraphs": [
+          "Before uploading, confirm the receiving form's current instructions and check five things on the exported copy: accepted format, exact pixel dimensions, actual file size in bytes, correct orientation, and readable details at normal viewing size. A file can be under 20KB and still fail because its dimensions or format are wrong.",
+          "If the image contains personal identification, prefer an editor you trust and avoid uploading it to an unfamiliar compression website. Keep the original separate, give the final copy a clear filename, and reopen that copy before selecting it in the form. After upload, review the portal preview and its confirmation message."
+        ]
       }
     ],
-    "updatedAt": "2026-10-20T00:00:00.000Z"
+    "updatedAt": "2026-11-19T00:00:00+05:30"
   },
   {
     "slug": "free-ai-tools-for-uppsc-upsssc-aspirants-2026",
