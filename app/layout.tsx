@@ -1,3 +1,4 @@
+
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { headers } from "next/headers";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: `${SITE_NAME} | AI Prompts, Image Tools & Blogging Platform`,
-    template: `%s | ${SITE_NAME}`
+    template: `%s | ${SITE_NAME}`,
   },
   description:
     "NB Prompts is a creator-first hub for AI prompt ideas, free online image tools, blogging tips, SEO guides, and quick content workflow solutions.",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
   category: "technology",
   manifest: "/manifest.json",
   alternates: {
-    canonical: "/"
+    canonical: "/",
   },
   robots: {
     index: true,
@@ -43,8 +44,8 @@ export const metadata: Metadata = {
       follow: true,
       "max-image-preview": "large",
       "max-snippet": -1,
-      "max-video-preview": -1
-    }
+      "max-video-preview": -1,
+    },
   },
   openGraph: {
     title: `${SITE_NAME} | Best AI Prompts & Free Online Tools`,
@@ -59,36 +60,42 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/main-logo.png`,
         width: 1792,
         height: 2380,
-        alt: `${SITE_NAME} logo`
-      }
-    ]
+        alt: `${SITE_NAME} logo`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${SITE_NAME} | ${SITE_TAGLINE}`,
     description:
       "Best AI prompts, image tools, blogging tips, and online creator resources.",
-    images: [`${SITE_URL}/main-logo.png`]
+    images: [`${SITE_URL}/main-logo.png`],
   },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png"
+    apple: "/apple-touch-icon.png",
   },
 };
 
 export default async function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   const slug = (await headers()).get("x-post-slug");
   const language = slug ? getPostBySlug(slug)?.language ?? "en" : "en";
-  const languages = Object.fromEntries(getAllPosts().map((post) => [post.slug, post.language]));
+  const languages = Object.fromEntries(
+    getAllPosts().map((post) => [post.slug, post.language])
+  );
+
   return (
     <html lang={language} suppressHydrationWarning>
       <head>
-        <meta name="google-adsense-account" content="ca-pub-6068512506766570" />
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-6068512506766570"
+        />
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6068512506766570"
           strategy="afterInteractive"
@@ -107,9 +114,18 @@ export default async function RootLayout({
         </Script>
 
         <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon" />
-        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link
+          rel="icon"
+          href="/favicon-32x32.png"
+          sizes="32x32"
+          type="image/png"
+        />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+          sizes="180x180"
+        />
       </head>
       <body>
         <DocumentLanguage languages={languages} />
