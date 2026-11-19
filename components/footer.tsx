@@ -58,7 +58,7 @@ export function Footer() {
               Contact Us
             </Link>
             <Link href="/author" className="block text-sm text-slate-400 transition-all duration-300 hover:translate-x-1 hover:text-cyan-400">
-              Author & Team
+              Author & Teams
             </Link>
           </div>
         </div>
