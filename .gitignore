@@ -1,0 +1,16 @@
+.next
+node_modules
+npm-debug.log*
+.env
+.env*.local
+dist
+
+# Local build and tool output
+/.dist/
+/.tmp/
+/output.log
+/tsconfig.tsbuildinfo
+
+# Generated notification/backlink files - do not track in git
+data/sent-notifications.json
+data/social-backlink-posts.txt

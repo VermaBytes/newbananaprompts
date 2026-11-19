@@ -1,0 +1,25 @@
+--- a/data/posts.json
++++ b/data/posts.json
+@@ -22635,1 +22635,1 @@
+-          "Scriptwriters can avoid plagiarism by using AI tools primarily to create outlines, brainstorm hooks, and draft initial descriptions, rather than copy-pasting entire paragraphs. Always verify historical dates, check math solutions, and cite original sources. This guarantees that your video resources are accurate, helpful, and academically sound. Setting a good example in your planning encourages audiences to use AI tools ethically in their own research habits."
++          "Scriptwriters can avoid plagiarism by using AI tools primarily to create outlines, brainstorm hooks, and draft initial descriptions, rather than copy-pasting entire paragraphs. Setting a good example in your planning encourages audiences to use AI tools ethically in their own research habits."
+@@ -23668,1 +23668,1 @@
+-          "Scriptwriters can avoid plagiarism by using AI tools primarily to create outlines, brainstorm hooks, and draft initial descriptions, rather than copy-pasting entire paragraphs. Always verify historical dates, check math solutions, and cite original sources. This guarantees that your video resources are accurate, helpful, and academically sound. Setting a good example in your planning encourages audiences to use AI tools ethically in their own research habits."
++          "Scriptwriters can avoid plagiarism by using AI tools primarily to create outlines, brainstorm hooks, and draft initial descriptions, rather than copy-pasting entire paragraphs. Setting a good example in your planning encourages audiences to use AI tools ethically in their own research habits."
+@@ -24396,1 +24396,1 @@
+-          "Teachers can avoid plagiarism by using AI tools primarily to create outlines, brainstorm activities, and draft initial worksheet formats, rather than copy-pasting entire reading assignments. Always verify historical dates, check math solutions, and cite original sources. This guarantees that your lesson resources are accurate, helpful, and academically sound. Setting a good example in your planning encourages students to use AI tools ethically in their own study habits."
++          "Teachers can avoid plagiarism by using AI tools primarily to create outlines, brainstorm activities, and draft initial worksheet formats, rather than copy-pasting entire reading assignments. Setting a good example in your planning encourages students to use AI tools ethically in their own study habits."
+@@ -35125,1 +35125,1 @@
+-          "Scriptwriters can avoid plagiarism by using AI tools primarily to create outlines, brainstorm hooks, and draft initial descriptions, rather than copy-pasting entire paragraphs. Always verify historical dates, check math solutions, and cite original sources. This guarantees that your video resources are accurate, helpful, and academically sound. Setting a good example in your planning encourages audiences to use AI tools ethically in their own research habits."
++          "Scriptwriters can avoid plagiarism by using AI tools primarily to create outlines, brainstorm hooks, and draft initial descriptions, rather than copy-pasting entire paragraphs. Setting a good example in your planning encourages audiences to use AI tools ethically in their own research habits."
+@@ -35431,1 +35431,1 @@
+-              "text": "Scriptwriters can avoid plagiarism by using AI tools primarily to create outlines, brainstorm hooks, and draft initial descriptions, rather than copy-pasting entire paragraphs. Always verify historical dates, check math solutions, and cite original sources. This guarantees that your video resources are accurate, helpful, and academically sound. Setting a good example in your planning encourages audiences to use AI tools ethically in their own research habits."
++              "text": "Scriptwriters can avoid plagiarism by using AI tools primarily to create outlines, brainstorm hooks, and draft initial descriptions, rather than copy-pasting entire paragraphs. Setting a good example in your planning encourages audiences to use AI tools ethically in their own research habits."
+--- a/components/footer.tsx
++++ b/components/footer.tsx
+@@ -111,1 +111,5 @@
++      <p className="relative mx-auto max-w-7xl px-4 pb-6 text-xs leading-6 text-slate-400 sm:px-6 lg:px-8">
++        AI outputs can be inaccurate; check important facts and current terms before relying on them.
++      </p>
++
+       {/* BOTTOM BAR */}

@@ -1,0 +1,678 @@
+const fs = require("fs");
+const path = require("path");
+
+const POSTS_PATH = path.join(process.cwd(), "data/posts.json");
+const posts = JSON.parse(fs.readFileSync(POSTS_PATH, "utf8"));
+
+// Helper: wrap a keyword in a link if it exists in the paragraph text
+function insertLink(text, keyword, slug, linkText) {
+  if (text.includes("href=")) return text; // already has a link in this para
+  const idx = text.indexOf(keyword);
+  if (idx === -1) return text;
+  const anchor = `<a href='/post/${slug}' class='text-cyan-500 font-bold hover:underline'>${linkText}</a>`;
+  return text.slice(0, idx) + anchor + text.slice(idx + keyword.length);
+}
+
+// Internal link map: for each post slug, which links to inject where
+// Format: { targetSlug, injectInto: [{ postSlug, sectionIndex, paraIndex, keyword, linkText }] }
+const linkPlan = [
+
+  // === AI PROMPTS POST (index 0) ===
+  {
+    postSlug: "25-best-nano-banana-prompts-for-realistic-ai-images-2026",
+    sectionIdx: 0, paraIdx: 1,
+    keyword: "AI image generators",
+    replace: (t) => t.replace(
+      "AI image generators have become incredibly powerful",
+      `AI image generators have become incredibly powerful. Agar aap consistent characters banana chahte hain toh hamara <a href='/post/midjourney-consistent-characters-generate-same-character-different-poses' class='text-cyan-500 font-bold hover:underline'>Midjourney Consistent Characters Guide</a> bhi padhein.`
+    )
+  },
+
+  // === SSC CGL PROMPTS (index 1) ===
+  {
+    postSlug: "top-15-chatgpt-prompts-every-ssc-cgl-aspirant-should-save-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` SSC CGL ke saath dusre competitive exams ke liye bhi AI tools bahut kaam aate hain — hamara <a href='/post/top-10-ai-tools-every-ssc-cgl-aspirant-should-use-in-2026' class='text-cyan-500 font-bold hover:underline'>Top 10 AI Tools for SSC CGL</a> guide zaroor padhein aur <a href='/post/how-to-use-chatgpt-for-daily-current-affairs-preparation-in-2026' class='text-cyan-500 font-bold hover:underline'>ChatGPT for Current Affairs</a> article bhi helpful rahega.`
+  },
+
+  // === CURRENT AFFAIRS (index 2) ===
+  {
+    postSlug: "how-to-use-chatgpt-for-daily-current-affairs-preparation-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Current Affairs ke saath saath proper AI tools ka knowledge bhi zaroori hai — iske liye <a href='/post/top-10-ai-tools-every-ssc-cgl-aspirant-should-use-in-2026' class='text-cyan-500 font-bold hover:underline'>Top 10 AI Tools for SSC CGL</a> aur <a href='/post/top-10-free-ai-tools-upsc-aspirant-2026' class='text-cyan-500 font-bold hover:underline'>Top 10 Free AI Tools for UPSC Aspirants</a> guide zaroor check karein.`
+  },
+
+  // === TOP 10 AI TOOLS SSC CGL (index 3) ===
+  {
+    postSlug: "top-10-ai-tools-every-ssc-cgl-aspirant-should-use-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Aur agar aap ChatGPT prompts specifically SSC ke liye dhundh rahe hain, toh hamara <a href='/post/top-15-chatgpt-prompts-every-ssc-cgl-aspirant-should-save-in-2026' class='text-cyan-500 font-bold hover:underline'>Top 15 ChatGPT Prompts for SSC CGL</a> guide copy-paste ready prompts ke saath available hai. Current Affairs preparation ke liye <a href='/post/how-to-use-chatgpt-for-daily-current-affairs-preparation-in-2026' class='text-cyan-500 font-bold hover:underline'>ChatGPT for Daily Current Affairs</a> bhi padhein.`
+  },
+
+  // === RESUME BUILDERS (index 4) ===
+  {
+    postSlug: "best-free-ai-resume-builders-for-freshers-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Resume banana ke baad aapko apni productivity aur skills bhi AI se boost karni chahiye — iske liye hamara <a href='/post/how-students-job-seekers-use-ai-grow-faster' class='text-cyan-500 font-bold hover:underline'>Students aur Job Seekers ke liye AI Guide</a> bahut helpful rahega. Aur AI tools ke aur bhi free options ke liye <a href='/post/best-free-ai-tools-for-students-2026' class='text-cyan-500 font-bold hover:underline'>Best Free AI Tools for Students</a> padhein.`
+  },
+
+  // === SBI CLERK PROMPTS (index 5) ===
+  {
+    postSlug: "10-chatgpt-prompts-every-sbi-clerk-aspirant-should-use-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Banking exams ke saath government exam AI preparation ke liye hamara <a href='/post/how-to-use-ai-for-sbi-clerk-preparation-2026' class='text-cyan-500 font-bold hover:underline'>AI se SBI Clerk Preparation Guide</a> aur <a href='/post/how-to-use-ai-to-prepare-for-government-exams-in-2026' class='text-cyan-500 font-bold hover:underline'>AI se Government Exams Preparation</a> guide bhi zaroor check karein.`
+  },
+
+  // === BEST FREE AI TOOLS FOR STUDENTS (index 7) ===
+  {
+    postSlug: "best-free-ai-tools-for-students-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Agar aap competitive exam aspirant hain toh <a href='/post/top-10-free-ai-tools-upsc-aspirant-2026' class='text-cyan-500 font-bold hover:underline'>Top 10 Free AI Tools for UPSC Aspirants</a> aur <a href='/post/top-10-ai-tools-every-ssc-cgl-aspirant-should-use-in-2026' class='text-cyan-500 font-bold hover:underline'>Top 10 AI Tools for SSC CGL</a> guide specially helpful rahenge. Students ke liye AI se career growth ke tips ke liye <a href='/post/how-students-job-seekers-use-ai-grow-faster' class='text-cyan-500 font-bold hover:underline'>Students aur Job Seekers ke liye AI Roadmap</a> bhi padhein.`
+  },
+
+  // === IMAGE 20KB CONVERT (index 8) ===
+  {
+    postSlug: "image-ko-20kb-me-convert-kaise-kare-free-easy-tarika",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Agar aap AI image generation seekhna chahte hain toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best AI Image Prompts Guide</a> aur viral avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> guide bhi useful rahega.`
+  },
+
+  // === ME WITH GOD TEMPLE PROMPT (index 9) ===
+  {
+    postSlug: "me-with-god-temple-prompt",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Agar aur bhi devotional AI art prompts chahiye toh hamara <a href='/post/devotional-krishna-temple-prompt' class='text-cyan-500 font-bold hover:underline'>Devotional Krishna Temple Prompt</a> guide bhi dekhein. Aur realistic AI images ke liye <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts</a> collection useful rahegi.`
+  },
+
+  // === MIDJOURNEY CONSISTENT CHARACTERS (index 25) ===
+  {
+    postSlug: "midjourney-consistent-characters-generate-same-character-different-poses",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Agar aap AI image prompts ke baare mein aur seekhna chahte hain, toh hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts for Realistic AI Images</a> guide zaroor padhein. Viral social media avatars banane ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> bhi helpful rahega.`
+  },
+
+  // === VIRAL AI REEL VIDEOS (index 26) ===
+  {
+    postSlug: "how-to-create-viral-ai-reel-videos-luma-runway",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` AI video creation ke saath AI tools se paise kamane ke liye hamara <a href='/post/best-ai-tools-to-make-money-online-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools to Make Money Online 2026</a> guide bhi dekhein. YouTubers ke liye free AI tools ki list ke liye <a href='/post/best-free-ai-tools-for-youtubers-in-2026' class='text-cyan-500 font-bold hover:underline'>Best Free AI Tools for YouTubers</a> article helpful rahega.`
+  },
+
+  // === HOW STUDENTS JOB SEEKERS USE AI (index 27) ===
+  {
+    postSlug: "how-students-job-seekers-use-ai-grow-faster",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Resume banane ke liye <a href='/post/best-free-ai-resume-builders-for-freshers-2026' class='text-cyan-500 font-bold hover:underline'>Best Free AI Resume Builders for Freshers</a> guide padhein. Aur students ke liye sabse best free AI tools ki list ke liye <a href='/post/best-free-ai-tools-for-students-2026' class='text-cyan-500 font-bold hover:underline'>Best Free AI Tools for Students 2026</a> zaroor check karein.`
+  },
+
+  // === VIRAL 3D NEON AVATAR (index 29) ===
+  {
+    postSlug: "viral-3d-social-media-neon-avatar-prompts-bing-creator",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Iske alawa realistic AI portraits ke liye hamara <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana AI Image Prompts</a> aur dark moody style ke liye <a href='/post/dark-moody-cyberpunk-portrait-prompt' class='text-cyan-500 font-bold hover:underline'>Dark Moody Cyberpunk Portrait Prompt</a> guide bhi useful rahega.`
+  },
+
+  // === DIGITAL NOMAD THUMBNAIL PROMPT (index 30) ===
+  {
+    postSlug: "digital-nomad-challenge-thumbnail-prompt-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` YouTube thumbnail banane ke baad AI se paise kamane ke aur tarike seekhne ke liye <a href='/post/best-ai-tools-to-make-money-online-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools to Make Money Online 2026</a> guide padhein. AI reel videos banana seekhne ke liye <a href='/post/how-to-create-viral-ai-reel-videos-luma-runway' class='text-cyan-500 font-bold hover:underline'>Viral AI Reel Videos Guide</a> bhi dekhein.`
+  },
+
+  // === DARK MOODY CYBERPUNK (index 31) ===
+  {
+    postSlug: "dark-moody-cyberpunk-portrait-prompt",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Agar aap Midjourney mein consistent characters banana chahte hain toh <a href='/post/midjourney-consistent-characters-generate-same-character-different-poses' class='text-cyan-500 font-bold hover:underline'>Midjourney Consistent Characters Guide</a> zaroor padhein. Aur 3D social media avatars ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> guide bhi helpful rahega.`
+  },
+
+  // === GOLDEN HOUR CAMPING (index 32) ===
+  {
+    postSlug: "golden-hour-riverside-camping-portrait",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Agar aur bhi nature-based AI portrait prompts chahiye toh <a href='/post/studio-side-profile-portrait-ai-prompt' class='text-cyan-500 font-bold hover:underline'>Studio Side Profile Portrait Prompt</a> aur <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana AI Image Prompts</a> guide bhi dekhein.`
+  },
+
+  // === DEVOTIONAL KRISHNA TEMPLE (index 33) ===
+  {
+    postSlug: "devotional-krishna-temple-prompt",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Agar aap apne devotional photos bhi create karna chahte hain toh <a href='/post/me-with-god-temple-prompt' class='text-cyan-500 font-bold hover:underline'>Me With God Temple Prompt</a> guide bhi padhein. Realistic AI art ke liye <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts</a> bhi check karein.`
+  },
+
+  // === STUDENT STUDY DESK PROMPT (index 34) ===
+  {
+    postSlug: "student-study-desk-prompt",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Agar aap students ke liye AI tools explore karna chahte hain toh <a href='/post/best-free-ai-tools-for-students-2026' class='text-cyan-500 font-bold hover:underline'>Best Free AI Tools for Students 2026</a> guide zaroor padhein. UPSC aspirants ke liye specially <a href='/post/top-10-free-ai-tools-upsc-aspirant-2026' class='text-cyan-500 font-bold hover:underline'>Top 10 Free AI Tools for UPSC</a> bhi helpful rahega.`
+  },
+
+  // === STUDIO SIDE PROFILE PORTRAIT (index 35) ===
+  {
+    postSlug: "studio-side-profile-portrait-ai-prompt",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Agar aap aur bhi AI portrait styles explore karna chahte hain toh <a href='/post/dark-moody-cyberpunk-portrait-prompt' class='text-cyan-500 font-bold hover:underline'>Dark Moody Cyberpunk Portrait Prompt</a> aur <a href='/post/golden-hour-riverside-camping-portrait' class='text-cyan-500 font-bold hover:underline'>Golden Hour Riverside Camping Portrait</a> guide bhi dekhein.`
+  },
+
+  // === CRICKET PLAYER SELFIE (index 36) ===
+  {
+    postSlug: "cricket-player-selfie-fan-ai-prompt",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + ` Agar aur bhi realistic AI image prompts chahiye toh <a href='/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026' class='text-cyan-500 font-bold hover:underline'>25 Best Nano Banana Prompts</a> aur social media ke liye <a href='/post/viral-3d-social-media-neon-avatar-prompts-bing-creator' class='text-cyan-500 font-bold hover:underline'>Viral 3D Neon Avatar Prompts</a> guide zaroor dekhein.`
+  },
+
+  // === LINK TO NEW SEO POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-tools-for-content-creators-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " Additionally, if you want to rank your content and drive search traffic to your creations, check out our comprehensive guide on the <a href='/post/best-ai-seo-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI SEO Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-developers-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " If you are building search-optimized web apps or need to automate technical audits, explore our detailed list of the <a href='/post/best-ai-seo-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI SEO Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To focus specifically on driving search rankings and organic customer acquisition, be sure to read our review of the <a href='/post/best-ai-seo-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI SEO Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-designers-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To drive search traffic to your portfolio and visual layouts, optimize your site using the platforms listed in our <a href='/post/best-ai-seo-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI SEO Tools in 2026 (Tested & Compared)</a> guide."
+  },
+  {
+    postSlug: "best-ai-productivity-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " For teams looking to scale their search visibility and optimize operational content, check out our detailed guide on the <a href='/post/best-ai-seo-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI SEO Tools in 2026 (Tested & Compared)</a>."
+  },
+
+  // === LINK TO NEW CRM POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-seo-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate sales tracking and manage customer pipeline operations, read our extensive evaluation of the <a href='/post/best-ai-crm-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI CRM Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-content-creators-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To manage sponsorships, brand deals, and creator pipelines, check out our detailed guide on the <a href='/post/best-ai-crm-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI CRM Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-developers-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " If you are building custom database models or syncing client projects, read our list of the <a href='/post/best-ai-crm-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI CRM Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To coordinate campaigns with your sales team and optimize customer retention, check out our guide on the <a href='/post/best-ai-crm-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI CRM Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-designers-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To track freelance design requests and manage client pipelines, organize your workflow using the platforms in our <a href='/post/best-ai-crm-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI CRM Software in 2026 (Tested & Compared)</a> guide."
+  },
+
+  // === LINK TO NEW EMAIL MARKETING POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-crm-software-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate lead nurturing and capture contact inquiries through email, combine your pipeline with the <a href='/post/best-ai-email-marketing-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Email Marketing Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-seo-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To engage and monetize the search traffic landing on your posts, implement the systems reviewed in our <a href='/post/best-ai-email-marketing-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Email Marketing Tools in 2026 (Tested & Compared)</a> guide."
+  },
+  {
+    postSlug: "best-ai-tools-for-content-creators-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To nurture your audience and deliver exclusive updates directly to their inboxes, read our review of the <a href='/post/best-ai-email-marketing-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Email Marketing Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-developers-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " If you are building transactional mail pipelines or integrating SMTP services, check out our guide on the <a href='/post/best-ai-email-marketing-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Email Marketing Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate your email flows, improve campaign deliverability, and grow lists, explore our list of the <a href='/post/best-ai-email-marketing-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Email Marketing Tools in 2026 (Tested & Compared)</a>."
+  },
+
+  // === LINK TO NEW SALES TOOLS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-email-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To align your email lists with automated outbound sales pipelines, integrate your campaigns with the platforms listed in our <a href='/post/best-ai-sales-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Sales Tools in 2026 (Compared)</a> guide."
+  },
+  {
+    postSlug: "best-ai-crm-software-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To supercharge your sales team with predictive pipeline and outreach automation, check out the <a href='/post/best-ai-sales-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Sales Tools in 2026 (Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-seo-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To convert organic search traffic into active corporate buyers and book live demos, explore the <a href='/post/best-ai-sales-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Sales Tools in 2026 (Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-content-creators-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To track brand deals and optimize B2B sponsor acquisitions, read our review of the <a href='/post/best-ai-sales-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Sales Tools in 2026 (Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-developers-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " If you are building custom database pipelines or syncing outreach APIs, check out our guide on the <a href='/post/best-ai-sales-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Sales Tools in 2026 (Compared)</a>."
+  },
+
+  // === LINK TO NEW AUTOMATION TOOLS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-sales-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate lead routing, trigger CRM status updates, and connect prospecting tools with custom API endpoints, read our review of the <a href='/post/best-ai-automation-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Automation Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-email-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To sync subscriber databases, trigger marketing campaigns, and automate follow-ups across tools, check out our guide on the <a href='/post/best-ai-automation-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Automation Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-crm-software-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To streamline contact updates, database logging, and lead transfers between channels, integrate your systems with the platforms in our <a href='/post/best-ai-automation-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Automation Tools in 2026 (Tested & Compared)</a> guide."
+  },
+  {
+    postSlug: "best-ai-seo-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate keyword research reporting, content publishing, and database backups, explore the <a href='/post/best-ai-automation-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Automation Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-content-creators-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate file conversions, script drafting, and cross-channel asset distribution, check out the <a href='/post/best-ai-automation-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Automation Tools in 2026 (Tested & Compared)</a>."
+  },
+
+  // === LINK TO NEW CUSTOMER SUPPORT TOOLS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-automation-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate ticket routing, trigger live chat escalations, and sync knowledge base directories with visual logic builders, read our guide on the <a href='/post/best-ai-customer-support-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Customer Support Tools in 2026 (Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-sales-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To align your prospecting campaigns with automated client resolution desks and reactive live chat widgets, explore the <a href='/post/best-ai-customer-support-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Customer Support Tools in 2026 (Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-email-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To connect customer newsletter queries with unified support ticketing inboxes and live agents, check out the <a href='/post/best-ai-customer-support-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Customer Support Tools in 2026 (Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-crm-software-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To synchronize contact accounts with automated help desks and conversational deflection chatbots, read our review of the <a href='/post/best-ai-customer-support-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Customer Support Tools in 2026 (Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-seo-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To handle organic landing page questions and support user signups with automated FAQ systems, explore the <a href='/post/best-ai-customer-support-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Customer Support Tools in 2026 (Compared)</a>."
+  },
+
+  // === LINK TO NEW PROJECT MANAGEMENT TOOLS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-customer-support-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To track resolution schedules, assign developer tasks from ticketing queues, and optimize agent support times, check out our guide on the <a href='/post/best-ai-project-management-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Project Management Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-automation-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate team task creation, route dashboard notifications, and sync calendar databases across systems, explore the <a href='/post/best-ai-project-management-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Project Management Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-sales-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To manage onboarding timelines, coordinate client delivery campaigns, and balance representative workloads, read our review of the <a href='/post/best-ai-project-management-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Project Management Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-email-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To collaborate on content assets, track design drafting milestones, and monitor publication deadlines, explore the <a href='/post/best-ai-project-management-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Project Management Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-crm-software-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To coordinate client onboarding stages and sync customer records with delivery team boards, check out the <a href='/post/best-ai-project-management-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Project Management Tools in 2026 (Tested & Compared)</a>."
+  },
+
+  // === LINK TO NEW ANALYTICS TOOLS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-project-management-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To track resource allocations, estimate future sales velocity, and compile real-time reporting dashboards, read our review of the <a href='/post/best-ai-analytics-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Analytics Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-customer-support-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To analyze client satisfaction trends, track ticket resolution speed metrics, and build customer retention forecasting charts, explore the <a href='/post/best-ai-analytics-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Analytics Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-automation-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate data transformations, sync cross-channel metrics tables, and trigger custom anomaly alerts across dashboards, check out the <a href='/post/best-ai-analytics-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Analytics Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-sales-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To forecast monthly sales revenue, analyze buyer behavior segments, and monitor sales representative performance dashboards, read our guide on the <a href='/post/best-ai-analytics-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Analytics Tools in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-email-marketing-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To track newsletter click-through rates, calculate multi-channel campaign ROI, and optimize marketing attribution pathways, check out our guide on the <a href='/post/best-ai-analytics-tools-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Analytics Tools in 2026 (Tested & Compared)</a>."
+  },
+
+  // === LINK TO NEW HR SOFTWARE POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-analytics-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To track candidate acquisition costs, measure employee timesheet records, and monitor corporate retention metrics across departments, explore the <a href='/post/best-ai-hr-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HR Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-project-management-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate employee onboarding milestones, coordinate team shift planning calendars, and align staffing requirements with project pipelines, check out the <a href='/post/best-ai-hr-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HR Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-customer-support-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To manage agent shift schedules, monitor hiring pipelines for support personnel, and track team feedback metrics, read our guide on the <a href='/post/best-ai-hr-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HR Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-automation-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To automate onboarding workflows, sync employee records across databases, and trigger custom payroll alerts, explore the <a href='/post/best-ai-hr-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HR Software in 2026 (Tested & Compared)</a>."
+  },
+  {
+    postSlug: "best-ai-sales-tools-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To track representative commissions, onboard new accounts personnel, and monitor sales team retention analytics, check out the <a href='/post/best-ai-hr-software-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HR Software in 2026 (Tested & Compared)</a>."
+  },
+
+  // === LINK TO NEW RIPPLING VS BAMBOOHR VS DEEL COMPARISON POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-hr-software-in-2026",
+    sectionIdx: 0, paraIdx: 0,
+    replace: (t) => t + " To read a deep-dive head-to-head evaluation of the leading enterprise solutions, check out our comparison guide on <a href='/post/rippling-vs-bamboohr-vs-deel-2026' class='text-cyan-500 font-bold hover:underline'>Rippling vs BambooHR vs Deel (2026)</a>."
+  },
+  {
+    postSlug: "best-ai-analytics-tools-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To compare how unified data directories link benefits and IT fleets to employee files, explore our detailed buyer's guide comparing <a href='/post/rippling-vs-bamboohr-vs-deel-2026' class='text-cyan-500 font-bold hover:underline'>Rippling vs BambooHR vs Deel (2026)</a>."
+  },
+  {
+    postSlug: "best-ai-project-management-tools-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To see which HR directory unifies task routing with global EOR contractor legal setups, review our head-to-head analysis of <a href='/post/rippling-vs-bamboohr-vs-deel-2026' class='text-cyan-500 font-bold hover:underline'>Rippling vs BambooHR vs Deel (2026)</a>."
+  },
+  {
+    postSlug: "best-ai-customer-support-tools-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To see how to align team schedules with local legal entity payroll structures, check out our review of <a href='/post/rippling-vs-bamboohr-vs-deel-2026' class='text-cyan-500 font-bold hover:underline'>Rippling vs BambooHR vs Deel (2026)</a>."
+  },
+  {
+    postSlug: "best-ai-automation-tools-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To design automated workflows linking employee records to SaaS app configurations, check our detailed comparison of <a href='/post/rippling-vs-bamboohr-vs-deel-2026' class='text-cyan-500 font-bold hover:underline'>Rippling vs BambooHR vs Deel (2026)</a>."
+  },
+
+  // === LINK TO NEW PAYROLL SOFTWARE POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "rippling-vs-bamboohr-vs-deel-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To compare how modern setups handle direct deposits and local tax compliance payments, see our list of the <a href='/post/best-ai-payroll-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Payroll Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hr-software-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To automate state tax calculations, print paychecks, and setup direct deposits for W-2 staff, review our guide on the <a href='/post/best-ai-payroll-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Payroll Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-analytics-tools-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To track employee tax withholdings and monitor general ledger expense entries, check out the <a href='/post/best-ai-payroll-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Payroll Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-project-management-tools-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To sync employee timecards directly with payroll calculations and bookkeeping ledgers, explore the <a href='/post/best-ai-payroll-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Payroll Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-customer-support-tools-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To pay your client support representatives on time and process state payroll taxes automatically, see the <a href='/post/best-ai-payroll-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Payroll Software for Small Businesses in 2026</a>."
+  },
+
+  // === LINK TO NEW RECRUITMENT SOFTWARE POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-payroll-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To optimize your applicant sourcing, resume screening scorecards, and collaborative hiring pipelines, see our guide on the <a href='/post/best-ai-recruitment-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Recruitment Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "rippling-vs-bamboohr-vs-deel-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To automate candidate screenings and manage custom applicant tracking boards across distributed teams, check out the <a href='/post/best-ai-recruitment-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Recruitment Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hr-software-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To build custom scorecard evaluations and syndicate open job posts to popular boards automatically, read our review of the <a href='/post/best-ai-recruitment-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Recruitment Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-analytics-tools-in-2026",
+    sectionIdx: 1, paraIdx: 0,
+    replace: (t) => t + " To monitor voluntary churn rates and analyze candidate acquisition costs across departments, see our comparison of the <a href='/post/best-ai-recruitment-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Recruitment Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-project-management-tools-in-2026",
+    sectionIdx: 1, paraIdx: 0,
+    replace: (t) => t + " To track new hire onboarding milestones and coordinate staffing needs with project pipelines, see our guide on the <a href='/post/best-ai-recruitment-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Recruitment Software for Small Businesses in 2026</a>."
+  },
+
+  // === LINK TO NEW HRIS SOFTWARE POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-recruitment-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To consolidate employee directories, track time off, and manage custom organizational charts, check out the <a href='/post/best-ai-hris-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HRIS Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-payroll-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To sync employee attendance calendars and administer benefits under a single unified console, explore the <a href='/post/best-ai-hris-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HRIS Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "rippling-vs-bamboohr-vs-deel-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To evaluate how unified profiles link shift planning to local tax entities, review our detailed guide comparing the <a href='/post/best-ai-hris-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HRIS Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hr-software-in-2026",
+    sectionIdx: 1, paraIdx: 0,
+    replace: (t) => t + " To manage team onboarding, track time-off balances, and generate detailed HR compliance reports, see the <a href='/post/best-ai-hris-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HRIS Software for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-analytics-tools-in-2026",
+    sectionIdx: 1, paraIdx: 1,
+    replace: (t) => t + " To monitor employee satisfaction metrics and forecast voluntary churn indicators across departments, see our review of the <a href='/post/best-ai-hris-software-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI HRIS Software for Small Businesses in 2026</a>."
+  },
+
+  // === LINK TO NEW AI TOOLS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-hris-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To compare the leading applications for document wikis, visual design, sales pipelines, and task schedules, see our ultimate list of the <a href='/post/best-ai-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-recruitment-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To automate your accounting ledgers, design visual marketing assets, and build collaborative databases, read our buyer's guide comparing the <a href='/post/best-ai-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-payroll-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To sync employee directories, track custom tasks schedules, and write marketing content automatically, review our list of the <a href='/post/best-ai-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "rippling-vs-bamboohr-vs-deel-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To design automated workflows linking multiple applications to CRM databases and task dashboards, check out the <a href='/post/best-ai-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hr-software-in-2026",
+    sectionIdx: 1, paraIdx: 1,
+    replace: (t) => t + " To automate repetitive office tasks, coordinate sales cycles, and build collaborative project databases, see the <a href='/post/best-ai-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Tools for Small Businesses in 2026</a>."
+  },
+
+  // === LINK TO NEW AI MARKETING TOOLS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To optimize your search engine optimization strategies, construct email automation sequences, and acquire customers, check our guide on the <a href='/post/best-ai-marketing-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Marketing Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hris-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To build custom lead capture channels, write copy variations, and rank higher on Google search results, see our review of the <a href='/post/best-ai-marketing-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Marketing Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-recruitment-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To track marketing analytics trends, automate email sequences, and accelerate content drafting times, check our buyer's guide comparing the <a href='/post/best-ai-marketing-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Marketing Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-payroll-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To map out complex customer communication paths, analyze conversion rates, and build marketing dashboards, review the <a href='/post/best-ai-marketing-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Marketing Tools for Small Businesses in 2026</a>."
+  },
+  {
+    postSlug: "rippling-vs-bamboohr-vs-deel-2026",
+    sectionIdx: 1, paraIdx: 0,
+    replace: (t) => t + " To deploy AI subject line generators, automate social post schedules, and boost organic search traffic, see our comprehensive guide on the <a href='/post/best-ai-marketing-tools-for-small-businesses-in-2026' class='text-cyan-500 font-bold hover:underline'>Best AI Marketing Tools for Small Businesses in 2026</a>."
+  },
+
+  // === LINK TO NEW YOUTUBE AI THUMBNAILS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "best-ai-marketing-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To discover how to monetize your design skills and launch a profitable freelance side hustle, see our guide on <a href='/post/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Earn Money by Creating AI Thumbnails for YouTube in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To learn how creators build portfolios, get paying clients, and use AI image generators to make money, check out our guide on <a href='/post/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Earn Money by Creating AI Thumbnails for YouTube in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hris-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To explore how freelance designers structure their delivery schedules and charge premium monthly subscription packages, read <a href='/post/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Earn Money by Creating AI Thumbnails for YouTube in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-recruitment-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To understand client onboarding processes and how design agencies hire remote junior artists to scale visual assets, check out <a href='/post/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Earn Money by Creating AI Thumbnails for YouTube in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-payroll-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To invoice clients securely, track software expense overheads, and establish a profitable side business, read our step-by-step guide on <a href='/post/how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Earn Money by Creating AI Thumbnails for YouTube in 2026</a>."
+  },
+
+  // === LINK TO NEW AI DESIGN BUSINESS GUIDE FROM LATEST 5 POSTS ===
+  {
+    postSlug: "how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To build your own agency infrastructure, get creator clients, and secure stable monthly retainer contracts, see our cornerstone guide on <a href='/post/how-to-start-an-ai-thumbnail-design-business-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Start an AI Thumbnail Design Business in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-marketing-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To expand your freelance side hustle into a sustainable agency, structure monthly package prices, and design high-converting templates, read <a href='/post/how-to-start-an-ai-thumbnail-design-business-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Start an AI Thumbnail Design Business in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To learn how visual designers build portfolios, invoice clients, and scale monthly recurring revenue, check out our guide on <a href='/post/how-to-start-an-ai-thumbnail-design-business-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Start an AI Thumbnail Design Business in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hris-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To manage customer acquisition pipelines and track business expenses for a freelance design services agency, explore our guide on <a href='/post/how-to-start-an-ai-thumbnail-design-business-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Start an AI Thumbnail Design Business in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-recruitment-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 5,
+    replace: (t) => t + " To build structured design onboarding checklists and coordinate client feedback loops, see our step-by-step overview of <a href='/post/how-to-start-an-ai-thumbnail-design-business-in-2026' class='text-cyan-500 font-bold hover:underline'>How to Start an AI Thumbnail Design Business in 2026</a>."
+  },
+
+  // === LINK TO NEW AI IMAGE GENERATORS POST FROM LATEST 5 POSTS ===
+  {
+    postSlug: "how-to-start-an-ai-thumbnail-design-business-in-2026",
+    sectionIdx: 0, paraIdx: 1,
+    replace: (t) => t + " To compare all 12 AI image generators side by side and find the best tool for your workflow, see our comprehensive guide on the <a href='/post/best-ai-image-generators-for-youtube-thumbnails-in-2026' class='text-cyan-500 font-bold hover:underline'>12 Best AI Image Generators for YouTube Thumbnails in 2026</a>."
+  },
+  {
+    postSlug: "how-to-earn-money-by-creating-ai-thumbnails-for-youtube-in-2026",
+    sectionIdx: 0, paraIdx: 2,
+    replace: (t) => t + " To discover which AI image generators deliver the best photorealistic assets and typography for client thumbnails, read our detailed comparison of the <a href='/post/best-ai-image-generators-for-youtube-thumbnails-in-2026' class='text-cyan-500 font-bold hover:underline'>12 Best AI Image Generators for YouTube Thumbnails in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-marketing-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 3,
+    replace: (t) => t + " To evaluate AI-powered design tools for creating high-CTR visual assets and marketing graphics, explore the <a href='/post/best-ai-image-generators-for-youtube-thumbnails-in-2026' class='text-cyan-500 font-bold hover:underline'>12 Best AI Image Generators for YouTube Thumbnails in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-tools-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 4,
+    replace: (t) => t + " To find the best AI tools for generating stunning visual content and branded graphics, check our review of the <a href='/post/best-ai-image-generators-for-youtube-thumbnails-in-2026' class='text-cyan-500 font-bold hover:underline'>12 Best AI Image Generators for YouTube Thumbnails in 2026</a>."
+  },
+  {
+    postSlug: "best-ai-hris-software-for-small-businesses-in-2026",
+    sectionIdx: 0, paraIdx: 5,
+    replace: (t) => t + " To optimize your visual branding and compare the top AI design platforms for marketing assets, see the <a href='/post/best-ai-image-generators-for-youtube-thumbnails-in-2026' class='text-cyan-500 font-bold hover:underline'>12 Best AI Image Generators for YouTube Thumbnails in 2026</a>."
+  }
+];
+
+// Apply all link injections
+module.exports = { linkPlan };
+if (require.main === module) {
+let updatedCount = 0;
+for (const plan of linkPlan) {
+  const postIdx = posts.findIndex(p => p.slug === plan.postSlug);
+  if (postIdx === -1) { console.log("NOT FOUND:", plan.postSlug); continue; }
+  const post = posts[postIdx];
+  if (!post.sections || !post.sections[plan.sectionIdx]) { console.log("NO SECTION:", plan.postSlug, plan.sectionIdx); continue; }
+  const section = post.sections[plan.sectionIdx];
+  if (!section.paragraphs || !section.paragraphs[plan.paraIdx]) { console.log("NO PARA:", plan.postSlug, plan.sectionIdx, plan.paraIdx); continue; }
+  const original = section.paragraphs[plan.paraIdx];
+  // A plan must not append the same recommendations on every run.
+  const plannedLinks = [...plan.replace("AI image generators have become incredibly powerful").matchAll(/href=['"]([^'"]+)['"]/g)].map(match => match[1]);
+  if (plannedLinks.some(href => original.includes(href))) continue;
+  const updated = plan.replace(original);
+  if (updated !== original) {
+    section.paragraphs[plan.paraIdx] = updated;
+    updatedCount++;
+    console.log("✅ Updated:", plan.postSlug);
+  } else {
+    console.log("⚠️ No change:", plan.postSlug);
+  }
+}
+
+fs.writeFileSync(POSTS_PATH, JSON.stringify(posts, null, 2));
+console.log(`\nDone! Updated ${updatedCount}/${linkPlan.length} posts with internal links.`);
+}

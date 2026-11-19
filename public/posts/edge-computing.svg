@@ -1,0 +1,13 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" fill="#020617"/>
+  <rect x="108" y="130" width="984" height="460" rx="36" fill="#0F172A" stroke="#1E293B" stroke-width="2"/>
+  <rect x="176" y="206" width="240" height="110" rx="24" fill="#1D4ED8"/>
+  <rect x="492" y="206" width="240" height="110" rx="24" fill="#0EA5E9"/>
+  <rect x="808" y="206" width="240" height="110" rx="24" fill="#F97316"/>
+  <rect x="336" y="420" width="240" height="110" rx="24" fill="#E2E8F0"/>
+  <rect x="648" y="420" width="240" height="110" rx="24" fill="#BFDBFE"/>
+  <path d="M417 316L456 420" stroke="#60A5FA" stroke-width="10" stroke-linecap="round"/>
+  <path d="M613 316V420" stroke="#38BDF8" stroke-width="10" stroke-linecap="round"/>
+  <path d="M889 316L768 420" stroke="#FB923C" stroke-width="10" stroke-linecap="round"/>
+  <text x="150" y="102" fill="white" font-size="62" font-family="Arial, sans-serif" font-weight="700">Edge Content Systems</text>
+</svg>

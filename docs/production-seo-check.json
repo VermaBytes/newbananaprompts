@@ -1,0 +1,775 @@
+{
+  "pagesChecked": 96,
+  "sitemapEntries": 92,
+  "failures": [],
+  "pages": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "NB Prompts | Professional AI Blog &amp; Creator Tools Guides",
+      "description": "NB Prompts is a professional AI blogging platform offering premium AI prompt ideas, step-by-step image tools tutorials, and AI engineering courses for creators.",
+      "canonical": "https://www.newbananaprompts.in",
+      "h1s": 1
+    },
+    {
+      "route": "/category/earn-money",
+      "status": 200,
+      "title": "Legit Ways to Earn Money with AI &amp; Blogging | NB Prompts | NB Prompts",
+      "description": "Learn actionable strategies, freelancing guides, and side hustle workflows to earn online using AI tools and content creation.",
+      "canonical": "https://www.newbananaprompts.in/category/earn-money",
+      "h1s": 1
+    },
+    {
+      "route": "/category/ai-prompts",
+      "status": 200,
+      "title": "Best AI Prompts for Midjourney, ChatGPT &amp; Bing | NB Prompts | NB Prompts",
+      "description": "Explore copyable, cinematic AI prompt ideas for Midjourney, ChatGPT, Claude, and Bing Image Creator.",
+      "canonical": "https://www.newbananaprompts.in/category/ai-prompts",
+      "h1s": 1
+    },
+    {
+      "route": "/courses/web-development-with-ai",
+      "status": 200,
+      "title": "Web Development with AI - 30 Day Beginner Course | NB Prompts",
+      "description": "30 days ka beginner friendly Web Development with AI course. Daily lectures, practical tasks, aur step-by-step learning for fast growth.",
+      "canonical": "https://www.newbananaprompts.in/courses/web-development-with-ai",
+      "h1s": 1
+    },
+    {
+      "route": "/blogs",
+      "status": 200,
+      "title": "Blogs | AI Prompts, Reviews &amp; Tools Guides | NB Prompts",
+      "description": "Browse cinematic AI prompts, detailed prompt engineering guides, free AI tool reviews, and productivity articles on NB Prompts.",
+      "canonical": "https://www.newbananaprompts.in/blogs",
+      "h1s": 1
+    },
+    {
+      "route": "/category/ai-tools",
+      "status": 200,
+      "title": "Best AI Tools Guides &amp; Reviews | NB Prompts | NB Prompts",
+      "description": "Discover curated reviews, step-by-step tutorials, and actionable workflows for top AI tools in writing, coding, marketing, and productivity.",
+      "canonical": "https://www.newbananaprompts.in/category/ai-tools",
+      "h1s": 1
+    },
+    {
+      "route": "/courses/web-development-with-ai/lecture-01",
+      "status": 200,
+      "title": "Day 01 - Introduction to Web Development with AI | NB Prompts",
+      "description": "Day 01 lecture: Web development basics, frontend vs backend, AI use in coding, HTML intro, and first practical webpage.",
+      "canonical": "https://www.newbananaprompts.in/courses/web-development-with-ai/lecture-01",
+      "h1s": 1
+    },
+    {
+      "route": "/courses/web-development-with-ai/lecture-04",
+      "status": 200,
+      "title": "Day 04 - Advanced CSS (Animations, Hover Effects, Modern UI Design) | NB Prompts",
+      "description": "Learn advanced CSS including animations, hover effects, and modern UI design. Build interactive and premium websites with real examples.",
+      "canonical": "https://www.newbananaprompts.in/courses/web-development-with-ai/lecture-04",
+      "h1s": 1
+    },
+    {
+      "route": "/courses/web-development-with-ai/lecture-02",
+      "status": 200,
+      "title": "Day 02 - Advanced HTML (Forms, Lists, Tables) + Real-World Layout | NB Prompts",
+      "description": "Day 02 lecture: HTML lists, tables, forms, and a real-world page layout with a mini project and pro tips.",
+      "canonical": "https://www.newbananaprompts.in/courses/web-development-with-ai/lecture-02",
+      "h1s": 1
+    },
+    {
+      "route": "/courses/web-development-with-ai/lecture-03",
+      "status": 200,
+      "title": "Day 03 - CSS Basics (Flexbox, Grid, Responsive Design) + Landing Page Project | NB Prompts",
+      "description": "Day 03 lecture: CSS basics, Flexbox, Grid, responsive design, and a landing page project with tasks and pro tips.",
+      "canonical": "https://www.newbananaprompts.in/courses/web-development-with-ai/lecture-03",
+      "h1s": 1
+    },
+    {
+      "route": "/courses/web-development-with-ai/lecture-05",
+      "status": 200,
+      "title": "Day 05 - Advanced CSS, Animations, Hover Effects &amp; Modern UI Design | NB Prompts",
+      "description": "Learn advanced CSS hover effects, transitions, transform, animations, keyframes, modern product card UI design, and build a professional product card project.",
+      "canonical": "https://www.newbananaprompts.in/courses/web-development-with-ai/lecture-05",
+      "h1s": 1
+    },
+    {
+      "route": "/courses/web-development-with-ai/lecture-06",
+      "status": 200,
+      "title": "Lecture 06 – Mini Project 1: Portfolio Website (Basic) | NB Prompts",
+      "description": "Day 06 lecture: Building a basic portfolio website using HTML and CSS, including hero section, about, skills, projects, and contact sections with modern UI design.",
+      "canonical": "https://www.newbananaprompts.in/courses/web-development-with-ai/lecture-06",
+      "h1s": 1
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "title": "About Shobhit Verma - Founder of NewBananaPrompts | NB Prompts",
+      "description": "Meet Shobhit Verma, the software developer and founder behind NewBananaPrompts, and learn how the site researches and publishes practical AI resources.",
+      "canonical": "https://www.newbananaprompts.in/about",
+      "h1s": 1
+    },
+    {
+      "route": "/author",
+      "status": 200,
+      "title": "About the Founder | Shobhit Verma | NB Prompts",
+      "description": "Meet Shobhit Verma, the founder of NB Prompts. Learn about his background in AI prompt engineering, educational blogging, and software development.",
+      "canonical": "https://www.newbananaprompts.in/author",
+      "h1s": 1
+    },
+    {
+      "route": "/courses/web-development-with-ai/lecture-07",
+      "status": 200,
+      "title": "Lecture 07 – Revision + GitHub Upload + Deployment + LinkedIn Post | NB Prompts",
+      "description": "Day 07 lecture: Project revision, GitHub upload process, Netlify and Vercel deployment, creating professional LinkedIn posts, and building developer presence.",
+      "canonical": "https://www.newbananaprompts.in/courses/web-development-with-ai/lecture-07",
+      "h1s": 1
+    },
+    {
+      "route": "/courses/web-development-with-ai/lecture-08",
+      "status": 200,
+      "title": "Lecture 08 – JavaScript Basics: Variables, Data Types, Functions &amp; Conditions | NB Prompts",
+      "description": "Day 08 lecture: JavaScript fundamentals including variables, data types, functions, conditions, and building basic calculator logic.",
+      "canonical": "https://www.newbananaprompts.in/courses/web-development-with-ai/lecture-08",
+      "h1s": 1
+    },
+    {
+      "route": "/terms-and-conditions",
+      "status": 200,
+      "title": "Terms and Conditions | NB Prompts",
+      "description": "Read the Terms and Conditions for using NB Prompts. Learn about user rights, intellectual property, prompt usage, and terms of service.",
+      "canonical": "https://www.newbananaprompts.in/terms-and-conditions",
+      "h1s": 1
+    },
+    {
+      "route": "/privacy-policy",
+      "status": 200,
+      "title": "Privacy Policy | NB Prompts",
+      "description": "Read the Privacy Policy for NB Prompts, detailing information collection, cookies, Google Analytics, third-party advertising, and user rights.",
+      "canonical": "https://www.newbananaprompts.in/privacy-policy",
+      "h1s": 1
+    },
+    {
+      "route": "/editorial-policy",
+      "status": 200,
+      "title": "Editorial Policy | NB Prompts",
+      "description": "Read the Editorial Policy for NB Prompts. Learn about our content standards, fact-checking, and editorial guidelines.",
+      "canonical": "https://www.newbananaprompts.in/editorial-policy",
+      "h1s": 1
+    },
+    {
+      "route": "/disclaimer",
+      "status": 200,
+      "title": "Disclaimer | NB Prompts",
+      "description": "Read the Disclaimer for NB Prompts. Learn about content limitations, government exam affiliation disclaimers, external links, and liability policies.",
+      "canonical": "https://www.newbananaprompts.in/disclaimer",
+      "h1s": 1
+    },
+    {
+      "route": "/cookie-policy",
+      "status": 200,
+      "title": "Cookie Policy | NB Prompts",
+      "description": "Read the Cookie Policy for NB Prompts. Learn about how we use cookies and how you can manage your preferences.",
+      "canonical": "https://www.newbananaprompts.in/cookie-policy",
+      "h1s": 1
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "title": "Contact Us | NB Prompts",
+      "description": "Contact NB Prompts about general inquiries, content corrections, copyright concerns, or advertising.",
+      "canonical": "https://www.newbananaprompts.in/contact",
+      "h1s": 1
+    },
+    {
+      "route": "/post/chatgpt-prompts-for-upsc-mains-answer-writing-2026",
+      "status": 200,
+      "title": "50+ ChatGPT Prompts for UPSC Mains Answer Writing 2026 | NB Prompts",
+      "description": "Ultimate 2026 guide for UPSC Mains answer writing using ChatGPT. Master GS Paper 1, 2, 3, 4 Ethics case studies, Essay structuring, directive word decoding,…",
+      "canonical": "https://www.newbananaprompts.in/post/chatgpt-prompts-for-upsc-mains-answer-writing-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/google-gemini-study-notebooks-guide-2026",
+      "status": 200,
+      "title": "Google Gemini Study Notebooks: Student Guide 2026 | NB Prompts",
+      "description": "Learn how Google Gemini Study Notebooks can help students organize study materials, understand concepts, practice questions, revise topics, and build…",
+      "canonical": "https://www.newbananaprompts.in/post/google-gemini-study-notebooks-guide-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026",
+      "status": 200,
+      "title": "25 Best Nano Banana Prompts for Realistic AI Images (2026) | NB Prompts",
+      "description": "Create more consistent, realistic AI images with 25 copy-ready Nano Banana prompts for portraits, landscapes, products, architecture, food, and cinematic…",
+      "canonical": "https://www.newbananaprompts.in/post/25-best-nano-banana-prompts-for-realistic-ai-images-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-translation-tools-in-2026",
+      "status": 200,
+      "title": "20 Best AI Translation Tools in 2026: Translate Text, PDFs, Documents &amp; Books | NB Prompts",
+      "description": "Discover the 20 best AI translation tools in 2026 for text, PDFs, documents and books, with practical use cases, limitations and recommendations.",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-translation-tools-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/how-to-earn-money-online-in-2026",
+      "status": 200,
+      "title": "How to Earn Money Online in 2026: 15 Legit Ways for Beginners | NB Prompts",
+      "description": "Learn how to earn money online in 2026 with 15 legitimate methods for beginners, including freelancing, blogging, YouTube, affiliate marketing, digital…",
+      "canonical": "https://www.newbananaprompts.in/post/how-to-earn-money-online-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/how-to-use-ai-for-product-photography-and-marketing-in-2026",
+      "status": 200,
+      "title": "How to Use AI for Product Photography and Marketing in 2026 | NB Prompts",
+      "description": "Learn how to use AI for product photography and marketing in 2026, from creating professional product images and backgrounds to writing ads, social posts,…",
+      "canonical": "https://www.newbananaprompts.in/post/how-to-use-ai-for-product-photography-and-marketing-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-ssc-cgl-aspirants-2026",
+      "status": 200,
+      "title": "25 Best AI Tools for SSC CGL Aspirants in 2026 | NB Prompts",
+      "description": "Discover the 25 best AI tools for SSC CGL preparation in 2026. Compare AI tools for Maths, Reasoning, English, General Awareness, revision, practice and…",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-ssc-cgl-aspirants-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-competitive-exam-preparation-2026",
+      "status": 200,
+      "title": "Best AI Tools for Competitive Exam Preparation in 2026 | NB Prompts",
+      "description": "Compare the best AI tools for competitive exam preparation in 2026. Learn how to use ChatGPT, Gemini, NotebookLM, Perplexity and other AI tools for study,…",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-competitive-exam-preparation-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-prompts-for-upsc-preparation-2026",
+      "status": 200,
+      "title": "30+ Best AI Prompts for UPSC Preparation in 2026 | NB Prompts",
+      "description": "Discover 30+ practical AI prompts for UPSC preparation in 2026 covering Prelims, Mains, answer writing, current affairs, essays, revision, study planning…",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-prompts-for-upsc-preparation-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/free-ai-tools-for-uppsc-upsssc-aspirants-2026",
+      "status": 200,
+      "title": "10 Free AI Tools for UPPSC &amp; UPSSSC Aspirants 2026 | NB Prompts",
+      "description": "Boost your exam preparation with 10 free AI tools for UPPSC and UPSSSC current affairs, notes, answer writing, mock tests, reasoning and study planning.",
+      "canonical": "https://www.newbananaprompts.in/post/free-ai-tools-for-uppsc-upsssc-aspirants-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-digital-marketers-2026",
+      "status": 200,
+      "title": "25 Best AI Tools for Digital Marketers (2026) | NB Prompts",
+      "description": "Compare 25 top AI tools for digital marketers in 2026 across SEO, content, social media, email, creative work, analytics, and automation.",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-digital-marketers-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/chatgpt-prompts-for-railway-exam-ntpc-group-d-2026",
+      "status": 200,
+      "title": "ChatGPT Prompts for Railway Exam | NB Prompts",
+      "description": "Use 100+ ChatGPT prompts for Railway Exam preparation, RRB NTPC, Group D, Maths, Reasoning, GK, Science, current affairs, and mocks.",
+      "canonical": "https://www.newbananaprompts.in/post/chatgpt-prompts-for-railway-exam-ntpc-group-d-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/chatgpt-prompts-government-job-interview-preparation-2026",
+      "status": 200,
+      "title": "ChatGPT Prompts for Govt Job Interviews | NB Prompts",
+      "description": "Use 50+ ChatGPT prompts for IAS, SSC, Banking, Railway, UPSC, State PSC and government job interview preparation.",
+      "canonical": "https://www.newbananaprompts.in/post/chatgpt-prompts-government-job-interview-preparation-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-freelancers-2026",
+      "status": 200,
+      "title": "Best AI Tools for Freelancers 2026 | NB Prompts",
+      "description": "Compare the best AI tools for freelancers in 2026 for writing, design, coding, meetings, automation, invoicing, productivity and growth.",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-freelancers-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/chatgpt-prompts-for-banking-exam-preparation",
+      "status": 200,
+      "title": "Best ChatGPT Prompts for Banking Exam Preparation (SBI, IBPS, RBI) | NB Prompts",
+      "description": "Crack your SBI PO, IBPS, and RBI exams with these 15 advanced ChatGPT prompts. Learn to solve Quant, Reasoning, English, and Banking Awareness sections faster.",
+      "canonical": "https://www.newbananaprompts.in/post/chatgpt-prompts-for-banking-exam-preparation",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-coding-tools-for-developers-2026",
+      "status": 200,
+      "title": "15 Best AI Coding Tools for Developers in 2026 | NB Prompts",
+      "description": "Compare 15 of the best AI coding tools for developers in 2026, including coding assistants, AI-native editors, coding agents, and enterprise developer tools.",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-coding-tools-for-developers-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-crm-software-small-businesses-2026",
+      "status": 200,
+      "title": "Best AI CRM Software for Small Businesses in 2026 | NB Prompts",
+      "description": "Compare the best AI CRM software for small businesses in 2026, including HubSpot, Salesforce, Pipedrive, Zoho CRM, Freshsales, monday CRM, and more.",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-crm-software-small-businesses-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/cursor-vs-github-copilot-vs-windsurf-2026",
+      "status": 200,
+      "title": "Cursor vs GitHub Copilot vs Windsurf: 2026 Comparison | NB Prompts",
+      "description": "Compare Cursor vs GitHub Copilot vs Windsurf in 2026 across coding features, AI agents, IDE experience, pricing, privacy, and team use to find the best AI…",
+      "canonical": "https://www.newbananaprompts.in/post/cursor-vs-github-copilot-vs-windsurf-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/chatgpt-prompts-for-upsc-aspirants-2026",
+      "status": 200,
+      "title": "ChatGPT Prompts for UPSC Aspirants | NB Prompts",
+      "description": "Use 100+ practical ChatGPT prompts for UPSC preparation, including Prelims, Mains answers, essays, current affairs, ethics, revision and interviews.",
+      "canonical": "https://www.newbananaprompts.in/post/chatgpt-prompts-for-upsc-aspirants-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-coding-agents-2026",
+      "status": 200,
+      "title": "10 Best AI Coding Agents in 2026: Compared | NB Prompts",
+      "description": "Compare 10 of the best AI coding agents in 2026, including Claude Code, Codex, Cursor, GitHub Copilot, and more across features, pricing, autonomy, and…",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-coding-agents-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/25-chatgpt-prompts-for-upsc-answer-writing-practice",
+      "status": 200,
+      "title": "25 Best ChatGPT Prompts for UPSC Answer Writing Practice | NB Prompts",
+      "description": "Master UPSC Mains answer writing with these 25 advanced ChatGPT prompts. Learn to structure introductions, generate multi-dimensional points, write dynamic…",
+      "canonical": "https://www.newbananaprompts.in/post/25-chatgpt-prompts-for-upsc-answer-writing-practice",
+      "h1s": 1
+    },
+    {
+      "route": "/post/ssc-cgl-2026-preparation-strategy-complete-6-month-study-plan",
+      "status": 200,
+      "title": "SSC CGL 2026 Preparation Strategy: Complete 6 Month Study Plan | NB Prompts",
+      "description": "Crack SSC CGL 2026 with our complete 6-month preparation strategy. Get month-by-month study plans, subject-wise targets, and a mock test execution roadmap.",
+      "canonical": "https://www.newbananaprompts.in/post/ssc-cgl-2026-preparation-strategy-complete-6-month-study-plan",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-upsc-aspirants-in-2026",
+      "status": 200,
+      "title": "Best AI Tools for UPSC Aspirants in 2026 (Study Smarter) | NB Prompts",
+      "description": "Compare practical AI tools for UPSC preparation in 2026, with workflows for verified research, Prelims, Mains answers, revision and interview practice.",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-upsc-aspirants-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/30-chatgpt-prompts-for-ssc-cgl-preparation-notes-and-mock-tests",
+      "status": 200,
+      "title": "30 ChatGPT Prompts for SSC CGL Preparation, Notes &amp; Mock Tests | NB Prompts",
+      "description": "Boost your SSC CGL score with 30 copy-ready ChatGPT prompts. Learn how to generate smart math notes, reasoning shortcuts, custom mock tests, and current…",
+      "canonical": "https://www.newbananaprompts.in/post/30-chatgpt-prompts-for-ssc-cgl-preparation-notes-and-mock-tests",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-email-assistants-in-2026",
+      "status": 200,
+      "title": "8 Best AI Email Assistants in 2026: Practical Comparison | NB Prompts",
+      "description": "Compare 8 AI email assistants for Gmail, Outlook, shared inboxes, writing and triage, with limitations, privacy checks and practical workflows.",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-email-assistants-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/ai-customer-support-automation-guide",
+      "status": 200,
+      "title": "AI Customer Support Automation for Small Businesses in 2026: Tools, Workflows &amp; Examples | NB Prompts",
+      "description": "Learn how AI customer support automation helps small businesses manage FAQs, WhatsApp replies, website chat, order updates and customer queries in 2026.",
+      "canonical": "https://www.newbananaprompts.in/post/ai-customer-support-automation-guide",
+      "h1s": 1
+    },
+    {
+      "route": "/post/chatgpt-team-vs-claude-team-vs-gemini-for-business",
+      "status": 200,
+      "title": "ChatGPT Team vs Claude Team vs Gemini for Business: Which Is Better in 2026? | NB Prompts",
+      "description": "Compare ChatGPT Team, Claude Team and Gemini for Business in 2026. Explore features, pricing, writing, research, collaboration, privacy, integrations and…",
+      "canonical": "https://www.newbananaprompts.in/post/chatgpt-team-vs-claude-team-vs-gemini-for-business",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-hr-software-in-2026",
+      "status": 200,
+      "title": "Best AI HR Software 2026: 15 Tools | NB Prompts",
+      "description": "Compare the 30 best AI HR software in 2026. Review top AI recruiting platforms, ATS, payroll, employee engagement, and enterprise HR automation tools with…",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-hr-software-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-small-business-owners",
+      "status": 200,
+      "title": "Best AI Tools for Small Business Owners in 2026: Save Time, Cut Costs &amp; Grow | NB Prompts",
+      "description": "Discover the best AI tools for small business owners in 2026. Use AI for content, design, marketing, automation, customer support, product photos, finance…",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-small-business-owners",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-recruitment-software-for-small-businesses-in-2026",
+      "status": 200,
+      "title": "7 Best AI Recruiting Software for Small Businesses in 2026 | NB Prompts",
+      "description": "Looking for the best AI recruiting software for small businesses? Compare Workable, Breezy HR, Zoho Recruit, Manatal, and more to find the right hiring…",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-recruitment-software-for-small-businesses-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/ai-image-prompts-for-product-photography",
+      "status": 200,
+      "title": "30 AI Product Photography Prompts for 2026 | NB Prompts",
+      "description": "Use 30 adaptable AI product photography prompts plus a reference-first workflow for accurate ecommerce, lifestyle and campaign visuals in 2026.",
+      "canonical": "https://www.newbananaprompts.in/post/ai-image-prompts-for-product-photography",
+      "h1s": 1
+    },
+    {
+      "route": "/post/chatgpt-prompts-for-youtube-creators",
+      "status": 200,
+      "title": "50 Best ChatGPT Prompts for YouTube Creators in 2026 | NB Prompts",
+      "description": "Discover 50 copy-paste ChatGPT prompts for YouTube creators. Create video ideas, scripts, titles, thumbnails, descriptions, tags and SEO content faster in 2026.",
+      "canonical": "https://www.newbananaprompts.in/post/chatgpt-prompts-for-youtube-creators",
+      "h1s": 1
+    },
+    {
+      "route": "/post/top-20-free-ai-tools-for-ssc-banking-and-railway-students-in-2026",
+      "status": 200,
+      "title": "Top 20 Free AI Tools for SSC, Banking &amp; Railway Students (2026) | NB Prompts",
+      "description": "Discover the top 20 free AI tools to speed up preparation for SSC, Banking, and Railway exams in 2026. Study smart, save time, and score higher.",
+      "canonical": "https://www.newbananaprompts.in/post/top-20-free-ai-tools-for-ssc-banking-and-railway-students-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/chatgpt-vs-gemini-vs-claude-for-students-2026",
+      "status": 200,
+      "title": "ChatGPT vs Gemini vs Claude for Students: Which AI Is Best in 2026? | NB Prompts",
+      "description": "Compare ChatGPT, Gemini, and Claude for students in 2026. A detailed breakdown of accuracy, research, coding, assignments, note-taking, pros, cons, and FAQs.",
+      "canonical": "https://www.newbananaprompts.in/post/chatgpt-vs-gemini-vs-claude-for-students-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-freelancers-in-2026-complete-guide",
+      "status": 200,
+      "title": "Best AI Tools for Freelancers in 2026 (Complete Guide) | NB Prompts",
+      "description": "Discover the best AI tools for freelancers in 2026. Compare ChatGPT, Claude, Canva AI, Midjourney, Notion AI, Grammarly, and more to save time and earn more.",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-freelancers-in-2026-complete-guide",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-teachers-in-2026",
+      "status": 200,
+      "title": "Best AI Tools for Teachers in 2026 (Complete Guide) | NB Prompts",
+      "description": "Compare the 30+ best AI tools for teachers in 2026. Discover pricing, features, pros, cons, and workflows for lesson planning, grading, and classroom…",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-teachers-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-productivity-tools-in-2026",
+      "status": 200,
+      "title": "Best AI Productivity Tools in 2026 (Complete Guide) | NB Prompts",
+      "description": "Discover the best AI productivity tools in 2026. Compare ChatGPT, Notion AI, ClickUp AI, Microsoft Copilot, Grammarly, Zapier AI, Motion, Reclaim AI, and…",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-productivity-tools-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-developers-in-2026",
+      "status": 200,
+      "title": "Best AI Tools for Developers in 2026: Top Coding &amp; Dev Tools | NB Prompts",
+      "description": "A practical guide to the best AI tools for developers in 2026, covering coding assistants, agents, debugging, testing, code review, and free options.",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-developers-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/top-15-chatgpt-prompts-every-ssc-cgl-aspirant-should-save-in-2026",
+      "status": 200,
+      "title": "Top 15 ChatGPT Prompts Every SSC CGL Aspirant Should Save in 2026 | NB Prompts",
+      "description": "A curated list of 15 high-impact, copy-ready ChatGPT prompts every SSC CGL aspirant should save and use in 2026 for study plans, mock tests, concept…",
+      "canonical": "https://www.newbananaprompts.in/post/top-15-chatgpt-prompts-every-ssc-cgl-aspirant-should-save-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/top-10-free-ai-tools-upsc-aspirant-2026",
+      "status": 200,
+      "title": "Top 10 Free AI Tools for UPSC Aspirants 2026 | Study Smarter with AI | NB Prompts",
+      "description": "Discover the top 10 free AI tools every UPSC aspirant must use in 2026 to study smarter, save time, and score better. From ChatGPT to Perplexity, SciSpace…",
+      "canonical": "https://www.newbananaprompts.in/post/top-10-free-ai-tools-upsc-aspirant-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/how-to-use-chatgpt-for-usa-job-search-and-resume-writing-in-2026",
+      "status": 200,
+      "title": "How to Use ChatGPT for USA Job Search &amp; Resume Writing (2026) | NB Prompts",
+      "description": "Discover how to use ChatGPT for US job search, ATS resume writing, and interview prep in 2026. Master prompts to land high-paying US jobs.",
+      "canonical": "https://www.newbananaprompts.in/post/how-to-use-chatgpt-for-usa-job-search-and-resume-writing-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/how-to-use-chatgpt-for-daily-current-affairs-preparation-in-2026",
+      "status": 200,
+      "title": "How to Use ChatGPT for Daily Current Affairs Preparation in 2026 | NB Prompts",
+      "description": "Learn how to leverage ChatGPT to master daily current affairs for competitive exams like SSC, Banking, UPSC, and Railways in 2026. Get copy-ready AI prompts…",
+      "canonical": "https://www.newbananaprompts.in/post/how-to-use-chatgpt-for-daily-current-affairs-preparation-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/25-best-chatgpt-prompts-to-make-money-online-in-2026",
+      "status": 200,
+      "title": "25 Best ChatGPT Prompts to Make Money Online in 2026 | NB Prompts",
+      "description": "Unlock 25 copy &amp; paste ChatGPT prompts to make money online in 2026. Perfect for freelancing, blogging, affiliate marketing, YouTube, and AI side hustles.",
+      "canonical": "https://www.newbananaprompts.in/post/25-best-chatgpt-prompts-to-make-money-online-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/top-25-ai-business-ideas-that-can-make-money-in-2026",
+      "status": 200,
+      "title": "Top 25 AI Business Ideas That Can Make Money in 2026 | NB Prompts",
+      "description": "Discover the top 25 AI business ideas to make money in 2026. A comprehensive, step-by-step guide for students, freelancers, bloggers, and startup founders.",
+      "canonical": "https://www.newbananaprompts.in/post/top-25-ai-business-ideas-that-can-make-money-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/10-chatgpt-prompts-every-sbi-clerk-aspirant-should-use-in-2026",
+      "status": 200,
+      "title": "10 ChatGPT Prompts Every SBI Clerk Aspirant Should Use in 2026 | NB Prompts",
+      "description": "Boost your SBI Clerk 2026 preparation with 10 high-performance, copy-ready ChatGPT prompts. Master speed math, seating arrangement puzzles, English…",
+      "canonical": "https://www.newbananaprompts.in/post/10-chatgpt-prompts-every-sbi-clerk-aspirant-should-use-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-free-ai-resume-builders-for-freshers-2026",
+      "status": 200,
+      "title": "5 Best Free AI Resume Builders for Freshers in 2026 (ATS Friendly) | NB Prompts",
+      "description": "Discover the best free AI resume builders for freshers in 2026. Create ATS-friendly resumes, generate professional summaries, and tailor your CV to land job…",
+      "canonical": "https://www.newbananaprompts.in/post/best-free-ai-resume-builders-for-freshers-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/top-10-ai-tools-every-ssc-cgl-aspirant-should-use-in-2026",
+      "status": 200,
+      "title": "Top 10 AI Tools Every SSC CGL Aspirant Should Use in 2026 | NB Prompts",
+      "description": "Discover the top 10 AI tools every SSC CGL aspirant should use in 2026. Master Quantitative Aptitude, Reasoning, English, and General Awareness to score higher.",
+      "canonical": "https://www.newbananaprompts.in/post/top-10-ai-tools-every-ssc-cgl-aspirant-should-use-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/chatgpt-vs-gemini-for-students-2026",
+      "status": 200,
+      "title": "ChatGPT vs Gemini for Students: Which AI Tool is Better in 2026? | NB Prompts",
+      "description": "A comprehensive head-to-head comparison of ChatGPT and Google Gemini for students in 2026. Discover which tool wins for coding, writing, research, and…",
+      "canonical": "https://www.newbananaprompts.in/post/chatgpt-vs-gemini-for-students-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-bank-po-preparation-2026",
+      "status": 200,
+      "title": "Best AI Tools for Bank PO Preparation in 2026 (Free &amp; Paid) | NB Prompts",
+      "description": "Crack Bank PO (SBI PO &amp; IBPS PO) exams with the best free and paid AI tools. Master speed math shortcuts, complex reasoning puzzles, English descriptive…",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-bank-po-preparation-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-assignment-writing-2026-free",
+      "status": 200,
+      "title": "Best AI Tools for Assignment Writing | NB Prompts",
+      "description": "Compare the best AI tools for assignment writing in 2026 for research, grammar, citations, plagiarism safety, outlines and presentations.",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-assignment-writing-2026-free",
+      "h1s": 1
+    },
+    {
+      "route": "/post/top-10-chatgpt-prompts-every-student-should-use-in-2026",
+      "status": 200,
+      "title": "Top 10 ChatGPT Prompts Every Student Should Use in 2026 | NB Prompts",
+      "description": "Boost your grades with the top 10 ChatGPT prompts for students in 2026. Copy-ready prompts for active recall, essay writing, textbook summaries, math…",
+      "canonical": "https://www.newbananaprompts.in/post/top-10-chatgpt-prompts-every-student-should-use-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/how-to-use-chatgpt-for-english-speaking",
+      "status": 200,
+      "title": "How to Use ChatGPT to Improve English Speaking in 2026 | NB Prompts",
+      "description": "Master English speaking using ChatGPT. Learn how to configure Voice Mode, practice real-life conversations, get real-time grammar corrections, and copy top…",
+      "canonical": "https://www.newbananaprompts.in/post/how-to-use-chatgpt-for-english-speaking",
+      "h1s": 1
+    },
+    {
+      "route": "/post/how-to-use-ai-for-railway-exam-preparation-2026",
+      "status": 200,
+      "title": "How to Use AI for Railway Exam Preparation 2026 | NB Prompts",
+      "description": "Crack RRB NTPC, Group D, ALP, and JE exams using free AI tools. Get copy-ready prompts for Math shortcuts, Reasoning puzzles, General Science, and a 30-day…",
+      "canonical": "https://www.newbananaprompts.in/post/how-to-use-ai-for-railway-exam-preparation-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-free-ai-websites-for-students-2026",
+      "status": 200,
+      "title": "Best Free AI Websites for Students in 2026 | NB Prompts",
+      "description": "Discover the best free AI websites for students in 2026. Learn how to use ChatGPT, Gemini, Canva AI, Copy.ai, Notion AI, and PDFgear to study smarter and…",
+      "canonical": "https://www.newbananaprompts.in/post/best-free-ai-websites-for-students-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-ai-tools-for-college-students-2026-free",
+      "status": 200,
+      "title": "Best AI Tools for College Students in 2026 (100% Free) | NB Prompts",
+      "description": "Discover the best free AI tools for college students in 2026. Master ChatGPT, Gemini, Canva AI, Notion AI, Perplexity AI, Grammarly, QuillBot, PDFgear,…",
+      "canonical": "https://www.newbananaprompts.in/post/best-ai-tools-for-college-students-2026-free",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-free-ai-tools-for-youtubers-in-2026",
+      "status": 200,
+      "title": "Best Free AI Tools for YouTubers in 2026 | NB Prompts",
+      "description": "Discover the 25 best free AI tools for YouTube creators in 2026. Streamline your scripting, thumbnail generation, video editing, voiceovers, shorts, and…",
+      "canonical": "https://www.newbananaprompts.in/post/best-free-ai-tools-for-youtubers-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/how-students-job-seekers-use-ai-grow-faster",
+      "status": 200,
+      "title": "Grow Faster with AI: Ultimate Student &amp; Job Seekers Guide | NB Prompts",
+      "description": "Discover how students and job seekers can leverage powerful AI tools like ChatGPT, Claude, and Notion to score resume ATS benchmarks, ace coding doubts, and…",
+      "canonical": "https://www.newbananaprompts.in/post/how-students-job-seekers-use-ai-grow-faster",
+      "h1s": 1
+    },
+    {
+      "route": "/post/how-to-use-chatgpt-for-daily-productivity-in-2026",
+      "status": 200,
+      "title": "How to Use ChatGPT for Daily Productivity in 2026 | NB Prompts",
+      "description": "Learn practical ways to use ChatGPT for planning, email, writing, learning and task review without relying on unsupported claims or sharing sensitive…",
+      "canonical": "https://www.newbananaprompts.in/post/how-to-use-chatgpt-for-daily-productivity-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/how-to-create-viral-ai-reel-videos-luma-runway",
+      "status": 200,
+      "title": "AI Reels with Luma and Runway: Practical Editing Workflow | NB Prompts",
+      "description": "Create a coherent three-shot AI reel with Luma or Runway: copy-ready motion prompts, a practical troubleshooting checklist, and a clear editing and export…",
+      "canonical": "https://www.newbananaprompts.in/post/how-to-create-viral-ai-reel-videos-luma-runway",
+      "h1s": 1
+    },
+    {
+      "route": "/post/midjourney-consistent-characters-generate-same-character-different-poses",
+      "status": 200,
+      "title": "Midjourney Consistent Characters in V8.2: Step-by-Step Guide | NB Prompts",
+      "description": "Create a consistent Midjourney character across poses, outfits and scenes. Updated V8.2 Edit Model workflow plus V7 --oref and V6 --cref examples.",
+      "canonical": "https://www.newbananaprompts.in/post/midjourney-consistent-characters-generate-same-character-different-poses",
+      "h1s": 1
+    },
+    {
+      "route": "/post/top-10-ai-tools-save-5-hours-daily-2026",
+      "status": 200,
+      "title": "10 AI Tools for Daily Productivity: Workflows and Limitations | NB Prompts",
+      "description": "Compare 10 AI tools by task, cost and limitations. Use practical prompts and a time-tracking worksheet to decide which tools actually help your daily work.",
+      "canonical": "https://www.newbananaprompts.in/post/top-10-ai-tools-save-5-hours-daily-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/how-to-use-ai-to-prepare-for-government-exams-in-2026",
+      "status": 200,
+      "title": "AI for Government Exam Preparation: 30 Prompts (2026) | NB Prompts",
+      "description": "Learn a responsible AI workflow for UPSC, SSC, banking, railway and state exams, with 30 prompts for planning, revision, MCQs and interviews.",
+      "canonical": "https://www.newbananaprompts.in/post/how-to-use-ai-to-prepare-for-government-exams-in-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/digital-nomad-challenge-thumbnail-prompt-2026",
+      "status": 200,
+      "title": "Digital Nomad Thumbnail: Layout, AI Prompt and Review Workflow | NB Prompts",
+      "description": "Design a readable digital nomad thumbnail with a clear subject, reserved text space, two layout variants, and an honest match to your video.",
+      "canonical": "https://www.newbananaprompts.in/post/digital-nomad-challenge-thumbnail-prompt-2026",
+      "h1s": 1
+    },
+    {
+      "route": "/post/me-with-god-temple-prompt",
+      "status": 200,
+      "title": "Me With God AI Prompt (Personalized Temple Photo) | NB Prompts",
+      "description": "Create a respectful personalized temple image beside a deity. Copy-ready prompt with placeholders and tips.",
+      "canonical": "https://www.newbananaprompts.in/post/me-with-god-temple-prompt",
+      "h1s": 1
+    },
+    {
+      "route": "/post/dark-moody-cyberpunk-portrait-prompt",
+      "status": 200,
+      "title": "Dark Moody Cyberpunk Portrait Prompt: 6 Neon AI Styles | NB Prompts",
+      "description": "Create a dark moody cyberpunk portrait with 6 copy-ready AI prompts, neon lighting tips, photo-reference guidance, crop choices and fixes for common mistakes.",
+      "canonical": "https://www.newbananaprompts.in/post/dark-moody-cyberpunk-portrait-prompt",
+      "h1s": 1
+    },
+    {
+      "route": "/post/devotional-krishna-temple-prompt",
+      "status": 200,
+      "title": "Krishna Temple AI Prompt: 6 Devotional Art Ideas | NB Prompts",
+      "description": "Create Krishna temple AI art with 6 copy-ready devotional prompts, lighting tips, Janmashtami card layouts, hand and flute fixes, and export guidance.",
+      "canonical": "https://www.newbananaprompts.in/post/devotional-krishna-temple-prompt",
+      "h1s": 1
+    },
+    {
+      "route": "/post/student-study-desk-prompt",
+      "status": 200,
+      "title": "50 Best Student Study Desk AI Prompts for Realistic Images (2026) | NB Prompts",
+      "description": "Copy the 50 best student study desk AI prompts for realistic images in 2026. Design stunning study workspaces for UPSC, SSC, Coding, and medical students.",
+      "canonical": "https://www.newbananaprompts.in/post/student-study-desk-prompt",
+      "h1s": 1
+    },
+    {
+      "route": "/post/viral-3d-social-media-neon-avatar-prompts-bing-creator",
+      "status": 200,
+      "title": "Viral 3D Social Media Neon Avatar Prompts for Bing Creator | NB Prompts",
+      "description": "Copy the 100+ best viral 3D social media neon avatar prompts for Bing Image Creator in 2026. Design custom glowing name avatars for Instagram, YouTube,…",
+      "canonical": "https://www.newbananaprompts.in/post/viral-3d-social-media-neon-avatar-prompts-bing-creator",
+      "h1s": 1
+    },
+    {
+      "route": "/__seo_missing__",
+      "status": 404,
+      "title": "Page Not Found | NB Prompts",
+      "description": "The requested NB Prompts page is unavailable. Browse published AI articles and tutorials instead.",
+      "canonical": "https://www.newbananaprompts.in/404",
+      "h1s": 1
+    },
+    {
+      "route": "/post/__seo_missing__",
+      "status": 404,
+      "title": "Page Not Found | NB Prompts",
+      "description": "The requested NB Prompts page is unavailable. Browse published AI articles and tutorials instead.",
+      "canonical": "https://www.newbananaprompts.in/404",
+      "h1s": 1
+    },
+    {
+      "route": "/category/__seo_missing__",
+      "status": 404,
+      "title": "Page Not Found | NB Prompts",
+      "description": "The requested NB Prompts page is unavailable. Browse published AI articles and tutorials instead.",
+      "canonical": "https://www.newbananaprompts.in/404",
+      "h1s": 1
+    },
+    {
+      "route": "/post/image-ko-20kb-me-convert-kaise-kare-free-easy-tarika",
+      "status": 200,
+      "title": "Image Under 20KB: Resize, Compress and Verify | NB Prompts",
+      "description": "Reduce an image below a 20KB upload limit while checking required dimensions, readable details, actual bytes, and common upload errors.",
+      "canonical": "https://www.newbananaprompts.in/post/image-ko-20kb-me-convert-kaise-kare-free-easy-tarika",
+      "h1s": 1
+    },
+    {
+      "route": "/search",
+      "status": 200,
+      "title": "Search Results | NB Prompts | NB Prompts",
+      "description": "Search NB Prompts articles by topic, tool, or prompt to find relevant AI guides and tutorials.",
+      "canonical": "https://www.newbananaprompts.in/search",
+      "h1s": 1
+    },
+    {
+      "route": "/post/best-free-ai-tools-for-students-2026",
+      "status": 200,
+      "title": "25 Best AI Tools for Students in 2026 | NB Prompts",
+      "description": "Compare 25 useful AI tools for students in 2026 for study, research, notes, writing, maths, presentations and exam preparation.",
+      "canonical": "https://www.newbananaprompts.in/post/best-free-ai-tools-for-students-2026",
+      "h1s": 1
+    }
+  ]
+}
