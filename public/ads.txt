@@ -1,2 +1,1 @@
-google.com, pub-6456487197514606, DIRECT, f08c47fec0942fa0
-# Placeholder: add other authorized seller records here after publisher verification.
+google.com, pub-6068512506766570, DIRECT, f08c47fec0942fa0
