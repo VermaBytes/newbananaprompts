@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "prebuild": "node node_modules/typescript/bin/tsc scripts/send-notifications.ts --module commonjs --resolveJsonModule --esModuleInterop --skipLibCheck --outDir dist && node dist/scripts/send-notifications.js",
-    "dev": "next dev",
+    "dev": "node scripts/start-dev.mjs",
     "build": "node scripts/refresh-image-dimensions.mjs && node scripts/audit-output-examples.mjs && next build",
     "start": "next start",
     "lint": "eslint .",
