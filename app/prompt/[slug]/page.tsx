@@ -11,6 +11,12 @@ type PromptPageProps = {
   params: { slug: string };
 };
 
+export const dynamicParams = false;
+
+export async function generateStaticParams() {
+  return promptCards.map(({ slug }) => ({ slug }));
+}
+
 export async function generateMetadata({ params }: PromptPageProps): Promise<Metadata> {
   const prompt = promptCards.find((card) => card.slug === params.slug);
 
@@ -18,6 +24,11 @@ export async function generateMetadata({ params }: PromptPageProps): Promise<Met
     title: prompt?.title ?? "Prompt not found",
     description: prompt
       ? `Copy the ${prompt.title} AI image prompt and adapt it for your own creative project.`
+      : undefined,
+    alternates: prompt
+      ? {
+          canonical: `/prompt/${prompt.slug}`
+        }
       : undefined,
     robots: { index: false, follow: true }
   };

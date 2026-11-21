@@ -25,3 +25,5 @@ dist
 # Generated notification/backlink files - do not track in git
 data/sent-notifications.json
 data/social-backlink-posts.txt
+
+.next-seo-audit/

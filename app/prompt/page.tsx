@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import { PromptCard } from "@/components/prompt-card";
 import { promptCards } from "@/data/prompt-cards";
+
+export const metadata: Metadata = {
+  title: "AI Prompt Gallery",
+  description:
+    "Explore AI image prompt ideas, copy a prompt, and adapt it for your own creative project.",
+  alternates: {
+    canonical: "/prompt"
+  }
+};
 
 export default function PromptGridPage() {
   return (
