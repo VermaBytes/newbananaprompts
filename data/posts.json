@@ -1,5 +1,201 @@
 [
   {
+    "slug": "gpt-6-vs-gemini-3-1-pro",
+    "language": "en",
+    "title": "GPT-6 vs Gemini 3.1 Pro (2026): Features, Benchmarks, Pricing & Which AI Is Better?",
+    "seoTitle": "GPT-6 vs Gemini 3.1 Pro (2026): Which AI Is Better?",
+    "metaTitle": "GPT-6 vs Gemini 3.1 Pro (2026): Which AI Is Better?",
+    "description": "Compare GPT-6.2 Astra and Sol with Gemini 3.1 Pro in 2026: verified features, benchmark caveats, API prices, access options, and practical guidance for students, developers, and creators.",
+    "category": "AI Tools",
+    "author": "Shobhit Verma",
+    "publishedAt": "2026-11-24T06:30:00.000Z",
+    "updatedAt": "2026-11-24T06:30:00.000Z",
+    "dateLabel": "November 24, 2026",
+    "image": "/posts/gpt-6.png",
+    "imageAlt": "GPT-6 and Gemini 3.1 Pro comparison featured image",
+    "tags": [
+      "GPT-6 vs Gemini 3.1 Pro",
+      "GPT-6.2 vs Gemini 3.1 Pro",
+      "ChatGPT vs Gemini 2026",
+      "GPT-6 API pricing",
+      "Gemini 3.1 Pro pricing",
+      "AI model comparison",
+      "AI tools for developers",
+      "AI tools for students"
+    ],
+    "sections": [
+      {
+        "heading": "GPT-6 vs Gemini 3.1 Pro in 2026: The Short Answer",
+        "paragraphs": [
+          "<p>Choosing between GPT-6 and Gemini 3.1 Pro depends on what you need the model to do, where you plan to use it, and whether you are comparing a consumer app or a developer API. As of November 24, 2026, OpenAI’s newest announced models are GPT-6.2 Astra and GPT-6.2 Sol. Google’s Gemini API price sheet lists Gemini 3.1 Pro Preview. Those labels matter: the two companies expose different model versions, product tiers, tools, and usage limits.</p>",
+          "<p>This guide focuses on verifiable product and API facts. It does not claim that one model wins every task. We did not run the same five prompts against both services, so the practical scorecard below is a blank test template. The most responsible recommendation is to test the current versions with your own tasks and budget.</p>",
+          "<p><strong>Quick take:</strong> consider GPT‑6.2 Astra for demanding professional work when its tools and cost suit your workflow; GPT‑6.2 Sol for lower-cost multistep API tasks; and Gemini 3.1 Pro when its multimodal capabilities, Google ecosystem, or API pricing fit. Verify the model name and availability in the product you actually use.</p>"
+        ]
+      },
+      {
+        "heading": "What Is GPT-6?",
+        "paragraphs": [
+          "<p>GPT‑6 is OpenAI’s model family. The current comparison needs more precision than the broad label “GPT‑6”: OpenAI’s November 17 release notes introduce GPT‑6.2 Astra and GPT‑6.2 Sol through the API. Astra is positioned for advanced reasoning, coding, and complex professional work; Sol is a faster, lower-cost option intended for multistep everyday work. Both accept text and images and return text through the API, according to the <a href=\"https://help.openai.com/en/articles/9624314-model-release-notes\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">release notes</a>.</p>",
+          "<p>“GPT‑6” also appears in ChatGPT, Codex, and API contexts, but access to a model in one product does not mean the same model name, features, limits, or price apply everywhere. A model’s API price is usage-based, while ChatGPT plans are subscriptions with product-specific access and limits. Check the selector and current plan information before assuming a subscription includes a particular API model.</p>"
+        ]
+      },
+      {
+        "heading": "GPT-6.2 Astra and GPT-6.2 Sol: What Is the Difference?",
+        "paragraphs": [
+          "<p><strong>GPT‑6.2 Astra</strong> is the higher-capability option OpenAI presents for its hardest projects. The API model page lists text and image input, a 1,050,000-token context window, and a maximum output of 128,000 tokens. Those are API specifications; an application may impose smaller limits. See the <a href=\"https://developers.openai.com/api/docs/models/gpt-6.2-astra\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">Astra model page</a> for current details.</p>",
+          "<p><strong>GPT‑6.2 Sol</strong> is the more economical sibling for multistep tasks. OpenAI describes both models as improvements on their predecessors for demanding work, while Sol is designed to combine speed and lower cost. Sol is not the “Astra API” or an Astra variant; it is a separate model ID, <code>gpt-6.2-sol</code>. API requests, billing, and model-specific limits should use the model ID documented for the endpoint.</p>",
+          "<p>OpenAI’s announcement reports selected internal and benchmark comparisons for Astra and describes its release-day availability in ChatGPT Work and Codex for eligible plans. These details do not establish that every consumer ChatGPT interface exposes Astra or Sol under identical conditions. Product rollout and usage limits can vary by plan, workspace settings, and date. Read the <a href=\"https://openai.com/index/introducing-gpt-6-2-astra-sol/\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">release announcement</a> and your own product’s current plan details.</p>"
+        ]
+      },
+      {
+        "heading": "What Is Google Gemini 3.1 Pro?",
+        "paragraphs": [
+          "<p>Gemini 3.1 Pro is Google’s Pro-class model for complex tasks. Google introduced it on February 19, 2026, describing it as a model for problems that need more than a simple answer. The announcement points to reasoning improvements and reports a 77.1% verified score on ARC‑AGI‑2. Google’s model card and API docs provide additional capability and usage details; those specifications should be read alongside the version label, because the API currently lists <em>Gemini 3.1 Pro Preview</em>.</p>",
+          "<p>The preview label matters for developers planning production workloads. Previews can change, have different support expectations, or be replaced. Check the API model list and model card immediately before building a dependency around a specific model ID. The Gemini app and the Gemini API are different products: consumer app access does not automatically provide API quota or include API usage in a Google subscription.</p>"
+        ]
+      },
+      {
+        "heading": "GPT-6 vs Gemini 3.1 Pro: Quick Feature Comparison",
+        "paragraphs": [
+          "<div class=\"overflow-x-auto\"><table class=\"min-w-full border-collapse text-sm\"><thead><tr><th class=\"border p-2 text-left\">Area</th><th class=\"border p-2 text-left\">GPT‑6.2 Astra / Sol</th><th class=\"border p-2 text-left\">Gemini 3.1 Pro</th></tr></thead><tbody><tr><td class=\"border p-2\">Current API name</td><td class=\"border p-2\">GPT‑6.2 Astra and GPT‑6.2 Sol</td><td class=\"border p-2\">Gemini 3.1 Pro Preview</td></tr><tr><td class=\"border p-2\">Reasoning</td><td class=\"border p-2\">Astra positioned for hardest work; Sol for efficient multistep work</td><td class=\"border p-2\">Google positions Pro for complex reasoning tasks</td></tr><tr><td class=\"border p-2\">API input</td><td class=\"border p-2\">Text and images</td><td class=\"border p-2\">Multimodal; check model card for supported modalities and limits</td></tr><tr><td class=\"border p-2\">Context</td><td class=\"border p-2\">Astra API: 1,050,000 tokens listed</td><td class=\"border p-2\">Consult current Preview model docs for limits</td></tr><tr><td class=\"border p-2\">API price basis</td><td class=\"border p-2\">Per million input/output tokens; varies by model and processing tier</td><td class=\"border p-2\">Per million tokens; tiers differ above 200K prompt tokens</td></tr><tr><td class=\"border p-2\">Web research</td><td class=\"border p-2\">API tools include web search, subject to tool charges</td><td class=\"border p-2\">Google Search grounding available with separate request pricing</td></tr><tr><td class=\"border p-2\">Consumer access</td><td class=\"border p-2\">ChatGPT plan and model access vary</td><td class=\"border p-2\">Gemini app access and limits vary</td></tr></tbody></table></div><p>This is a feature and product comparison, not a claim that one system is universally better. See the official <a href=\"https://developers.openai.com/api/docs/models/gpt-6.2-astra\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">OpenAI model documentation</a> and <a href=\"https://deepmind.google/models/model-cards/gemini-3-1-pro/\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">Google model card</a> for details and limits.</p>"
+        ]
+      },
+      {
+        "heading": "Performance and Benchmarks: How to Read the Results",
+        "paragraphs": [
+          "<p>Benchmarks are useful when they disclose the model version, prompt format, tools, reasoning setting, sample size, and evaluation method. They are less useful when a score from one company’s test is placed beside a score from another test as if the models competed under identical conditions. Scores can also change with model updates, prompting, and inference settings.</p>",
+          "<p>Google says Gemini 3.1 Pro achieved 77.1% on ARC‑AGI‑2, a benchmark for solving novel logic patterns. That is an official Google-reported result, not a head-to-head score against GPT‑6.2. OpenAI’s GPT‑6.2 launch post reports selected comparisons for Astra on its named evaluations. Different benchmark suites and conditions mean neither figure alone establishes an overall winner. Use the original <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">Google announcement</a> and <a href=\"https://openai.com/index/introducing-gpt-6-2-astra-sol/\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">OpenAI announcement</a> to understand what each number measures.</p>",
+          "<p>For a fair independent comparison, choose your task, freeze the prompts and tools, use the exact model IDs, run multiple trials, hide model identity from graders, and record cost and latency as well as correctness. A result from GPT‑5 or an earlier Gemini version is not a direct GPT‑6.2 versus Gemini 3.1 Pro result.</p>"
+        ]
+      },
+      {
+        "heading": "Reasoning and Mathematics",
+        "paragraphs": [
+          "<p>Both products target difficult reasoning, but marketing descriptions and selected benchmark results do not guarantee accuracy on your question. For mathematics, ask the model to show a verifiable method, independently calculate key steps, and test edge cases. For research or professional decisions, request assumptions, uncertainty, and the source for each factual claim.</p>",
+          "<p>In everyday use, the best fit may come down to workflow: whether you need a fast answer, a long multi-step process, a particular tool integration, or a response grounded in provided documents. Compare the same task at the same reasoning or quality setting where available, and include retries in your cost estimate.</p>"
+        ]
+      },
+      {
+        "heading": "Coding and Programming",
+        "paragraphs": [
+          "<p>OpenAI positions GPT‑6.2 Astra for advanced coding and complex professional work; Sol is a cheaper alternative for multistep tasks. Google describes Gemini 3.1 Pro as supporting agentic capabilities and “vibe-coding.” Those are vendor descriptions, not a guarantee that generated code is secure, correct, or ready to deploy.</p>",
+          "<p>Test each model on a real, bounded task: ask it to explain an unfamiliar module, make a small change, add or update a test, and describe any assumptions. Review the diff, run your own checks, and inspect dependency changes and security-sensitive code. For more developer-oriented tools, see our guide to <a href=\"/post/best-ai-tools-for-developers-in-2026\" class=\"text-cyan-400 hover:underline\">AI tools for developers</a>.</p>"
+        ]
+      },
+      {
+        "heading": "Image, Video, and Multimodal Understanding",
+        "paragraphs": [
+          "<p>GPT‑6.2 Astra and Sol accept images as API input and return text, per OpenAI’s release notes. That statement does not mean either model natively accepts video or audio through the same model endpoint. Check modality support by model and endpoint rather than inferring it from the broader product family.</p>",
+          "<p>Google presents Gemini 3.1 Pro as a multimodal model. For image or video questions, ask both systems to identify visible evidence and separate observation from inference. Test small text, charts, screenshots, and long clips separately; model support, file handling, and limits may differ between the Gemini app and API.</p>"
+        ]
+      },
+      {
+        "heading": "Long Context and Document Analysis",
+        "paragraphs": [
+          "<p>The GPT‑6.2 Astra API page lists a 1,050,000-token context window, but a large context limit is not the same as guaranteed perfect recall. Tool wrappers, product interfaces, account limits, and output caps can affect what a user can send. Confirm the current limit for the exact model and endpoint you plan to use.</p>",
+          "<p>For Gemini 3.1 Pro, consult the current Preview model documentation for its context limit and supported file types; this guide avoids quoting a value that can vary by endpoint or be revised during preview. For either model, use a document with known answers, ask questions from the beginning, middle, and end, and verify quotations and page references against the source.</p>"
+        ]
+      },
+      {
+        "heading": "Research and Web Search",
+        "paragraphs": [
+          "<p>Search tools can improve freshness, but a citation is not proof that the cited page supports the sentence. Open the source, check its date and authority, and make sure the model has not stretched its meaning. OpenAI lists web search as an API tool with per-call charges; Google lists Search grounding with monthly free requests and paid requests after that allowance. Tool charges are separate from model-token charges.</p>",
+          "<p>For important facts, prioritize official documentation, government sources, academic papers, or the original dataset. Ask the model for direct links and quote snippets you can find on the page, then verify independently. Treat the answer as a research aid, not a substitute for reading the evidence.</p>"
+        ]
+      },
+      {
+        "heading": "Writing and Content Creation",
+        "paragraphs": [
+          "<p>Either model can help outline, edit, summarize, or draft content. A useful comparison is to give both the same audience, purpose, source material, length, and voice constraints. Judge factual accuracy, specificity, structure, and usefulness rather than fluency alone. Review claims and edit the final text for your publication’s standards.</p>",
+          "<p>For SEO writing, use AI to accelerate research organization and first drafts, not to manufacture expertise, reviews, or personal experience. Add original explanation, cite reliable sources next to claims, and verify that the page answers readers’ questions. Avoid publishing model-generated comparisons without checking current features and prices.</p>"
+        ]
+      },
+      {
+        "heading": "GPT-6 API Pricing vs Gemini 3.1 Pro API Pricing",
+        "paragraphs": [
+          "<p>API pricing is metered and separate from consumer subscriptions. OpenAI’s Standard rates per million tokens are <strong>$8 input and $40 output for GPT‑6.2 Astra</strong>, and <strong>$2 input and $10 output for GPT‑6.2 Sol</strong>. Cached input and other processing modes have different rates; see the <a href=\"https://developers.openai.com/api/docs/pricing\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">official pricing table</a> before estimating a bill.</p>",
+          "<p>Google lists Gemini 3.1 Pro Preview at <strong>$2 input and $12 output per million tokens for prompts up to 200,000 tokens</strong>. For prompts above 200,000 tokens, the listed rates are <strong>$4 input and $18 output</strong>. Google Search grounding is billed separately after the shared monthly free allowance shown in the pricing documentation. Recheck pricing before launch, because preview rates and model availability may change.</p>",
+          "<div class=\"overflow-x-auto\"><table class=\"min-w-full border-collapse text-sm\"><thead><tr><th class=\"border p-2 text-left\">API model (Standard)</th><th class=\"border p-2 text-left\">Input / 1M tokens</th><th class=\"border p-2 text-left\">Output / 1M tokens</th><th class=\"border p-2 text-left\">Important note</th></tr></thead><tbody><tr><td class=\"border p-2\">GPT‑6.2 Astra</td><td class=\"border p-2\">$8</td><td class=\"border p-2\">$40</td><td class=\"border p-2\">Cached input and processing tiers have separate rates</td></tr><tr><td class=\"border p-2\">GPT‑6.2 Sol</td><td class=\"border p-2\">$2</td><td class=\"border p-2\">$10</td><td class=\"border p-2\">Separate model ID and price from Astra</td></tr><tr><td class=\"border p-2\">Gemini 3.1 Pro Preview</td><td class=\"border p-2\">$2 up to 200K; $4 above</td><td class=\"border p-2\">$12 up to 200K; $18 above</td><td class=\"border p-2\">Preview model; Search grounding billed separately</td></tr></tbody></table></div>",
+          "<p>Do not compare prices from different processing tiers or ignore input length, cached tokens, image/audio handling, search calls, and generated output. A lower per-token price does not necessarily mean lower cost per completed task. Estimate using your real prompts and measure successful completion, retries, tool usage, latency, and output length. Prices above are USD rates listed on the official pages on November 24, 2026.</p>"
+        ]
+      },
+      {
+        "heading": "Free and Paid Access: ChatGPT vs Gemini in 2026",
+        "paragraphs": [
+          "<p>ChatGPT subscription access and OpenAI API access are different. ChatGPT plan fees buy access to the ChatGPT product under its current usage limits; API calls use developer credentials and are billed separately according to usage. OpenAI’s launch post names the plans that had GPT‑6.2 access in ChatGPT Work and Codex at release, but product availability can change. Check the model picker and plan page for your account.</p>",
+          "<p>Likewise, using Gemini in Google’s consumer app is not the same as calling Gemini through AI Studio or the Gemini API. API free-tier availability and quotas depend on model and terms; Google’s current pricing page identifies free-tier availability separately for each model. Do not assume a Google One or Gemini app subscription covers API usage.</p>"
+        ]
+      },
+      {
+        "heading": "Which AI Is Best for Students?",
+        "paragraphs": [
+          "<p>Students should start with the tool they can access reliably and affordably. Use either model to explain a concept in simpler language, generate practice questions from supplied notes, or give feedback on a draft. Ask it to identify uncertainty and provide sources for factual material, then compare important facts with course texts and official resources.</p>",
+          "<p>Do not submit unverified generated answers as your own work. Follow your institution’s AI and citation policy, protect personal information, and remember that confident explanations can contain mistakes. If you use an app’s free tier, check current limits rather than relying on old descriptions.</p>"
+        ]
+      },
+      {
+        "heading": "Which AI Is Best for Developers?",
+        "paragraphs": [
+          "<p>For developers, choose by repository fit, tool access, latency, cost per accepted change, and how well the model follows your project’s conventions. GPT‑6.2 Astra is positioned for demanding code work; Sol may be a more economical option. Gemini 3.1 Pro may fit teams already using Google’s developer ecosystem or workflows that need its multimodal and agentic features. These are starting points for evaluation, not universal rankings.</p>",
+          "<p>Run a small bake-off with sanitized tasks from your own codebase. Record whether each model follows instructions, makes a correct minimal change, explains trade-offs, and passes your existing checks. Never put secrets or sensitive code into a service unless your organization has approved its data handling terms.</p>"
+        ]
+      },
+      {
+        "heading": "Which AI Is Best for Content Creators?",
+        "paragraphs": [
+          "<p>Creators should compare draft quality, revision control, research traceability, image input, and cost. Give both models the same outline and sources, ask for a draft and a fact-check list, and inspect every cited claim. Use your editorial judgment to add examples and perspective that are genuinely yours.</p>",
+          "<p>If your workflow is mostly brainstorming and editing, convenience inside the app may matter more than API token prices. If you are automating many tasks, calculate API cost with actual usage. Keep an editor responsible for accuracy, originality, and disclosure requirements.</p>"
+        ]
+      },
+      {
+        "heading": "Pros and Cons of GPT-6.2",
+        "paragraphs": [
+          "<p><strong>Potential advantages:</strong> Astra and Sol give developers distinct capability and cost choices; OpenAI documents image input for both, and Astra’s API page lists a large context window and tool support. Standard API pricing for Sol is lower than Astra’s.</p>",
+          "<p><strong>Points to weigh:</strong> Astra output tokens cost more than Sol; higher API capability does not guarantee better results on your particular task; and API tools can add charges. Access in ChatGPT, Codex, and the API is governed by separate product rules. Confirm model ID, limits, and data terms before adopting it.</p>"
+        ]
+      },
+      {
+        "heading": "Pros and Cons of Gemini 3.1 Pro",
+        "paragraphs": [
+          "<p><strong>Potential advantages:</strong> Google positions 3.1 Pro for complex reasoning and multimodal work, and publishes a model card and API pricing. The listed token prices can be attractive for prompts at or below 200,000 tokens compared with GPT‑6.2 Astra’s Standard rates, though task cost depends on output and usage.</p>",
+          "<p><strong>Points to weigh:</strong> The API entry is labeled Preview, so availability and terms may change. Rates rise for prompts above 200,000 tokens; search grounding is extra; and Google’s benchmark result is not a direct comparison with GPT‑6.2. Confirm exact app and API limits before relying on it.</p>"
+        ]
+      },
+      {
+        "heading": "Five Practical GPT-6 vs Gemini Tests",
+        "paragraphs": [
+          "<p>Run each prompt unchanged on the exact model IDs you intend to use. Keep tools and settings consistent where possible, repeat each test, and save outputs, elapsed time, and estimated cost. For image understanding, submit the same image file and ask the same question. Do not treat this unrun template as test results.</p><ol class=\"list-decimal pl-6 space-y-2\"><li><strong>Complex reasoning:</strong> “Solve this multi-step problem. State assumptions, show the method, check the result independently, and flag any ambiguity: [insert a problem with a known answer].”</li><li><strong>Responsive website:</strong> “Build a responsive page from this specification: [insert requirements]. Use semantic HTML, accessible controls, and explain how I can run and verify it.”</li><li><strong>Research:</strong> “Research [topic]. Use primary sources, link each factual claim to evidence, include publication dates, and say when a point cannot be verified.”</li><li><strong>SEO article:</strong> “Create an accurate outline and draft for [topic/audience]. Use only the supplied verified facts, identify claims needing citations, and avoid invented experience.”</li><li><strong>Image understanding:</strong> “Describe only what is visible in this image. Separate direct observations from uncertain interpretations and read any legible text.”</li></ol>",
+          "<p><strong>Scorecard template — awaiting live tests:</strong></p><div class=\"overflow-x-auto\"><table class=\"min-w-full border-collapse text-sm\"><thead><tr><th class=\"border p-2 text-left\">Criterion (1–5)</th><th class=\"border p-2 text-left\">GPT‑6.2 Astra</th><th class=\"border p-2 text-left\">GPT‑6.2 Sol</th><th class=\"border p-2 text-left\">Gemini 3.1 Pro</th></tr></thead><tbody><tr><td class=\"border p-2\">Accuracy</td><td class=\"border p-2\">Not tested</td><td class=\"border p-2\">Not tested</td><td class=\"border p-2\">Not tested</td></tr><tr><td class=\"border p-2\">Instruction following</td><td class=\"border p-2\">Not tested</td><td class=\"border p-2\">Not tested</td><td class=\"border p-2\">Not tested</td></tr><tr><td class=\"border p-2\">Explanation quality</td><td class=\"border p-2\">Not tested</td><td class=\"border p-2\">Not tested</td><td class=\"border p-2\">Not tested</td></tr><tr><td class=\"border p-2\">Output usefulness</td><td class=\"border p-2\">Not tested</td><td class=\"border p-2\">Not tested</td><td class=\"border p-2\">Not tested</td></tr></tbody></table></div><p>Use a written rubric: define what a score of 1, 3, and 5 means before testing. For coding, include whether the output passes the same checks; for research, whether every key citation supports the claim. Ideally have a reviewer who does not know which model produced each answer.</p>"
+        ]
+      },
+      {
+        "heading": "Final Verdict: Which AI Should You Choose?",
+        "paragraphs": [
+          "<p>There is no evidence-based universal winner in this comparison. Choose GPT‑6.2 Astra when its higher-end API capabilities suit a complex task and the cost works; choose GPT‑6.2 Sol when you want a lower-priced OpenAI API model for multistep work; consider Gemini 3.1 Pro when its features, Google ecosystem, or current API pricing fit your requirements. For consumer use, compare the actual ChatGPT and Gemini app plans available to you rather than relying on API tables.</p>",
+          "<p>For a serious decision, run the five tests above on your own tasks, use current product versions, verify factual outputs, and compare total cost per successful result. Model names, prices, limits, and preview status change. Recheck the linked official documentation before purchasing or shipping a production integration. In short, the practical answer to “GPT‑6 vs Gemini 3.1 Pro” is the model that performs reliably on your workload at a cost and access level you can sustain.</p>"
+        ]
+      },
+      {
+        "heading": "Frequently Asked Questions About GPT-6 vs Gemini 3.1 Pro",
+        "paragraphs": [
+          "<p>Q1: Is GPT‑6.2 Astra the same as GPT‑6.2 Astra API?<br>A: GPT‑6.2 Astra is the model; “API” describes one way to access it. API model access is distinct from using a model in ChatGPT or Codex, and API billing is usage-based.</p>",
+          "<p>Q2: What is the difference between GPT‑6.2 Astra and Sol?<br>A: OpenAI positions Astra for its hardest professional work and Sol as a faster, lower-cost model for multistep tasks. They are separate model IDs with separate prices.</p>",
+          "<p>Q3: Is Gemini 3.1 Pro generally better than GPT‑6.2?<br>A: No official source establishes a universal winner. Benchmark scores use different tasks and conditions, so compare the exact models on your own workload.</p>",
+          "<p>Q4: How much does Gemini 3.1 Pro API cost?<br>A: Google lists $2 input and $12 output per million tokens for prompts up to 200,000 tokens, and $4 input and $18 output above that threshold. Search grounding and other features may add charges.</p>",
+          "<p>Q5: Does a ChatGPT subscription include OpenAI API usage?<br>A: ChatGPT subscriptions and API usage are separate products and billing. Check current plan terms for ChatGPT access and API pricing for developer calls.</p>",
+          "<p>Q6: Can I use Gemini for free?<br>A: Availability depends on the Gemini app or API, the model, account, and current limits. Check Google’s current product and pricing pages for the free tier relevant to your use.</p>",
+          "<p>Q7: Were the five models tested directly for this article?<br>A: No. The prompts and scorecard are provided as a reproducible test method; all score cells are labeled “Not tested.” No live head-to-head result is claimed.</p>"
+        ]
+      },
+      {
+        "heading": "Sources and Pricing Notes",
+        "paragraphs": [
+          "<p>Primary sources consulted for this article: <a href=\"https://openai.com/index/introducing-gpt-6-2-astra-sol/\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">OpenAI’s GPT‑6.2 announcement</a>; <a href=\"https://help.openai.com/en/articles/9624314-model-release-notes\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">OpenAI model release notes</a>; <a href=\"https://developers.openai.com/api/docs/pricing\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">OpenAI API pricing</a>; <a href=\"https://developers.openai.com/api/docs/models/gpt-6.2-astra\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">GPT‑6.2 Astra model page</a>; <a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">Google’s Gemini 3.1 Pro announcement</a>; <a href=\"https://deepmind.google/models/model-cards/gemini-3-1-pro/\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">Gemini 3.1 Pro model card</a>; and <a href=\"https://ai.google.dev/gemini-api/docs/pricing\" target=\"_blank\" rel=\"noreferrer\" class=\"text-cyan-400 hover:underline\">Gemini API pricing</a>. API pricing and preview availability were checked on November 24, 2026. Product access, model limits, and prices can change, so check the source pages again before relying on these details.</p>"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "ai-se-pdf-lecture-se-handwritten-study-notes-kaise-banaye",
     "language": "hi",
     "title": "AI से Notes कैसे बनाएं? PDF और Lecture से Exam Notes बनाने की पूरी Guide",
