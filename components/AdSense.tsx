@@ -10,10 +10,11 @@ declare global {
 
 type AdSenseProps = {
   slot: string;
+  format?: string;
   className?: string;
 };
 
-export function AdSense({ slot, className = "" }: AdSenseProps) {
+export function AdSense({ slot, format = "auto", className = "" }: AdSenseProps) {
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -32,7 +33,7 @@ export function AdSense({ slot, className = "" }: AdSenseProps) {
       style={{ display: "block" }}
       data-ad-client="ca-pub-6068512506766570"
       data-ad-slot={slot}
-      data-ad-format="auto"
+      data-ad-format={format}
       data-full-width-responsive="true"
     />
   );

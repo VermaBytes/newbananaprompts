@@ -96,11 +96,6 @@ export default async function RootLayout({
           name="google-adsense-account"
           content="ca-pub-6068512506766570"
         />
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6068512506766570"
-          strategy="afterInteractive"
-          crossOrigin="anonymous"
-        />
         <Script id="theme-init" strategy="beforeInteractive">
           {`
             (function() {

@@ -26,6 +26,11 @@ export function PrivacyScripts() {
     <>
       {consent === "accepted" ? (
         <>
+          <Script
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6068512506766570"
+            strategy="afterInteractive"
+            crossOrigin="anonymous"
+          />
           <Script src="https://www.googletagmanager.com/gtag/js?id=G-CFRHNCTG1G" strategy="lazyOnload" />
           <Script id="google-analytics" strategy="afterInteractive">
             {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CFRHNCTG1G');`}
