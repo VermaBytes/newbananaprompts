@@ -6,7 +6,7 @@ import type { PostPreview } from "@/lib/posts";
 import { PostCard } from "@/components/post-card";
 import { PostCardSkeleton } from "@/components/post-card-skeleton";
 
-const filters = ["All", "Image Prompts", "Video Prompts", "AI Tools", "Earn Money", "Courses"] as const;
+const filters = ["All", "Image Prompts", "Video Prompts", "AI Tools", "Earn Money", "Courses", "Gaming & Technology"] as const;
 
 export function PostsExplorer({ posts = [], query = "" }: { posts?: PostPreview[]; query?: string }) {
   const searchParams = useSearchParams();
